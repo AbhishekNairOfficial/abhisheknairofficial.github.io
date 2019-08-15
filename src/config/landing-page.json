@@ -1,0 +1,31 @@
+{
+  "title": "Hi, I'm Abhishek!",
+  "quote": "I am a frontend developer / budding designer",
+  "links": [
+    {
+      "title":"Microsoft",
+      "url":"mailto:abhisheknr21@outlook.com",
+      "icon":"fab fa-microsoft"
+    },{
+      "title":"LinkedIn",
+      "url":"https://www.linkedin.com/in/6foot4/",
+      "icon":"fab fa-linkedin-in"
+    },{
+      "title":"github",
+      "url": "https://www.github.com/abhisheknairofficial",
+      "icon":"fab fa-github"
+    },{
+      "title":"quora",
+      "url":"https://www.quora.com/profile/Abhishek-Nair-147",
+      "icon": "fab fa-quora"
+    },{
+      "title":"Medium",
+      "url":"https://medium.com/@abhisheknairp",
+      "icon":"fab fa-medium"
+    },{
+      "title":"Twitter",
+      "url":"https://twitter.com/nairgalactico21",
+      "icon":"fab fa-twitter"
+    }
+  ]
+}
