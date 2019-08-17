@@ -1,5 +1,4 @@
 import React from 'react';
-import arrowIcon from '../../assets/down-arrow.svg';
 import data from '../../config/projects-page.json';
 import './index.css';
 import ProjectTile from '../../components/projectTile';
@@ -14,9 +13,6 @@ const ProjectsPage = () => {
           return <ProjectTile key={key} data={project} />;
         })}
       </div>
-      <a aria-label="chevron" href="#EmailPage">
-        <img src={arrowIcon} alt="chevron-down" className="chevron-down" />
-      </a>
     </div>
   );
 };
