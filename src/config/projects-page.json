@@ -1,0 +1,30 @@
+{
+  "title": "Projects:",
+  "text": "Here are some of the projects I've done",
+  "projects":[
+    {
+      "title":"React Native Boilerplate",
+      "description":"A boilerplate application I made to create React Native applications",
+      "url":"https://www.github.com/abhisheknairofficial/react-native-boilerplate",
+      "icon":"fab fa-github"
+    },
+    {
+      "title":"NotesApp",
+      "description":"I made an application to take notes, using React Native",
+      "url":"https://www.github.com/abhisheknairofficial/notes-app",
+      "icon":"fab fa-github"
+    },
+    {
+      "title":"Dev Tools Article",
+      "description":"My Medium Article on tricks using Chrome Dev Tools",
+      "url":"https://medium.com/@abhisheknairp/how-to-make-the-most-of-chrome-developer-tools-e0af605dffb",
+      "icon":"fab fa-medium"
+    },
+    {
+      "title":"Dev Tools Repo",
+      "description":"The repository for my Dev Tools tutorial",
+      "url":"https://github.com/abhisheknairofficial/dev-tools",
+      "icon":"fab fa-github"
+    }
+  ]
+}

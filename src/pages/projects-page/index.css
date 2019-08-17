@@ -1,0 +1,19 @@
+.project-page-container {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.landing-page-container>a {
+  align-self: center;
+}
+.projects-title {
+  margin: 20px;
+  margin-left: 0;
+}
+.projects-text {
+  font-size: 1.2em;
+}
+.projects-holder {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}

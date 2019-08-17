@@ -11,13 +11,19 @@ const LandingPage = () => {
       <div className="icons-holder">
         {data.links.map((link, key) => {
           return (
-            <a key={key} href={link.url} target="_blank" rel="noopener noreferrer">
+            <a
+              key={key}
+              aria-label={link.title}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className={`${link.icon} icon`} />
             </a>
           );
         })}
       </div>
-      <a href="#ProjectsPage">
+      <a aria-label="chevron" href="#ProjectsPage">
         <img src={arrowIcon} alt="chevron-down" className="chevron-down" />
       </a>
     </div>
