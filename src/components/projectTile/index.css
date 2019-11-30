@@ -31,7 +31,8 @@
 }
 /* link */
 .project .icon {
-  font-size: 2em;
+  height: 30px;
+  width: 30px;
   align-self: flex-end;
 }
 .project:hover .icon {

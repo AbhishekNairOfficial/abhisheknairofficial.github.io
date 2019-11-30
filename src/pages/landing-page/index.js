@@ -2,6 +2,31 @@ import React from 'react';
 import './index.css';
 import data from '../../config/landing-page.json';
 import arrowIcon from '../../assets/down-arrow.svg';
+import MicrosoftIcon from '../../assets/microsoft.svg';
+import GithubIcon from '../../assets/github.svg';
+import MediumIcon from '../../assets/medium.svg';
+import TwitterIcon from '../../assets/twitter.svg';
+import QuoraIcon from '../../assets/quora.svg';
+import LinkedinIcon from '../../assets/linkedin.svg';
+
+export const getIcon = icon => {
+  switch (icon) {
+    case 'microsoft':
+      return MicrosoftIcon;
+    case 'linkedin':
+      return LinkedinIcon;
+    case 'twitter':
+      return TwitterIcon;
+    case 'quora':
+      return QuoraIcon;
+    case 'medium':
+      return MediumIcon;
+    case 'github':
+      return GithubIcon;
+    default:
+      return GithubIcon;
+  }
+};
 
 const LandingPage = () => {
   return (
@@ -18,7 +43,7 @@ const LandingPage = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i className={`${link.icon} icon`} />
+              <img alt="Social Icon" src={getIcon(link.icon)} />
             </a>
           );
         })}

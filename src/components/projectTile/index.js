@@ -1,4 +1,5 @@
 import React from 'react';
+import { getIcon } from '../../pages/landing-page';
 import './index.css';
 
 const ProjectTile = props => {
@@ -7,7 +8,7 @@ const ProjectTile = props => {
   return (
     <div className="project">
       <p className="title">{title}</p>
-      <i className={`${icon} icon`} />
+      <img alt="Social Icon" className="icon" src={getIcon(icon)} />
       <p className="text">{description}</p>
       <a
         aria-label="article link"
