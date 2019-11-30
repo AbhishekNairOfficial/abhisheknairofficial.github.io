@@ -17,4 +17,4 @@ const ProjectsPage = () => {
   );
 };
 
-export default ProjectsPage;
+export default React.memo(ProjectsPage);

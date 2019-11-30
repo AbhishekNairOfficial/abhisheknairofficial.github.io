@@ -23,4 +23,4 @@ const ProjectTile = props => {
   );
 };
 
-export default ProjectTile;
+export default React.memo(ProjectTile);
