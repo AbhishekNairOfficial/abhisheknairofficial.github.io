@@ -11,7 +11,7 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "yarn run build",
-    "deploy": "firebase deploy --only hosting:abhisheknairoficial.web.app",
+    "deploy": "firebase deploy --only hosting:abhisheknairoficial",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -33,7 +33,7 @@
     ]
   },
   "devDependencies": {
-    "eslint": "6.1.0",
+    "eslint": "^6.7.2",
     "eslint-config-airbnb": "18.0.1",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-import": "^2.18.2",
