@@ -9,7 +9,7 @@ import TwitterIcon from '../../assets/twitter.svg';
 import QuoraIcon from '../../assets/quora.svg';
 import LinkedinIcon from '../../assets/linkedin.svg';
 
-export const getIcon = icon => {
+export const getIcon = (icon) => {
   switch (icon) {
     case 'microsoft':
       return MicrosoftIcon;

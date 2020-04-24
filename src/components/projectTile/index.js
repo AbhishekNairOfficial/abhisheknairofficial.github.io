@@ -2,9 +2,11 @@ import React from 'react';
 import { getIcon } from '../../pages/landing-page';
 import './index.css';
 
-const ProjectTile = props => {
+const ProjectTile = (props) => {
   const { data } = props;
-  const { title, description, url, icon } = data;
+  const {
+    title, description, url, icon,
+  } = data;
   return (
     <div className="project">
       <p className="title">{title}</p>
