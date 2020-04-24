@@ -1,8 +1,8 @@
 import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
+import SixFootFour from './components/atoms/6foot4';
 import HomePage from './components/pages/HomePage';
-import NavBar from './components/organisms/NavBar';
 import theme from './themes';
 
 const GlobalStyle = createGlobalStyle`
@@ -26,7 +26,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <NavBar />
+      <SixFootFour />
       <HomePage />
     </ThemeProvider>
   );

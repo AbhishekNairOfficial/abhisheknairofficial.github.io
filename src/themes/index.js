@@ -5,11 +5,11 @@ const theme = {};
 
 theme.palette = {
   primary: ['#247AFDE6'],
-  secondary: [],
+  secondary: ['#FFD700'],
   danger: [],
   alert: [],
   success: [],
-  white: ['#fff', '#F7F7FF'],
+  white: ['#fff', '#F7F7FF', '#FBFFFE33'],
   grayscale: [
     '#212121',
     '#414141',
