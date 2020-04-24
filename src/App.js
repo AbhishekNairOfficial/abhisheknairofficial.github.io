@@ -1,5 +1,7 @@
 import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import 'product-sans-webfont';
+import 'typeface-spartan';
 
 import SixFootFour from './components/atoms/6foot4';
 import HomePage from './components/pages/HomePage';

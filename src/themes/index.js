@@ -25,8 +25,10 @@ theme.palette = {
 theme.reversePalette = reversePalette(theme.palette);
 
 theme.fonts = {
-  primary: 'Product Sans, Roboto, sans-serif',
+  primary: 'GoogleSansRegular, Roboto, sans-serif',
   pre: 'Spartan, Liberation Mono, Menlo, Courier, monospace',
+  medium: 'GoogleSansMedium',
+  bold: 'GoogleSansBold',
   quote: 'Georgia, serif',
 };
 

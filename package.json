@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "product-sans-webfont": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
     "styled-components": "^5.1.0",
-    "styled-theme": "^0.3.3"
+    "styled-theme": "^0.3.3",
+    "typeface-spartan": "^1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
