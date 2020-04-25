@@ -9,6 +9,7 @@ const Text = styled.div`
 const HelloText = styled.h1`
   font-size: 3em;
   margin: 0 0 20px 0;
+  font-weight: 100;
 `;
 
 const NameText = styled.h2`
@@ -20,6 +21,7 @@ const NameText = styled.h2`
 const DesignationText = styled.h3`
   margin: 0;
   font-size: 1.5em;
+  font-weight: 100;
   font-family: ${props => props.theme.fonts.primary};
 `;
 

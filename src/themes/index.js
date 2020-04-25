@@ -9,7 +9,8 @@ theme.palette = {
   danger: [],
   alert: [],
   success: [],
-  white: ['#fff', '#F7F7FF', '#FBFFFE33'],
+  white: ['#fff', '#F7F7FF', '#FBFFFE33', '#FBFFFE'],
+  black: ['#0D1212'],
   grayscale: [
     '#212121',
     '#414141',
