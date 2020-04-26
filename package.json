@@ -6,6 +6,7 @@
     "product-sans-webfont": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-loading-skeleton": "^2.0.1",
     "react-scripts": "^3.4.1",
     "styled-components": "^5.1.0",
     "styled-theme": "^0.3.3",

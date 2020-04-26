@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import styled from 'styled-components';
-
-import Title from '../../atoms/Title';
-import RightSideNavBar from '../../molecules/RightSideNavBar';
+import Skeleton from 'react-loading-skeleton';
 
 export const Container = styled.nav`
   padding: 3em;
@@ -11,10 +9,17 @@ export const Container = styled.nav`
   align-items: center;
 `;
 
+const Title = lazy(() => import('../../atoms/Title'));
+const RightSideNavBar = lazy(() => import('../../molecules/RightSideNavBar'));
+
 const NavBar = () => (
   <Container>
-    <Title />
-    <RightSideNavBar />
+    <Suspense fallback={<Skeleton />}>
+      <Title />
+    </Suspense>
+    <Suspense fallback={<Skeleton />}>
+      <RightSideNavBar />
+    </Suspense>
   </Container>
 );
 
