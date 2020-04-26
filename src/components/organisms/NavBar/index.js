@@ -4,8 +4,7 @@ import styled from 'styled-components';
 import Title from '../../atoms/Title';
 import RightSideNavBar from '../../molecules/RightSideNavBar';
 
-const Container = styled.nav`
-  /* background-color: ${props => props.theme.palette.primary[0]}; */
+export const Container = styled.nav`
   padding: 3em;
   display: flex;
   justify-content: space-between;
