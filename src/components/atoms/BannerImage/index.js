@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import BANNER_IMAGE from '../../../assets/images/banner-image.png';
 
-const Image = styled.img`
+export const Image = styled.img`
   align-self: flex-end;
 `;
 

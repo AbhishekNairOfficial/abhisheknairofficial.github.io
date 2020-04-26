@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
+export const Container = styled.div`
   position: fixed;
   height: 100vh;
   width: 100vw;
 `;
 
-const Text = styled.span`
+export const Text = styled.span`
   font-size: 35rem;
   color: transparent;
   line-height: ${props => (props.right ? '1em' : '0.6em')};
