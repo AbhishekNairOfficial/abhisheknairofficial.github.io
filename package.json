@@ -16,7 +16,7 @@
     "predeploy": "yarn run build",
     "deploy": "firebase deploy --only hosting:abhisheknairoficial",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom-fourteen",
+    "test": "react-scripts test --watchAll --coverage",
     "eject": "react-scripts eject",
     "lint": "eslint ./ --fix"
   },
