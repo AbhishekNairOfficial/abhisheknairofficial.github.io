@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import SocialContainer from '../../molecules/SocialContainer';
 
-const Container = styled.footer`
+export const Container = styled.footer`
   padding: 2.5em 5vw;
   background-color: ${props => props.theme.palette.white[3]};
   display: flex;
@@ -11,7 +11,7 @@ const Container = styled.footer`
   justify-content: space-between;
 `;
 
-const LeftSideText = styled.p`
+export const LeftSideText = styled.p`
   font-family: ${props => props.theme.fonts.primary};
 `;
 

@@ -26,3 +26,6 @@ yarn-error.log*
 # Firebase
 /.firebase
 firebase-*.log
+
+# Testing
+**/__snapshots__
