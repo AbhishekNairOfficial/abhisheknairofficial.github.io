@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div``;
+export const Container = styled.div``;
 
-const LinkComponent = styled.span`
+export const LinkComponent = styled.span`
   font-size: 1.2em;
   font-family: ${props => props.theme.fonts.primary};
   color: ${props => props.theme.palette.white[1]};

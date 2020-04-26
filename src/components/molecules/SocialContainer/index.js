@@ -8,7 +8,7 @@ import DRIBBBLE_ICON from '../../../assets/images/dribbble.svg';
 import GITHUB_ICON from '../../../assets/images/github.svg';
 import TWITTER_ICON from '../../../assets/images/twitter.svg';
 
-const Image = styled.img`
+export const Image = styled.img`
   height: 32px;
   margin-left: 30px;
 `;
