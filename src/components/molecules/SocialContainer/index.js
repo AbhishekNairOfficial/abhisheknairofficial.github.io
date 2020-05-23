@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -13,14 +14,25 @@ export const Image = styled.img`
   margin-left: 30px;
 `;
 
+const socialProfileMaps = [
+  { icon: QUORA_ICON, link: 'https://www.quora.com/profile/Abhishek-Nair-147' },
+  { icon: LINKEDIN_ICON, link: 'https://www.linkedin.com/in/6foot4/' },
+  { icon: MEDIUM_ICON, link: 'https://medium.com/@abhisheknairp' },
+  { icon: DRIBBBLE_ICON, link: 'https://dribbble.com/AbhishekNairOfficial' },
+  { icon: GITHUB_ICON, link: 'https://github.com/abhisheknairofficial' },
+  { icon: TWITTER_ICON, link: 'https://twitter.com/NairGalactico21' },
+];
+
 const SocialContainer = () => (
   <div>
-    <Image src={QUORA_ICON} alt="quora" />
-    <Image src={LINKEDIN_ICON} alt="linkedin" />
-    <Image src={MEDIUM_ICON} alt="medium" />
-    <Image src={DRIBBBLE_ICON} alt="dribbble" />
-    <Image src={GITHUB_ICON} alt="github" />
-    <Image src={TWITTER_ICON} alt="twitter" />
+    {socialProfileMaps.map((socialProfile, index) => {
+      const { icon, link } = socialProfile;
+      return (
+        <a href={link} key={index} target="_blank" rel="noopener noreferrer">
+          <Image src={icon} alt={link} />
+        </a>
+      );
+    })}
   </div>
 );
 

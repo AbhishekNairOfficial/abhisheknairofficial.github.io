@@ -5,6 +5,7 @@ export const Container = styled.div`
   position: fixed;
   height: 100vh;
   width: 100vw;
+  z-index: -1;
 `;
 
 export const Text = styled.span`
