@@ -29,3 +29,6 @@ firebase-*.log
 
 # Testing
 **/__snapshots__
+
+# VS Code
+.vscode

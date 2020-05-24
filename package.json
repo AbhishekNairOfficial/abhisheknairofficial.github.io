@@ -18,6 +18,7 @@
     "deploy": "firebase deploy --only hosting:abhisheknairoficial",
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll --coverage",
+    "test:build": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "eslint ./ --fix"
   },
@@ -54,7 +55,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint && git add ."
+      "pre-commit": "yarn lint && yarn test:build && git add ."
     }
   },
   "jest": {
