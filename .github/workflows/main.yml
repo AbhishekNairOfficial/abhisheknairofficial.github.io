@@ -13,11 +13,14 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@master
 
+      - name: Installing the dependencies
+        run: npm install
+
       - name: Lint and test the code
         run: npm run lint && npm run test:build
 
       - name: Building the production code
-        run: npm i && npm run build
+        run: npm run build
 
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
