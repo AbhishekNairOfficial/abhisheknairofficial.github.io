@@ -57,5 +57,14 @@
       "pre-commit": "yarn lint && git add ."
     }
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**",
+      "!**/serviceWorker.js",
+      "!src/index.js"
+    ]
+  },
   "homepage": "https://abhisheknairofficial.com"
 }

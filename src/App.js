@@ -7,7 +7,7 @@ import SixFootFour from './components/atoms/6foot4';
 import HomePage from './components/pages/HomePage';
 import theme from './themes';
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
     scroll-behavior: smooth;
