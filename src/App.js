@@ -1,38 +1,37 @@
-import React, { useEffect } from 'react';
-import LandingPage from './pages/landing-page';
-import ProjectsPage from './pages/projects-page';
-import './App.css';
+import React from 'react';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import 'product-sans-webfont';
+import 'typeface-spartan';
+
+import SixFootFour from './components/atoms/6foot4';
+import HomePage from './components/pages/HomePage';
+import theme from './themes';
+
+export const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+  }
+  *::-webkit-scrollbar {
+    width: 0 !important
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: ${props => props.theme.palette.primary};
+  }
+`;
 
 const App = () => {
-  // This function adds and removes the chevrons during scroll
-  const handleScroll = () => {
-    let timer = null;
-    const chevrons = document.getElementsByClassName('chevron-down');
-
-    if (timer !== null) {
-      clearTimeout(timer);
-    }
-    timer = setTimeout(() => {
-      Array.from(chevrons).forEach(element => {
-        element.classList.remove('hide');
-      });
-    }, 1000);
-    Array.from(chevrons).forEach(element => {
-      element.classList.add('hide');
-    });
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', e => handleScroll(e));
-    return () => {
-      window.removeEventListener('scroll', e => handleScroll(e));
-    };
-  }, []);
   return (
-    <div className="container">
-      <LandingPage />
-      <ProjectsPage />
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <SixFootFour />
+      <HomePage />
+    </ThemeProvider>
   );
 };
 
