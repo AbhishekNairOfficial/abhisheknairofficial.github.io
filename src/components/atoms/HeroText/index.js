@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import Skeleton from 'react-loading-skeleton';
+
+import { useRealtimeDatabase } from '../../../config/useFirebase';
 
 export const Text = styled.div`
   color: ${props => props.theme.palette.white[0]};
@@ -16,6 +19,9 @@ export const NameText = styled.h2`
   font-size: 8em;
   margin: 0;
   font-weight: 500;
+  & > B {
+    font-family: ${props => props.theme.fonts.bold};
+  }
 `;
 
 export const DesignationText = styled.h3`
@@ -23,29 +29,32 @@ export const DesignationText = styled.h3`
   font-size: 1.5em;
   font-weight: 100;
   font-family: ${props => props.theme.fonts.primary};
+  & > YellowText {
+    color: ${props => props.theme.palette.secondary[0]};
+  }
 `;
 
-export const B = styled.span`
-  font-family: ${props => props.theme.fonts.bold};
-`;
+const HeroText = () => {
+  const landingPageData = useRealtimeDatabase('landingPage');
 
-export const YellowText = styled.span`
-  color: ${props => props.theme.palette.secondary[0]};
-`;
+  if (!landingPageData) {
+    return (
+      <>
+        <Skeleton height="4em" width={150} />
+        <Skeleton height="10em" width="70vw" />
+        <Skeleton height="2.5em" width="30vw" />
+      </>
+    );
+  }
 
-const HeroText = () => (
-  <Text>
-    <HelloText>Hello there!</HelloText>
-    <NameText>
-      I&apos;m
-      <B> Abhishek.</B>
-    </NameText>
-    <DesignationText>
-      {'front-end developer | '}
-      <YellowText>design</YellowText>
-      {' student'}
-    </DesignationText>
-  </Text>
-);
+  const { title, quote, firstLine } = landingPageData;
+  return (
+    <Text>
+      <HelloText>{firstLine}</HelloText>
+      <NameText dangerouslySetInnerHTML={{ __html: title }} />
+      <DesignationText dangerouslySetInnerHTML={{ __html: quote }} />
+    </Text>
+  );
+};
 
 export default HeroText;

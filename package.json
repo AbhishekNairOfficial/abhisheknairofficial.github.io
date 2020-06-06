@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "firebase": "^7.15.0",
     "product-sans-webfont": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -38,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react-hooks": "^3.3.0",
     "babel-eslint": "^10.1.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
