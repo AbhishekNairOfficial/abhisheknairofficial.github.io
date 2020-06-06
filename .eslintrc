@@ -14,7 +14,7 @@
   },
   "rules": {
     "semi": [2, "always"],
-    "comma-dangle": [2, "never"],
+    "comma-dangle": [0, "never"],
     "max-len": 0,
     "react/prop-types": 0,
     "no-shadow": 0,

@@ -1,11 +1,13 @@
 import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { SkeletonTheme } from 'react-loading-skeleton';
 import 'product-sans-webfont';
 import 'typeface-spartan';
 
 import SixFootFour from './components/atoms/6foot4';
 import HomePage from './components/pages/HomePage';
 import theme from './themes';
+import { initialiseFirebase } from './config/useFirebase';
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -26,11 +28,15 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 const App = () => {
+  initialiseFirebase();
+
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <SixFootFour />
-      <HomePage />
+      <SkeletonTheme color="#ffffff1a" highlightColor="#ffffff80">
+        <GlobalStyle />
+        <SixFootFour />
+        <HomePage />
+      </SkeletonTheme>
     </ThemeProvider>
   );
 };
