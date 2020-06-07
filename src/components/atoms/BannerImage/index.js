@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-
-import BANNER_IMAGE from '../../../assets/images/banner-image.png';
+import Skeleton from 'react-loading-skeleton';
+import { useFirebaseStorage } from '../../../config/useFirebase';
 
 export const Image = styled.img`
   align-self: flex-end;
+  background-image: transparent url;
 `;
 
-const BannerImage = () => <Image src={BANNER_IMAGE} alt="Banner" />;
+export const StyledSkeleton = styled.div`
+  align-self: flex-end;
+`;
+
+const BannerImage = () => {
+  // State
+  const [loading, setLoading] = useState(true);
+  // Hooks
+  const imageUrl = useFirebaseStorage('banner-image.png');
+
+  return (
+    <>
+      {loading && (
+        <StyledSkeleton>
+          <Skeleton height={250} width={250} circle />
+        </StyledSkeleton>
+      )}
+      {imageUrl && (
+        <Image loading={loading} onLoad={() => setLoading(false)} src={imageUrl} alt="Banner" />
+      )}
+    </>
+  );
+};
 
 export default BannerImage;
