@@ -1,5 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/database';
+import 'firebase/storage';
 import { useEffect, useState } from 'react';
 
 export const initialiseFirebase = () => {
@@ -35,4 +36,23 @@ export const useRealtimeDatabase = key => {
   }, [database, key]);
 
   return value;
+};
+
+export const useFirebaseStorage = key => {
+  // State
+  if (firebase.apps.length === 0) {
+    initialiseFirebase();
+  }
+  const [imageUrl, setImageUrl] = useState(null);
+
+  const getImage = async () => {
+    // Get a reference to the storage service, which is used to create references in your storage bucket
+    const storage = firebase.storage();
+    // Create a storage reference from our storage service
+    const bannerImage = await storage.ref(key).getDownloadURL();
+    setImageUrl(bannerImage);
+  };
+  getImage();
+
+  return imageUrl;
 };
