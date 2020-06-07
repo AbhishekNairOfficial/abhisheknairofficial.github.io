@@ -1,10 +1,12 @@
+/* eslint-disable react/jsx-indent */
+/* eslint-disable indent */
 import React from 'react';
 import styled from 'styled-components';
+import Skeleton from 'react-loading-skeleton';
 
 import ProjectsTitle from '../../molecules/ProjectsTitle';
 import ProjectTile from '../../molecules/ProjectTile';
-
-import projectsData from '../../../config/projects-page.json';
+import { useRealtimeDatabase } from '../../../config/useFirebase';
 
 export const Container = styled.section`
   position: relative;
@@ -20,16 +22,25 @@ const ProjectsContainerDiv = styled.div`
   margin-top: 30px;
 `;
 
-const ProjectsContainerComponent = () => (
-  <Container>
-    <ProjectsTitle />
-    <ProjectsContainerDiv>
-      {projectsData.projects.map((project, key) => {
-        const { title, description, url } = project;
-        return <ProjectTile key={key} title={title} description={description} url={url} />;
-      })}
-    </ProjectsContainerDiv>
-  </Container>
-);
+const ProjectsContainerComponent = () => {
+  const listOfProjects = useRealtimeDatabase('projectsPage/projects');
+  const listOfFourEmptyProjects = new Array(4).fill({});
+
+  return (
+    <Container>
+      <ProjectsTitle />
+      <ProjectsContainerDiv>
+        {listOfProjects
+          ? listOfProjects.map((project, key) => {
+              const { title, description, url } = project;
+              return <ProjectTile key={key} title={title} description={description} url={url} />;
+            })
+          : listOfFourEmptyProjects.map((item, index) => (
+              <Skeleton key={index} width="40vw" height="40vh" />
+            ))}
+      </ProjectsContainerDiv>
+    </Container>
+  );
+};
 
 export default ProjectsContainerComponent;
