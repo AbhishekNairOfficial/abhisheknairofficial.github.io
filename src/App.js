@@ -1,11 +1,13 @@
 import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { SkeletonTheme } from 'react-loading-skeleton';
+import { BrowserRouter, Route } from 'react-router-dom';
 import 'product-sans-webfont';
 import 'typeface-spartan';
 
 import SixFootFour from './components/atoms/6foot4';
 import HomePage from './components/pages/HomePage';
+import ProjectDetailsPage from './components/pages/ProjectDetails';
 import theme from './themes';
 import { initialiseFirebase } from './config/useFirebase';
 
@@ -35,7 +37,14 @@ const App = () => {
       <SkeletonTheme color="#ffffff1a" highlightColor="#ffffff80">
         <GlobalStyle />
         <SixFootFour />
-        <HomePage />
+        <BrowserRouter>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route path="/projects">
+            <ProjectDetailsPage />
+          </Route>
+        </BrowserRouter>
       </SkeletonTheme>
     </ThemeProvider>
   );
