@@ -9,7 +9,7 @@ import theme from '../../../themes';
 
 configure({ adapter: new Adapter() });
 
-describe('<SixFootFour />', () => {
+describe('<BannerImage />', () => {
   const Component = shallow(
     <ThemeProvider theme={theme}>
       <BannerImage />
