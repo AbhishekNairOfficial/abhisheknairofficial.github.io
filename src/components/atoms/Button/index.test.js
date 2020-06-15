@@ -3,16 +3,15 @@ import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { ThemeProvider } from 'styled-components';
 
-import BannerImage, { Image } from '.';
-
+import ButtonComponent, { StyledButton } from '.';
 import theme from '../../../themes';
 
 configure({ adapter: new Adapter() });
 
-describe('<BannerImage />', () => {
+describe('<StyledButton />', () => {
   const Component = shallow(
     <ThemeProvider theme={theme}>
-      <BannerImage />
+      <StyledButton />
     </ThemeProvider>
   );
 
@@ -21,10 +20,10 @@ describe('<BannerImage />', () => {
   });
 });
 
-describe('<Image />', () => {
+describe('<ButtonComponent />', () => {
   const Component = shallow(
     <ThemeProvider theme={theme}>
-      <Image />
+      <ButtonComponent />
     </ThemeProvider>
   );
 

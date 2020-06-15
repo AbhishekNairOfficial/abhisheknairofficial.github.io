@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Button = styled.div`
+export const StyledButton = styled.div`
   height: 50px;
   border: ${props => `2px solid ${props.theme.palette.primary[0]}`};
   margin: 10px;
@@ -20,7 +20,7 @@ const Button = styled.div`
 `;
 
 const ButtonComponent = ({ label }) => {
-  return <Button type="button">{label}</Button>;
+  return <StyledButton type="button">{label}</StyledButton>;
 };
 
 export default ButtonComponent;

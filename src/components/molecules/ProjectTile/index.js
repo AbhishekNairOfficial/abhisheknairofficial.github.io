@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import FAKE_TILE from '../../../assets/images/fake-project-tile.png';
 import Button from '../../atoms/Button';
 
-const Container = styled.div`
+export const Container = styled.div`
   position: relative;
   background-color: ${props => props.theme.palette.white[0]};
   &:hover {
@@ -15,7 +15,7 @@ const Container = styled.div`
   }
 `;
 
-const TextContainer = styled.div`
+export const TextContainer = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -29,7 +29,7 @@ const TextContainer = styled.div`
   align-items: center;
 `;
 
-const Title = styled.div`
+export const Title = styled.div`
   font-family: ${props => props.theme.fonts.primary};
   font-size: 1.3em;
   font-weight: bold;
@@ -37,19 +37,19 @@ const Title = styled.div`
   margin-bottom: 20px;
 `;
 
-const Description = styled.div`
+export const Description = styled.div`
   font-family: ${props => props.theme.fonts.primary};
   font-size: 1em;
   color: ${props => props.theme.palette.white[1]};
 `;
 
-const Image = styled.img`
+export const Image = styled.img`
   position: relative;
   top: 0;
   right: 0;
 `;
 
-const Gap = styled.div`
+export const Gap = styled.div`
   height: 30px;
 `;
 
@@ -61,7 +61,11 @@ const ProjectTile = ({ title, description }) => {
   };
 
   return (
-    <Container onMouseEnter={handleMouseHover} onMouseLeave={handleMouseHover}>
+    <Container
+      id="projectTileContainer"
+      onMouseEnter={handleMouseHover}
+      onMouseLeave={handleMouseHover}
+    >
       {showImage || (
         <TextContainer>
           <Title>{title}</Title>
