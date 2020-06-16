@@ -7,6 +7,9 @@ export const Container = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media only screen and (max-width: 600px) {
+    padding: 2em;
+  }
 `;
 
 const Title = lazy(() => import('../../atoms/Title'));

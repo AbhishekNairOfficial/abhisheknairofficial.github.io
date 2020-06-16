@@ -12,6 +12,9 @@ export const Container = styled.section`
   position: relative;
   background-color: ${props => props.theme.palette.black[0]};
   padding: 2.5em 5vw;
+  @media only screen and (max-width: 600px) {
+    padding: 30px;
+  }
 `;
 
 const ProjectsContainerDiv = styled.div`
@@ -20,6 +23,9 @@ const ProjectsContainerDiv = styled.div`
   column-gap: 20px;
   row-gap: 20px;
   margin-top: 30px;
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 100%;
+  }
 `;
 
 const ProjectsContainerComponent = () => {

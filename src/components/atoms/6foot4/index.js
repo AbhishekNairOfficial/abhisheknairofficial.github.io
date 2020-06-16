@@ -6,6 +6,9 @@ export const Container = styled.div`
   height: 100vh;
   width: 100vw;
   z-index: -1;
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
 `;
 
 export const Text = styled.span`

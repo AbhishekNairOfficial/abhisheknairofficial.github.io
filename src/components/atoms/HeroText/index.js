@@ -13,6 +13,9 @@ export const HelloText = styled.h1`
   font-size: 3em;
   margin: 0 0 20px 0;
   font-weight: 100;
+  @media only screen and (max-width: 600px) {
+    font-size: 1.8em;
+  }
 `;
 
 export const NameText = styled.h2`
@@ -21,6 +24,9 @@ export const NameText = styled.h2`
   font-weight: 500;
   & > B {
     font-family: ${props => props.theme.fonts.bold};
+  }
+  @media only screen and (max-width: 600px) {
+    font-size: 2.4em;
   }
 `;
 
@@ -31,6 +37,9 @@ export const DesignationText = styled.h3`
   font-family: ${props => props.theme.fonts.primary};
   & > YellowText {
     color: ${props => props.theme.palette.secondary[0]};
+  }
+  @media only screen and (max-width: 600px) {
+    font-size: 1.2em;
   }
 `;
 

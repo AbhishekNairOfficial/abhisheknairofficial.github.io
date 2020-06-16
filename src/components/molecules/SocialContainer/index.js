@@ -15,6 +15,9 @@ import TWITTER_ICON from '../../../assets/images/twitter.svg';
 export const Image = styled.img`
   height: 32px;
   margin-left: 30px;
+  @media only screen and (max-width: 600px) {
+    margin-left: ${props => (props.index === 0 ? '0px' : '20px')};
+  }
 `;
 
 const imageLinks = {
@@ -36,7 +39,7 @@ const SocialContainer = () => {
           const { icon, link } = socialProfile;
           return (
             <a href={link} key={index} target="_blank" rel="noopener noreferrer">
-              <Image src={imageLinks[icon]} alt={link} />
+              <Image index={index} src={imageLinks[icon]} alt={link} />
             </a>
           );
         })
