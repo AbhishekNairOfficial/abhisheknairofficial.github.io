@@ -8,8 +8,8 @@ export const Image = styled.img`
   background-image: transparent url;
   max-width: 300px;
   @media only screen and (max-width: 600px) {
-    max-width: 80vw;
-    margin: auto 0;
+    width: 100%;
+    margin-top: 10vh;
     align-self: flex-start;
   }
 `;
