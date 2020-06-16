@@ -8,6 +8,9 @@ export const LinkComponent = styled.span`
   font-family: ${props => props.theme.fonts.primary};
   color: ${props => props.theme.palette.white[1]};
   margin-left: 1.2em;
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
 `;
 
 const RightSideNavBar = () => (

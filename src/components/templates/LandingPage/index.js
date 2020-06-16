@@ -19,6 +19,10 @@ export const MainPart = styled.div`
   flex-direction: column;
   align-items: flex-start;
   flex: 1;
+  @media only screen and (max-width: 600px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 `;
 
 const LandingPage = () => (
