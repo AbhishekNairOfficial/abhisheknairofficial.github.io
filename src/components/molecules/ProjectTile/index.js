@@ -13,6 +13,9 @@ export const Container = styled.div`
   &:hover > img {
     opacity: 0.1;
   }
+  @media only screen and (max-width: 600px) {
+    width: calc(100vw - 60px);
+  }
 `;
 
 export const TextContainer = styled.div`
@@ -47,6 +50,9 @@ export const Image = styled.img`
   position: relative;
   top: 0;
   right: 0;
+  @media only screen and (max-width: 600px) {
+    max-width: calc(100vw - 60px);
+  }
 `;
 
 export const Gap = styled.div`

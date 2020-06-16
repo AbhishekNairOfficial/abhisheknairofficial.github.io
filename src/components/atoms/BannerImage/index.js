@@ -6,10 +6,19 @@ import { useFirebaseStorage } from '../../../config/useFirebase';
 export const Image = styled.img`
   align-self: flex-end;
   background-image: transparent url;
+  max-width: 300px;
+  @media only screen and (max-width: 600px) {
+    max-width: 80vw;
+    margin: auto 0;
+    align-self: flex-start;
+  }
 `;
 
 export const StyledSkeleton = styled.div`
   align-self: flex-end;
+  @media only screen and (max-width: 600px) {
+    align-self: center;
+  }
 `;
 
 const BannerImage = () => {

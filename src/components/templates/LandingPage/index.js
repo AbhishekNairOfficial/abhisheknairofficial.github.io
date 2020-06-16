@@ -10,6 +10,9 @@ export const Container = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: column;
+  @media only screen and (max-width: 600px) {
+    box-sizing: border-box;
+  }
 `;
 
 export const MainPart = styled.div`
