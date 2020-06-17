@@ -7,7 +7,7 @@ const Cursor = styled.div`
   height: 1.8rem;
   border: ${props => `2px solid ${props.theme.palette.secondary[0]}`};
   border-radius: 50%;
-  transform: translate(50%, 50%);
+  transform: translate(100%, -300%);
   pointer-events: none;
   transition: all 0.2s ease;
   transition-property: background, border, transform;
