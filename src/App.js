@@ -10,6 +10,7 @@ import HomePage from './components/pages/HomePage';
 import ProjectDetailsPage from './components/pages/ProjectDetails';
 import theme from './themes';
 import { initialiseFirebase } from './config/useFirebase';
+import CursorContainer from './components/atoms/Cursor';
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -32,21 +33,30 @@ export const GlobalStyle = createGlobalStyle`
 const App = () => {
   initialiseFirebase();
 
+  const onMouseMove = e => {
+    const cursor = document.querySelector('.cursor');
+    cursor.style.left = `${e.pageX}px`;
+    cursor.style.top = `${e.pageY}px`;
+  };
+
   return (
-    <ThemeProvider theme={theme}>
-      <SkeletonTheme color="#ffffff1a" highlightColor="#ffffff80">
-        <GlobalStyle />
-        <SixFootFour />
-        <BrowserRouter>
-          <Route exact path="/">
-            <HomePage />
-          </Route>
-          <Route path="/projects">
-            <ProjectDetailsPage />
-          </Route>
-        </BrowserRouter>
-      </SkeletonTheme>
-    </ThemeProvider>
+    <div onMouseMove={onMouseMove}>
+      <ThemeProvider theme={theme}>
+        <SkeletonTheme color="#ffffff1a" highlightColor="#ffffff80">
+          <GlobalStyle />
+          <CursorContainer />
+          <SixFootFour />
+          <BrowserRouter>
+            <Route exact path="/">
+              <HomePage />
+            </Route>
+            <Route path="/projects">
+              <ProjectDetailsPage />
+            </Route>
+          </BrowserRouter>
+        </SkeletonTheme>
+      </ThemeProvider>
+    </div>
   );
 };
 
