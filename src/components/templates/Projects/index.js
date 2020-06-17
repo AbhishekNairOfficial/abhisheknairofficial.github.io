@@ -33,7 +33,7 @@ const ProjectsContainerComponent = () => {
   const listOfFourEmptyProjects = new Array(4).fill({});
 
   return (
-    <Container>
+    <Container id="projectsSectionContainer">
       <ProjectsTitle />
       <ProjectsContainerDiv>
         {listOfProjects

@@ -8,6 +8,7 @@ export const Container = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 2.5em 5vw;
   @media only screen and (max-width: 600px) {
     flex-direction: column;
     padding: 1.5em 20px;
