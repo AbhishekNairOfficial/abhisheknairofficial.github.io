@@ -13,6 +13,9 @@ const Cursor = styled.div`
   transition-property: background, border, transform;
   transform-origin: 150% 150%;
   z-index: 999;
+  &.filled {
+    background-color: ${props => props.theme.palette.secondary[0]};
+  }
 `;
 
 const CursorContainer = () => {
