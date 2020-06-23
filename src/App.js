@@ -7,6 +7,7 @@ import 'typeface-spartan';
 
 import SixFootFour from './components/atoms/6foot4';
 import HomePage from './components/pages/HomePage';
+import AboutPage from './components/pages/AboutPage';
 import ProjectDetailsPage from './components/pages/ProjectDetails';
 import theme from './themes';
 import { initialiseFirebase } from './config/useFirebase';
@@ -47,6 +48,9 @@ const App = () => {
             </Route>
             <Route path="/projects">
               <ProjectDetailsPage />
+            </Route>
+            <Route path="/about">
+              <AboutPage />
             </Route>
           </BrowserRouter>
         </SkeletonTheme>

@@ -2,6 +2,8 @@ import React from 'react';
 import { shallow, mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { ThemeProvider } from 'styled-components';
+import { fireEvent, render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 
 import RightSideNavBar, { Container, LinkComponent } from '.';
 
@@ -12,7 +14,9 @@ configure({ adapter: new Adapter() });
 describe('<RightSideNavBar />', () => {
   const Component = mount(
     <ThemeProvider theme={theme}>
-      <RightSideNavBar />
+      <MemoryRouter>
+        <RightSideNavBar history={{}} />
+      </MemoryRouter>
     </ThemeProvider>
   );
 
@@ -39,6 +43,42 @@ describe('<RightSideNavBar />', () => {
   });
 });
 
+describe('<RightSideNavBar />', () => {
+  const { container } = render(
+    <ThemeProvider theme={theme}>
+      <MemoryRouter>
+        <Container />
+      </MemoryRouter>
+    </ThemeProvider>
+  );
+  // Creating a new element with classname cursor
+  const cursor = document.createElement('div');
+  cursor.setAttribute('class', 'cursor');
+  document.body.appendChild(cursor);
+
+  it('should change class on mouse enter', () => {
+    fireEvent(
+      container,
+      new MouseEvent('mouseover', {
+        bubbles: true,
+        cancelable: true,
+      })
+    );
+  });
+
+  it('should change class on mouse enter', () => {
+    fireEvent(
+      container,
+      new MouseEvent('mouseleave', {
+        bubbles: true,
+        cancelable: true,
+      })
+    );
+  });
+
+  expect(cursor.classList.contains('filled')).toBe(false);
+});
+
 describe('<Container />', () => {
   const Component = shallow(
     <ThemeProvider theme={theme}>
@@ -57,7 +97,9 @@ describe('<Container />', () => {
 describe('<LinkComponent />', () => {
   const Component = shallow(
     <ThemeProvider theme={theme}>
-      <LinkComponent />
+      <MemoryRouter>
+        <LinkComponent to="/" />
+      </MemoryRouter>
     </ThemeProvider>
   );
 

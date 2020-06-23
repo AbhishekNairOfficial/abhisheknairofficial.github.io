@@ -8,6 +8,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-loading-skeleton": "^2.0.1",
+    "react-markdown": "^4.3.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.1",
     "styled-components": "^5.1.0",
@@ -40,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react": "^10.4.0",
     "@testing-library/react-hooks": "^3.3.0",
     "babel-eslint": "^10.1.0",
     "enzyme": "^3.11.0",

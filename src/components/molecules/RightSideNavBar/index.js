@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div``;
 
-export const LinkComponent = styled.span`
+export const LinkComponent = styled(Link)`
   font-size: 1.2em;
+  text-decoration: none;
   font-family: ${props => props.theme.fonts.primary};
   color: ${props => props.theme.palette.white[1]};
   margin-left: 1.2em;
@@ -31,12 +33,16 @@ const RightSideNavBar = () => {
   };
 
   return (
-    <Container onMouseMove={onMouseMove} onMouseLeave={onMouseLeave}>
-      <LinkComponent>About</LinkComponent>
-      <LinkComponent className="projects-nav-link" onClick={navigateToProjects}>
+    <Container
+      data-testid="rightSideNavBarContainer"
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
+    >
+      <LinkComponent to="/about">About</LinkComponent>
+      <LinkComponent to="/" className="projects-nav-link" onClick={navigateToProjects}>
         Work
       </LinkComponent>
-      <LinkComponent>Contact</LinkComponent>
+      <LinkComponent to="/">Contact</LinkComponent>
     </Container>
   );
 };
