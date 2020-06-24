@@ -39,7 +39,12 @@ const RightSideNavBar = () => {
       onMouseLeave={onMouseLeave}
     >
       <LinkComponent to="/about">About</LinkComponent>
-      <LinkComponent to="/" className="projects-nav-link" onClick={navigateToProjects}>
+      <LinkComponent
+        data-testid="workButton"
+        to="/"
+        className="projects-nav-link"
+        onClick={navigateToProjects}
+      >
         Work
       </LinkComponent>
       <LinkComponent to="/">Contact</LinkComponent>
