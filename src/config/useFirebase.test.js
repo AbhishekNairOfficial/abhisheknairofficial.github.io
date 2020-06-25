@@ -1,11 +1,7 @@
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import { renderHook } from '@testing-library/react-hooks';
 import firebase from 'firebase';
 
 import { useRealtimeDatabase, initialiseFirebase } from './useFirebase';
-
-configure({ adapter: new Adapter() });
 
 describe('useRealtimeDatabase', () => {
   if (firebase.apps.length === 0) {

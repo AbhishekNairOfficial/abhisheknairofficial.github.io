@@ -1,34 +1,31 @@
 import React from 'react';
-import { shallow, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 
 import SocialContainer, { Image } from '.';
 
 import theme from '../../../themes';
 
-configure({ adapter: new Adapter() });
-
 describe('<SocialContainer />', () => {
-  const Component = shallow(
+  const { container } = render(
     <ThemeProvider theme={theme}>
       <SocialContainer />
     </ThemeProvider>
   );
 
   it('should match the snapshot', () => {
-    expect(Component.html()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });
 
 describe('<Image />', () => {
-  const Component = shallow(
+  const { container } = render(
     <ThemeProvider theme={theme}>
       <Image />
     </ThemeProvider>
   );
 
   it('should match the snapshot', () => {
-    expect(Component.html()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });
