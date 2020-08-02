@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
-import Footer from '../../templates/Footer';
+import Footer from 'components/templates/Footer';
+import theme from 'themes';
 import HomePage from '.';
 
-import theme from '../../../themes';
 
 describe('<HomePage />', () => {
   const { container } = render(

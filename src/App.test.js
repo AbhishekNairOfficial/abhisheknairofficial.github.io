@@ -2,9 +2,9 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 
-import theme from './themes';
-import SixFootFour from './components/atoms/6foot4';
-import App, { GlobalStyle } from './App';
+import theme from 'themes';
+import SixFootFour from 'components/atoms/6foot4';
+import App, { GlobalStyle } from 'App';
 
 describe('<App />', () => {
   const { container } = render(<App />);

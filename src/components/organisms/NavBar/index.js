@@ -12,8 +12,8 @@ export const Container = styled.nav`
   }
 `;
 
-const Title = lazy(() => import('../../atoms/Title'));
-const RightSideNavBar = lazy(() => import('../../molecules/RightSideNavBar'));
+const Title = lazy(() => import('components/atoms/Title'));
+const RightSideNavBar = lazy(() => import('components/molecules/RightSideNavBar'));
 
 const NavBar = () => (
   <Container>

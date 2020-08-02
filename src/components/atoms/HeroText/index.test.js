@@ -2,9 +2,9 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { render } from '@testing-library/react';
 
+import theme from 'themes';
 import HeroText, { Text, HelloText, NameText, DesignationText } from '.';
 
-import theme from '../../../themes';
 
 describe('<BannerImage />', () => {
   const { container } = render(

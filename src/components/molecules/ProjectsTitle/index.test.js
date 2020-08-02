@@ -2,9 +2,9 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 
+import theme from 'themes';
 import ProjectsTitle, { Container, Title, SubTitle } from '.';
 
-import theme from '../../../themes';
 
 describe('<ProjectsTitle />', () => {
   const { container } = render(

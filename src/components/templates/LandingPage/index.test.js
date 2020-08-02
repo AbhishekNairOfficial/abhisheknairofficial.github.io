@@ -2,9 +2,9 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 
+import theme from 'themes';
 import LandingPage, { Container, MainPart } from '.';
 
-import theme from '../../../themes';
 
 describe('<LandingPage />', () => {
   const { container } = render(

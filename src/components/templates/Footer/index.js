@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import SocialContainer from '../../molecules/SocialContainer';
+import SocialContainer from 'components/molecules/SocialContainer';
 
 export const Container = styled.footer`
   background-color: ${props => props.theme.palette.white[3]};

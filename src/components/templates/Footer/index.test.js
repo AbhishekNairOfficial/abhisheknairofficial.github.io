@@ -2,9 +2,9 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 
+import theme from 'themes';
 import Footer, { Container, LeftSideText } from '.';
 
-import theme from '../../../themes';
 
 describe('<Footer />', () => {
   const { container } = render(

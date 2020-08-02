@@ -1,9 +1,9 @@
 import React, { lazy, Suspense } from 'react';
 
-import LandingPage from '../../templates/LandingPage';
+import LandingPage from 'components/templates/LandingPage';
 
-const ProjectsContainer = lazy(() => import('../../templates/Projects'));
-const Footer = lazy(() => import('../../templates/Footer'));
+const ProjectsContainer = lazy(() => import('components/templates/Projects'));
+const Footer = lazy(() => import('components/templates/Footer'));
 
 const HomePage = () => (
   <>
