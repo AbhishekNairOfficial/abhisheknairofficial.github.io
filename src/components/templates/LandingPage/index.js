@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import NavBar from '../../organisms/NavBar';
-import HeroText from '../../atoms/HeroText';
-import BannerImage from '../../atoms/BannerImage';
+import HeroText from 'components/atoms/HeroText';
+import NavBar from 'components/organisms/NavBar';
+import BannerImage from 'components/atoms/BannerImage';
 
 export const Container = styled.div`
   height: 100vh;

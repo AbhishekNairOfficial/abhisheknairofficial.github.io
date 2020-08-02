@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Skeleton from 'react-loading-skeleton';
 
-import { useRealtimeDatabase } from '../../../config/useFirebase';
+import { useRealtimeDatabase } from 'config/useFirebase';
 
 export const Text = styled.div`
   color: ${props => props.theme.palette.white[0]};

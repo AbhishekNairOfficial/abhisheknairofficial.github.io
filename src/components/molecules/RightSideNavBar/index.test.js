@@ -3,9 +3,9 @@ import { ThemeProvider } from 'styled-components';
 import { fireEvent, render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
+import theme from 'themes';
 import RightSideNavBar, { Container, LinkComponent } from '.';
 
-import theme from '../../../themes';
 
 describe('<RightSideNavBar />', () => {
   const { container } = render(

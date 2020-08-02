@@ -41,5 +41,12 @@
         "aspects": ["noHref", "invalidHref", "preferButton"]
       }
     ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
   }
 }

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import FAKE_TILE from '../../../assets/images/fake-project-tile.png';
-import Button from '../../atoms/Button';
+import FAKE_TILE from 'assets/images/fake-project-tile.png';
+import Button from 'components/atoms/Button';
 
 export const Container = styled.div`
   position: relative;

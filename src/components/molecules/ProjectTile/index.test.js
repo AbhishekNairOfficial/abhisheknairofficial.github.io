@@ -2,8 +2,8 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { render } from '@testing-library/react';
 
+import theme from 'themes';
 import ProjectTile, { Container, Title, Description } from '.';
-import theme from '../../../themes';
 
 describe('<ProjectTile />', () => {
   const { container } = render(

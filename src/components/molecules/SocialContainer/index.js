@@ -3,14 +3,13 @@ import React from 'react';
 import styled from 'styled-components';
 import Skeleton from 'react-loading-skeleton';
 
-import { useRealtimeDatabase } from '../../../config/useFirebase';
-
-import QUORA_ICON from '../../../assets/images/quora.svg';
-import LINKEDIN_ICON from '../../../assets/images/linkedin.svg';
-import MEDIUM_ICON from '../../../assets/images/medium.svg';
-import DRIBBBLE_ICON from '../../../assets/images/dribbble.svg';
-import GITHUB_ICON from '../../../assets/images/github.svg';
-import TWITTER_ICON from '../../../assets/images/twitter.svg';
+import QUORA_ICON from 'assets/images/quora.svg';
+import LINKEDIN_ICON from 'assets/images/linkedin.svg';
+import MEDIUM_ICON from 'assets/images/medium.svg';
+import DRIBBBLE_ICON from 'assets/images/dribbble.svg';
+import GITHUB_ICON from 'assets/images/github.svg';
+import TWITTER_ICON from 'assets/images/twitter.svg';
+import { useRealtimeDatabase } from 'config/useFirebase';
 
 export const Image = styled.img`
   height: 32px;

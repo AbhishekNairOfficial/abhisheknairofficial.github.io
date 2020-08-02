@@ -4,9 +4,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Skeleton from 'react-loading-skeleton';
 
-import ProjectsTitle from '../../molecules/ProjectsTitle';
-import ProjectTile from '../../molecules/ProjectTile';
-import { useRealtimeDatabase } from '../../../config/useFirebase';
+import ProjectsTitle from 'components/molecules/ProjectsTitle';
+import ProjectTile from 'components/molecules/ProjectTile';
+import { useRealtimeDatabase } from 'config/useFirebase';
 
 export const Container = styled.section`
   position: relative;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Skeleton from 'react-loading-skeleton';
-import { useFirebaseStorage } from '../../../config/useFirebase';
+import { useFirebaseStorage } from 'config/useFirebase';
 
 export const Image = styled.img`
   align-self: flex-end;

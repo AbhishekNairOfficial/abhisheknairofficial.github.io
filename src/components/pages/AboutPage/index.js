@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import useMarkDown from '../../../config/useMarkDown';
+import useMarkDown from 'config/useMarkDown';
 import ABOUT_ME_DATA from './index.md';
 
 const Container = styled.div`
