@@ -2,19 +2,9 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 import 'firebase/storage';
 import { useEffect, useState } from 'react';
+import firebaseConfig from '../firebase-config.json';
 
 export const initialiseFirebase = () => {
-  // Set the configuration for your app
-  const firebaseConfig = {
-    apiKey: 'AIzaSyBcibEXu9VmzZFOR_7a8sIRtQNgyICM3ic',
-    authDomain: 'abhisheknairofficialdotcom.firebaseapp.com',
-    databaseURL: 'https://abhisheknairofficialdotcom.firebaseio.com',
-    projectId: 'abhisheknairofficialdotcom',
-    storageBucket: 'abhisheknairofficialdotcom.appspot.com',
-    messagingSenderId: '1066577160683',
-    appId: '1:1066577160683:web:5e014d73d528a94ee951ae',
-    measurementId: 'G-T4LPP2JGTJ',
-  };
   firebase.initializeApp(firebaseConfig);
 };
 
