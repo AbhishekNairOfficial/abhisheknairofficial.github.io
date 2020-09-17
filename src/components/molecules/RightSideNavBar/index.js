@@ -9,7 +9,8 @@ export const LinkComponent = styled(Link)`
   text-decoration: none;
   font-family: ${props => props.theme.fonts.primary};
   color: ${props => props.theme.palette.white[1]};
-  margin-left: 1.2em;
+  margin-left: 2em;
+  letter-spacing: 0.6px;
   cursor: pointer;
   @media only screen and (max-width: 600px) {
     display: none;
