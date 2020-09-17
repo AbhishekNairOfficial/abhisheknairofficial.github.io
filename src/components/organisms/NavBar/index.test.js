@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components';
 import theme from 'themes';
 import { Container } from '.';
 
-
 // describe('<NavBar />', () => {
 //   const Component = render(
 //     <ThemeProvider theme={theme}>

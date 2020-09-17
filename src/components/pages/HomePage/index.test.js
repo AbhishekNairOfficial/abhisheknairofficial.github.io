@@ -5,7 +5,6 @@ import Footer from 'components/templates/Footer';
 import theme from 'themes';
 import HomePage from '.';
 
-
 describe('<HomePage />', () => {
   const { container } = render(
     <ThemeProvider theme={theme}>

@@ -6,7 +6,9 @@ import { useFirebaseStorage } from 'config/useFirebase';
 export const Image = styled.img`
   align-self: flex-end;
   background-image: transparent url;
-  max-width: 300px;
+  /* width: 300px; */
+  height: 300px;
+  border-radius: 250px;
   @media only screen and (max-width: 600px) {
     width: 100%;
     margin-top: 10vh;
@@ -25,7 +27,7 @@ const BannerImage = () => {
   // State
   const [loading, setLoading] = useState(true);
   // Hooks
-  const imageUrl = useFirebaseStorage('banner-image.png');
+  const imageUrl = useFirebaseStorage('banner-image.jpg');
 
   return (
     <>

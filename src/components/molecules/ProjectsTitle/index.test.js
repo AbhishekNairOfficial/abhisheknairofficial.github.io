@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components';
 import theme from 'themes';
 import ProjectsTitle, { Container, Title, SubTitle } from '.';
 
-
 describe('<ProjectsTitle />', () => {
   const { container } = render(
     <ThemeProvider theme={theme}>

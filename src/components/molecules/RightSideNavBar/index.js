@@ -38,16 +38,15 @@ const RightSideNavBar = () => {
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
     >
-      <LinkComponent to="/about">About</LinkComponent>
+      <LinkComponent to="#about">About</LinkComponent>
       <LinkComponent
         data-testid="workButton"
         to="/"
         className="projects-nav-link"
         onClick={navigateToProjects}
       >
-        Work
+        Resume
       </LinkComponent>
-      <LinkComponent to="/">Contact</LinkComponent>
     </Container>
   );
 };

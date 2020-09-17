@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components';
 import theme from 'themes';
 import LandingPage, { Container, MainPart } from '.';
 
-
 describe('<LandingPage />', () => {
   const { container } = render(
     <ThemeProvider theme={theme}>
