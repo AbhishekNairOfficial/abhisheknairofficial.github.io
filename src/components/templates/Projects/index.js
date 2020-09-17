@@ -10,8 +10,8 @@ import { useRealtimeDatabase } from 'config/useFirebase';
 
 export const Container = styled.section`
   position: relative;
-  background-color: ${props => props.theme.palette.black[0]};
-  padding: 2.5em 5vw;
+  background-color: ${props => props.theme.palette.white[0]};
+  padding: 2.5em 15vw;
   @media only screen and (max-width: 600px) {
     padding: 30px;
   }
@@ -22,7 +22,7 @@ const ProjectsContainerDiv = styled.div`
   grid-template-columns: 50% 50%;
   column-gap: 20px;
   row-gap: 20px;
-  margin-top: 30px;
+  margin-top: 60px;
   @media only screen and (max-width: 600px) {
     grid-template-columns: 100%;
   }
