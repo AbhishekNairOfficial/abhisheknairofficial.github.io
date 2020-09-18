@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import { useFirebaseStorage } from 'config/useFirebase';
+import React from 'react';
 import styled from 'styled-components';
 
-import FAKE_TILE from 'assets/images/fake-project-tile.png';
-import Button from 'components/atoms/Button';
+import EXTERNAL_LINK_ICON from 'assets/images/external-link.svg';
+import RIGHT_ARROW_ICON from 'assets/images/button-arrow.svg';
 
 export const Container = styled.div`
-  position: relative;
-  background-color: ${props => props.theme.palette.white[0]};
+  background-color: ${props => props.theme.palette.black[0]};
+  width: calc(35vw - 10px);
+  height: calc(35vw - 10px);
+  box-shadow: 0px 1px 2px #00000033;
+  border-radius: 9px;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
   &:hover {
-    background-color: ${props => `${props.theme.palette.white[0]}1A`};
-  }
-  &:hover > img {
-    opacity: 0.1;
+    box-shadow: 0px 5px 10px #00000033;
   }
   @media only screen and (max-width: 600px) {
     width: calc(100vw - 60px);
@@ -19,68 +23,97 @@ export const Container = styled.div`
 `;
 
 export const TextContainer = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-  padding: 30px;
+  background-color: ${props => props.theme.palette.white[0]};
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  flex: 1;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 20px;
 `;
 
 export const Title = styled.div`
-  font-family: ${props => props.theme.fonts.primary};
-  font-size: 1.3em;
-  font-weight: bold;
-  color: ${props => props.theme.palette.white[1]};
-  margin-bottom: 20px;
+  font-family: ${props => props.theme.fonts.bold};
+  font-size: 1.2em;
+  line-height: 1.5em;
+  color: ${props => props.theme.palette.black[0]};
+  text-align: center;
+  letter-spacing: 1.2px;
+  opacity: 1;
 `;
 
-export const Description = styled.div`
-  font-family: ${props => props.theme.fonts.primary};
-  font-size: 1em;
-  color: ${props => props.theme.palette.white[1]};
+export const Icon = styled.img`
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
 `;
 
 export const Image = styled.img`
-  position: relative;
-  top: 0;
-  right: 0;
+  width: calc(35vw - 10px);
+  height: calc((35vw - 10px) * 0.8);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  object-fit: cover;
+  opacity: 0.6;
   @media only screen and (max-width: 600px) {
     max-width: calc(100vw - 60px);
   }
 `;
 
-export const Gap = styled.div`
-  height: 30px;
+const LeftSide = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
-const ProjectTile = ({ title, description }) => {
-  const [showImage, setShowImage] = useState(true);
+const RightSide = styled.div`
+  background-color: ${props => props.theme.palette.primary[0]};
+  padding: 20px;
+  height: 40px;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+`;
 
-  const handleMouseHover = () => {
-    setShowImage(!showImage);
-  };
+const Text = styled.span`
+  text-align: left;
+  font-family: ${props => props.theme.fonts.primary};
+  font-size: 1em;
+  color: ${props => props.theme.palette.white[0]};
+  letter-spacing: 0.32px;
+  color: #fbfffe;
+  text-transform: capitalize;
+  margin-right: 10px;
+`;
+
+const RightSideIcon = styled.img`
+  height: 16px;
+  width: 16px;
+`;
+
+const ProjectTile = ({ title, image, type, icon }) => {
+  const actualImageLink = useFirebaseStorage(`projects/${image}`);
+  const actualIconLink = useFirebaseStorage(`projects/${icon}`);
+
+  const rightSideIcon = type === 'design' ? RIGHT_ARROW_ICON : EXTERNAL_LINK_ICON;
+  const rightSideText = type === 'design' ? 'read case study' : 'see more';
 
   return (
-    <Container
-      id="projectTileContainer"
-      onMouseEnter={handleMouseHover}
-      onMouseLeave={handleMouseHover}
-    >
-      {showImage || (
-        <TextContainer>
+    <Container id="projectTileContainer">
+      <Image src={actualImageLink} alt="project" />
+      <TextContainer>
+        <LeftSide>
+          <Icon src={actualIconLink} alt="project icon" />
           <Title>{title}</Title>
-          <Description>{description}</Description>
-          <Gap />
-          <Button label="Learn more" />
-        </TextContainer>
-      )}
-      <Image src={FAKE_TILE} />
+        </LeftSide>
+        <RightSide>
+          <Text>{rightSideText}</Text>
+          <RightSideIcon src={rightSideIcon} alt="project icon" />
+        </RightSide>
+      </TextContainer>
     </Container>
   );
 };
