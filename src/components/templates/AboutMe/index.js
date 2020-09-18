@@ -20,7 +20,7 @@ const AboutMeText = styled.p`
   }
 `;
 
-const Block = styled.section`
+export const Block = styled.section`
   background-color: ${props => props.theme.palette.white[0]};
 `;
 
