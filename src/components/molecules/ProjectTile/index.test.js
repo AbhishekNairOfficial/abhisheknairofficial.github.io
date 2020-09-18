@@ -3,12 +3,12 @@ import { ThemeProvider } from 'styled-components';
 import { render } from '@testing-library/react';
 
 import theme from 'themes';
-import ProjectTile, { Container, Title, Description } from '.';
+import ProjectTile, { Container, Title } from '.';
 
 describe('<ProjectTile />', () => {
   const { container } = render(
     <ThemeProvider theme={theme}>
-      <ProjectTile title="title" description="description" />
+      <ProjectTile title="title" />
     </ThemeProvider>
   );
 
@@ -33,18 +33,6 @@ describe('<Title />', () => {
   const { container } = render(
     <ThemeProvider theme={theme}>
       <Title />
-    </ThemeProvider>
-  );
-
-  it('should match the snapshot', () => {
-    expect(container).toMatchSnapshot();
-  });
-});
-
-describe('<Description />', () => {
-  const { container } = render(
-    <ThemeProvider theme={theme}>
-      <Description />
     </ThemeProvider>
   );
 
