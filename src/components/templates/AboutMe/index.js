@@ -20,17 +20,28 @@ const AboutMeText = styled.p`
   }
 `;
 
+const Block = styled.section`
+  background-color: ${props => props.theme.palette.white[0]};
+`;
+
+export const BottomLine = styled.hr`
+  margin: 0px 15vw;
+  margin-top: 50px;
+  border: 0.5x solid ${props => props.theme.palette.black[0]};
+`;
+
 const AboutMe = () => {
   const aboutMeText = useRealtimeDatabase('aboutMe/text');
 
   return (
-    <>
+    <Block>
       <Container id="AboutMeSection">
         <Title>About Me</Title>
         <AboutMeText dangerouslySetInnerHTML={{ __html: aboutMeText }} />
       </Container>
       <AboutMePicturesSection />
-    </>
+      <BottomLine />
+    </Block>
   );
 };
 
