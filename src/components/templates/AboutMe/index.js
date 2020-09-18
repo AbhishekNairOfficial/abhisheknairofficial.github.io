@@ -1,8 +1,9 @@
 import React from 'react';
 import { useRealtimeDatabase } from 'config/useFirebase';
 
-import { Title } from 'components/molecules/ProjectsTitle';
+// eslint-disable-next-line import/no-cycle
 import { Container } from 'components/templates/Projects';
+import { Title } from 'components/molecules/ProjectsTitle';
 import styled from 'styled-components';
 import AboutMePicturesSection from 'components/organisms/NavBar/AboutMePicturesSection';
 
