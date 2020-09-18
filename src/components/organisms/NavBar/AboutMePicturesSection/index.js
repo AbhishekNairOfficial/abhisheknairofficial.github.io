@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   background-color: ${props => props.theme.palette.white[0]};
-  padding: 3em;
+  padding: 0 3em;
   display: flex;
   flex-wrap: wrap;
 `;
