@@ -1,3 +1,4 @@
+import { useFirebaseStorage } from 'config/useFirebase';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -21,12 +22,16 @@ export const LinkComponent = styled(Link)`
 `;
 
 const RightSideNavBar = () => {
+  const url = useFirebaseStorage('Resume.pdf');
+
   const navigateToAboutMe = () => {
     const element = document.querySelector('#AboutMeSection');
     element.scrollIntoView();
   };
 
-  const downloadResume = () => {};
+  const downloadResume = async () => {
+    window.open(url);
+  };
 
   const onMouseMove = () => {
     const cursor = document.querySelector('.cursor');
