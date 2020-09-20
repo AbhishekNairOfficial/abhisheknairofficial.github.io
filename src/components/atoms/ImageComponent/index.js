@@ -11,6 +11,9 @@ const Image = styled.img`
   &:last-child {
     margin-bottom: 0px;
   }
+  @media only screen and (max-width: 600px) {
+    width: calc(100vw - 60px);
+  }
 `;
 
 const ImageComponent = ({ src }) => {

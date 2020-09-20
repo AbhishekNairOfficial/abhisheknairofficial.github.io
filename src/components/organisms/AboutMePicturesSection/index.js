@@ -1,5 +1,6 @@
 import ImageComponent from 'components/atoms/ImageComponent';
 import { useRealtimeDatabase } from 'config/useFirebase';
+import useWindowResize from 'functions/useWindowResize';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -8,6 +9,9 @@ const Container = styled.div`
   padding: 0 3em;
   display: flex;
   flex-wrap: wrap;
+  @media only screen and (max-width: 600px) {
+    padding: 0 30px;
+  }
 `;
 
 const Column = styled.div`
@@ -21,11 +25,13 @@ const Column = styled.div`
 const AboutMePicturesSection = () => {
   const listOfImages = useRealtimeDatabase('aboutMe/images');
 
+  const { width } = useWindowResize();
+
   if (!listOfImages) {
     return <></>;
   }
 
-  const numberOfRows = 3;
+  const numberOfRows = width <= 600 ? 1 : 3;
   const numberOfColumns = Math.ceil(listOfImages.length / numberOfRows);
   let newListOfImages = [];
 
@@ -40,8 +46,9 @@ const AboutMePicturesSection = () => {
       newListOfImages[myColumnNumber] = [image];
     }
   });
-
-  newListOfImages = transpose(newListOfImages);
+  if (numberOfRows > 1) {
+    newListOfImages = transpose(newListOfImages);
+  }
 
   return (
     <Container>
