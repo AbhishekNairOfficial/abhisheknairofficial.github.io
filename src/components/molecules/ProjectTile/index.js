@@ -18,7 +18,9 @@ export const Container = styled.div`
     box-shadow: 0px 5px 10px #00000033;
   }
   @media only screen and (max-width: 600px) {
+    box-shadow: 0px 5px 10px #00000033;
     width: calc(100vw - 60px);
+    height: calc(100vw - 60px);
   }
 `;
 
@@ -31,6 +33,9 @@ export const TextContainer = styled.div`
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   padding: 20px;
+  @media only screen and (max-width: 600px) {
+    padding: 5px 15px;
+  }
 `;
 
 export const Title = styled.div`
@@ -41,12 +46,20 @@ export const Title = styled.div`
   text-align: center;
   letter-spacing: 1.2px;
   opacity: 1;
+  @media only screen and (max-width: 600px) {
+    font-size: 1em;
+    line-height: 1em;
+  }
 `;
 
 export const Icon = styled.img`
   height: 30px;
   width: 30px;
   margin-right: 10px;
+  @media only screen and (max-width: 600px) {
+    height: 20px;
+    width: 20px;
+  }
 `;
 
 export const Image = styled.img`
@@ -57,7 +70,8 @@ export const Image = styled.img`
   object-fit: cover;
   opacity: 0.6;
   @media only screen and (max-width: 600px) {
-    max-width: calc(100vw - 60px);
+    width: calc(100vw - 60px);
+    height: calc((100vw - 60px) * 0.8);
   }
 `;
 
@@ -76,6 +90,10 @@ const RightSide = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
+  @media only screen and (max-width: 600px) {
+    padding: 10px;
+    height: 30px;
+  }
 `;
 
 const Text = styled.span`
@@ -87,11 +105,18 @@ const Text = styled.span`
   color: #fbfffe;
   text-transform: capitalize;
   margin-right: 10px;
+  @media only screen and (max-width: 600px) {
+    font-size: 0.8em;
+  }
 `;
 
 const RightSideIcon = styled.img`
   height: 16px;
   width: 16px;
+  @media only screen and (max-width: 600px) {
+    height: 12px;
+    width: 12px;
+  }
 `;
 
 const ProjectTile = ({ title, image, type, icon }) => {

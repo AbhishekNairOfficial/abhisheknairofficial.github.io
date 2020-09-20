@@ -26,6 +26,7 @@ const ProjectsContainerDiv = styled.div`
   row-gap: 20px;
   margin-top: 60px;
   @media only screen and (max-width: 600px) {
+    margin-top: 30px;
     grid-template-columns: 100%;
   }
 `;
