@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components';
 import theme from 'themes';
 import SixFootFour, { Container, Text } from '.';
 
-
 describe('<SixFootFour />', () => {
   const { container } = render(
     <ThemeProvider theme={theme}>

@@ -7,11 +7,17 @@ export const SpartanTitle = styled.div`
   display: inline;
   font-weight: bold;
   color: ${props => props.theme.palette.white[1]};
+  @media only screen and (max-width: 600px) {
+    font-size: 1.4em;
+  }
 `;
 
 export const ProductSansTitle = styled.div`
   display: inline;
   font-family: ${props => props.theme.fonts.primary};
+  @media only screen and (max-width: 600px) {
+    font-size: 1em;
+  }
 `;
 
 const Title = () => (

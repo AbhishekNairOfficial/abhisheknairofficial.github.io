@@ -19,8 +19,8 @@ theme.palette = {
     '#bdbdbd',
     '#e0e0e0',
     '#eeeeee',
-    '#ffffff'
-  ]
+    '#ffffff',
+  ],
 };
 
 theme.reversePalette = reversePalette(theme.palette);
@@ -30,11 +30,12 @@ theme.fonts = {
   pre: 'Spartan, Liberation Mono, Menlo, Courier, monospace',
   medium: 'GoogleSansMedium',
   bold: 'GoogleSansBold',
-  quote: 'Georgia, serif'
+  italic: 'GoogleSansItalic',
+  quote: 'Georgia, serif',
 };
 
 theme.sizes = {
-  maxWidth: '1100px'
+  maxWidth: '1100px',
 };
 
 export default theme;

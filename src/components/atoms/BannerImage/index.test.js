@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components';
 import theme from 'themes';
 import BannerImage, { Image } from '.';
 
-
 describe('<BannerImage />', () => {
   const { container } = render(
     <ThemeProvider theme={theme}>

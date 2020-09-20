@@ -7,11 +7,13 @@ import Skeleton from 'react-loading-skeleton';
 import ProjectsTitle from 'components/molecules/ProjectsTitle';
 import ProjectTile from 'components/molecules/ProjectTile';
 import { useRealtimeDatabase } from 'config/useFirebase';
+import { Block, BottomLine } from '../AboutMe';
 
 export const Container = styled.section`
   position: relative;
-  background-color: ${props => props.theme.palette.black[0]};
-  padding: 2.5em 5vw;
+  font-family: ${props => props.theme.fonts.primary};
+  background-color: ${props => props.theme.palette.white[0]};
+  padding: 2.5em 15vw;
   @media only screen and (max-width: 600px) {
     padding: 30px;
   }
@@ -20,10 +22,11 @@ export const Container = styled.section`
 const ProjectsContainerDiv = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
-  column-gap: 20px;
+  column-gap: 10px;
   row-gap: 20px;
-  margin-top: 30px;
+  margin-top: 60px;
   @media only screen and (max-width: 600px) {
+    margin-top: 30px;
     grid-template-columns: 100%;
   }
 `;
@@ -33,19 +36,24 @@ const ProjectsContainerComponent = () => {
   const listOfFourEmptyProjects = new Array(4).fill({});
 
   return (
-    <Container id="projectsSectionContainer">
-      <ProjectsTitle />
-      <ProjectsContainerDiv>
-        {listOfProjects
-          ? listOfProjects.map((project, key) => {
-              const { title, description, url } = project;
-              return <ProjectTile key={key} title={title} description={description} url={url} />;
-            })
-          : listOfFourEmptyProjects.map((item, index) => (
-              <Skeleton key={index} width="40vw" height="40vh" />
-            ))}
-      </ProjectsContainerDiv>
-    </Container>
+    <Block>
+      <Container id="projectsSectionContainer">
+        <ProjectsTitle />
+        <ProjectsContainerDiv>
+          {listOfProjects
+            ? listOfProjects.map((project, key) => {
+                const { title, image, type, icon } = project;
+                return (
+                  <ProjectTile key={key} title={title} image={image} type={type} icon={icon} />
+                );
+              })
+            : listOfFourEmptyProjects.map((item, index) => (
+                <Skeleton key={index} width="40vw" height="40vh" />
+              ))}
+        </ProjectsContainerDiv>
+      </Container>
+      <BottomLine />
+    </Block>
   );
 };
 

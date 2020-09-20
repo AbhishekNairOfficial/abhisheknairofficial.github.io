@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components';
 import theme from 'themes';
 import ProjectsContainer, { Container } from '.';
 
-
 describe('<ProjectsContainer />', () => {
   const { container } = render(
     <ThemeProvider theme={theme}>

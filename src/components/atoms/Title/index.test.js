@@ -5,7 +5,6 @@ import { render } from '@testing-library/react';
 import theme from 'themes';
 import Title, { SpartanTitle, ProductSansTitle } from '.';
 
-
 describe('<Title />', () => {
   const { container } = render(
     <ThemeProvider theme={theme}>

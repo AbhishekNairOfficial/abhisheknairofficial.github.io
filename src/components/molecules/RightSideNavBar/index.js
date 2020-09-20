@@ -1,3 +1,4 @@
+import { useFirebaseStorage } from 'config/useFirebase';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -9,17 +10,27 @@ export const LinkComponent = styled(Link)`
   text-decoration: none;
   font-family: ${props => props.theme.fonts.primary};
   color: ${props => props.theme.palette.white[1]};
-  margin-left: 1.2em;
+  margin-left: 2em;
+  letter-spacing: 0.6px;
   cursor: pointer;
   @media only screen and (max-width: 600px) {
-    display: none;
+    display: ${props => props.keep || 'none'};
+  }
+  &:hover {
+    opacity: 0.6;
   }
 `;
 
 const RightSideNavBar = () => {
-  const navigateToProjects = () => {
-    const element = document.querySelector('#projectsSectionContainer');
+  const url = useFirebaseStorage('Resume.pdf');
+
+  const navigateToAboutMe = () => {
+    const element = document.querySelector('#AboutMeSection');
     element.scrollIntoView();
+  };
+
+  const downloadResume = async () => {
+    window.open(url);
   };
 
   const onMouseMove = () => {
@@ -38,16 +49,12 @@ const RightSideNavBar = () => {
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
     >
-      <LinkComponent to="/about">About</LinkComponent>
-      <LinkComponent
-        data-testid="workButton"
-        to="/"
-        className="projects-nav-link"
-        onClick={navigateToProjects}
-      >
-        Work
+      <LinkComponent keep data-testid="workButton" to="/" onClick={downloadResume}>
+        Resume
       </LinkComponent>
-      <LinkComponent to="/">Contact</LinkComponent>
+      <LinkComponent to="/" onClick={navigateToAboutMe}>
+        About
+      </LinkComponent>
     </Container>
   );
 };

@@ -6,7 +6,6 @@ import { MemoryRouter } from 'react-router-dom';
 import theme from 'themes';
 import RightSideNavBar, { Container, LinkComponent } from '.';
 
-
 describe('<RightSideNavBar />', () => {
   const { container } = render(
     <ThemeProvider theme={theme}>
