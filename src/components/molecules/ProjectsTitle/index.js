@@ -10,6 +10,10 @@ export const Title = styled.h1`
   font-size: 2.5em;
   font-weight: 500;
   margin: 0 0 20px 0;
+  @media only screen and (max-width: 600px) {
+    font-size: 2em;
+    margin: 0 0 15px 0;
+  }
 `;
 
 export const SubTitle = styled.h3`
@@ -17,6 +21,7 @@ export const SubTitle = styled.h3`
   font-size: 1.2em;
   font-weight: 100;
   opacity: 0.8;
+  letter-spacing: 0.48px;
 `;
 
 const ProjectsTitle = () => (
