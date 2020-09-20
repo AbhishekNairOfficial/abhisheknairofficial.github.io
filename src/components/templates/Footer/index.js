@@ -10,7 +10,7 @@ export const Container = styled.footer`
   justify-content: space-between;
   padding: 2.5em 15vw;
   @media only screen and (max-width: 600px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 1.5em 20px;
     justify-content: center;
   }
@@ -20,6 +20,9 @@ export const LeftSideText = styled.p`
   font-family: ${props => props.theme.fonts.primary};
   color: ${props => props.theme.palette.white[1]};
   font-size: 1.1em;
+  @media only screen and (max-width: 600px) {
+    margin-bottom: 0;
+  }
 `;
 
 const Footer = () => (
