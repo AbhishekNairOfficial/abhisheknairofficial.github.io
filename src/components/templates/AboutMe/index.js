@@ -5,7 +5,7 @@ import { useRealtimeDatabase } from 'config/useFirebase';
 import { Container } from 'components/templates/Projects';
 import { Title } from 'components/molecules/ProjectsTitle';
 import styled from 'styled-components';
-import AboutMePicturesSection from 'components/organisms/NavBar/AboutMePicturesSection';
+import AboutMePicturesSection from 'components/organisms/AboutMePicturesSection';
 
 const AboutMeText = styled.p`
   text-align: left;
