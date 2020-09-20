@@ -23,8 +23,8 @@ export const MainPart = styled.div`
   align-items: flex-start;
   flex: 1;
   @media only screen and (max-width: 600px) {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 30px;
+    padding-top: 10vh;
   }
 `;
 
