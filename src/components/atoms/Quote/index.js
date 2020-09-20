@@ -6,7 +6,11 @@ const Block = styled.div`
   font-family: ${props => props.theme.fonts.italic};
   letter-spacing: 0px;
   text-align: ${props => (props.odd ? 'left' : 'right')};
-  line-height: 3em;
+  @media only screen and (max-width: 600px) {
+    line-height: 2em;
+    margin-bottom: 10px;
+    text-align: left;
+  }
 `;
 
 const Quote = styled.span`
