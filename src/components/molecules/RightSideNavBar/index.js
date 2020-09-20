@@ -13,7 +13,7 @@ export const LinkComponent = styled(Link)`
   letter-spacing: 0.6px;
   cursor: pointer;
   @media only screen and (max-width: 600px) {
-    display: none;
+    display: ${props => props.keep || 'none'};
   }
   &:hover {
     opacity: 0.6;
@@ -44,7 +44,7 @@ const RightSideNavBar = () => {
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
     >
-      <LinkComponent data-testid="workButton" to="/" onClick={downloadResume}>
+      <LinkComponent keep data-testid="workButton" to="/" onClick={downloadResume}>
         Resume
       </LinkComponent>
       <LinkComponent to="/" onClick={navigateToAboutMe}>
