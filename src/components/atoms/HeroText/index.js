@@ -11,22 +11,27 @@ export const Text = styled.div`
 
 export const HelloText = styled.h1`
   font-size: 3em;
+  line-height: 3.6em;
   margin: 0 0 20px 0;
   font-weight: 100;
   @media only screen and (max-width: 600px) {
     font-size: 1.8em;
+    margin: 0 0 15px 0;
+    line-height: 1.2em;
   }
 `;
 
 export const NameText = styled.h2`
   font-size: 8em;
+  line-height: 10em;
   margin: 0;
-  font-weight: 500;
+  font-weight: 600;
   & > B {
     font-family: ${props => props.theme.fonts.bold};
   }
   @media only screen and (max-width: 600px) {
-    font-size: 2.4em;
+    font-size: 2.5em;
+    line-height: 1.5em;
   }
 `;
 
@@ -39,7 +44,8 @@ export const DesignationText = styled.h3`
     color: ${props => props.theme.palette.secondary[0]};
   }
   @media only screen and (max-width: 600px) {
-    font-size: 1.2em;
+    font-size: 1.3em;
+    line-height: 1.3em;
   }
 `;
 
