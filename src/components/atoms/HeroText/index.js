@@ -11,7 +11,7 @@ export const Text = styled.div`
 
 export const HelloText = styled.h1`
   font-size: 3em;
-  line-height: 3.6em;
+  line-height: 1.6em;
   margin: 0 0 20px 0;
   font-weight: 100;
   @media only screen and (max-width: 600px) {
@@ -23,7 +23,6 @@ export const HelloText = styled.h1`
 
 export const NameText = styled.h2`
   font-size: 8em;
-  line-height: 10em;
   margin: 0;
   font-weight: 600;
   & > B {
