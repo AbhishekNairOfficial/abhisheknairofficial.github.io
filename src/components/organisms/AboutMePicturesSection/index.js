@@ -1,6 +1,6 @@
 import ImageComponent from 'components/atoms/ImageComponent';
 import { useRealtimeDatabase } from 'config/useFirebase';
-import useWindowResize from 'functions/useWindowResize';
+import useWindowResize from 'config/useWindowResize';
 import React from 'react';
 import styled from 'styled-components';
 
