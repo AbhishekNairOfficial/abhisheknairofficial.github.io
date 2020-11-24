@@ -41,12 +41,7 @@ const ProjectsContainerComponent = () => {
         <ProjectsTitle />
         <ProjectsContainerDiv>
           {listOfProjects
-            ? listOfProjects.map((project, key) => {
-                const { title, image, type, icon } = project;
-                return (
-                  <ProjectTile key={key} title={title} image={image} type={type} icon={icon} />
-                );
-              })
+            ? listOfProjects.map((project, key) => <ProjectTile key={key} project={project} />)
             : listOfFourEmptyProjects.map((item, index) => (
                 <Skeleton key={index} width="40vw" height="40vh" />
               ))}

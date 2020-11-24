@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import EXTERNAL_LINK_ICON from 'assets/images/external-link.svg';
 import RIGHT_ARROW_ICON from 'assets/images/button-arrow.svg';
+import { LinkComponent } from '../RightSideNavBar';
 
 export const Container = styled.div`
   background-color: ${props => props.theme.palette.black[0]};
@@ -119,12 +120,26 @@ const RightSideIcon = styled.img`
   }
 `;
 
-const ProjectTile = ({ title, image, type, icon }) => {
+const ProjectTile = ({ project }) => {
+  const { title, image, type, icon, url, fireStore } = project;
+
   const actualImageLink = useFirebaseStorage(`projects/${image}`);
   const actualIconLink = useFirebaseStorage(`projects/${icon}`);
 
   const rightSideIcon = type === 'design' ? RIGHT_ARROW_ICON : EXTERNAL_LINK_ICON;
   const rightSideText = type === 'design' ? 'read case study' : 'see more';
+
+  // fireStore link
+  const fireStoreLink = useFirebaseStorage(`projects/caseStudy/${url}`);
+
+  const onButtonClick = () => {
+    if (fireStore) {
+      // If the item is hosted on firestore, we'll need to use the other link.
+      window.open(fireStoreLink);
+    } else {
+      window.open(url);
+    }
+  };
 
   return (
     <Container id="projectTileContainer">
@@ -134,10 +149,12 @@ const ProjectTile = ({ title, image, type, icon }) => {
           <Icon src={actualIconLink} alt="project icon" />
           <Title>{title}</Title>
         </LeftSide>
-        <RightSide>
-          <Text>{rightSideText}</Text>
-          <RightSideIcon src={rightSideIcon} alt="project icon" />
-        </RightSide>
+        <LinkComponent keep data-testid="workButton" to="/" onClick={onButtonClick}>
+          <RightSide>
+            <Text>{rightSideText}</Text>
+            <RightSideIcon src={rightSideIcon} alt="project icon" />
+          </RightSide>
+        </LinkComponent>
       </TextContainer>
     </Container>
   );
