@@ -36,6 +36,9 @@ export const useFirebaseStorage = key => {
   const [imageUrl, setImageUrl] = useState(null);
 
   const getImage = async () => {
+    if (!key) {
+      return;
+    }
     // Get a reference to the storage service, which is used to create references in your storage bucket
     const storage = firebase.storage();
     // Create a storage reference from our storage service

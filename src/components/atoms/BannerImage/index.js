@@ -24,7 +24,7 @@ export const StyledSkeleton = styled.div`
 
 const BannerImage = () => {
   // State
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(1);
   // Hooks
   const imageUrl = useFirebaseStorage('banner-image.jpg');
 
@@ -36,7 +36,7 @@ const BannerImage = () => {
         </StyledSkeleton>
       )}
       {imageUrl && (
-        <Image loading={loading} onLoad={() => setLoading(false)} src={imageUrl} alt="Banner" />
+        <Image loading={loading} onLoad={() => setLoading(0)} src={imageUrl} alt="Banner" />
       )}
     </>
   );

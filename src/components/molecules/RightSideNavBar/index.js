@@ -49,7 +49,7 @@ const RightSideNavBar = () => {
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
     >
-      <LinkComponent keep data-testid="workButton" to="/" onClick={downloadResume}>
+      <LinkComponent keep="true" data-testid="workButton" to="/" onClick={downloadResume}>
         Resume
       </LinkComponent>
       <LinkComponent to="/" onClick={navigateToAboutMe}>

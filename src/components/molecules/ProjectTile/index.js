@@ -130,7 +130,11 @@ const ProjectTile = ({ project }) => {
   const rightSideText = type === 'design' ? 'read case study' : 'see more';
 
   // fireStore link
-  const fireStoreLink = useFirebaseStorage(`projects/caseStudy/${url}`);
+  let link = `projects/caseStudy/${url}`;
+  if (type !== 'design') {
+    link = null;
+  }
+  const fireStoreLink = useFirebaseStorage(link);
 
   const onButtonClick = () => {
     if (fireStore) {
@@ -149,7 +153,7 @@ const ProjectTile = ({ project }) => {
           <Icon src={actualIconLink} alt="project icon" />
           <Title>{title}</Title>
         </LeftSide>
-        <LinkComponent keep data-testid="workButton" to="/" onClick={onButtonClick}>
+        <LinkComponent keep="true" data-testid="workButton" to="/" onClick={onButtonClick}>
           <RightSide>
             <Text>{rightSideText}</Text>
             <RightSideIcon src={rightSideIcon} alt="project icon" />
