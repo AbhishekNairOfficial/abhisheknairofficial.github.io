@@ -1,8 +1,8 @@
-const StaleWhileRevalidate = workbox.strategies.StaleWhileRevalidate;
+const CacheFirst = workbox.strategies.CacheFirst;
 
 workbox.routing.registerRoute(
   ({ url }) => url.origin === 'https://firebasestorage.googleapis.com',
-  new StaleWhileRevalidate({
+  new CacheFirst({
     cacheName: 'firebase',
   })
 );
