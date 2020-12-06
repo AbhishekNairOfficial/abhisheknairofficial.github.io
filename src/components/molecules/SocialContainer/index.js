@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Skeleton from 'react-loading-skeleton';
 
 import QUORA_ICON from 'assets/images/quora.svg';
+import BEHANCE_ICON from 'assets/images/behance.svg';
 import LINKEDIN_ICON from 'assets/images/linkedin.svg';
 import MEDIUM_ICON from 'assets/images/medium.svg';
 import DRIBBBLE_ICON from 'assets/images/dribbble.svg';
@@ -26,6 +27,7 @@ const imageLinks = {
   dribbble: DRIBBBLE_ICON,
   github: GITHUB_ICON,
   twitter: TWITTER_ICON,
+  behance: BEHANCE_ICON,
 };
 
 const SocialContainer = () => {

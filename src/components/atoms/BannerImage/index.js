@@ -30,7 +30,7 @@ const BannerImage = () => {
 
   return (
     <>
-      {loading && (
+      {!!loading && (
         <StyledSkeleton>
           <Skeleton height={250} width={250} circle />
         </StyledSkeleton>
