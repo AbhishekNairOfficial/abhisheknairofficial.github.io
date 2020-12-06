@@ -1,3 +1,4 @@
 /public
 /build
 /src/serviceWorker.js
+/src/custom-service-worker.js

@@ -16,10 +16,10 @@
     "typeface-spartan": "^1.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-app-rewired start",
     "predeploy": "yarn run build",
     "deploy": "firebase deploy --only hosting:abhisheknairoficial",
-    "build": "react-scripts build",
+    "build": "react-app-rewired build",
     "test": "react-scripts test --watchAll --coverage --env=jest-environment-jsdom-sixteen",
     "test:build": "react-scripts test --watchAll=false -u",
     "eject": "react-scripts eject",
@@ -57,7 +57,9 @@
     "husky": "^4.2.5",
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "prettier": "^2.0.5",
-    "react-test-renderer": "^16.13.1"
+    "react-app-rewired": "^2.1.7",
+    "react-test-renderer": "^16.13.1",
+    "workbox-build": "^6.0.2"
   },
   "husky": {
     "hooks": {
