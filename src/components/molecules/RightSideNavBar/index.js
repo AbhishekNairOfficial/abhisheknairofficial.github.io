@@ -33,22 +33,8 @@ const RightSideNavBar = () => {
     window.open(url);
   };
 
-  const onMouseMove = () => {
-    const cursor = document.querySelector('.cursor');
-    cursor.classList.add('filled');
-  };
-
-  const onMouseLeave = () => {
-    const cursor = document.querySelector('.cursor');
-    cursor.classList.remove('filled');
-  };
-
   return (
-    <Container
-      data-testid="rightSideNavBarContainer"
-      onMouseMove={onMouseMove}
-      onMouseLeave={onMouseLeave}
-    >
+    <Container data-testid="rightSideNavBarContainer">
       <LinkComponent keep="true" data-testid="workButton" to="/" onClick={downloadResume}>
         Resume
       </LinkComponent>

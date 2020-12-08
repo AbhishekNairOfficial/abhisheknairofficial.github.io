@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
 import theme from 'themes';
@@ -39,42 +39,6 @@ describe('<RightSideNavBar />', () => {
   //   );
   //   expect(scrollIntoViewMock).toBeCalled();
   // });
-});
-
-describe('<RightSideNavBar />', () => {
-  const { container } = render(
-    <ThemeProvider theme={theme}>
-      <MemoryRouter>
-        <Container />
-      </MemoryRouter>
-    </ThemeProvider>
-  );
-  // Creating a new element with classname cursor
-  const cursor = document.createElement('div');
-  cursor.setAttribute('class', 'cursor');
-  document.body.appendChild(cursor);
-
-  it('should change class on mouse enter', () => {
-    fireEvent(
-      container,
-      new MouseEvent('mouseover', {
-        bubbles: true,
-        cancelable: true,
-      })
-    );
-  });
-
-  it('should change class on mouse enter', () => {
-    fireEvent(
-      container,
-      new MouseEvent('mouseleave', {
-        bubbles: true,
-        cancelable: true,
-      })
-    );
-  });
-
-  expect(cursor.classList.contains('filled')).toBe(false);
 });
 
 describe('<Container />', () => {
