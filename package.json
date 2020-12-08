@@ -18,7 +18,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "predeploy": "yarn run build",
-    "deploy": "firebase deploy --only hosting:abhisheknairoficial",
+    "deploy": "firebase deploy --only hosting",
     "build": "react-app-rewired build",
     "test": "react-scripts test --watchAll --coverage --env=jest-environment-jsdom-sixteen",
     "test:build": "react-scripts test --watchAll=false -u",
