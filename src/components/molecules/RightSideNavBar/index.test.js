@@ -1,7 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
 
 import theme from 'themes';
 import RightSideNavBar, { Container, LinkComponent } from '.';
@@ -9,9 +8,7 @@ import RightSideNavBar, { Container, LinkComponent } from '.';
 describe('<RightSideNavBar />', () => {
   const { container } = render(
     <ThemeProvider theme={theme}>
-      <MemoryRouter>
-        <RightSideNavBar />
-      </MemoryRouter>
+      <RightSideNavBar />
     </ThemeProvider>
   );
   // const linkButton = getByTestId('workButton');
@@ -59,9 +56,7 @@ describe('<Container />', () => {
 describe('<LinkComponent />', () => {
   const { container } = render(
     <ThemeProvider theme={theme}>
-      <MemoryRouter>
-        <LinkComponent to="/" />
-      </MemoryRouter>
+      <LinkComponent />
     </ThemeProvider>
   );
 

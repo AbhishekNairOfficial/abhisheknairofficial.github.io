@@ -1,14 +1,10 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { SkeletonTheme } from 'react-loading-skeleton';
-import { BrowserRouter, Route } from 'react-router-dom';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'product-sans-webfont';
 import 'typeface-spartan';
 
 import SixFootFour from 'components/atoms/6foot4';
-import HomePage from 'components/pages/HomePage';
-import AboutPage from 'components/pages/AboutPage';
-import ProjectDetailsPage from 'components/pages/ProjectDetails';
 import theme from 'themes';
 import { initialiseFirebase } from 'config/useFirebase';
 
@@ -33,22 +29,16 @@ export const GlobalStyle = createGlobalStyle`
 const App = () => {
   initialiseFirebase();
 
+  const HomePage = lazy(() => import('components/pages/HomePage'));
+
   return (
     <ThemeProvider theme={theme}>
       <SkeletonTheme color="#ffffff1a" highlightColor="#ffffff80">
         <GlobalStyle />
         <SixFootFour />
-        <BrowserRouter>
-          <Route exact path="/">
-            <HomePage />
-          </Route>
-          <Route path="/projects">
-            <ProjectDetailsPage />
-          </Route>
-          <Route path="/about">
-            <AboutPage />
-          </Route>
-        </BrowserRouter>
+        <Suspense fallback={<Skeleton />}>
+          <HomePage />
+        </Suspense>
       </SkeletonTheme>
     </ThemeProvider>
   );

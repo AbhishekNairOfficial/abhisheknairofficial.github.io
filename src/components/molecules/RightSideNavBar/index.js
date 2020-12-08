@@ -1,11 +1,10 @@
 import { useFirebaseStorage } from 'config/useFirebase';
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div``;
 
-export const LinkComponent = styled(Link)`
+export const LinkComponent = styled.span`
   font-size: 1.2em;
   text-decoration: none;
   font-family: ${props => props.theme.fonts.primary};

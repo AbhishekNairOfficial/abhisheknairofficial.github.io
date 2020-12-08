@@ -3,15 +3,12 @@ import { ThemeProvider } from 'styled-components';
 import { render } from '@testing-library/react';
 
 import theme from 'themes';
-import { BrowserRouter } from 'react-router-dom';
 import ProjectTile, { Container, Title } from '.';
 
 describe('<ProjectTile />', () => {
   const { container } = render(
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <ProjectTile project={{ title: 'title' }} />
-      </BrowserRouter>
+      <ProjectTile project={{ title: 'title' }} />
     </ThemeProvider>
   );
 
