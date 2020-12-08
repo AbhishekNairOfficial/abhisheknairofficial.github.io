@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import GridContainer from '../GridContainer';
+
 export const Container = styled.div`
   position: fixed;
   height: 100vh;
@@ -15,7 +17,7 @@ export const Text = styled.span`
   font-size: 35rem;
   color: transparent;
   line-height: ${props => (props.right ? '1em' : '0.6em')};
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: ${props => props.theme.palette.white[2]};
   position: fixed;
   top: ${props => props.top && 0};
@@ -34,6 +36,7 @@ const SixFootFour = () => (
     <Text left bottom>
       6
     </Text>
+    <GridContainer />
     <Text right top>
       4
     </Text>
