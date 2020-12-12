@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import styled from 'styled-components';
 
 import { Block } from 'components/templates/AboutMe';
 import { Container } from 'components/templates/Projects';
 import { Title } from 'components/molecules/ProjectsTitle';
-import { useRealtimeDatabase } from 'config/useFirebase';
 import QuoteComponent from 'components/atoms/Quote';
-import styled from 'styled-components';
 import { StyledButton } from 'components/atoms/Button';
+import FirebaseContext from 'config/context';
+
 import MAIL_ICON from 'assets/images/mail-icon.svg';
 
 const Paragraph = styled.div`
@@ -28,13 +29,9 @@ const ButtonCnntainer = styled.a`
 `;
 
 const LetsTalk = () => {
-  const data = useRealtimeDatabase('letsTalk');
+  const { letsTalk } = useContext(FirebaseContext);
 
-  if (!data) {
-    return <></>;
-  }
-
-  const { email, paragraph, quotes } = data;
+  const { email, paragraph, quotes } = letsTalk;
 
   return (
     <Block>

@@ -3,12 +3,15 @@ import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 
 import theme from 'themes';
+import FirebaseContext from 'config/context';
 import SocialContainer, { Image } from '.';
 
 describe('<SocialContainer />', () => {
   const { container } = render(
     <ThemeProvider theme={theme}>
-      <SocialContainer />
+      <FirebaseContext.Provider value={{ socialProfile: [] }}>
+        <SocialContainer />
+      </FirebaseContext.Provider>
     </ThemeProvider>
   );
 

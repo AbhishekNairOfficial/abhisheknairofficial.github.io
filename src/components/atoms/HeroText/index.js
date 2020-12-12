@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
-import Skeleton from 'react-loading-skeleton';
 
-import { useRealtimeDatabase } from 'config/useFirebase';
+import FirebaseContext from 'config/context';
 
 export const Text = styled.div`
   color: ${props => props.theme.palette.white[0]};
@@ -49,19 +48,9 @@ export const DesignationText = styled.h3`
 `;
 
 const HeroText = () => {
-  const landingPageData = useRealtimeDatabase('landingPage');
+  const { landingPage } = useContext(FirebaseContext);
+  const { title, quote, firstLine } = landingPage;
 
-  if (!landingPageData) {
-    return (
-      <>
-        <Skeleton height="4em" width={150} />
-        <Skeleton height="10em" width="70vw" />
-        <Skeleton height="2.5em" width="30vw" />
-      </>
-    );
-  }
-
-  const { title, quote, firstLine } = landingPageData;
   return (
     <Text>
       <HelloText>{firstLine}</HelloText>

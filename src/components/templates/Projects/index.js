@@ -1,12 +1,11 @@
 /* eslint-disable react/jsx-indent */
 /* eslint-disable indent */
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
-import Skeleton from 'react-loading-skeleton';
 
 import ProjectsTitle from 'components/molecules/ProjectsTitle';
 import ProjectTile from 'components/molecules/ProjectTile';
-import { useRealtimeDatabase } from 'config/useFirebase';
+import FirebaseContext from 'config/context';
 import { Block, BottomLine } from '../AboutMe';
 
 export const Container = styled.section`
@@ -32,19 +31,18 @@ const ProjectsContainerDiv = styled.div`
 `;
 
 const ProjectsContainerComponent = () => {
-  const listOfProjects = useRealtimeDatabase('projectsPage/projects');
-  const listOfFourEmptyProjects = new Array(4).fill({});
+  const {
+    projectsPage: { projects: listOfProjects },
+  } = useContext(FirebaseContext);
 
   return (
     <Block>
       <Container id="projectsSectionContainer">
         <ProjectsTitle />
         <ProjectsContainerDiv>
-          {listOfProjects
-            ? listOfProjects.map((project, key) => <ProjectTile key={key} project={project} />)
-            : listOfFourEmptyProjects.map((item, index) => (
-                <Skeleton key={index} width="40vw" height="40vh" />
-              ))}
+          {listOfProjects.map((project, key) => (
+            <ProjectTile key={key} project={project} />
+          ))}
         </ProjectsContainerDiv>
       </Container>
       <BottomLine />

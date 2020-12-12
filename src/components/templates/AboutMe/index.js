@@ -1,11 +1,11 @@
-import React from 'react';
-import { useRealtimeDatabase } from 'config/useFirebase';
+import React, { useContext } from 'react';
+import styled from 'styled-components';
 
 // eslint-disable-next-line import/no-cycle
 import { Container } from 'components/templates/Projects';
 import { Title } from 'components/molecules/ProjectsTitle';
-import styled from 'styled-components';
 import AboutMePicturesSection from 'components/organisms/AboutMePicturesSection';
+import FirebaseContext from 'config/context';
 
 const AboutMeText = styled.p`
   text-align: left;
@@ -32,13 +32,15 @@ export const BottomLine = styled.hr`
 `;
 
 const AboutMe = () => {
-  const aboutMeText = useRealtimeDatabase('aboutMe/text');
+  const {
+    aboutMe: { text },
+  } = useContext(FirebaseContext);
 
   return (
     <Block>
       <Container id="AboutMeSection">
         <Title>About Me</Title>
-        <AboutMeText dangerouslySetInnerHTML={{ __html: aboutMeText }} />
+        <AboutMeText dangerouslySetInnerHTML={{ __html: text }} />
       </Container>
       <AboutMePicturesSection />
       <BottomLine />

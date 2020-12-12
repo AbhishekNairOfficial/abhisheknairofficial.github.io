@@ -20,8 +20,8 @@ const GridItem = styled.div`
 
 export default () => (
   <Container>
-    {Array.from(Array(100)).map(() => (
-      <GridItem />
+    {Array.from(Array(100)).map((i, key) => (
+      <GridItem key={key} />
     ))}
   </Container>
 );

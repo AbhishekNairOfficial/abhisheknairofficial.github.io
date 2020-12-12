@@ -3,12 +3,15 @@ import { ThemeProvider } from 'styled-components';
 import { render } from '@testing-library/react';
 
 import theme from 'themes';
+import FirebaseContext from 'config/context';
 import HeroText, { Text, HelloText, NameText, DesignationText } from '.';
 
 describe('<BannerImage />', () => {
   const { container } = render(
     <ThemeProvider theme={theme}>
-      <HeroText />
+      <FirebaseContext.Provider value={{ landingPage: { title: '', quote: '', firstLine: '' } }}>
+        <HeroText />
+      </FirebaseContext.Provider>
     </ThemeProvider>
   );
 

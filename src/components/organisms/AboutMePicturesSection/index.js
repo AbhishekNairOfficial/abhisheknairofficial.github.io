@@ -1,8 +1,9 @@
-import ImageComponent from 'components/atoms/ImageComponent';
-import { useRealtimeDatabase } from 'config/useFirebase';
-import useWindowResize from 'config/useWindowResize';
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+
+import ImageComponent from 'components/atoms/ImageComponent';
+import FirebaseContext from 'config/context';
+import useWindowResize from 'config/useWindowResize';
 
 const Container = styled.div`
   background-color: ${props => props.theme.palette.white[0]};
@@ -23,7 +24,9 @@ const Column = styled.div`
 `;
 
 const AboutMePicturesSection = () => {
-  const listOfImages = useRealtimeDatabase('aboutMe/images');
+  const {
+    aboutMe: { images: listOfImages },
+  } = useContext(FirebaseContext);
 
   const { width } = useWindowResize();
 

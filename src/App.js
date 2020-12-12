@@ -1,12 +1,15 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import { SkeletonTheme } from 'react-loading-skeleton';
 import 'product-sans-webfont';
 import 'typeface-spartan';
 
 import SixFootFour from 'components/atoms/6foot4';
+import HomePage from 'components/pages/HomePage';
+import LoadingPage from 'components/atoms/Loading6foot4';
 import theme from 'themes';
-import { initialiseFirebase } from 'config/useFirebase';
+import { useRealtimeDatabase } from 'config/useFirebase';
+import FirebaseContext from 'config/context';
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -27,20 +30,26 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 const App = () => {
-  initialiseFirebase();
+  const firebaseData = useRealtimeDatabase('');
 
-  const HomePage = lazy(() => import('components/pages/HomePage'));
+  if (!firebaseData) {
+    return (
+      <ThemeProvider theme={theme}>
+        <LoadingPage />
+      </ThemeProvider>
+    );
+  }
 
   return (
-    <ThemeProvider theme={theme}>
-      <SkeletonTheme color="#ffffff1a" highlightColor="#ffffff80">
-        <GlobalStyle />
-        <SixFootFour />
-        <Suspense fallback={<Skeleton />}>
+    <FirebaseContext.Provider value={firebaseData}>
+      <ThemeProvider theme={theme}>
+        <SkeletonTheme color="#ffffff1a" highlightColor="#ffffff80">
+          <GlobalStyle />
+          <SixFootFour />
           <HomePage />
-        </Suspense>
-      </SkeletonTheme>
-    </ThemeProvider>
+        </SkeletonTheme>
+      </ThemeProvider>
+    </FirebaseContext.Provider>
   );
 };
 

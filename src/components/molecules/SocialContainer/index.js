@@ -1,7 +1,9 @@
 /* eslint-disable comma-dangle */
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import Skeleton from 'react-loading-skeleton';
+
+import FirebaseContext from 'config/context';
 
 import QUORA_ICON from 'assets/images/quora.svg';
 import BEHANCE_ICON from 'assets/images/behance.svg';
@@ -10,7 +12,6 @@ import MEDIUM_ICON from 'assets/images/medium.svg';
 import DRIBBBLE_ICON from 'assets/images/dribbble.svg';
 import GITHUB_ICON from 'assets/images/github.svg';
 import TWITTER_ICON from 'assets/images/twitter.svg';
-import { useRealtimeDatabase } from 'config/useFirebase';
 
 export const Image = styled.img`
   height: 32px;
@@ -31,7 +32,7 @@ const imageLinks = {
 };
 
 const SocialContainer = () => {
-  const socialProfiles = useRealtimeDatabase('socialProfiles');
+  const { socialProfiles = [] } = useContext(FirebaseContext);
 
   return (
     <div>
