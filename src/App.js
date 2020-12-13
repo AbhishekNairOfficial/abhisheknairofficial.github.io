@@ -32,22 +32,17 @@ export const GlobalStyle = createGlobalStyle`
 const App = () => {
   const firebaseData = useRealtimeDatabase('');
 
-  if (!firebaseData) {
-    return (
-      <ThemeProvider theme={theme}>
-        <LoadingPage />
-      </ThemeProvider>
-    );
-  }
-
   return (
     <FirebaseContext.Provider value={firebaseData}>
       <ThemeProvider theme={theme}>
-        <SkeletonTheme color="#ffffff1a" highlightColor="#ffffff80">
-          <GlobalStyle />
-          <SixFootFour />
-          <HomePage />
-        </SkeletonTheme>
+        <LoadingPage loading={!firebaseData} />
+        {!!firebaseData && (
+          <SkeletonTheme color="#ffffff1a" highlightColor="#ffffff80">
+            <GlobalStyle />
+            <SixFootFour />
+            <HomePage />
+          </SkeletonTheme>
+        )}
       </ThemeProvider>
     </FirebaseContext.Provider>
   );
