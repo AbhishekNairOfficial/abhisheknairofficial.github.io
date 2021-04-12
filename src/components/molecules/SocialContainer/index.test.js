@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 
 import theme from 'themes';
 import FirebaseContext from 'config/context';
-import SocialContainer, { Image } from '.';
+import SocialContainer, { ImageContainer } from '.';
 
 describe('<SocialContainer />', () => {
   const { container } = render(
@@ -23,7 +23,7 @@ describe('<SocialContainer />', () => {
 describe('<Image />', () => {
   const { container } = render(
     <ThemeProvider theme={theme}>
-      <Image />
+      <ImageContainer />
     </ThemeProvider>
   );
 

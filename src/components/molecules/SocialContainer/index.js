@@ -2,19 +2,20 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import Skeleton from 'react-loading-skeleton';
+import NextImage from 'next/image';
 
 import FirebaseContext from 'config/context';
 
-import QUORA_ICON from 'assets/images/quora.svg';
-import BEHANCE_ICON from 'assets/images/behance.svg';
-import LINKEDIN_ICON from 'assets/images/linkedin.svg';
-import MEDIUM_ICON from 'assets/images/medium.svg';
-import DRIBBBLE_ICON from 'assets/images/dribbble.svg';
-import GITHUB_ICON from 'assets/images/github.svg';
-import TWITTER_ICON from 'assets/images/twitter.svg';
+const QUORA_ICON = '/quora.svg';
+const BEHANCE_ICON = '/behance.svg';
+const LINKEDIN_ICON = '/linkedin.svg';
+const MEDIUM_ICON = '/medium.svg';
+const DRIBBBLE_ICON = '/dribbble.svg';
+const GITHUB_ICON = '/github.svg';
+const TWITTER_ICON = '/twitter.svg';
 
-export const Image = styled.img`
-  height: 32px;
+export const ImageContainer = styled.div`
+  /* height: 32px; */
   margin-left: 30px;
   @media only screen and (max-width: 600px) {
     margin-left: ${props => (props.index === 0 ? '0px' : '20px')};
@@ -41,7 +42,9 @@ const SocialContainer = () => {
           const { icon, link } = socialProfile;
           return (
             <a href={link} key={index} target="_blank" rel="noopener noreferrer">
-              <Image index={index} src={imageLinks[icon]} alt={link} />
+              <ImageContainer>
+                <NextImage height={32} width={32} index={index} src={imageLinks[icon]} alt={link} />
+              </ImageContainer>
             </a>
           );
         })

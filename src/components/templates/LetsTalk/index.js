@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
+import Image from 'next/image';
 
 import { Block } from 'components/templates/AboutMe';
 import { Container } from 'components/templates/Projects';
@@ -7,8 +8,6 @@ import { Title } from 'components/molecules/ProjectsTitle';
 import QuoteComponent from 'components/atoms/Quote';
 import { StyledButton } from 'components/atoms/Button';
 import FirebaseContext from 'config/context';
-
-import MAIL_ICON from 'assets/images/mail-icon.svg';
 
 const Paragraph = styled.div`
   color: ${props => props.theme.palette.black[0]};
@@ -43,7 +42,7 @@ const LetsTalk = () => {
         <Paragraph>{paragraph}</Paragraph>
         <ButtonCnntainer href={`mailto:${email}`}>
           <StyledButton label="Email">
-            <img src={MAIL_ICON} alt="email" />
+            <Image layout="intrinsic" height={32} width={32} src="/mail-icon.svg" alt="email" />
           </StyledButton>
         </ButtonCnntainer>
       </Container>

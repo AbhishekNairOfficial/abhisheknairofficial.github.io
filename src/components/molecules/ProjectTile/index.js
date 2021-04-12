@@ -1,10 +1,11 @@
 import { useFirebaseStorage } from 'config/useFirebase';
 import React from 'react';
 import styled from 'styled-components';
-
-import EXTERNAL_LINK_ICON from 'assets/images/external-link.svg';
-import RIGHT_ARROW_ICON from 'assets/images/button-arrow.svg';
+import NextImage from 'next/image';
 import { LinkComponent } from '../RightSideNavBar';
+
+const EXTERNAL_LINK_ICON = '/external-link.svg';
+const RIGHT_ARROW_ICON = '/button-arrow.svg';
 
 export const Container = styled.div`
   background-color: ${props => props.theme.palette.black[0]};
@@ -53,7 +54,7 @@ export const Title = styled.div`
   }
 `;
 
-export const Icon = styled.img`
+export const Icon = styled(NextImage)`
   height: 30px;
   width: 30px;
   margin-right: 10px;
@@ -63,7 +64,7 @@ export const Icon = styled.img`
   }
 `;
 
-export const Image = styled.img`
+export const ImageContainer = styled.div`
   width: calc(35vw - 10px);
   height: calc((35vw - 10px) * 0.8);
   border-top-left-radius: 8px;
@@ -111,7 +112,7 @@ const Text = styled.span`
   }
 `;
 
-const RightSideIcon = styled.img`
+const RightSideIconContainer = styled.div`
   height: 16px;
   width: 16px;
   @media only screen and (max-width: 600px) {
@@ -147,16 +148,26 @@ const ProjectTile = ({ project }) => {
 
   return (
     <Container id="projectTileContainer">
-      <Image src={actualImageLink} alt="project" />
+      <ImageContainer>
+        <NextImage
+          height={500}
+          width={500}
+          objectFit="contain"
+          src={actualImageLink}
+          alt="project"
+        />
+      </ImageContainer>
       <TextContainer>
         <LeftSide>
-          <Icon src={actualIconLink} alt="project icon" />
+          <Icon height={30} width={30} src={actualIconLink} alt="project icon" />
           <Title>{title}</Title>
         </LeftSide>
         <LinkComponent keep="true" data-testid="workButton" to="/" onClick={onButtonClick}>
           <RightSide>
             <Text>{rightSideText}</Text>
-            <RightSideIcon src={rightSideIcon} alt="project icon" />
+            <RightSideIconContainer>
+              <NextImage src={rightSideIcon} height={16} width={16} alt="project icon" />
+            </RightSideIconContainer>
           </RightSide>
         </LinkComponent>
       </TextContainer>
