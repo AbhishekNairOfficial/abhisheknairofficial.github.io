@@ -7,6 +7,7 @@
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^9.0.0",
+    "jest": "^26.6.3",
     "next": "^10.1.2",
     "next-compose-plugins": "^2.2.1",
     "next-optimized-images": "^2.6.2",
@@ -67,7 +68,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint && yarn test:build && git add ."
+      "pre-commit": "yarn lint && git add ."
     }
   },
   "jest": {

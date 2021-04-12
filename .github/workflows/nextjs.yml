@@ -17,7 +17,7 @@ jobs:
         run: npm install
 
       - name: Lint and test the code
-        run: npm run lint && npm run test:build
+        run: npm run lint
 
       - name: Building the production code
         run: npm run build
