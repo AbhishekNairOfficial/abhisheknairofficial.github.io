@@ -27,7 +27,7 @@
     "predeploy": "yarn run build",
     "deploy": "firebase deploy --only hosting",
     "test": "jest --watchAll --coverage --env=jest-environment-jsdom-sixteen",
-    "test:build": "react-scripts test --watchAll=false -u",
+    "test:build": "jest --watchAll=false -u",
     "eject": "react-scripts eject",
     "lint": "eslint ./ --fix"
   },
