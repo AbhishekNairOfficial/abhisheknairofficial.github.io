@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@migrating-to-nextjs
+        uses: actions/checkout@master
 
       - name: Installing the dependencies
         run: npm install
