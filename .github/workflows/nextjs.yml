@@ -23,7 +23,7 @@ jobs:
         run: npm run build
 
       - name: Exporting the production code
-        run: npm run out
+        run: npm run export
 
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
