@@ -1,9 +1,8 @@
 import { useFirebaseStorage } from 'config/useFirebase';
 import React from 'react';
-import NextImage from 'next/image';
 import styled from 'styled-components';
 
-const ImageContainer = styled.div`
+const ImageContainer = styled.img`
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -20,11 +19,7 @@ const ImageContainer = styled.div`
 const ImageComponent = ({ src }) => {
   const imageUrl = useFirebaseStorage(`aboutMe/${src}`);
 
-  return (
-    <ImageContainer>
-      <NextImage height={300} width={400} alt="about me" src={imageUrl} />
-    </ImageContainer>
-  );
+  return <ImageContainer alt="about me" src={imageUrl} />;
 };
 
 export default ImageComponent;

@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
 
 import { Block } from 'components/templates/AboutMe';
 import { Container } from 'components/templates/Projects';
@@ -19,7 +18,7 @@ const Paragraph = styled.div`
   margin-top: 20px;
 `;
 
-const ButtonCnntainer = styled.a`
+const ButtonContainer = styled.a`
   margin: 30px auto;
   flex: 1;
   display: flex;
@@ -40,11 +39,11 @@ const LetsTalk = () => {
           <QuoteComponent index={index} key={index} text={quote} />
         ))}
         <Paragraph>{paragraph}</Paragraph>
-        <ButtonCnntainer href={`mailto:${email}`}>
+        <ButtonContainer href={`mailto:${email}`}>
           <StyledButton label="Email">
-            <Image layout="intrinsic" height={32} width={32} src="/mail-icon.svg" alt="email" />
+            <img src="/mail-icon.svg" alt="email" />
           </StyledButton>
-        </ButtonCnntainer>
+        </ButtonContainer>
       </Container>
     </Block>
   );

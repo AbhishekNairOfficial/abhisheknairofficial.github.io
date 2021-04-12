@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import NextImage from 'next/image';
 import Skeleton from 'react-loading-skeleton';
 import { useFirebaseStorage } from 'config/useFirebase';
 
-export const ImageContainer = styled.div`
+export const Image = styled.img`
   align-self: flex-end;
-  /* background-image: transparent url; */
+  background-image: transparent url;
   border-radius: 250px;
+  height: 300px;
   @media only screen and (max-width: 600px) {
     width: 80%;
     height: auto;
@@ -36,16 +36,7 @@ const BannerImage = () => {
         </StyledSkeleton>
       )}
       {imageUrl && (
-        <ImageContainer>
-          <NextImage
-            height={300}
-            width={300}
-            loading={loading}
-            onLoad={() => setLoading(0)}
-            src={imageUrl}
-            alt="Banner"
-          />
-        </ImageContainer>
+        <Image loading={loading} onLoad={() => setLoading(0)} src={imageUrl} alt="Banner" />
       )}
     </>
   );

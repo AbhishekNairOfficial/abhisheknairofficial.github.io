@@ -1,7 +1,7 @@
 import { useFirebaseStorage } from 'config/useFirebase';
 import React from 'react';
 import styled from 'styled-components';
-import NextImage from 'next/image';
+
 import { LinkComponent } from '../RightSideNavBar';
 
 const EXTERNAL_LINK_ICON = '/external-link.svg';
@@ -54,7 +54,7 @@ export const Title = styled.div`
   }
 `;
 
-export const Icon = styled(NextImage)`
+export const Icon = styled.img`
   height: 30px;
   width: 30px;
   margin-right: 10px;
@@ -64,7 +64,7 @@ export const Icon = styled(NextImage)`
   }
 `;
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled.img`
   width: calc(35vw - 10px);
   height: calc((35vw - 10px) * 0.8);
   border-top-left-radius: 8px;
@@ -112,7 +112,7 @@ const Text = styled.span`
   }
 `;
 
-const RightSideIconContainer = styled.div`
+const RightSideIconContainer = styled.img`
   height: 16px;
   width: 16px;
   @media only screen and (max-width: 600px) {
@@ -148,26 +148,16 @@ const ProjectTile = ({ project }) => {
 
   return (
     <Container id="projectTileContainer">
-      <ImageContainer>
-        <NextImage
-          height={500}
-          width={500}
-          objectFit="contain"
-          src={actualImageLink}
-          alt="project"
-        />
-      </ImageContainer>
+      <ImageContainer src={actualImageLink} alt="project" />
       <TextContainer>
         <LeftSide>
-          <Icon height={30} width={30} src={actualIconLink} alt="project icon" />
+          <Icon src={actualIconLink} alt="project icon" />
           <Title>{title}</Title>
         </LeftSide>
         <LinkComponent keep="true" data-testid="workButton" to="/" onClick={onButtonClick}>
           <RightSide>
             <Text>{rightSideText}</Text>
-            <RightSideIconContainer>
-              <NextImage src={rightSideIcon} height={16} width={16} alt="project icon" />
-            </RightSideIconContainer>
+            <RightSideIconContainer src={rightSideIcon} alt="project icon" />
           </RightSide>
         </LinkComponent>
       </TextContainer>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { SkeletonTheme } from 'react-loading-skeleton';
+import Head from 'next/head';
 import 'product-sans-webfont';
 import 'typeface-spartan';
 
@@ -31,13 +32,16 @@ export const GlobalStyle = createGlobalStyle`
 
 const App = () => {
   const firebaseData = useRealtimeDatabase('');
-
   return (
     <FirebaseContext.Provider value={firebaseData}>
       <ThemeProvider theme={theme}>
         <LoadingPage loading={!firebaseData} />
         {!!firebaseData && (
           <SkeletonTheme color="#ffffff1a" highlightColor="#ffffff80">
+            <Head>
+              <title>Abhishek P</title>
+              <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
             <GlobalStyle />
             <SixFootFour />
             <HomePage />
