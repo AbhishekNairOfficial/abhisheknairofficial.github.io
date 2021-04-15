@@ -20,7 +20,7 @@ jobs:
         run: npm run lint
 
       - name: Building the production code
-        run: npm run build
+        run: npm run build && npm run export
 
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
