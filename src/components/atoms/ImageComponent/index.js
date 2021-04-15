@@ -2,7 +2,7 @@ import { useFirebaseStorage } from 'config/useFirebase';
 import React from 'react';
 import styled from 'styled-components';
 
-const Image = styled.img`
+const ImageContainer = styled.img`
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -19,7 +19,7 @@ const Image = styled.img`
 const ImageComponent = ({ src }) => {
   const imageUrl = useFirebaseStorage(`aboutMe/${src}`);
 
-  return <Image alt="about me" src={imageUrl} />;
+  return <ImageContainer alt="about me" src={imageUrl} />;
 };
 
 export default ImageComponent;

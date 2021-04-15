@@ -5,13 +5,13 @@ import Skeleton from 'react-loading-skeleton';
 
 import FirebaseContext from 'config/context';
 
-import QUORA_ICON from 'assets/images/quora.svg';
-import BEHANCE_ICON from 'assets/images/behance.svg';
-import LINKEDIN_ICON from 'assets/images/linkedin.svg';
-import MEDIUM_ICON from 'assets/images/medium.svg';
-import DRIBBBLE_ICON from 'assets/images/dribbble.svg';
-import GITHUB_ICON from 'assets/images/github.svg';
-import TWITTER_ICON from 'assets/images/twitter.svg';
+const QUORA_ICON = '/quora.svg';
+const BEHANCE_ICON = '/behance.svg';
+const LINKEDIN_ICON = '/linkedin.svg';
+const MEDIUM_ICON = '/medium.svg';
+const DRIBBBLE_ICON = '/dribbble.svg';
+const GITHUB_ICON = '/github.svg';
+const TWITTER_ICON = '/twitter.svg';
 
 export const Image = styled.img`
   height: 32px;

@@ -6,8 +6,8 @@ import { useFirebaseStorage } from 'config/useFirebase';
 export const Image = styled.img`
   align-self: flex-end;
   background-image: transparent url;
-  height: 300px;
   border-radius: 250px;
+  height: 300px;
   @media only screen and (max-width: 600px) {
     width: 80%;
     height: auto;

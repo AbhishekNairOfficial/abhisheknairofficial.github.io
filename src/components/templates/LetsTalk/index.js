@@ -8,8 +8,6 @@ import QuoteComponent from 'components/atoms/Quote';
 import { StyledButton } from 'components/atoms/Button';
 import FirebaseContext from 'config/context';
 
-import MAIL_ICON from 'assets/images/mail-icon.svg';
-
 const Paragraph = styled.div`
   color: ${props => props.theme.palette.black[0]};
   text-align: left;
@@ -20,7 +18,7 @@ const Paragraph = styled.div`
   margin-top: 20px;
 `;
 
-const ButtonCnntainer = styled.a`
+const ButtonContainer = styled.a`
   margin: 30px auto;
   flex: 1;
   display: flex;
@@ -41,11 +39,11 @@ const LetsTalk = () => {
           <QuoteComponent index={index} key={index} text={quote} />
         ))}
         <Paragraph>{paragraph}</Paragraph>
-        <ButtonCnntainer href={`mailto:${email}`}>
+        <ButtonContainer href={`mailto:${email}`}>
           <StyledButton label="Email">
-            <img src={MAIL_ICON} alt="email" />
+            <img src="/mail-icon.svg" alt="email" />
           </StyledButton>
-        </ButtonCnntainer>
+        </ButtonContainer>
       </Container>
     </Block>
   );

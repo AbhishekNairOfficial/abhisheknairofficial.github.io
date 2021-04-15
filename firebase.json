@@ -1,7 +1,13 @@
 {
   "hosting": {
-    "public": "build",
-    "site": "abhisheknairofficial",
+    "public": "out",
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "nextServer"
+      }
+    ],
+    "site": "abhisheknairofficialdotcom",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   }
 }
