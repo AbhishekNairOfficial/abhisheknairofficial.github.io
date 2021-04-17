@@ -18,10 +18,12 @@ const GridItem = styled.div`
   z-index: -1;
 `;
 
-export default () => (
+const GridContainer = () => (
   <Container>
     {Array.from(Array(100)).map((i, key) => (
       <GridItem key={key} />
     ))}
   </Container>
 );
+
+export default GridContainer;

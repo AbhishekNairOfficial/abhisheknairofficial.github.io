@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 import { LinkComponent } from '../RightSideNavBar';
 
-const EXTERNAL_LINK_ICON = '/external-link.svg';
-const RIGHT_ARROW_ICON = '/button-arrow.svg';
+const EXTERNAL_LINK_ICON = 'projects/external-link.svg';
+const RIGHT_ARROW_ICON = 'projects/button-arrow.svg';
 
 export const Container = styled.div`
   background-color: ${props => props.theme.palette.black[0]};
