@@ -3,8 +3,8 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 
-import ProjectsTitle from 'components/molecules/ProjectsTitle';
-import ProjectTile from 'components/molecules/ProjectTile';
+import ProjectsTitle from 'molecules/ProjectsTitle';
+import ProjectTile from 'molecules/ProjectTile';
 import FirebaseContext from 'config/context';
 import { Block, BottomLine } from '../AboutMe';
 

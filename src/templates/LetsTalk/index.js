@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 
-import { Block } from 'components/templates/AboutMe';
-import { Container } from 'components/templates/Projects';
-import { Title } from 'components/molecules/ProjectsTitle';
-import QuoteComponent from 'components/atoms/Quote';
-import { StyledButton } from 'components/atoms/Button';
+import { Block } from 'templates/AboutMe';
+import { Container } from 'templates/Projects';
+import { Title } from 'molecules/ProjectsTitle';
+import QuoteComponent from 'atoms/Quote';
+import { StyledButton } from 'atoms/Button';
 import FirebaseContext from 'config/context';
 
 const Paragraph = styled.div`

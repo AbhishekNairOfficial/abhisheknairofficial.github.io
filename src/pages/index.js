@@ -5,12 +5,16 @@ import Head from 'next/head';
 import 'product-sans-webfont';
 import 'typeface-spartan';
 
-import SixFootFour from 'components/atoms/6foot4';
-import HomePage from 'components/pages/HomePage';
-import LoadingPage from 'components/atoms/Loading6foot4';
+import SixFootFour from 'atoms/6foot4';
+import LoadingPage from 'atoms/Loading6foot4';
 import theme from 'themes';
 import { useRealtimeDatabase } from 'config/useFirebase';
 import FirebaseContext from 'config/context';
+import LandingPage from 'templates/LandingPage';
+import ProjectsContainerComponent from 'templates/Projects';
+import AboutMe from 'templates/AboutMe';
+import LetsTalk from 'templates/LetsTalk';
+import Footer from 'templates/Footer';
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -44,7 +48,11 @@ const App = () => {
             </Head>
             <GlobalStyle />
             <SixFootFour />
-            <HomePage />
+            <LandingPage />
+            <ProjectsContainerComponent />
+            <AboutMe />
+            <LetsTalk />
+            <Footer />
           </SkeletonTheme>
         )}
       </ThemeProvider>

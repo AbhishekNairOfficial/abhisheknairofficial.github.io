@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 
-import ImageComponent from 'components/atoms/ImageComponent';
+import ImageComponent from 'atoms/ImageComponent';
 import FirebaseContext from 'config/context';
 import useWindowResize from 'config/useWindowResize';
 

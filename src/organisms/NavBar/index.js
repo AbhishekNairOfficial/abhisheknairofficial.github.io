@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Title from 'components/atoms/Title';
-import RightSideNavBar from 'components/molecules/RightSideNavBar';
+import Title from 'atoms/Title';
+import RightSideNavBar from 'molecules/RightSideNavBar';
 
 export const Container = styled.nav`
   padding: 3em;

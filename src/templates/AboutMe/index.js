@@ -2,10 +2,10 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 // eslint-disable-next-line import/no-cycle
-import { Container } from 'components/templates/Projects';
-import { Title } from 'components/molecules/ProjectsTitle';
-import AboutMePicturesSection from 'components/organisms/AboutMePicturesSection';
+import { Container } from 'templates/Projects';
+import { Title } from 'molecules/ProjectsTitle';
 import FirebaseContext from 'config/context';
+import AboutMePicturesSection from 'organisms/AboutMePicturesSection';
 
 const AboutMeText = styled.p`
   text-align: left;
