@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Image from 'next/image';
+
 export const Picture = styled.picture`
   align-self: flex-end;
   background-image: transparent url;
@@ -9,12 +11,14 @@ export const Picture = styled.picture`
   }
 `;
 
-export const Image = styled.img`
-  border-radius: 250px;
-  height: 300px;
-  @media only screen and (max-width: 600px) {
-    width: 80%;
-    height: auto;
+export const ImageContainer = styled.div`
+  & img {
+    border-radius: 250px;
+    height: 300px;
+    @media only screen and (max-width: 600px) {
+      width: 80%;
+      height: auto;
+    }
   }
 `;
 
@@ -31,9 +35,12 @@ const BannerImage = () => {
 
   return (
     <Picture>
-      <source srcSet={`${imageUrl}&webp`} type="image/webp" />
-      <source srcSet={imageUrl} type="image/jpeg" />
-      <Image src={imageUrl} alt="Banner" />
+      {/* <source srcSet={`${imageUrl}&webp`} type="image/webp" />
+       <source srcSet={imageUrl} type="image/jpeg" />
+    <Image src={imageUrl} alt="Banner" /> */}
+      <ImageContainer>
+        <Image height={300} width={300} src={imageUrl} />
+      </ImageContainer>
     </Picture>
   );
 };
