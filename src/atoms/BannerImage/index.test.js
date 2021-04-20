@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 
 import theme from 'themes';
-import BannerImage, { Image } from '.';
+import BannerImage, { ImageContainer } from '.';
 
 describe('<BannerImage />', () => {
   const { container } = render(
@@ -20,7 +20,7 @@ describe('<BannerImage />', () => {
 describe('<Image />', () => {
   const { container } = render(
     <ThemeProvider theme={theme}>
-      <Image />
+      <ImageContainer />
     </ThemeProvider>
   );
 
