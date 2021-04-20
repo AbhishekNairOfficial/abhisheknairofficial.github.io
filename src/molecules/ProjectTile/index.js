@@ -1,6 +1,6 @@
-import { useFirebaseStorage } from 'config/useFirebase';
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 import { LinkComponent } from '../RightSideNavBar';
 
@@ -122,44 +122,36 @@ const RightSideIconContainer = styled.img`
 `;
 
 const ProjectTile = ({ project }) => {
-  const { title, image, type, icon, url, fireStore } = project;
-
-  const actualImageLink = useFirebaseStorage(`projects/${image}`);
-  const actualIconLink = useFirebaseStorage(`projects/${icon}`);
+  const { title, image, type, icon, url, local } = project;
 
   const rightSideIcon = type === 'design' ? RIGHT_ARROW_ICON : EXTERNAL_LINK_ICON;
   const rightSideText = type === 'design' ? 'read case study' : 'see more';
 
-  // fireStore link
-  let link = `projects/caseStudy/${url}`;
-  if (type !== 'design') {
-    link = null;
-  }
-  const fireStoreLink = useFirebaseStorage(link);
-
   const onButtonClick = () => {
-    if (fireStore) {
-      // If the item is hosted on firestore, we'll need to use the other link.
-      window.open(fireStoreLink);
-    } else {
-      window.open(url);
+    if (local) {
+      return;
     }
+    window.open(url);
   };
 
   return (
     <Container id="projectTileContainer">
-      <ImageContainer src={actualImageLink} alt="project" />
+      <ImageContainer src={image} alt="project" />
       <TextContainer>
         <LeftSide>
-          <Icon src={actualIconLink} alt="project icon" />
+          <Icon src={icon} alt="project icon" />
           <Title>{title}</Title>
         </LeftSide>
-        <LinkComponent keep="true" data-testid="workButton" to="/" onClick={onButtonClick}>
-          <RightSide>
-            <Text>{rightSideText}</Text>
-            <RightSideIconContainer src={rightSideIcon} alt="project icon" />
-          </RightSide>
-        </LinkComponent>
+        {local ? (
+          <Link href={url} />
+        ) : (
+          <LinkComponent keep="true" data-testid="workButton" href="/" onClick={onButtonClick}>
+            <RightSide>
+              <Text>{rightSideText}</Text>
+              <RightSideIconContainer src={rightSideIcon} alt="project icon" />
+            </RightSide>
+          </LinkComponent>
+        )}
       </TextContainer>
     </Container>
   );

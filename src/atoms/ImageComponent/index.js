@@ -1,4 +1,3 @@
-import { useFirebaseStorage } from 'config/useFirebase';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -17,9 +16,7 @@ const ImageContainer = styled.img`
 `;
 
 const ImageComponent = ({ src }) => {
-  const imageUrl = useFirebaseStorage(`aboutMe/${src}`);
-
-  return <ImageContainer alt="about me" src={imageUrl} />;
+  return <ImageContainer alt="about me" src={src} />;
 };
 
 export default ImageComponent;

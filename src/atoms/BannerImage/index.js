@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import Skeleton from 'react-loading-skeleton';
-import { useFirebaseStorage } from 'config/useFirebase';
 
 export const Image = styled.img`
   align-self: flex-end;
@@ -23,23 +21,10 @@ export const StyledSkeleton = styled.div`
 `;
 
 const BannerImage = () => {
-  // State
-  const [loading, setLoading] = useState(1);
   // Hooks
-  const imageUrl = useFirebaseStorage('banner-image.jpg');
+  const imageUrl = '/banner/banner-image.jpg';
 
-  return (
-    <>
-      {!!loading && (
-        <StyledSkeleton>
-          <Skeleton height={250} width={250} circle />
-        </StyledSkeleton>
-      )}
-      {imageUrl && (
-        <Image loading={loading} onLoad={() => setLoading(0)} src={imageUrl} alt="Banner" />
-      )}
-    </>
-  );
+  return <Image src={imageUrl} alt="Banner" />;
 };
 
 export default BannerImage;

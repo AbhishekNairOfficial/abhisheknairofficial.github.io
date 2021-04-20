@@ -33,12 +33,10 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="shortcut icon" href="banner/6foot4-logo.png" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content="#000000" />
           <meta name="description" content="Hi, I'm abhishek. Welcome to my portfolio site." />
           <link rel="apple-touch-icon" href="banner/6foot4-logo.png" />
           <link rel="manifest" href="manifest.json" />
-          <title>Abhishek</title>
         </Head>
         <body>
           <Main />
