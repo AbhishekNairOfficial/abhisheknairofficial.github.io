@@ -12,6 +12,7 @@ export const Picture = styled.picture`
 `;
 
 export const ImageContainer = styled.div`
+  margin-top: 10vh;
   & img {
     border-radius: 250px;
     height: 300px;
@@ -35,9 +36,6 @@ const BannerImage = () => {
 
   return (
     <Picture>
-      {/* <source srcSet={`${imageUrl}&webp`} type="image/webp" />
-       <source srcSet={imageUrl} type="image/jpeg" />
-    <Image src={imageUrl} alt="Banner" /> */}
       <ImageContainer>
         <Image height={300} width={300} src={imageUrl} />
       </ImageContainer>
