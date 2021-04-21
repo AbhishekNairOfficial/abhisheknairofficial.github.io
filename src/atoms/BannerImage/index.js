@@ -37,7 +37,7 @@ const BannerImage = () => {
   return (
     <Picture>
       <ImageContainer>
-        <Image height={300} width={300} src={imageUrl} />
+        <Image alt="banner" height={300} width={300} src={imageUrl} />
       </ImageContainer>
     </Picture>
   );
