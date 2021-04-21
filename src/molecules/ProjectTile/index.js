@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
+import Image from 'next/image';
 
-import { LinkComponent } from '../RightSideNavBar';
+import { LinkComponent } from 'molecules/RightSideNavBar';
+import useWindowSize from 'config/useWindowResize';
 
 const EXTERNAL_LINK_ICON = 'projects/external-link.svg';
 const RIGHT_ARROW_ICON = 'projects/button-arrow.svg';
@@ -54,7 +56,7 @@ export const Title = styled.div`
   }
 `;
 
-export const Icon = styled.img`
+export const Icon = styled(Image)`
   height: 30px;
   width: 30px;
   margin-right: 10px;
@@ -64,7 +66,7 @@ export const Icon = styled.img`
   }
 `;
 
-export const ImageContainer = styled.img`
+export const ImageContainer = styled(Image)`
   width: calc(35vw - 10px);
   height: calc((35vw - 10px) * 0.8);
   border-top-left-radius: 8px;
@@ -124,6 +126,8 @@ const RightSideIconContainer = styled.img`
 const ProjectTile = ({ project }) => {
   const { title, image, type, icon, url, local } = project;
 
+  const { width } = useWindowSize();
+
   const rightSideIcon = type === 'design' ? RIGHT_ARROW_ICON : EXTERNAL_LINK_ICON;
   const rightSideText = type === 'design' ? 'read case study' : 'see more';
 
@@ -136,10 +140,20 @@ const ProjectTile = ({ project }) => {
 
   return (
     <Container id="projectTileContainer">
-      <ImageContainer src={image} alt="project" />
+      <ImageContainer
+        width={0.35 * width - 10}
+        height={(0.35 * width - 10) * 0.8}
+        src={image}
+        alt="project"
+      />
       <TextContainer>
         <LeftSide>
-          <Icon src={icon} alt="project icon" />
+          <Icon
+            height={width >= 600 ? 30 : 20}
+            width={width >= 600 ? 30 : 20}
+            src={icon}
+            alt="project icon"
+          />
           <Title>{title}</Title>
         </LeftSide>
         {local ? (
