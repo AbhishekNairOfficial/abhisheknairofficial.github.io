@@ -12,7 +12,7 @@
     "text": "I’m <B>Abhishek</B>, a 25 year old <Y>designer</Y> with a frontend development background. I’ve always been intrigued by user experiences, and how to make them better and more intuitive. This led me to start learning UI design, and identify common problems in everyday UI. Currently, I work as a developer at <B>PiktorLabs</B>, where I bring to life some amazing interfaces both on web and mobile."
   },
   "landingPage": {
-    "firstLine": "Helooo!",
+    "firstLine": "Hellooo!",
     "links": [
       {
         "icon": "microsoft",
@@ -62,8 +62,8 @@
     "projects": [
       {
         "description": "I made an application to take notes, using React Native",
-        "icon": "projects/notesapp-icon.svg",
-        "image": "projects/notesapp-bg.png",
+        "icon": "/projects/notesapp-icon.svg",
+        "image": "/projects/notesapp-bg.png",
         "title": "NotesApp",
         "type": "development",
         "url": "https://www.github.com/abhisheknairofficial/notes-app"
@@ -71,24 +71,24 @@
       {
         "description": "Case study from design class",
         "file": true,
-        "icon": "projects/cleansneaker.svg",
-        "image": "projects/cleansneaker.png",
+        "icon": "/projects/cleansneaker.svg",
+        "image": "/projects/cleansneaker.png",
         "title": "cleansneaker",
         "type": "design",
         "url": "/case-study/cleansneaker"
       },
       {
         "description": "The 100 days of UI challenge I completed",
-        "icon": "projects/dribbble.svg",
-        "image": "projects/dailyui-bg.png",
+        "icon": "/projects/dribbble.svg",
+        "image": "/projects/dailyui-bg.png",
         "title": "Daily UI",
         "type": "ui",
         "url": "https://dribbble.com/AbhishekNairOfficial"
       },
       {
         "description": "Tic Tac Toe game I designed and developed during the lockdown",
-        "icon": "projects/tic-tac-toe.svg",
-        "image": "projects/tic-tac-toe.png",
+        "icon": "/projects/tic-tac-toe.svg",
+        "image": "/projects/tic-tac-toe.png",
         "title": "Tic Tac Toe",
         "type": "development",
         "url": "https://ttt-backend-42a99.web.app/"

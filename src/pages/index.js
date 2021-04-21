@@ -1,5 +1,6 @@
 import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import 'product-sans-webfont';
 import 'typeface-spartan';
@@ -13,6 +14,7 @@ import AboutMe from 'templates/AboutMe';
 import LetsTalk from 'templates/LetsTalk';
 import Footer from 'templates/Footer';
 
+import LoadingPage from 'atoms/Loading6foot4';
 import firebaseData from '../../content/data.content.json';
 
 export const GlobalStyle = createGlobalStyle`
@@ -34,6 +36,22 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 const App = () => {
+  const router = useRouter();
+
+  const [pageLoading, setPageLoading] = React.useState(false);
+  React.useEffect(() => {
+    const handleStart = () => {
+      setPageLoading(true);
+    };
+    const handleComplete = () => {
+      setPageLoading(false);
+    };
+
+    router.events.on('routeChangeStart', handleStart);
+    router.events.on('routeChangeComplete', handleComplete);
+    router.events.on('routeChangeError', handleComplete);
+  }, [router]);
+
   return (
     <FirebaseContext.Provider value={firebaseData}>
       <ThemeProvider theme={theme}>
@@ -42,12 +60,18 @@ const App = () => {
           <title>Abhishek P</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
-        <SixFootFour />
-        <LandingPage />
-        <ProjectsContainerComponent />
-        <AboutMe />
-        <LetsTalk />
-        <Footer />
+        {pageLoading ? (
+          <LoadingPage />
+        ) : (
+          <>
+            <SixFootFour />
+            <LandingPage />
+            <ProjectsContainerComponent />
+            <AboutMe />
+            <LetsTalk />
+            <Footer />
+          </>
+        )}
       </ThemeProvider>
     </FirebaseContext.Provider>
   );

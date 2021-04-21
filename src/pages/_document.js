@@ -42,9 +42,6 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-        <script async src="/__/firebase/7.5.0/firebase-app.js" />
-        <script async src="/__/firebase/7.5.0/firebase-analytics.js" />
-        <script async src="/__/firebase/init.js" />
       </Html>
     );
   }
