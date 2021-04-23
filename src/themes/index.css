@@ -1,0 +1,21 @@
+:root {
+  --primary: #247afde6;
+  --secondary: #ffd700;
+  --danger: '';
+  --alert: '';
+  --success: '';
+  --white: #ffffff;
+  --white-two: #f7f7ff;
+  --white-three: #fbfffe33;
+  --white-four: #fbfffe;
+  --black: #0d1212;
+
+  --font-primary: GoogleSansRegular, Roboto, sans-serif;
+  --font-pre: Spartan, Liberation Mono, Menlo, Courier, monospace;
+  --font-medium: GoogleSansMedium;
+  --font-bold: GoogleSansBold;
+  --font-italic: GoogleSansItalic;
+  --font-quote: Georgia, serif;
+
+  --size-max-width: 1100px;
+}

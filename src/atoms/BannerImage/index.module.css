@@ -1,0 +1,23 @@
+.picture {
+  align-self: flex-end;
+  background-image: transparent url;
+  @media only screen and (max-width: 600px) {
+    margin-top: 10vh;
+  }
+}
+
+.imageContainer {
+  margin-top: 10vh;
+}
+
+.bannerImage {
+  border-radius: 250px;
+  height: 300px;
+}
+
+@media only screen and (max-width: 600px) {
+  .bannerImage {
+    width: 80%;
+    height: auto;
+  }
+}

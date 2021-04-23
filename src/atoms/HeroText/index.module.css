@@ -1,0 +1,49 @@
+.text {
+  color: var(--white);
+  font-family: var(--font-primary);
+}
+
+.helloText {
+  font-size: 3em;
+  line-height: 1.6em;
+  margin: 0 0 20px 0;
+  font-weight: 100;
+}
+@media only screen and (max-width: 600px) {
+  .helloText {
+    font-size: 1.8em;
+    margin: 0 0 15px 0;
+    line-height: 1.2em;
+  }
+}
+
+.nameText {
+  font-size: 8em;
+  margin: 0;
+  font-weight: 600;
+}
+.nameText > B {
+  font-family: var(--font-primary);
+}
+@media only screen and (max-width: 600px) {
+  .nameText {
+    font-size: 2.5em;
+    line-height: 1.5em;
+  }
+}
+
+.designationText {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: 100;
+  font-family: var(--font-primary);
+}
+.designationText > YellowText {
+  color: var(--secondary);
+}
+@media only screen and (max-width: 600px) {
+  .designationText {
+    font-size: 1.3em;
+    line-height: 1.3em;
+  }
+}

@@ -5,7 +5,7 @@ import { Block } from 'templates/AboutMe';
 import { Container } from 'templates/Projects';
 import { Title } from 'molecules/ProjectsTitle';
 import QuoteComponent from 'atoms/Quote';
-import { StyledButton } from 'atoms/Button';
+import StyledButton from 'atoms/Button';
 import FirebaseContext from 'config/context';
 
 const Paragraph = styled.div`

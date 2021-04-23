@@ -1,28 +1,14 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
-import styled from 'styled-components';
 
-export const StyledButton = styled.div`
-  height: 50px;
-  border: ${props => `2px solid ${props.theme.palette.primary[0]}`};
-  margin: 10px;
-  padding: 0 50px;
-  border-radius: 6px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  color: ${props => props.theme.palette.white[0]};
-  background-color: ${props => props.theme.palette.primary[0]};
-  font-family: ${props => props.theme.fonts.primary};
-  &:hover {
-    color: ${props => props.theme.palette.primary[0]};
-  }
-`;
+import styles from './index.module.css';
 
 const ButtonComponent = ({ label, onClick = () => {} }) => {
   return (
-    <StyledButton onClick={onClick} type="button">
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+    <div className={styles.StyledButton} onClick={onClick} type="button">
       {label}
-    </StyledButton>
+    </div>
   );
 };
 

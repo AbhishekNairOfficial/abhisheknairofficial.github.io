@@ -1,0 +1,18 @@
+.picture {
+  margin-bottom: 15px;
+}
+.picture:last-child {
+  margin-bottom: 0px;
+}
+
+.imageContainer {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  width: calc((100vw - 6em - 30px) / 3);
+}
+@media only screen and (max-width: 600px) {
+  .imageContainer {
+    width: calc(100vw - 60px);
+  }
+}
