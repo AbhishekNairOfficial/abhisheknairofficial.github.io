@@ -35,3 +35,15 @@ body {
   padding: 0;
   background-color: var(--primary);
 }
+
+@font-face {
+  font-family: 'GoogleSansRegular';
+  src: url('product-sans-webfont/fonts/GoogleSans-Regular.ttf') format('ttf');
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'GoogleSansBold';
+  src: url('product-sans-webfont/fonts/GoogleSans-Bold.ttf') format('tff');
+  font-display: fallback;
+}
