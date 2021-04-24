@@ -6,7 +6,6 @@
 }
 
 .imageContainer {
-  width: 100%;
   height: auto;
   object-fit: cover;
   width: calc((100vw - 6em - 30px) / 3);

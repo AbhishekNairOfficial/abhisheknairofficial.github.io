@@ -5,7 +5,7 @@ import styles from './index.module.css';
 
 const BannerImage = () => {
   // Hooks
-  const imageUrl = '/banner/banner-image.jpg?resize&size=300';
+  const imageUrl = '/banner/banner-image.jpg';
 
   return (
     <picture className={styles.picture}>
