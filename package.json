@@ -6,7 +6,6 @@
     "gray-matter": "^4.0.2",
     "jest": "^26.6.3",
     "next": "^10.1.2",
-    "product-sans-webfont": "^1.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-loading-skeleton": "^2.0.1",
@@ -14,8 +13,7 @@
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",
     "styled-components": "^5.1.0",
-    "styled-theme": "^0.3.3",
-    "typeface-spartan": "^1.1.4"
+    "styled-theme": "^0.3.3"
   },
   "scripts": {
     "dev": "next dev",

@@ -1,7 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import 'product-sans-webfont';
-import 'typeface-spartan';
 
 import SixFootFour from 'atoms/6foot4';
 import LandingPage from 'templates/LandingPage';

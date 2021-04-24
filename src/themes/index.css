@@ -10,11 +10,10 @@
   --white-four: #fbfffe;
   --black: #0d1212;
 
-  --font-primary: GoogleSansRegular, Roboto, sans-serif;
+  --font-primary: 'Product Sans', GoogleSansRegular, Roboto, sans-serif;
   --font-pre: Spartan, Liberation Mono, Menlo, Courier, monospace;
-  --font-medium: GoogleSansMedium;
-  --font-bold: GoogleSansBold;
-  --font-italic: GoogleSansItalic;
+  --font-bold: 'Product Sans', GoogleSansBold;
+  --font-italic: 'Product Sans', GoogleSansItalic;
   --font-quote: Georgia, serif;
 
   --size-max-width: 1100px;
@@ -34,16 +33,30 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--primary);
+  font-family: var(--font-primary);
+  font-weight: 300;
 }
 
 @font-face {
   font-family: 'GoogleSansRegular';
-  src: url('product-sans-webfont/fonts/GoogleSans-Regular.ttf') format('ttf');
-  font-display: fallback;
+  src: url('/fonts/product-sans-regular.woff2')
+    url('https://fonts.gstatic.com/s/productsans/v13/pxicypQkot1TnFhsFMOfGShdvPWbT2lB.woff2')
+    format('woff2');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'GoogleSansBold';
-  src: url('product-sans-webfont/fonts/GoogleSans-Bold.ttf') format('tff');
+  src: url('/fonts/product-sans-bold.woff2')
+    url('https://fonts.gstatic.com/s/productsans/v13/pxicypQkot1TnFhsFMOfGShdrPKbT2lB.woff2')
+    format('woff2');
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'GoogleSansItalic';
+  src: url('/fonts/product-sans-italic.woff2')
+    url('https://fonts.gstatic.com/s/productsans/v13/pxieypQkot1TnFhsFMOfGShVEu8nSllDims.woff2')
+    format('woff2');
   font-display: fallback;
 }
