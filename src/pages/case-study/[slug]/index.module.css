@@ -1,0 +1,9 @@
+.container {
+  max-width: var(--size-max-width);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background-color: var(--white-two);
+  padding: 3em;
+  font-family: var(--font-pre);
+}
