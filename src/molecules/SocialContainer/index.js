@@ -3,15 +3,16 @@ import React, { useContext } from 'react';
 
 import FirebaseContext from 'config/context';
 
+import Image from 'next/image';
 import styles from './index.module.css';
 
-const QUORA_ICON = 'socialIcons/quora.svg';
-const BEHANCE_ICON = 'socialIcons/behance.svg';
-const LINKEDIN_ICON = 'socialIcons/linkedin.svg';
-const MEDIUM_ICON = 'socialIcons/medium.svg';
-const DRIBBBLE_ICON = 'socialIcons/dribbble.svg';
-const GITHUB_ICON = 'socialIcons/github.svg';
-const TWITTER_ICON = 'socialIcons/twitter.svg';
+const QUORA_ICON = '/socialIcons/quora.svg';
+const BEHANCE_ICON = '/socialIcons/behance.svg';
+const LINKEDIN_ICON = '/socialIcons/linkedin.svg';
+const MEDIUM_ICON = '/socialIcons/medium.svg';
+const DRIBBBLE_ICON = '/socialIcons/dribbble.svg';
+const GITHUB_ICON = '/socialIcons/github.svg';
+const TWITTER_ICON = '/socialIcons/twitter.svg';
 
 const imageLinks = {
   quora: QUORA_ICON,
@@ -31,13 +32,14 @@ const SocialContainer = () => {
       {socialProfiles.map((socialProfile, index) => {
         const { icon, link } = socialProfile;
         return (
-          <a href={link} key={index} target="_blank" rel="noopener noreferrer">
-            <img
-              className={[styles.image, index === 0 && styles.firstItem].join(' ')}
-              index={index}
-              src={imageLinks[icon]}
-              alt={link}
-            />
+          <a
+            href={link}
+            className={[styles.image, index === 0 && styles.firstItem].join(' ')}
+            key={index}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image height={32} width={32} index={index} src={imageLinks[icon]} alt={link} />
           </a>
         );
       })}
