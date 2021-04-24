@@ -1,27 +1,10 @@
 import React, { useContext } from 'react';
-import styled from 'styled-components';
 
 import ImageComponent from 'atoms/ImageComponent';
 import FirebaseContext from 'config/context';
 import useWindowResize from 'config/useWindowResize';
 
-const Container = styled.div`
-  background-color: ${props => props.theme.palette.white[0]};
-  padding: 0 3em;
-  display: flex;
-  flex-wrap: wrap;
-  @media only screen and (max-width: 600px) {
-    padding: 0 30px;
-  }
-`;
-
-const Column = styled.div`
-  display: flex;
-  flex-direction: column;
-  &:nth-child(2) {
-    margin: 0 15px;
-  }
-`;
+import styles from './index.module.css';
 
 const AboutMePicturesSection = () => {
   const {
@@ -54,15 +37,15 @@ const AboutMePicturesSection = () => {
   }
 
   return (
-    <Container>
+    <div className={styles.container}>
       {newListOfImages.map((column, index) => (
-        <Column key={index}>
+        <div className={styles.column} key={index}>
           {column.map((image, key) => (
             <ImageComponent key={key} src={image} />
           ))}
-        </Column>
+        </div>
       ))}
-    </Container>
+    </div>
   );
 };
 

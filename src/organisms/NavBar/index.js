@@ -1,26 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import Title from 'atoms/Title';
 import RightSideNavBar from 'molecules/RightSideNavBar';
 
-export const Container = styled.nav`
-  padding: 3em;
-  padding-right: 15vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  @media only screen and (max-width: 600px) {
-    padding: 2em;
-    padding-right: 2em;
-  }
-`;
+import styles from './index.module.css';
 
 const NavBar = () => (
-  <Container>
+  <div className={styles.container}>
     <Title />
     <RightSideNavBar />
-  </Container>
+  </div>
 );
 
 export default NavBar;
