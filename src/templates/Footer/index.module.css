@@ -1,0 +1,25 @@
+.container {
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5em 15vw;
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column-reverse;
+    padding: 1.5em 20px;
+    justify-content: center;
+  }
+}
+
+.leftSideText {
+  font-family: var(--font-primary);
+  color: var(--white-two);
+  font-size: 1.1em;
+}
+@media only screen and (max-width: 600px) {
+  .leftSideText {
+    margin-bottom: 0;
+  }
+}

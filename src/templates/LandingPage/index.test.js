@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 
 import theme from 'themes';
 import FirebaseContext from 'config/context';
-import LandingPage, { Container, MainPart } from '.';
+import LandingPage from '.';
 
 describe('<LandingPage />', () => {
   const { container } = render(
@@ -15,28 +15,4 @@ describe('<LandingPage />', () => {
     </ThemeProvider>
   );
   expect(container).toMatchSnapshot();
-});
-
-describe('<Container />', () => {
-  const { container } = render(
-    <ThemeProvider theme={theme}>
-      <Container />
-    </ThemeProvider>
-  );
-
-  it('should match the snapshot', () => {
-    expect(container).toMatchSnapshot();
-  });
-});
-
-describe('<MainPart />', () => {
-  const { container } = render(
-    <ThemeProvider theme={theme}>
-      <MainPart />
-    </ThemeProvider>
-  );
-
-  it('should match the snapshot', () => {
-    expect(container).toMatchSnapshot();
-  });
 });

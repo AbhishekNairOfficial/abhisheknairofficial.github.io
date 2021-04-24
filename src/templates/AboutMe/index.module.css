@@ -3,3 +3,27 @@
   font-weight: 500;
   margin: 0 0 20px 0;
 }
+
+.aboutMeText {
+  text-align: left;
+  font-family: var(--font-primary);
+  font-size: 1.2em;
+  line-height: 1.5em;
+  letter-spacing: 0.72px;
+  opacity: 1;
+}
+.aboutMeText > B {
+  color: var(--primary);
+  text-transform: capitalize;
+  font-family: var(--font-bold);
+}
+
+.block {
+  background-color: var(--white);
+}
+
+.bottomLine {
+  margin: 0px 15vw;
+  margin-top: 50px;
+  border: 0.5x solid var(--black);
+}

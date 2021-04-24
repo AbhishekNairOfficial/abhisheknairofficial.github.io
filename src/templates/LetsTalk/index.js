@@ -1,30 +1,13 @@
 import React, { useContext } from 'react';
-import styled from 'styled-components';
 
-import { Block } from 'templates/AboutMe';
-import { Container } from 'templates/Projects';
 import QuoteComponent from 'atoms/Quote';
 import StyledButton from 'atoms/Button';
 import FirebaseContext from 'config/context';
+
 import otherStyles from 'molecules/ProjectsTitle/index.module.css';
-
-const Paragraph = styled.div`
-  color: ${props => props.theme.palette.black[0]};
-  text-align: left;
-  font-family: ${props => props.theme.fonts.primary};
-  letter-spacing: 0.28px;
-  font-size: 1.2em;
-  opacity: 1;
-  margin-top: 20px;
-`;
-
-const ButtonContainer = styled.a`
-  margin: 30px auto;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-`;
+import externalStyles from 'templates/AboutMe/index.module.css';
+import moreStyles from 'templates/Projects/index.module.css';
+import styles from './index.module.css';
 
 const LetsTalk = () => {
   const { letsTalk } = useContext(FirebaseContext);
@@ -32,20 +15,20 @@ const LetsTalk = () => {
   const { email, paragraph, quotes } = letsTalk;
 
   return (
-    <Block>
-      <Container id="AboutMeSection">
+    <section className={externalStyles.block}>
+      <div className={moreStyles.container} id="AboutMeSection">
         <h1 className={otherStyles.title}>Let&#39;s Talk</h1>
         {quotes.map((quote, index) => (
           <QuoteComponent index={index} key={index} text={quote} />
         ))}
-        <Paragraph>{paragraph}</Paragraph>
-        <ButtonContainer href={`mailto:${email}`}>
+        <div className={styles.paragraph}>{paragraph}</div>
+        <a className={styles.buttonContainer} href={`mailto:${email}`}>
           <StyledButton label="Email">
             <img src="/mail-icon.svg" alt="email" />
           </StyledButton>
-        </ButtonContainer>
-      </Container>
-    </Block>
+        </a>
+      </div>
+    </section>
   );
 };
 

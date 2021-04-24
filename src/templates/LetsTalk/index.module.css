@@ -1,0 +1,17 @@
+.paragraph {
+  color: var(--black);
+  text-align: left;
+  font-family: var(--font-primary);
+  letter-spacing: 0.28px;
+  font-size: 1.2em;
+  opacity: 1;
+  margin-top: 20px;
+}
+
+.buttonContainer {
+  margin: 30px auto;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
