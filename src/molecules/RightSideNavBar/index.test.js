@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { render } from '@testing-library/react';
 
 import theme from 'themes';
-import RightSideNavBar, { Container, LinkComponent } from '.';
+import RightSideNavBar from '.';
 
 describe('<RightSideNavBar />', () => {
   const { container } = render(
@@ -36,31 +36,4 @@ describe('<RightSideNavBar />', () => {
   //   );
   //   expect(scrollIntoViewMock).toBeCalled();
   // });
-});
-
-describe('<Container />', () => {
-  const { container } = render(
-    <ThemeProvider theme={theme}>
-      <Container />
-    </ThemeProvider>
-  );
-
-  // container.simulate('mouseMove', { preventDefault: () => true });
-  // container.simulate('mouseLeave', { preventDefault: () => true });
-
-  it('should match the snapshot', () => {
-    expect(container).toMatchSnapshot();
-  });
-});
-
-describe('<LinkComponent />', () => {
-  const { container } = render(
-    <ThemeProvider theme={theme}>
-      <LinkComponent />
-    </ThemeProvider>
-  );
-
-  it('should match the snapshot', () => {
-    expect(container).toMatchSnapshot();
-  });
 });

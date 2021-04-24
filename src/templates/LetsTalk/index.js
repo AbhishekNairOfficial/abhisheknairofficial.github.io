@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 import { Block } from 'templates/AboutMe';
 import { Container } from 'templates/Projects';
-import { Title } from 'molecules/ProjectsTitle';
 import QuoteComponent from 'atoms/Quote';
 import StyledButton from 'atoms/Button';
 import FirebaseContext from 'config/context';
+import otherStyles from 'molecules/ProjectsTitle/index.module.css';
 
 const Paragraph = styled.div`
   color: ${props => props.theme.palette.black[0]};
@@ -34,7 +34,7 @@ const LetsTalk = () => {
   return (
     <Block>
       <Container id="AboutMeSection">
-        <Title>Let&#39;s Talk</Title>
+        <h1 className={otherStyles.title}>Let&#39;s Talk</h1>
         {quotes.map((quote, index) => (
           <QuoteComponent index={index} key={index} text={quote} />
         ))}

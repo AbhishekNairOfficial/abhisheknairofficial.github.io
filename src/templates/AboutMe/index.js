@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 // eslint-disable-next-line import/no-cycle
 import { Container } from 'templates/Projects';
-import { Title } from 'molecules/ProjectsTitle';
 import FirebaseContext from 'config/context';
 import AboutMePicturesSection from 'organisms/AboutMePicturesSection';
+import otherStyles from 'molecules/ProjectsTitle/index.module.css';
 
 const AboutMeText = styled.p`
   text-align: left;
@@ -39,7 +39,7 @@ const AboutMe = () => {
   return (
     <Block>
       <Container id="AboutMeSection">
-        <Title>About Me</Title>
+        <h1 className={otherStyles.title}>About Me</h1>
         <AboutMeText dangerouslySetInnerHTML={{ __html: text }} />
       </Container>
       <AboutMePicturesSection />
