@@ -11,6 +11,7 @@ const BannerImage = () => {
     <picture className={styles.picture}>
       <div className={styles.ImageContainer}>
         <Image
+          loading="eager"
           className={styles.bannerImage}
           alt="banner"
           height={300}
