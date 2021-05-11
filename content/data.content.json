@@ -12,7 +12,7 @@
     "text": "I’m <B>Abhishek</B>, a 25 year old <Y>designer</Y> with a frontend development background. I’ve always been intrigued by user experiences, and how to make them better and more intuitive. This led me to start learning UI design, and identify common problems in everyday UI. Currently, I work as a developer at <B>PiktorLabs</B>, where I bring to life some amazing interfaces both on web and mobile."
   },
   "landingPage": {
-    "firstLine": "Hellooo!",
+    "firstLine": "Good day to you!",
     "links": [
       {
         "icon": "microsoft",
@@ -45,6 +45,8 @@
         "url": "https://twitter.com/nairgalactico21"
       }
     ],
+    "paraOne": "I’m Abhishek, a developer / designer based out of Bangalore, India. Currently, I work as a Product Engineer at Piktorlabs.",
+    "paraTwo": "I enjoy contributing to user experience and research and that's where I look to improve my skills. I also enjoy creating interfaces, as well as bringing them to life, on web, android and iOS.",
     "quote": "<YellowText>designer</YellowText> | front-end developer",
     "title": "I'm <B>Abhishek</B>"
   },

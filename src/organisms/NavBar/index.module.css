@@ -1,9 +1,8 @@
 .container {
-  padding: 3em;
-  padding-right: 15vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 50px var(--horizontal-padding);
 }
 @media only screen and (max-width: 600px) {
   .container {

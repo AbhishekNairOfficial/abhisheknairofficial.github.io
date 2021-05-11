@@ -10,13 +10,18 @@
   --white-four: #fbfffe;
   --black: #0d1212;
 
-  --font-primary: 'Product Sans', GoogleSansRegular, Roboto, sans-serif;
+  --font-primary: 'DM Serif Display', Playfair Display, Roboto, serif;
+  --font-secondary: Montserrat, Roboto, sans-serif;
   --font-pre: Spartan, Liberation Mono, Menlo, Courier, monospace;
   --font-bold: 'Product Sans', GoogleSansBold;
   --font-italic: 'Product Sans', GoogleSansItalic;
   --font-quote: Georgia, serif;
 
   --size-max-width: 1100px;
+  --grid-width-one: calc((100vw - 13 * 16px) / 14);
+  --grid-width-two: calc(var(--grid-width-one) * 2 + 16px);
+  --grid-width-four: calc(var(--grid-width-two) * 2 + 16px);
+  --horizontal-padding: calc(var(--grid-width-two) + 16px);
 }
 
 * {

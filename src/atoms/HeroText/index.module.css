@@ -1,13 +1,12 @@
 .text {
   color: var(--white);
-  font-family: var(--font-primary);
 }
 
 .helloText {
+  font-family: var(--font-primary);
   font-size: 3em;
-  line-height: 1.6em;
-  margin: 0 0 20px 0;
-  font-weight: 100;
+  line-height: 1.3;
+  margin: 0 0 30px 0;
 }
 @media only screen and (max-width: 600px) {
   .helloText {
@@ -17,33 +16,31 @@
   }
 }
 
-.nameText {
-  font-size: 8em;
-  margin: 0;
-  font-weight: 600;
-}
-.nameText > B {
-  font-family: var(--font-primary);
+.helloText ~ p {
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: var(--font-secondary);
+  width: var(--grid-width-four);
 }
 @media only screen and (max-width: 600px) {
-  .nameText {
-    font-size: 2.5em;
-    line-height: 1.5em;
+  .helloText ~ p {
+    width: auto;
   }
 }
 
-.designationText {
-  margin: 0;
-  font-size: 1.5em;
-  font-weight: 100;
-  font-family: var(--font-primary);
+.button {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--white);
+  padding: 15px 40px;
+  font-family: var(--font-secondary);
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 600;
+  margin-top: 15px;
+  cursor: pointer;
 }
-.designationText > YellowText {
-  color: var(--secondary);
-}
-@media only screen and (max-width: 600px) {
-  .designationText {
-    font-size: 1.3em;
-    line-height: 1.3em;
-  }
+
+.button > span {
+  margin-right: 10px;
 }
