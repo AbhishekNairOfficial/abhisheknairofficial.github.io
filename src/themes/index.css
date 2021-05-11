@@ -1,5 +1,6 @@
 :root {
   --primary: #247afde6;
+  --primary-10p: #247afd1a;
   --secondary: #ffd700;
   --danger: '';
   --alert: '';
@@ -37,7 +38,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--primary);
+  background-color: var(--white);
   font-family: var(--font-primary);
   font-weight: 300;
 }

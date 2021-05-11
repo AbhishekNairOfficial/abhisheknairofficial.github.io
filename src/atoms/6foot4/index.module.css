@@ -3,6 +3,7 @@
   height: 100vh;
   width: 100vw;
   z-index: -1;
+  background-color: var(--primary);
 }
 @media only screen and (max-width: 600px) {
   .container {
@@ -12,7 +13,7 @@
 
 .text {
   font-size: 35rem;
-  color: transparent;
+  color: var(--primary-10p);
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: var(--white-three);
   position: fixed;
