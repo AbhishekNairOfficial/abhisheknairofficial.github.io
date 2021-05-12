@@ -6,7 +6,6 @@ import ProjectsTitle from 'molecules/ProjectsTitle';
 import ProjectTile from 'molecules/ProjectTile';
 import FirebaseContext from 'config/context';
 
-import otherStyles from 'templates/AboutMe/index.module.css';
 import styles from './index.module.css';
 
 const ProjectsContainerComponent = () => {
@@ -24,7 +23,6 @@ const ProjectsContainerComponent = () => {
           ))}
         </div>
       </div>
-      <hr className={otherStyles.bottomLine} />
     </section>
   );
 };

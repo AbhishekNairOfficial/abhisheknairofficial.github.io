@@ -11,27 +11,24 @@ import styles from './index.module.css';
 // const RIGHT_ARROW_ICON = 'projects/button-arrow.svg';
 
 const ProjectTile = ({ project }) => {
-  const { title, image, icon, description, client, tags = [] } = project;
+  const { title, image, url, icon, description, client, tags = [] } = project;
 
   const { width } = useWindowSize();
 
-  // const rightSideIcon = type === 'design' ? RIGHT_ARROW_ICON : EXTERNAL_LINK_ICON;
-  // const rightSideText = type === 'design' ? 'read case study' : 'see more';
+  const widthOfTheImage = ((width - 13 * 16) / 14) * 10 + 16 * 9;
+  const heightOfTheImage = widthOfTheImage * 0.5;
 
-  // const onButtonClick = () => {
-  //   if (local) {
-  //     return;
-  //   }
-  //   window.open(url);
-  // };
+  const onReadMoreClick = () => {
+    window.open(url);
+  };
 
   return (
     <div className={styles.container} id="projectTileContainer">
       <Image
         quality={100}
         className={styles.imageContainer}
-        width={0.35 * width - 10}
-        height={(0.35 * width - 10) * 0.8}
+        width={widthOfTheImage}
+        height={heightOfTheImage}
         src={image}
         alt="project"
       />
@@ -57,6 +54,10 @@ const ProjectTile = ({ project }) => {
             ))}
           </div>
           <div>{description}</div>
+          <div onClick={onReadMoreClick}>
+            <span>read full case study</span>
+            <Image src="/projects/right-arrow.svg" height={8} width={8} />
+          </div>
         </div>
       </div>
     </div>

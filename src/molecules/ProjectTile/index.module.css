@@ -1,8 +1,8 @@
 .container {
   width: calc(var(--grid-width-four) * 2 + var(--grid-width-two) + 16px);
-  height: calc(var(--grid-width-four) + var(--grid-width-one) + 16px);
   display: flex;
   flex-direction: column;
+  margin-bottom: 100px;
 }
 @media only screen and (max-width: 600px) {
   .container {
@@ -51,12 +51,6 @@
 .imageContainer {
   object-fit: cover;
 }
-@media only screen and (max-width: 600px) {
-  .imageContainer {
-    width: calc(100vw - 60px);
-    height: calc((100vw - 60px) * 0.8);
-  }
-}
 
 .leftSide {
   display: flex;
@@ -65,11 +59,11 @@
   width: calc(var(--grid-width-four) + var(--grid-width-one) + 8px);
 }
 
-.leftSide > div:last-child {
+.leftSide > div:nth-child(2) {
   display: flex;
   align-items: center;
 }
-.leftSide > div:last-child > span {
+.leftSide > div:nth-child(2) > span {
   margin-left: 10px;
   font-family: var(--font-secondary);
   font-size: 1em;
@@ -118,10 +112,25 @@
 }
 
 /* description */
-.rightSide > div:last-child {
+.rightSide > div:nth-child(2) {
   font-family: var(--font-secondary);
   font-size: 1em;
   line-height: 1.5;
   text-align: left;
   color: var(--black);
+}
+
+/* Read more button */
+.rightSide > div:last-child {
+  font-family: Montserrat;
+  font-family: var(--font-secondary);
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--black);
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+.rightSide > div:last-child > span {
+  margin-right: 10px;
 }
