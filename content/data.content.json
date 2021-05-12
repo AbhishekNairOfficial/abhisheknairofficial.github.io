@@ -64,43 +64,44 @@
     "projects": [
       {
         "description": "Taking an idea from conception to finalised app design in 14 weeks, complete with iOS and android mock ups. Lorem ipsum historia que tu hiciste, historia por hacer. Porque tu na resiste, tus ganas de vencer. Ya salen las estrellas, mi Viejo chamartin. De llejos y de cerca, nos trae hasta que",
-        "file": true,
-        "icon": "/projects/cleansneaker.svg",
-        "image": "/projects/cleansneaker.png",
+        "icon": "/projects/designboat.webp",
+        "image": "/projects/cleansneaker.webp",
         "title": "Case Study: Creating a specialized experience for sneaker-heads",
-        "type": "design",
         "client": "designboat",
         "tags": ["research", "visual design"],
         "url": "https://bootcamp.uxdesign.cc/case-study-creating-a-specialised-experience-for-sneaker-heads-5cd00941eb78"
       },
       {
-        "description": "I made an application to take notes, using React Native",
-        "icon": "/projects/notesapp-icon.svg",
-        "image": "/projects/notesapp-bg.png",
-        "title": "NotesApp",
-        "type": "development",
-        "url": "https://www.github.com/abhisheknairofficial/notes-app"
-      },
-      {
-        "description": "The 100 days of UI challenge I completed",
+        "description": "The story of improving UI skills and a test of my durability, with a 100 day challenge. Lorem ipsum historia que tu hiciste, historia por hacer. Porque tu na resiste, tus ganas de vencer. Ya salen las estrellas, mi Viejo chamartin. De llejos y de cerca, nos trae hasta que",
         "icon": "/projects/dribbble.svg",
-        "image": "/projects/dailyui-bg.png",
+        "image": "/projects/dailyui.webp",
         "title": "Daily UI",
-        "type": "ui",
+        "client": "Dribbble",
+        "tags": ["ui design", "daily challenge"],
         "url": "https://dribbble.com/AbhishekNairOfficial"
-      },
-      {
-        "description": "Tic Tac Toe game I designed and developed during the lockdown",
-        "icon": "/projects/tic-tac-toe.svg",
-        "image": "/projects/tic-tac-toe.png",
-        "title": "Tic Tac Toe",
-        "type": "development",
-        "url": "https://ttt-backend-42a99.web.app/"
       }
     ],
     "text": "Here are some of the projects I've done",
     "title": "Projects:"
   },
+  "devProjects": [
+    {
+      "description": "I made an application to take notes, using React Native",
+      "icon": "/projects/notesapp-icon.svg",
+      "image": "/projects/notesapp-bg.png",
+      "title": "NotesApp",
+      "type": "development",
+      "url": "https://www.github.com/abhisheknairofficial/notes-app"
+    },
+    {
+      "description": "Tic Tac Toe game I designed and developed during the lockdown",
+      "icon": "/projects/tic-tac-toe.svg",
+      "image": "/projects/tic-tac-toe.png",
+      "title": "Tic Tac Toe",
+      "type": "development",
+      "url": "https://ttt-backend-42a99.web.app/"
+    }
+  ],
   "socialProfiles": [
     {
       "icon": "behance",
