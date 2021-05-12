@@ -59,13 +59,8 @@
   },
   "letsTalk": {
     "email": "abhisheknr4@gmail.com",
-    "paragraph": "Are any of these thoughts on your mind right now? Then you have come to the right place! Drop me an email, or hmu on any of my social profiles, and let’s create something exciting!",
-    "quotes": [
-      "I want someone to build this website for me.",
-      "Wow this Abhishek dude has a website, let me see what he’s done",
-      "Wow, what a clean website. How did you make this?",
-      "I want to hire you as my new UX designer and pay you a ridiculous amount of cash."
-    ]
+    "paragraph": "If you’d like to discuss a freelance project, a full time job opportunity, or you would just like to talk about how I went about creating this site, feel free to hit me up below :)",
+    "image": "/letsTalk/myDude.webp"
   },
   "projectsPage": {
     "projects": [

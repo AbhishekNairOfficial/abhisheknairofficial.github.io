@@ -1,17 +1,30 @@
-.paragraph {
-  color: var(--black);
-  text-align: left;
-  font-family: var(--font-primary);
-  letter-spacing: 0.28px;
-  font-size: 1.2em;
-  opacity: 1;
-  margin-top: 20px;
+.container {
+  display: flex;
 }
 
-.buttonContainer {
-  margin: 30px auto;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
+.leftSide {
+  width: calc(var(--grid-width-four) + 16px);
+}
+
+.leftSide > p {
+  font-family: var(--font-secondary);
+  color: var(--black);
+  font-size: 1em;
+  line-height: 1.5;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.leftSide > a {
+  text-decoration: none;
+  padding: 15px 40px;
+  background-color: var(--primary);
+  color: var(--white);
+  font-family: var(--font-secondary);
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+.rightSide {
+  margin-left: auto;
 }

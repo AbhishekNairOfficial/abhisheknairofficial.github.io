@@ -10,6 +10,7 @@ import FirebaseContext from 'config/context';
 
 import Testimonials from 'templates/Testimonials';
 import DevelopmentProjects from 'templates/DevProjects';
+import LetsTalk from 'templates/LetsTalk';
 import firebaseData from '../../content/data.content.json';
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
       <AboutMe />
       <Testimonials />
       <DevelopmentProjects />
+      <LetsTalk />
       <Footer />
     </FirebaseContext.Provider>
   );
