@@ -5,10 +5,10 @@ import SixFootFour from 'atoms/6foot4';
 import LandingPage from 'templates/LandingPage';
 import ProjectsContainerComponent from 'templates/Projects';
 import AboutMe from 'templates/AboutMe';
-import LetsTalk from 'templates/LetsTalk';
 import Footer from 'templates/Footer';
 import FirebaseContext from 'config/context';
 
+import Testimonials from 'templates/Testimonials';
 import firebaseData from '../../content/data.content.json';
 
 const App = () => {
@@ -22,7 +22,7 @@ const App = () => {
       <LandingPage />
       <ProjectsContainerComponent />
       <AboutMe />
-      <LetsTalk />
+      <Testimonials />
       <Footer />
     </FirebaseContext.Provider>
   );
