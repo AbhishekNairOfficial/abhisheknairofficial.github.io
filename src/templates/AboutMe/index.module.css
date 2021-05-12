@@ -4,27 +4,47 @@
   margin: 0 0 20px 0;
 }
 
-.aboutMeText {
-  text-align: left;
-  font-family: var(--font-primary);
-  font-size: 1.2em;
-  line-height: 1.5em;
-  letter-spacing: 0.72px;
-  opacity: 1;
-}
-.aboutMeText > B {
-  color: var(--primary);
-  text-transform: capitalize;
-  font-family: var(--font-bold);
-  font-weight: 800;
+.leftSide {
+  width: calc(var(--grid-width-four) + var(--grid-width-one) + 8px);
 }
 
-.block {
-  background-color: var(--white);
+.aboutMeText {
+  text-align: left;
+  font-family: var(--font-secondary);
+  font-size: 1em;
+  line-height: 1.6;
+  color: var(--black);
+  white-space: pre-wrap;
+  margin-bottom: 30px;
+}
+.aboutMeText > b {
+  text-transform: capitalize;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+}
+.aboutMeText:nth-child(2) {
+  line-height: 2.2;
 }
 
 .bottomLine {
   margin: 0px 15vw;
   margin-top: 50px;
   border: 0.5x solid var(--black);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.resumeButton {
+  padding: 15px 40px;
+  background-color: var(--primary);
+  display: inline-flex;
+  text-transform: uppercase;
+  font-family: var(--font-secondary);
+  font-size: 1em;
+  font-weight: 500;
+  color: var(--white);
 }

@@ -28,6 +28,7 @@ const ProjectTile = ({ project }) => {
   return (
     <div className={styles.container} id="projectTileContainer">
       <Image
+        quality={100}
         className={styles.imageContainer}
         width={0.35 * width - 10}
         height={(0.35 * width - 10) * 0.8}
@@ -39,6 +40,7 @@ const ProjectTile = ({ project }) => {
           <div className={styles.title}>{title}</div>
           <div>
             <Image
+              quality={100}
               className={styles.icon}
               height={width >= 600 ? 24 : 20}
               width={width >= 600 ? 24 : 20}

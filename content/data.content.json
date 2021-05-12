@@ -1,15 +1,22 @@
 {
   "aboutMe": {
-    "images": [
-      "/aboutMe/image-1.jpeg",
-      "/aboutMe/image-2.jpg",
-      "/aboutMe/image-3.jpg",
-      "/aboutMe/image-4.jpg",
-      "/aboutMe/image-5.jpg",
-      "/aboutMe/image-6.jpg",
-      "/aboutMe/image-7.jpg"
-    ],
-    "text": "I’m <B>Abhishek</B>, a 25 year old <Y>designer</Y> with a frontend development background. I’ve always been intrigued by user experiences, and how to make them better and more intuitive. This led me to start learning UI design, and identify common problems in everyday UI. Currently, I work as a developer at <B>PiktorLabs</B>, where I bring to life some amazing interfaces both on web and mobile."
+    "image": "/aboutMe/profile-picture.webp",
+    "paraOne": "If you're a recruiter who's just looking for keywords to decide whether I fit the bill, here you go:",
+    "paraTwo": "I brainstorm in <b>Miro</b>.\nI wireframe and design with <b>Adobe XD | Figma.</b>\nI develop websites in <b>React (CRA, NextJS)</b>\nI also develop apps with <b>React Native</b> (and a lot of patience).\nI jot down my thoughts on <b>NotesApp</b> (more on that below).\nI collaborate over <b>Slack</b> and  <b>Discord.</b>",
+    "paraThree": "For the rest of you: I help create products that focus on user experience and performance. Working in the front-end side of things and getting to interact with a lot of designers sparked an interest in me towards designing, and that's how I began my journey into this world of personas and wireframes.\nI've had the opportunity to work on a variety of UI/UX projects both as a developer and designer. This unique viewpoint helps me bridge the gap between both the teams, as well as speed up the handover process.\nWhen I'm not working, you can find me watching football, playing football, or gaming. Football games of course. I also tend to my garden, tinker with the PC I built myself, and if I have some time left I write at Plain English and Bootcamp. And did I mention I like football?",
+    "careerGraph": [
+      {
+        "name": "Moonraft Innovation Labs",
+        "date": "2017-2019"
+      },
+      {
+        "name": "Piktorlabs",
+        "date": "2019-Present"
+      },
+      {
+        "name": "Maybe you?"
+      }
+    ]
   },
   "landingPage": {
     "firstLine": "Good day to you!",
