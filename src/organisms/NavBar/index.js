@@ -9,7 +9,7 @@ const NavBar = () => (
       src="/banner/6foot4-logo-long.png"
       alt="logo"
       layout="fixed"
-      quality="100"
+      quality={100}
       height={39}
       width={107}
     />

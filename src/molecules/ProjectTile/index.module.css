@@ -2,7 +2,7 @@
   width: calc(var(--grid-width-four) * 2 + var(--grid-width-two) + 16px);
   display: flex;
   flex-direction: column;
-  margin-bottom: 100px;
+  margin-bottom: 150px;
 }
 @media only screen and (max-width: 600px) {
   .container {

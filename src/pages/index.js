@@ -9,6 +9,7 @@ import Footer from 'templates/Footer';
 import FirebaseContext from 'config/context';
 
 import Testimonials from 'templates/Testimonials';
+import DevelopmentProjects from 'templates/DevProjects';
 import firebaseData from '../../content/data.content.json';
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
       <ProjectsContainerComponent />
       <AboutMe />
       <Testimonials />
+      <DevelopmentProjects />
       <Footer />
     </FirebaseContext.Provider>
   );
