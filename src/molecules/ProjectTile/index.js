@@ -40,12 +40,12 @@ const ProjectTile = ({ project }) => {
           <div>
             <Image
               className={styles.icon}
-              height={width >= 600 ? 30 : 20}
-              width={width >= 600 ? 30 : 20}
+              height={width >= 600 ? 24 : 20}
+              width={width >= 600 ? 24 : 20}
               src={icon}
               alt="project icon"
             />
-            {client}
+            <span>{client}</span>
           </div>
         </div>
         <div className={styles.rightSide}>
