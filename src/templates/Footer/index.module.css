@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2.5em 15vw;
+  padding: 2.5em var(--horizontal-padding);
 }
 @media only screen and (max-width: 600px) {
   .container {
@@ -14,9 +14,9 @@
 }
 
 .leftSideText {
-  font-family: var(--font-primary);
+  font-family: var(--font-secondary);
   color: var(--white-two);
-  font-size: 1.1em;
+  font-size: 1em;
 }
 @media only screen and (max-width: 600px) {
   .leftSideText {

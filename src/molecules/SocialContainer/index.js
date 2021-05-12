@@ -28,7 +28,7 @@ const SocialContainer = () => {
   const { socialProfiles = [] } = useContext(FirebaseContext);
 
   return (
-    <div>
+    <div className={styles.container}>
       {socialProfiles.map((socialProfile, index) => {
         const { icon, link } = socialProfile;
         return (
