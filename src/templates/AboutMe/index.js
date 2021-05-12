@@ -8,6 +8,7 @@ import externalStyles from 'templates/Projects/index.module.css';
 import Image from 'next/image';
 import useWindowSize from 'config/useWindowResize';
 import CareerGraph from 'atoms/CareerGraph';
+import Link from 'next/link';
 import styles from './index.module.css';
 
 const AboutMe = () => {
@@ -31,7 +32,9 @@ const AboutMe = () => {
           </div>
           <Image quality={100} src={image} width={widthOfTheImage} height={widthOfTheImage} />
         </div>
-        <div className={styles.resumeButton}>download my resume</div>
+        <Link href="/resume.pdf">
+          <div className={styles.resumeButton}>download my resume</div>
+        </Link>
         <CareerGraph />
       </div>
     </section>

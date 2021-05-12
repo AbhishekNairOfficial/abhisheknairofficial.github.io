@@ -47,4 +47,5 @@
   font-size: 1em;
   font-weight: 500;
   color: var(--white);
+  cursor: pointer;
 }
