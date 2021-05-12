@@ -12,9 +12,7 @@ const HeroText = () => {
   const { paraOne, paraTwo } = landingPage;
 
   const onButtonClick = () => {
-    document
-      .getElementById('AboutMeSection')
-      .scrollIntoView({ behavior: 'smooth', block: 'center' });
+    document.getElementById('AboutMeSection').scrollIntoView({ behavior: 'auto', block: 'start' });
   };
 
   return (

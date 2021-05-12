@@ -45,3 +45,20 @@
 .button > span {
   margin-right: 10px;
 }
+
+.button > div {
+  position: relative;
+  animation: verticalMovement 0.8s infinite;
+}
+
+@keyframes verticalMovement {
+  0% {
+    top: -2px;
+  }
+  50% {
+    top: 2px;
+  }
+  100% {
+    top: -2px;
+  }
+}

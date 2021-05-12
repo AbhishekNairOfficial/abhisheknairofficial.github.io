@@ -20,8 +20,8 @@ const AboutMe = () => {
   const widthOfTheImage = ((width - 13 * 16) / 14) * 3 + 16 * 2;
 
   return (
-    <section>
-      <div className={externalStyles.container} id="AboutMeSection">
+    <section id="AboutMeSection">
+      <div className={externalStyles.container}>
         <h1 className={otherStyles.title}>About Me</h1>
         <div className={styles.container}>
           <div className={styles.leftSide}>
