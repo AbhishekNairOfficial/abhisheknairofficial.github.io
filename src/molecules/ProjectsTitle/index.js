@@ -4,8 +4,7 @@ import styles from './index.module.css';
 
 const ProjectsTitle = () => (
   <div className={styles.container}>
-    <h1 className={styles.title}>My Work</h1>
-    <h3 className={styles.SubTitle}>Here are a few things I’ve worked on</h3>
+    <h1 className={styles.title}>Here is some of my best work</h1>
   </div>
 );
 

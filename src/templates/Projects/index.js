@@ -15,7 +15,7 @@ const ProjectsContainerComponent = () => {
   } = useContext(FirebaseContext);
 
   return (
-    <section className={otherStyles.block}>
+    <section>
       <div className={styles.container} id="projectsSectionContainer">
         <ProjectsTitle />
         <div className={styles.projectsContainerDiv}>

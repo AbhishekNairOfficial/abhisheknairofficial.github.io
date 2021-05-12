@@ -1,12 +1,12 @@
 .container {
-  color: var(--black);
+  color: var(--white);
   font-family: var(--font-primary);
 }
 
 .title {
   font-size: 2.5em;
   font-weight: 500;
-  margin: 0 0 20px 0;
+  margin: 0 0 50px 0;
 }
 @media only screen and (max-width: 600px) {
   .title {

@@ -63,21 +63,23 @@
   "projectsPage": {
     "projects": [
       {
+        "description": "Taking an idea from conception to finalised app design in 14 weeks, complete with iOS and android mock ups. Lorem ipsum historia que tu hiciste, historia por hacer. Porque tu na resiste, tus ganas de vencer. Ya salen las estrellas, mi Viejo chamartin. De llejos y de cerca, nos trae hasta que",
+        "file": true,
+        "icon": "/projects/cleansneaker.svg",
+        "image": "/projects/cleansneaker.png",
+        "title": "Case Study: Creating a specialized experience for sneaker-heads",
+        "type": "design",
+        "client": "designboat",
+        "tags": ["research", "visual design"],
+        "url": "https://bootcamp.uxdesign.cc/case-study-creating-a-specialised-experience-for-sneaker-heads-5cd00941eb78"
+      },
+      {
         "description": "I made an application to take notes, using React Native",
         "icon": "/projects/notesapp-icon.svg",
         "image": "/projects/notesapp-bg.png",
         "title": "NotesApp",
         "type": "development",
         "url": "https://www.github.com/abhisheknairofficial/notes-app"
-      },
-      {
-        "description": "Case study from design class",
-        "file": true,
-        "icon": "/projects/cleansneaker.svg",
-        "image": "/projects/cleansneaker.png",
-        "title": "cleansneaker",
-        "type": "design",
-        "url": "/case-study/cleansneaker"
       },
       {
         "description": "The 100 days of UI challenge I completed",
