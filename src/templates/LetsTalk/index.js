@@ -24,9 +24,11 @@ const LetsTalk = () => {
           <p>{paragraph}</p>
           <a href={`mailto:${email}`}>shoot me an email</a>
         </div>
-        <div className={styles.rightSide}>
-          <Image src={image} height={widthOfTheImage} width={widthOfTheImage} />
-        </div>
+        {width < 600 || (
+          <div className={styles.rightSide}>
+            <Image src={image} height={widthOfTheImage} width={widthOfTheImage} />
+          </div>
+        )}
       </div>
     </section>
   );

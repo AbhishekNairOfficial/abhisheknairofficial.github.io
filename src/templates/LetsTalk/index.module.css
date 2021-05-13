@@ -5,6 +5,11 @@
 .leftSide {
   width: calc(var(--grid-width-four) + 16px);
 }
+@media only screen and (max-width: 600px) {
+  .leftSide {
+    width: 100%;
+  }
+}
 
 .leftSide > p {
   font-family: var(--font-secondary);
