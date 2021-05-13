@@ -7,7 +7,6 @@
 @media only screen and (max-width: 600px) {
   .container {
     width: calc(100vw - 60px);
-    height: calc(100vw - 60px);
   }
 }
 
@@ -20,7 +19,7 @@
 }
 @media only screen and (max-width: 600px) {
   .textContainer {
-    padding: 5px 15px;
+    flex-direction: column;
   }
 }
 
@@ -32,7 +31,7 @@
 }
 @media only screen and (max-width: 600px) {
   .title {
-    font-size: 1em;
+    font-size: 1.5em;
   }
 }
 
@@ -48,8 +47,10 @@
   }
 }
 
-.imageContainer {
-  object-fit: cover;
+@media only screen and (max-width: 600px) {
+  .imageContainer {
+    margin: 0 -30px;
+  }
 }
 
 .leftSide {
@@ -57,6 +58,11 @@
   flex-direction: column;
   margin-top: 10px;
   width: calc(var(--grid-width-four) + var(--grid-width-one) + 8px);
+}
+@media only screen and (max-width: 600px) {
+  .leftSide {
+    width: 100%;
+  }
 }
 
 .leftSide > div:nth-child(2) {
@@ -84,8 +90,7 @@
 }
 @media only screen and (max-width: 600px) {
   .rightSide {
-    padding: 10px;
-    height: 30px;
+    width: 100%;
   }
 }
 

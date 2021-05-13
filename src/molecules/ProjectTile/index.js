@@ -15,7 +15,10 @@ const ProjectTile = ({ project }) => {
 
   const { width } = useWindowSize();
 
-  const widthOfTheImage = ((width - 13 * 16) / 14) * 10 + 16 * 9;
+  let widthOfTheImage = ((width - 13 * 16) / 14) * 10 + 16 * 9;
+  if (width < 600) {
+    widthOfTheImage = width;
+  }
   const heightOfTheImage = widthOfTheImage * 0.5;
 
   const onReadMoreClick = () => {
@@ -24,14 +27,15 @@ const ProjectTile = ({ project }) => {
 
   return (
     <div className={styles.container} id="projectTileContainer">
-      <Image
-        quality={100}
-        className={styles.imageContainer}
-        width={widthOfTheImage}
-        height={heightOfTheImage}
-        src={image}
-        alt="project"
-      />
+      <div className={styles.imageContainer}>
+        <Image
+          quality={100}
+          width={widthOfTheImage}
+          height={heightOfTheImage}
+          src={image}
+          alt="project"
+        />
+      </div>
       <div className={styles.textContainer}>
         <div className={styles.leftSide}>
           <div className={styles.title}>{title}</div>
