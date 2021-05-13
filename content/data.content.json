@@ -1,6 +1,6 @@
 {
   "aboutMe": {
-    "image": "/aboutMe/profile-picture.webp",
+    "image": "/aboutMe/profile-picture.jpg",
     "paraOne": "If you're a recruiter who's just looking for keywords to decide whether I fit the bill, here you go:",
     "paraTwo": "I brainstorm in <b>Miro</b>.\nI wireframe and design with <b>Adobe XD | Figma.</b>\nI develop websites in <b>React (CRA, NextJS)</b>\nI also develop apps with <b>React Native</b> (and a lot of patience).\nI jot down my thoughts on <b>NotesApp</b> (more on that below).\nI collaborate over <b>Slack</b> and  <b>Discord.</b>",
     "paraThree": "For the rest of you: I help create products that focus on user experience and performance. Working in the front-end side of things and getting to interact with a lot of designers sparked an interest in me towards designing, and that's how I began my journey into this world of personas and wireframes.\nI've had the opportunity to work on a variety of UI/UX projects both as a developer and designer. This unique viewpoint helps me bridge the gap between both the teams, as well as speed up the handover process.\nWhen I'm not working, you can find me watching football, playing football, or gaming. Football games of course. I also tend to my garden, tinker with the PC I built myself, and if I have some time left I write at Plain English and Bootcamp. And did I mention I like football?",
@@ -60,7 +60,7 @@
   "letsTalk": {
     "email": "abhisheknr4@gmail.com",
     "paragraph": "If you’d like to discuss a freelance project, a full time job opportunity, or you would just like to talk about how I went about creating this site, feel free to hit me up below :)",
-    "image": "/letsTalk/myDude.webp"
+    "image": "/letsTalk/contact-image.svg"
   },
   "projectsPage": {
     "projects": [

@@ -12,7 +12,7 @@ const Testimonials = () => {
   const { width } = useWindowSize();
 
   const widthOfTheImage = ((width - 13 * 16) / 14) * 2 + 16;
-  const heightOfTheImage = widthOfTheImage * 2.6;
+  const heightOfTheImage = (widthOfTheImage * 8) / 3;
 
   return (
     <section className={styles.container}>
@@ -24,7 +24,7 @@ const Testimonials = () => {
       </div>
       <div className={styles.imageContainer}>
         <Image
-          src="/testimonials/testimonial-image.webp"
+          src="/testimonials/testimonial-image.svg"
           height={heightOfTheImage}
           width={widthOfTheImage}
           quality={100}

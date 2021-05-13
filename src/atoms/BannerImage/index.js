@@ -7,12 +7,11 @@ import styles from './index.module.css';
 
 const BannerImage = () => {
   // Hooks
-  const imageUrl = '/banner/banner-image.png';
+  const imageUrl = '/banner/banner-image.svg';
 
   const { width } = useWindowSize();
 
-  const widthOfTheImage = (width - 13 * 16) / 7;
-  const heightOfTheImage = (widthOfTheImage * 552) / 384;
+  const widthOfTheImage = ((width - 13 * 16) / 14) * 3 + 16 * 2;
 
   return (
     <picture className={styles.picture}>
@@ -21,7 +20,7 @@ const BannerImage = () => {
           loading="eager"
           alt="banner"
           width={widthOfTheImage}
-          height={heightOfTheImage}
+          height={widthOfTheImage}
           src={imageUrl}
         />
       </div>

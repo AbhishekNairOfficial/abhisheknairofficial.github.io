@@ -30,7 +30,13 @@ const AboutMe = () => {
             <p className={styles.aboutMeText} dangerouslySetInnerHTML={{ __html: paraTwo }} />
             <p className={styles.aboutMeText} dangerouslySetInnerHTML={{ __html: paraThree }} />
           </div>
-          <Image quality={100} src={image} width={widthOfTheImage} height={widthOfTheImage} />
+          <Image
+            className={styles.profilePicture}
+            quality={100}
+            src={image}
+            width={widthOfTheImage}
+            height={widthOfTheImage}
+          />
         </div>
         <Link href="/resume.pdf">
           <div className={styles.resumeButton}>download my resume</div>

@@ -26,10 +26,8 @@
   line-height: 2.2;
 }
 
-.bottomLine {
-  margin: 0px 15vw;
-  margin-top: 50px;
-  border: 0.5x solid var(--black);
+.profilePicture {
+  border-radius: 500px;
 }
 
 .container {
