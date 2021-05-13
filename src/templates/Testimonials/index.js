@@ -17,7 +17,7 @@ const Testimonials = () => {
   return (
     <section className={styles.container}>
       <div className={styles.title}>Testimonials</div>
-      <div className={styles.gridContainergridContainer}>
+      <div className={styles.gridContainer}>
         {testimonials.map((testimonial, i) => (
           <Testimonial key={i} testimonial={testimonial} />
         ))}
