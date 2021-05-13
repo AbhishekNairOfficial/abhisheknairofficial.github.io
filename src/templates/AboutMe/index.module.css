@@ -7,6 +7,11 @@
 .leftSide {
   width: calc(var(--grid-width-four) + var(--grid-width-one) + 8px);
 }
+@media only screen and (max-width: 600px) {
+  .leftSide {
+    width: 100%;
+  }
+}
 
 .aboutMeText {
   text-align: left;
@@ -34,6 +39,12 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column-reverse;
+    margin-top: 50px;
+  }
 }
 
 .resumeButton {

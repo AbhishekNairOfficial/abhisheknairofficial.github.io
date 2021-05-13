@@ -18,7 +18,10 @@ const AboutMe = () => {
 
   const { width } = useWindowSize();
 
-  const widthOfTheImage = ((width - 13 * 16) / 14) * 3 + 16 * 2;
+  let widthOfTheImage = ((width - 13 * 16) / 14) * 3 + 16 * 2;
+  if (width < 600) {
+    widthOfTheImage = width - 100;
+  }
 
   return (
     <section id="AboutMeSection">
@@ -41,7 +44,7 @@ const AboutMe = () => {
         <Link href="/resume.pdf">
           <div className={styles.resumeButton}>download my resume</div>
         </Link>
-        <CareerGraph />
+        {width < 600 || <CareerGraph />}
       </div>
     </section>
   );
