@@ -37,6 +37,7 @@ const AboutMe = () => {
             className={styles.profilePicture}
             quality={100}
             src={image}
+            alt="profile picture"
             width={widthOfTheImage}
             height={widthOfTheImage}
           />

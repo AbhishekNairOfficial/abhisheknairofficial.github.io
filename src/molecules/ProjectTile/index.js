@@ -60,7 +60,7 @@ const ProjectTile = ({ project }) => {
           <div>{description}</div>
           <div onClick={onReadMoreClick}>
             <span>read full case study</span>
-            <Image src="/projects/right-arrow.svg" height={8} width={8} />
+            <Image alt="arrow" src="/projects/right-arrow.svg" height={8} width={8} />
           </div>
         </div>
       </div>
