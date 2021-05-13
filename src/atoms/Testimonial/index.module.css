@@ -12,6 +12,12 @@
 .container:not(:last-child) {
   margin-right: 16px;
 }
+@media only screen and (max-width: 600px) {
+  .container:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 50px;
+  }
+}
 
 .container > p {
   font-family: var(--font-secondary);

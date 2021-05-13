@@ -17,19 +17,21 @@ const Testimonials = () => {
   return (
     <section className={styles.container}>
       <div className={styles.title}>Testimonials</div>
-      <div className={styles.gridContainer}>
+      <div className={styles.gridContainergridContainer}>
         {testimonials.map((testimonial, i) => (
           <Testimonial key={i} testimonial={testimonial} />
         ))}
       </div>
-      <div className={styles.imageContainer}>
-        <Image
-          src="/testimonials/testimonial-image.svg"
-          height={heightOfTheImage}
-          width={widthOfTheImage}
-          quality={100}
-        />
-      </div>
+      {width > 600 && (
+        <div className={styles.imageContainer}>
+          <Image
+            src="/testimonials/testimonial-image.svg"
+            height={heightOfTheImage}
+            width={widthOfTheImage}
+            quality={100}
+          />
+        </div>
+      )}
     </section>
   );
 };
