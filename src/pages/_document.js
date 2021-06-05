@@ -43,7 +43,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:300,500,700,800&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&display=swap"
             rel="stylesheet"
           />
           <link
