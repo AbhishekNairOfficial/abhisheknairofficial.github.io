@@ -46,6 +46,9 @@
     margin-top: 50px;
   }
 }
+.container + a {
+  text-decoration: none;
+}
 
 .resumeButton {
   padding: 15px 40px;
