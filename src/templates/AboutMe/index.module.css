@@ -58,3 +58,6 @@
   color: var(--white);
   cursor: pointer;
 }
+.resumeButton:hover {
+  box-shadow: 2px 3px 6px #00000029;
+}

@@ -15,6 +15,9 @@
   align-items: center;
   position: relative;
 }
+.jobContainer:hover {
+  box-shadow: 2px 3px 6px #00000029;
+}
 
 /* Title */
 .jobContainer > span:first-child {
