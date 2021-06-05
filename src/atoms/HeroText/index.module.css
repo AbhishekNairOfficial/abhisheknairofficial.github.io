@@ -41,6 +41,9 @@
   margin-top: 15px;
   cursor: pointer;
 }
+.button:hover {
+  box-shadow: 2px 3px 6px #00000029;
+}
 
 .button > span {
   margin-right: 10px;
