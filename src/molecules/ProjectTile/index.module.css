@@ -130,12 +130,20 @@
   font-family: Montserrat;
   font-family: var(--font-secondary);
   font-size: 1em;
-  font-weight: 700;
+  font-weight: bold;
   line-height: 1.25;
   color: var(--black);
   text-transform: uppercase;
   margin-top: 30px;
+  padding: 10px 20px;
+  position: relative;
+  left: -20px;
+  display: flex;
+  align-items: center;
 }
 .rightSide > div:last-child > span {
   margin-right: 10px;
+}
+.rightSide > div:last-child:hover {
+  box-shadow: 2px 3px 6px #00000029;
 }
