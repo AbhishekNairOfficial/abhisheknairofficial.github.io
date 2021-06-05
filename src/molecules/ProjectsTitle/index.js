@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import styles from './index.module.css';
 
-const ProjectsTitle = () => {
+const ProjectsTitle = ({ title }) => {
   useEffect(() => {
     const projectTitleElement = document.getElementById('projectsTitle');
     const { top } = projectTitleElement.getBoundingClientRect();
@@ -16,7 +16,7 @@ const ProjectsTitle = () => {
   return (
     <div className={styles.container}>
       <h1 id="projectsTitle" className={styles.title}>
-        Here is some of my best work
+        {title || 'Here is some of my best work'}
       </h1>
     </div>
   );
