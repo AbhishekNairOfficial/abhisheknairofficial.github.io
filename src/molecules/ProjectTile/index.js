@@ -11,7 +11,7 @@ import styles from './index.module.css';
 // const RIGHT_ARROW_ICON = 'projects/button-arrow.svg';
 
 const ProjectTile = ({ project }) => {
-  const { title, image, url, icon, description, client, tags = [] } = project;
+  const { title, image, url, icon, description, client, buttonText, tags = [] } = project;
 
   const { width } = useWindowSize();
 
@@ -34,7 +34,7 @@ const ProjectTile = ({ project }) => {
           width={widthOfTheImage}
           height={heightOfTheImage}
           src={image}
-          objectFit="contain"
+          objectFit="cover"
           alt="project"
         />
       </div>
@@ -61,8 +61,8 @@ const ProjectTile = ({ project }) => {
           </div>
           <div>{description}</div>
           <div onClick={onReadMoreClick}>
-            <span>read full case study</span>
-            <Image alt="arrow" src="/projects/right-arrow.svg" height={8} width={8} />
+            <span>{buttonText || 'read full case study'}</span>
+            <Image alt="arrow" src="/projects/right-arrow.svg" quality={100} height={8} width={8} />
           </div>
         </div>
       </div>

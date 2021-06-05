@@ -97,19 +97,24 @@
   },
   "devProjects": [
     {
-      "description": "I made an application to take notes, using React Native",
-      "icon": "/projects/notesapp-icon.svg",
-      "image": "/projects/notesapp-bg.png",
-      "title": "NotesApp",
+      "description": "As part of learning UI/UX design, I decided to redesign my website and work on it. Soon I completed the design and development. I wondered if there was an easier way for me to deploy. The current method involved merging code into master, and then manual deployment through the CLI.",
+      "icon": "/projects/plain-english.webp",
+      "image": "/projects/firebase-deploy.webp",
+      "title": "Host Your Own React Site with Firebase and Github Actions",
       "type": "development",
-      "url": "https://www.github.com/abhisheknairofficial/notes-app"
+      "client": "JavaScript in plain English",
+      "buttonText": "Read the article here",
+      "url": "https://javascript.plainenglish.io/hosting-your-own-react-site-using-firebase-and-github-actions-8a518255cc64"
     },
     {
-      "description": "Tic Tac Toe game I designed and developed during the lockdown",
+      "description": "In 2020, we saw a long period of time where everyone had to stay home. The WFH culture grew global, and now everything moved online. I decided to get in on the action, by creating a simple game using my skills.",
       "icon": "/projects/tic-tac-toe.svg",
       "image": "/projects/tic-tac-toe.png",
       "title": "Tic Tac Toe",
+      "client": "Hosted on Firebase",
       "type": "development",
+      "buttonText": "Play the game here",
+      "tags": ["javascript", "reactjs", "game design"],
       "url": "https://ttt-backend-42a99.web.app/"
     }
   ],
