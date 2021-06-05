@@ -10,13 +10,13 @@ import styles from './index.module.css';
 
 const ProjectsContainerComponent = () => {
   const {
-    projectsPage: { projects: listOfProjects },
+    projectsPage: { projects: listOfProjects, text },
   } = useContext(FirebaseContext);
 
   return (
     <section>
       <div className={styles.container} id="projectsSectionContainer">
-        <ProjectsTitle />
+        <ProjectsTitle title={text} />
         <div className={styles.projectsContainerDiv}>
           {listOfProjects.map((project, key) => (
             <ProjectTile key={key} project={project} />

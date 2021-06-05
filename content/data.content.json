@@ -74,6 +74,15 @@
         "url": "https://bootcamp.uxdesign.cc/case-study-creating-a-specialised-experience-for-sneaker-heads-5cd00941eb78"
       },
       {
+        "description": "A young developer, I had recently learnt to build a mobile app. This got my mind racing. Creating anything that could run on billions of devices, I was living an earlier dream. So, I set about trying to build something that I would use, that someone else might use. And this is the story of how I created NotesApp.",
+        "icon": "/projects/medium.svg",
+        "image": "/projects/NotesApp.webp",
+        "title": "NotesApp: A minimalistic application to take, and keep track of notes.",
+        "client": "Medium",
+        "tags": ["ui design", "development", "react native"],
+        "url": "https://medium.com/@6foot4/notesapp-b443bb9b2ac9"
+      },
+      {
         "description": "The story of improving UI skills and a test of my durability, with a 100 day challenge. Lorem ipsum historia que tu hiciste, historia por hacer. Porque tu na resiste, tus ganas de vencer. Ya salen las estrellas, mi Viejo chamartin. De llejos y de cerca, nos trae hasta que",
         "icon": "/projects/dribbble.svg",
         "image": "/projects/dailyui.webp",
@@ -83,7 +92,7 @@
         "url": "https://dribbble.com/AbhishekNairOfficial"
       }
     ],
-    "text": "Here are some of the projects I've done",
+    "text": "Here is some of my work",
     "title": "Projects:"
   },
   "devProjects": [
