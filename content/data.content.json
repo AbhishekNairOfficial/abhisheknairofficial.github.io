@@ -65,9 +65,9 @@
   "projectsPage": {
     "projects": [
       {
-        "description": "Taking an idea from conception to finalised app design in 14 weeks, complete with iOS and android mock ups. Lorem ipsum historia que tu hiciste, historia por hacer. Porque tu na resiste, tus ganas de vencer. Ya salen las estrellas, mi Viejo chamartin. De llejos y de cerca, nos trae hasta que",
+        "description": "A journey from initial conception to finalised app design in 14 weeks. It's complete with iOS and android mock ups, ready for handover. This project was a result of the UI/UX course I attended at DesignBoat. It helped me get a firm grasp of the entire product life cycle.",
         "icon": "/projects/designboat.webp",
-        "image": "/projects/cleansneaker.png",
+        "image": "/projects/cleansneaker.webp",
         "title": "Case Study: Creating a specialized experience for sneaker-heads",
         "client": "designboat",
         "tags": ["research", "visual design"],
@@ -83,13 +83,13 @@
         "url": "https://medium.com/@6foot4/notesapp-b443bb9b2ac9"
       },
       {
-        "description": "The story of improving UI skills and a test of my durability, with a 100 day challenge. Lorem ipsum historia que tu hiciste, historia por hacer. Porque tu na resiste, tus ganas de vencer. Ya salen las estrellas, mi Viejo chamartin. De llejos y de cerca, nos trae hasta que",
+        "description": "The story of improving UI skills and a test of my durability, with a 100 day challenge. I started the challenge a beginner to the world of design tools and online resources. By the time I finished, they were in the palm of my hand.",
         "icon": "/projects/dribbble.svg",
-        "image": "/projects/dailyui.webp",
+        "image": "/projects/daily-ui.webp",
         "title": "Daily UI Challenge: 100 days, 100 problem statements, 100 screens",
         "client": "Dribbble",
         "tags": ["ui design", "daily challenge"],
-        "url": "https://dribbble.com/AbhishekNairOfficial"
+        "url": "https://dribbble.com/AbhishekNairOfficial/collections/2732240-Daily-UI"
       }
     ],
     "text": "Here is some of my work",
