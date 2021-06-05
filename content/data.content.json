@@ -118,18 +118,7 @@
       "url": "https://ttt-backend-42a99.web.app/"
     }
   ],
-  "testimonials": [
-    {
-      "name": "Lavanya Gopal",
-      "role": "Dealt with Abhishek's bullshit for months",
-      "message": "Abhishek has been lorem ipsum what a beautiful thanks"
-    },
-    {
-      "name": "Lavanya Gopal",
-      "role": "Dealt with Abhishek's bullshit for months",
-      "message": "Abhishek has been lorem ipsum what a beautiful thanks"
-    }
-  ],
+  "testimonials": [],
   "socialProfiles": [
     {
       "icon": "behance",

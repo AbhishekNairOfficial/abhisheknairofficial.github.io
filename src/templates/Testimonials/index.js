@@ -14,6 +14,10 @@ const Testimonials = () => {
   const widthOfTheImage = ((width - 13 * 16) / 14) * 2 + 16;
   const heightOfTheImage = (widthOfTheImage * 8) / 3;
 
+  if (!testimonials.length) {
+    return <></>;
+  }
+
   return (
     <section className={styles.container}>
       <div className={styles.title}>Testimonials</div>
