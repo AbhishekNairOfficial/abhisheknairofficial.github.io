@@ -30,9 +30,11 @@ const ProjectTile = ({ project }) => {
       <div className={styles.imageContainer}>
         <Image
           quality={100}
+          loading="eager"
           width={widthOfTheImage}
           height={heightOfTheImage}
           src={image}
+          objectFit="contain"
           alt="project"
         />
       </div>
