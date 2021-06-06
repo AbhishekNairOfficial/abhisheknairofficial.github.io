@@ -1,62 +1,36 @@
+/* eslint-disable react/no-danger */
 import React, { useContext } from 'react';
-import styled from 'styled-components';
+import Image from 'next/image';
 
 import FirebaseContext from 'config/context';
 
-export const Text = styled.div`
-  color: ${props => props.theme.palette.white[0]};
-  font-family: ${props => props.theme.fonts.primary};
-`;
-
-export const HelloText = styled.h1`
-  font-size: 3em;
-  line-height: 1.6em;
-  margin: 0 0 20px 0;
-  font-weight: 100;
-  @media only screen and (max-width: 600px) {
-    font-size: 1.8em;
-    margin: 0 0 15px 0;
-    line-height: 1.2em;
-  }
-`;
-
-export const NameText = styled.h2`
-  font-size: 8em;
-  margin: 0;
-  font-weight: 600;
-  & > B {
-    font-family: ${props => props.theme.fonts.bold};
-  }
-  @media only screen and (max-width: 600px) {
-    font-size: 2.5em;
-    line-height: 1.5em;
-  }
-`;
-
-export const DesignationText = styled.h3`
-  margin: 0;
-  font-size: 1.5em;
-  font-weight: 100;
-  font-family: ${props => props.theme.fonts.primary};
-  & > YellowText {
-    color: ${props => props.theme.palette.secondary[0]};
-  }
-  @media only screen and (max-width: 600px) {
-    font-size: 1.3em;
-    line-height: 1.3em;
-  }
-`;
+import { greetingText } from 'functions';
+import styles from './index.module.css';
 
 const HeroText = () => {
   const { landingPage } = useContext(FirebaseContext);
-  const { title, quote, firstLine } = landingPage;
+  const { paraOne, paraTwo } = landingPage;
+
+  const onButtonClick = () => {
+    document.getElementById('AboutMeSection').scrollIntoView({ behavior: 'auto', block: 'start' });
+  };
 
   return (
-    <Text>
-      <HelloText>{firstLine}</HelloText>
-      <NameText dangerouslySetInnerHTML={{ __html: title }} />
-      <DesignationText dangerouslySetInnerHTML={{ __html: quote }} />
-    </Text>
+    <div className={styles.text}>
+      <h1 className={styles.helloText}>{greetingText()}</h1>
+      <p>{paraOne}</p>
+      <p>{paraTwo}</p>
+      <div
+        tabIndex="0"
+        aria-hidden="true"
+        role="button"
+        onClick={onButtonClick}
+        className={styles.button}
+      >
+        <span>More about me</span>
+        <Image className="down-arrow" src="/banner/down-arrow.svg" height={16} width={11} />
+      </div>
+    </div>
   );
 };
 

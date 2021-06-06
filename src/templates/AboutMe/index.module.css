@@ -1,0 +1,66 @@
+.title {
+  font-size: 2.5em;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+}
+
+.leftSide {
+  width: calc(var(--grid-width-four) + var(--grid-width-one) + 8px);
+}
+@media only screen and (max-width: 600px) {
+  .leftSide {
+    width: 100%;
+  }
+}
+
+.aboutMeText {
+  text-align: left;
+  font-family: var(--font-secondary);
+  font-size: 1em;
+  line-height: 1.6;
+  color: var(--black);
+  white-space: pre-wrap;
+  margin-bottom: 30px;
+}
+.aboutMeText > b {
+  text-transform: capitalize;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+}
+.aboutMeText:nth-child(2) {
+  line-height: 2.2;
+}
+
+.profilePicture {
+  border-radius: 500px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column-reverse;
+    margin-top: 50px;
+  }
+}
+.container + a {
+  text-decoration: none;
+}
+
+.resumeButton {
+  padding: 15px 40px;
+  background-color: var(--primary);
+  display: inline-flex;
+  text-transform: uppercase;
+  font-family: var(--font-secondary);
+  font-size: 1em;
+  font-weight: 500;
+  color: var(--white);
+  cursor: pointer;
+}
+.resumeButton:hover {
+  box-shadow: 2px 3px 6px #00000029;
+}

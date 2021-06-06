@@ -1,0 +1,23 @@
+.container {
+  position: relative;
+  font-family: var(--font-primary);
+  padding: 0 var(--horizontal-padding);
+  margin-bottom: 150px;
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 30px;
+  }
+}
+
+.projectsContainerDiv {
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 100px;
+}
+@media only screen and (max-width: 600px) {
+  .projectsContainerDiv {
+    margin-top: 30px;
+    grid-template-columns: 100%;
+  }
+}

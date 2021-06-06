@@ -1,30 +1,34 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 
-const Picture = styled.picture`
-  margin-bottom: 15px;
-  &:last-child {
-    margin-bottom: 0px;
-  }
-`;
+import useWindowResize from 'config/useWindowResize';
 
-const ImageContainer = styled.img`
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  width: calc((100vw - 6em - 30px) / 3);
-  @media only screen and (max-width: 600px) {
-    width: calc(100vw - 60px);
-  }
-`;
+import styles from './index.module.css';
 
 const ImageComponent = ({ src }) => {
+  const { width } = useWindowResize();
+  const [height, setHeight] = useState(0);
+
+  const widthOfTheElement = (width - 6 * 16 - 30) / 3;
+
+  useEffect(() => {
+    const imageElement = document.getElementById(src);
+    setHeight((widthOfTheElement * imageElement.naturalHeight) / imageElement.naturalWidth);
+  }, [widthOfTheElement]);
+
   return (
-    <Picture>
+    <picture className={styles.picture}>
       <source srcSet={`${src}?webp`} type="image/webp" />
       <source srcSet={src} type="image/jpeg" />
-      <ImageContainer alt="about me" src={src} />
-    </Picture>
+      <Image
+        id={src}
+        width={widthOfTheElement}
+        height={height}
+        className={styles.imageContainer}
+        alt="about me"
+        src={src}
+      />
+    </picture>
   );
 };
 

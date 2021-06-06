@@ -1,0 +1,17 @@
+.linkComponent {
+  font-size: 1.2em;
+  text-decoration: none;
+  font-family: var(--font-primary);
+  color: var(--white-two);
+  margin-left: 2em;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+  .hide {
+    display: none;
+  }
+}
+.linkComponent:hover {
+  opacity: 0.6;
+}

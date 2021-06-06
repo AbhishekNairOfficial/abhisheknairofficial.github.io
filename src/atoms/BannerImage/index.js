@@ -1,47 +1,30 @@
 import React from 'react';
-import styled from 'styled-components';
-
 import Image from 'next/image';
 
-export const Picture = styled.picture`
-  align-self: flex-end;
-  background-image: transparent url;
-  @media only screen and (max-width: 600px) {
-    margin-top: 10vh;
-  }
-`;
+import useWindowSize from 'config/useWindowResize';
 
-export const ImageContainer = styled.div`
-  & img {
-    border-radius: 250px;
-    height: 300px;
-    @media only screen and (max-width: 600px) {
-      width: 80%;
-      height: auto;
-    }
-  }
-`;
-
-export const StyledSkeleton = styled.div`
-  align-self: flex-end;
-  @media only screen and (max-width: 600px) {
-    margin-top: 10vh;
-  }
-`;
+import styles from './index.module.css';
 
 const BannerImage = () => {
   // Hooks
-  const imageUrl = '/banner/banner-image.jpg?resize&size=300';
+  const imageUrl = '/banner/banner-image.svg';
+
+  const { width } = useWindowSize();
+
+  const widthOfTheImage = ((width - 13 * 16) / 14) * 3 + 16 * 2;
 
   return (
-    <Picture>
-      {/* <source srcSet={`${imageUrl}&webp`} type="image/webp" />
-       <source srcSet={imageUrl} type="image/jpeg" />
-    <Image src={imageUrl} alt="Banner" /> */}
-      <ImageContainer>
-        <Image height={300} width={300} src={imageUrl} />
-      </ImageContainer>
-    </Picture>
+    <picture className={styles.picture}>
+      <div className={styles.ImageContainer}>
+        <Image
+          loading="eager"
+          alt="banner"
+          width={widthOfTheImage}
+          height={widthOfTheImage}
+          src={imageUrl}
+        />
+      </div>
+    </picture>
   );
 };
 

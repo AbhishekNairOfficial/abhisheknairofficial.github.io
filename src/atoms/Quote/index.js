@@ -1,34 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const Block = styled.div`
-  color: ${props => props.theme.palette.black[0]};
-  font-family: ${props => props.theme.fonts.italic};
-  letter-spacing: 0px;
-  text-align: ${props => (props.odd ? 'left' : 'right')};
-  @media only screen and (max-width: 600px) {
-    line-height: 2em;
-    margin-bottom: 10px;
-    text-align: left;
-  }
-`;
-
-const Quote = styled.span`
-  font-size: 3em;
-`;
-
-const Text = styled.span`
-  font-size: 1em;
-`;
+import styles from './index.module.css';
 
 const QuoteComponent = ({ text, index }) => {
   const odd = index % 2 === 0; // index is one lesser than count
   return (
-    <Block odd={odd}>
-      <Quote>&#34;</Quote>
-      <Text>{text}</Text>
-      <Quote>&#34;</Quote>
-    </Block>
+    <div className={[styles.block, odd && styles.odd]}>
+      <span className={styles.quote}>&#34;</span>
+      <span className={styles.text}>{text}</span>
+      <span className={styles.quote}>&#34;</span>
+    </div>
   );
 };
 

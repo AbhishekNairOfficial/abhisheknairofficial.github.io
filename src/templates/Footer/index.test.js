@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 
 import theme from 'themes';
 import FirebaseContext from 'config/context';
-import Footer, { Container, LeftSideText } from '.';
+import Footer from '.';
 
 describe('<Footer />', () => {
   const { container } = render(
@@ -12,30 +12,6 @@ describe('<Footer />', () => {
       <FirebaseContext.Provider value={{ socialProfile: [] }}>
         <Footer />
       </FirebaseContext.Provider>
-    </ThemeProvider>
-  );
-
-  it('should match the snapshot', () => {
-    expect(container).toMatchSnapshot();
-  });
-});
-
-describe('<Container />', () => {
-  const { container } = render(
-    <ThemeProvider theme={theme}>
-      <Container />
-    </ThemeProvider>
-  );
-
-  it('should match the snapshot', () => {
-    expect(container).toMatchSnapshot();
-  });
-});
-
-describe('<LeftSideText />', () => {
-  const { container } = render(
-    <ThemeProvider theme={theme}>
-      <LeftSideText />
     </ThemeProvider>
   );
 

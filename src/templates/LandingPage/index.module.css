@@ -1,0 +1,26 @@
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 200px;
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    box-sizing: border-box;
+    margin-bottom: 300px;
+  }
+}
+
+.mainPart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex: 1;
+  padding: 0 var(--horizontal-padding);
+}
+@media only screen and (max-width: 600px) {
+  .mainPart {
+    padding: 30px;
+    padding-top: 10vh;
+  }
+}
