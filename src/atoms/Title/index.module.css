@@ -1,0 +1,29 @@
+.spartanTitle {
+  font-family: var(--font-pre);
+  display: inline;
+  display: inline;
+  font-weight: bold;
+  color: var(--white-two);
+  font-size: 2em;
+}
+
+.large {
+  font-size: 5em;
+}
+
+.productSansTitle {
+  display: inline;
+  font-family: var(--primary);
+}
+
+@media only screen and (max-width: 600px) {
+  .spartanTitle {
+    font-size: 1.4em;
+  }
+  .large {
+    font-size: 3em;
+  }
+  .productSansTitle {
+    font-size: 1em;
+  }
+}

@@ -1,18 +1,25 @@
 {
   "aboutMe": {
-    "images": [
-      "/aboutMe/image-1.jpeg",
-      "/aboutMe/image-2.jpg",
-      "/aboutMe/image-3.jpg",
-      "/aboutMe/image-4.jpg",
-      "/aboutMe/image-5.jpg",
-      "/aboutMe/image-6.jpg",
-      "/aboutMe/image-7.jpg"
-    ],
-    "text": "I’m <B>Abhishek</B>, a 25 year old <Y>designer</Y> with a frontend development background. I’ve always been intrigued by user experiences, and how to make them better and more intuitive. This led me to start learning UI design, and identify common problems in everyday UI. Currently, I work as a developer at <B>PiktorLabs</B>, where I bring to life some amazing interfaces both on web and mobile."
+    "image": "/aboutMe/profile-picture.jpg",
+    "paraOne": "If you're a recruiter who's just looking for keywords to decide whether I fit the bill, here you go:",
+    "paraTwo": "I brainstorm in <b>Miro</b>.\nI wireframe and design with <b>Adobe XD | Figma.</b>\nI develop websites in <b>React (CRA, NextJS)</b>\nI also develop apps with <b>React Native</b> (and a lot of patience).\nI jot down my thoughts on <b>NotesApp</b> (more on that below).\nI collaborate over <b>Slack</b> and  <b>Discord.</b>",
+    "paraThree": "For the rest of you: I help create products that focus on user experience and performance. Working in the front-end side of things and getting to interact with a lot of designers sparked an interest in me towards designing, and that's how I began my journey into this world of personas and wireframes.\nI've had the opportunity to work on a variety of UI/UX projects both as a developer and designer. This unique viewpoint helps me bridge the gap between both the teams, as well as speed up the handover process.\nWhen I'm not working, you can find me watching football, playing football, or gaming. Football games of course. I also tend to my garden, tinker with the PC I built myself, and if I have some time left I write at Plain English and Bootcamp. And did I mention I like football?",
+    "careerGraph": [
+      {
+        "name": "Moonraft Innovation Labs",
+        "date": "2017-2019"
+      },
+      {
+        "name": "Piktorlabs",
+        "date": "2019-Present"
+      },
+      {
+        "name": "Maybe you?"
+      }
+    ]
   },
   "landingPage": {
-    "firstLine": "Helooo!",
+    "firstLine": "Good day to you!",
     "links": [
       {
         "icon": "microsoft",
@@ -45,58 +52,73 @@
         "url": "https://twitter.com/nairgalactico21"
       }
     ],
+    "paraOne": "I’m Abhishek, a developer / designer based out of Bangalore, India. Currently, I work as a Product Engineer at Piktorlabs.",
+    "paraTwo": "I enjoy contributing to user experience and research and that's where I look to improve my skills. I also enjoy creating interfaces, as well as bringing them to life, on web, android and iOS.",
     "quote": "<YellowText>designer</YellowText> | front-end developer",
     "title": "I'm <B>Abhishek</B>"
   },
   "letsTalk": {
     "email": "abhisheknr4@gmail.com",
-    "paragraph": "Are any of these thoughts on your mind right now? Then you have come to the right place! Drop me an email, or hmu on any of my social profiles, and let’s create something exciting!",
-    "quotes": [
-      "I want someone to build this website for me.",
-      "Wow this Abhishek dude has a website, let me see what he’s done",
-      "Wow, what a clean website. How did you make this?",
-      "I want to hire you as my new UX designer and pay you a ridiculous amount of cash."
-    ]
+    "paragraph": "If you’d like to discuss a freelance project, a full time job opportunity, or you would just like to talk about how I went about creating this site, feel free to hit me up below :)",
+    "image": "/letsTalk/contact-image.svg"
   },
   "projectsPage": {
     "projects": [
       {
-        "description": "I made an application to take notes, using React Native",
-        "icon": "projects/notesapp-icon.svg",
-        "image": "projects/notesapp-bg.png",
-        "title": "NotesApp",
-        "type": "development",
-        "url": "https://www.github.com/abhisheknairofficial/notes-app"
+        "description": "A journey from initial conception to finalised app design in 14 weeks. It's complete with iOS and android mock ups, ready for handover. This project was a result of the UI/UX course I attended at DesignBoat. It helped me get a firm grasp of the entire product life cycle.",
+        "icon": "/projects/designboat.webp",
+        "image": "/projects/cleansneaker.webp",
+        "title": "Case Study: Creating a specialized experience for sneaker-heads",
+        "client": "designboat",
+        "tags": ["research", "visual design"],
+        "url": "https://bootcamp.uxdesign.cc/case-study-creating-a-specialised-experience-for-sneaker-heads-5cd00941eb78"
       },
       {
-        "description": "Case study from design class",
-        "file": true,
-        "icon": "projects/cleansneaker.svg",
-        "image": "projects/cleansneaker.png",
-        "title": "cleansneaker",
-        "type": "design",
-        "url": "/case-study/cleansneaker"
+        "description": "A young developer, I had recently learnt to build a mobile app. This got my mind racing. Creating anything that could run on billions of devices, I was living an earlier dream. So, I set about trying to build something that I would use, that someone else might use. And this is the story of how I created NotesApp.",
+        "icon": "/projects/medium.svg",
+        "image": "/projects/NotesApp.webp",
+        "title": "NotesApp: A minimalistic application to take, and keep track of notes.",
+        "client": "Medium",
+        "tags": ["ui design", "development", "react native"],
+        "url": "https://medium.com/@6foot4/notesapp-b443bb9b2ac9"
       },
       {
-        "description": "The 100 days of UI challenge I completed",
-        "icon": "projects/dribbble.svg",
-        "image": "projects/dailyui-bg.png",
-        "title": "Daily UI",
-        "type": "ui",
-        "url": "https://dribbble.com/AbhishekNairOfficial"
-      },
-      {
-        "description": "Tic Tac Toe game I designed and developed during the lockdown",
-        "icon": "projects/tic-tac-toe.svg",
-        "image": "projects/tic-tac-toe.png",
-        "title": "Tic Tac Toe",
-        "type": "development",
-        "url": "https://ttt-backend-42a99.web.app/"
+        "description": "The story of improving UI skills and a test of my durability, with a 100 day challenge. I started the challenge a beginner to the world of design tools and online resources. By the time I finished, they were in the palm of my hand.",
+        "icon": "/projects/dribbble.svg",
+        "image": "/projects/daily-ui.webp",
+        "title": "Daily UI Challenge: 100 days, 100 problem statements, 100 screens",
+        "client": "Dribbble",
+        "tags": ["ui design", "daily challenge"],
+        "url": "https://dribbble.com/AbhishekNairOfficial/collections/2732240-Daily-UI"
       }
     ],
-    "text": "Here are some of the projects I've done",
+    "text": "Here is some of my work",
     "title": "Projects:"
   },
+  "devProjects": [
+    {
+      "description": "As part of learning UI/UX design, I decided to redesign my website and work on it. Soon I completed the design and development. I wondered if there was an easier way for me to deploy. The current method involved merging code into master, and then manual deployment through the CLI.",
+      "icon": "/projects/plain-english.webp",
+      "image": "/projects/firebase-deploy.webp",
+      "title": "Host Your Own React Site with Firebase and Github Actions",
+      "type": "development",
+      "client": "JavaScript in plain English",
+      "buttonText": "Read the article here",
+      "url": "https://javascript.plainenglish.io/hosting-your-own-react-site-using-firebase-and-github-actions-8a518255cc64"
+    },
+    {
+      "description": "In 2020, we saw a long period of time where everyone had to stay home. The WFH culture grew global, and now everything moved online. I decided to get in on the action, by creating a simple game using my skills.",
+      "icon": "/projects/tic-tac-toe.svg",
+      "image": "/projects/tic-tac-toe.png",
+      "title": "Tic Tac Toe",
+      "client": "Hosted on Firebase",
+      "type": "development",
+      "buttonText": "Play the game here",
+      "tags": ["javascript", "reactjs", "game design"],
+      "url": "https://ttt-backend-42a99.web.app/"
+    }
+  ],
+  "testimonials": [],
   "socialProfiles": [
     {
       "icon": "behance",
@@ -117,10 +139,6 @@
     {
       "icon": "github",
       "link": "https://github.com/abhisheknairofficial"
-    },
-    {
-      "icon": "twitter",
-      "link": "https://twitter.com/NairGalactico21"
     }
   ]
 }

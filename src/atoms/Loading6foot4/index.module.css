@@ -1,0 +1,14 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transition: transform 0.4s ease-in-out;
+}
+
+.loading {
+  transform: translateY(-100vh);
+}

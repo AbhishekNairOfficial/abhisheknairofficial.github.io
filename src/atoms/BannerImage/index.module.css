@@ -1,0 +1,19 @@
+.picture {
+  background-image: transparent url;
+}
+@media only screen and (max-width: 600px) {
+  .picture {
+    display: none;
+  }
+}
+
+.imageContainer {
+  margin-top: 10vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .bannerImage {
+    width: 80%;
+    height: auto;
+  }
+}

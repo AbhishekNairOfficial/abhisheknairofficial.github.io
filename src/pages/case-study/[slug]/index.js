@@ -1,17 +1,24 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
+import Head from 'next/head';
 
+import SixFootFour from 'atoms/6foot4';
 import { getAllPosts, getPostBySlug, markdownToHtml } from 'config/api';
+
+import styles from './index.module.css';
 
 const CaseStudy = props => {
   const { post } = props;
-  // debugger;
-  // const myMarkdownData = useMarkDown(post.content);
 
   return (
-    <div>
-      <div dangerouslySetInnerHTML={{ __html: post.content }} />
-    </div>
+    <>
+      <Head>
+        <title>{post.slug}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <SixFootFour />
+      <div className={styles.container} dangerouslySetInnerHTML={{ __html: post.content }} />
+    </>
   );
 };
 

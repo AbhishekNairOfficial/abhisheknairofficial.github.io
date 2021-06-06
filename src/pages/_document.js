@@ -37,14 +37,28 @@ class MyDocument extends Document {
           <meta name="description" content="Hi, I'm abhishek. Welcome to my portfolio site." />
           <link rel="apple-touch-icon" href="banner/6foot4-logo.png" />
           <link rel="manifest" href="manifest.json" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Spartan&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css?family=Product+Sans:300,300i,800"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
-        <script async src="/__/firebase/7.5.0/firebase-app.js" />
-        <script async src="/__/firebase/7.5.0/firebase-analytics.js" />
-        <script async src="/__/firebase/init.js" />
       </Html>
     );
   }
