@@ -12,7 +12,7 @@ import styles from './index.module.css';
 
 const AboutMe = () => {
   const {
-    aboutMe: { image, paraOne, paraTwo, paraThree },
+    aboutMe: { image, paraOne, paraTwo, paraThree, resumeLink },
   } = useContext(FirebaseContext);
 
   const { width } = useWindowSize();
@@ -41,7 +41,7 @@ const AboutMe = () => {
             height={widthOfTheImage}
           />
         </div>
-        <a href="/resume.pdf" target="_blank" rel="noreferrer">
+        <a href={resumeLink} target="_blank" rel="noreferrer">
           <div className={styles.resumeButton}>download my resume</div>
         </a>
         {width < 600 || <CareerGraph />}
