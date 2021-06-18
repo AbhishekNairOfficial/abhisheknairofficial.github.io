@@ -1,7 +1,7 @@
 const greetingText = () => {
   const currentTime = new Date().getHours();
   if (currentTime > 4 && currentTime <= 7) {
-    return "What are you, a rooster? Go back to sleep!";
+    return 'What are you, a rooster? Go back to sleep!';
   }
   if (currentTime > 7 && currentTime <= 12) {
     return 'Good morning to you!';
