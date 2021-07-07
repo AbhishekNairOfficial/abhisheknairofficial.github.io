@@ -119,7 +119,13 @@
       "url": "https://ttt-backend-42a99.web.app/"
     }
   ],
-  "testimonials": [],
+  "testimonials": [
+    {
+      "name": "The IF Mag team",
+      "role": "I helped redesign and develop their blog",
+      "message": "Would I recommend Abhishek to my friends? Definitely!  Abhishek is a complete package when it comes to design and development!"
+    }
+  ],
   "socialProfiles": [
     {
       "icon": "behance",
