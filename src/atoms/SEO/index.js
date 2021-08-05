@@ -3,8 +3,10 @@ import React from 'react';
 
 const content = {
   title: "Abhishek P's portfolio website",
-  description: 'Hey this is Abhishek. Welcome to my portfolio site!',
-  image: '../../public/aboutMe/profile-picture.webp',
+  description:
+    'Hey this is Abhishek. Welcome to my portfolio site! You can find more about me and my work here.',
+  image:
+    'https://www.abhisheknairofficial.com/_next/image?url=/aboutMe/profile-picture.jpg&w=384&q=100',
   url: 'www.abhisheknairofficial.com',
 };
 
@@ -21,6 +23,7 @@ const SEO = () => (
     <meta name="keywords" content="design, development, coding" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={content.title} />
+    <meta name="twitter:description" content={content.description} />
     <meta name="twitter:creator" content="@nairgalactico21" />
     <meta name="twitter:image" content={content.image} />
   </Head>
