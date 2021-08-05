@@ -6,7 +6,7 @@ const content = {
   description:
     'Hey this is Abhishek. Welcome to my portfolio site! You can find more about me and my work here.',
   image:
-    'https://www.abhisheknairofficial.com/_next/image?url=/aboutMe/profile-picture.jpg&w=384&q=100',
+    'https://www.abhisheknairofficial.com/_next/image?url=/aboutMe/profile-picture.jpg&w=1200&q=100',
   url: 'www.abhisheknairofficial.com',
 };
 
