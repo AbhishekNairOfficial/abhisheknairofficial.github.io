@@ -66,6 +66,15 @@
   "projectsPage": {
     "projects": [
       {
+        "description": "Along with a friend of mine, I took up a project to redesign and develop the Intersectional feminist magazine website. It gave me the change to work along a talented architect turned designer, and use my interdisciplinary skills to reduce the friction between design and development.",
+        "icon": "/projects/ifmag-logo.webp",
+        "image": "/projects/ifmag.webp",
+        "title": "Case Study: Redesigning the website for ‘The Intersectional Feminist’",
+        "client": "The Intersectional Feminist",
+        "tags": ["research", "visual design", "development"],
+        "url": "https://medium.muz.li/case-study-redesigning-the-website-for-the-intersectional-feminist-8a6c9900e675"
+      },
+      {
         "description": "A journey from initial conception to finalised app design in 14 weeks. It's complete with iOS and android mock ups, ready for handover. This project was a result of the UI/UX course I attended at DesignBoat. It helped me get a firm grasp of the entire product life cycle.",
         "icon": "/projects/designboat.webp",
         "image": "/projects/cleansneaker.webp",
