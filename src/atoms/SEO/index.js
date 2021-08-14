@@ -10,6 +10,15 @@ const content = {
   url: 'www.abhisheknairofficial.com',
 };
 
+const ldJson = {
+  "@context": "http://schema.org/",
+  "type": "Person",
+  "jobTitle": "Designer | Developer",
+  "name": "Abhishek P",
+  "telephone": "+91 9986551570",
+  "url": "http://www.abhisheknairofficial.com"
+}
+
 const SEO = () => (
   <Head>
     <title>Abhishek P</title>
@@ -19,13 +28,17 @@ const SEO = () => (
     <meta property="og:title" content={content.title} />
     <meta property="og:description" content={content.description} />
     <meta property="og:image" content={content.image} />
-    <meta name="description" content={content.title} />
+    <meta name="description" content={content.description} />
     <meta name="keywords" content="design, development, coding" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={content.title} />
     <meta name="twitter:description" content={content.description} />
     <meta name="twitter:creator" content="@nairgalactico21" />
     <meta name="twitter:image" content={content.image} />
+    <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJson) }}
+  />
   </Head>
 );
 
