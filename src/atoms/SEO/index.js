@@ -35,10 +35,7 @@ const SEO = () => (
     <meta name="twitter:description" content={content.description} />
     <meta name="twitter:creator" content="@nairgalactico21" />
     <meta name="twitter:image" content={content.image} />
-    <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJson) }}
-  />
+    <script type="application/ld+json">{JSON.stringify(ldJson)}</script>
   </Head>
 );
 
