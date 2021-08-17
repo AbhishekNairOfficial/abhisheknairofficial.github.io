@@ -5,7 +5,7 @@
   "dependencies": {
     "gray-matter": "^4.0.2",
     "jest": "^26.6.3",
-    "next": "^10.1.2",
+    "next": "^11.1.0",
     "preact": "^10.5.14",
     "preact-compat": "^3.19.0",
     "react": "^17.0.2",
