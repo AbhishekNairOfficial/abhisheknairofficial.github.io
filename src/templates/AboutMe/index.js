@@ -12,7 +12,7 @@ import styles from './index.module.css';
 
 const AboutMe = () => {
   const {
-    aboutMe: { image, paraOne, paraTwo, paraThree, resumeLink },
+    aboutMe: { image, imageBlur, paraOne, paraTwo, paraThree, resumeLink },
   } = useContext(FirebaseContext);
 
   const { width } = useWindowSize();
@@ -36,6 +36,8 @@ const AboutMe = () => {
             className={styles.profilePicture}
             quality={100}
             src={image}
+            placeholder="blur"
+            blurDataURL={imageBlur}
             alt="profile picture"
             width={widthOfTheImage}
             height={widthOfTheImage}
