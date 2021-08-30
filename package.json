@@ -17,6 +17,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "export": "next export",
     "predeploy": "yarn run build",
@@ -54,6 +55,7 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^3.0.0",
     "husky": "^4.2.5",
+    "next-sitemap": "^1.6.164",
     "react-test-renderer": "^16.13.1"
   },
   "husky": {
