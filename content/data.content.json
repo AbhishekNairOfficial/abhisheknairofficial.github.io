@@ -2,23 +2,27 @@
   "aboutMe": {
     "image": "/aboutMe/profile-picture.jpg",
     "imageBlur": "/aboutMe/profile-picture-blur.jpg",
-    "paraOne": "If you're a recruiter who's just looking for keywords to decide whether I fit the bill, here you go:",
-    "paraTwo": "I brainstorm in <b>Miro</b>.\nI wireframe and design with <b>Adobe XD | Figma.</b>\nI develop websites in <b>React (CRA, NextJS)</b>\nI also develop apps with <b>React Native</b> (and a lot of patience).\nI jot down my thoughts on <b>NotesApp</b> (more on that below).\nI collaborate over <b>Slack</b> and  <b>Discord.</b>",
-    "paraThree": "For the rest of you: I help create products that focus on user experience and performance. Working in the front-end side of things and getting to interact with a lot of designers sparked an interest in me towards designing, and that's how I began my journey into this world of personas and wireframes.\nI've had the opportunity to work on a variety of UI/UX projects both as a developer and designer. This unique viewpoint helps me bridge the gap between both the teams, as well as speed up the handover process.\nWhen I'm not working, you can find me watching football, playing football, or gaming. Football games of course. I also tend to my garden, tinker with the PC I built myself, and if I have some time left I write at Plain English and Bootcamp. And did I mention I like football?",
+    "paraOne": "Hey, if you're a recruiter just scanning for keywords, I got you covered.",
+    "paraTwo": "When it comes to brainstorming, you'll find me using <b>Miro</b> to map out my ideas.\nFor wireframing and design, I'm a big fan of both <b>Adobe XD</b> and <b>Figma</b>.\nWhen it's time to develop websites, I rely on <b>React</b> and its frameworks like NextJS.\nI also have experience in developing mobile apps using <b>React Native</b>.\nTo keep my thoughts organized , I use <b>NotesApp</b> (which I actually built myself!).\nAnd of course, I collaborate with my team using tools like <b>Slack</b> and <b>Discord</b>.",
+    "paraThree": "For the rest of you: I'm passionate about creating products that focus on user experience and performance. I love working on the front-end of things and collaborating with designers. That's how I discovered my love for wireframes and personas, and started my journey into the world of UI/UX.\nI've been lucky enough to work on a variety of UI/UX projects as both a developer and a designer. Having experience on both sides of the process helps me bridge the gap between teams and make the handover process smoother.\nWhen I'm not working, you can find me doing a few things. I love watching football, playing football, and even gaming (mostly football games, of course). I also like to tend to my garden, tinker with my PC (which I built myself!), and write for Plain English and Bootcamp.\nAnd did I mention football? It's kind of my thing.",
     "careerGraph": [
       {
         "name": "Moonraft Innovation Labs",
         "date": "2017-2019"
       },
       {
-        "name": "Piktorlabs",
-        "date": "2019-Present"
+        "name": "Piktorlabs India",
+        "date": "2019-2022"
+      },
+      {
+        "name": "UST",
+        "date": "2023-Present"
       },
       {
         "name": "Maybe you?"
       }
     ],
-    "resumeLink": "https://drive.google.com/file/d/101G96sxpYeWF4pJRfeB_uHBAN4Ghjg95/view"
+    "resumeLink": "https://drive.google.com/file/d/1klz65Dy8oZEWaxDepYZymZRQCGSjI_AC/view?usp=sharing"
   },
   "landingPage": {
     "firstLine": "Good day to you!",
@@ -54,20 +58,20 @@
         "url": "https://twitter.com/nairgalactico21"
       }
     ],
-    "paraOne": "I’m Abhishek, a designer / developer based out of Seattle WA. Currently, I work as a Senior Design Technologist at Piktorlabs.",
-    "paraTwo": "I enjoy contributing to user experience and research and that's where I look to improve my skills. I also enjoy creating interfaces, as well as bringing them to life, on web, android and iOS.",
+    "paraOne": "Hello, my name is Abhishek, and I'm a developer based in Seattle, WA. With over 5 years of experience in the industry, I currently hold the position of Lead Software Engineer at UST.",
+    "paraTwo": "My strength lies in contributing to the user experience and frontend aspects of software development. I believe in constantly honing my skills in these areas to deliver exceptional products that meet needs and exceed expectations.",
     "quote": "<YellowText>designer</YellowText> | front-end developer",
     "title": "I'm <B>Abhishek</B>"
   },
   "letsTalk": {
     "email": "abhisheknr4@gmail.com",
-    "paragraph": "If you’d like to discuss a freelance project, a full time job opportunity, or you would just like to talk about how I went about creating this site, feel free to hit me up below :)",
+    "paragraph": "If you want to chat about a freelance project, job opportunity, or even just learn more about how I created this site, don't hesitate to reach out to me below!",
     "image": "/letsTalk/contact-image.svg"
   },
   "projectsPage": {
     "projects": [
       {
-        "description": "Along with a friend of mine, I took up a project to redesign and develop the Intersectional feminist magazine website. It gave me the change to work along a talented architect turned designer, and use my interdisciplinary skills to reduce the friction between design and development.",
+        "description": "Collaborating with a friend, I recently led the redesign and development if the IF magazine website. Working alongside a talented architect-turned-designer, I leveraged my interdisciplinary skills to bridge the gap between design and development and create a seamless user experience. Throughout the project, I utilized my expertise in both design and development to ensure that the website was not only visually stunning but also highly functional and user-friendly. By reducing the friction between the two disciplines, I was able to create a more efficient and streamlined development process. The opportunity to work on this project was incredibly rewarding, and I'm proud of the impact that our team was able to make.",
         "icon": "/projects/ifmag-logo.webp",
         "image": "/projects/ifmag.webp",
         "title": "Case Study: Redesigning the website for ‘The Intersectional Feminist’",
@@ -76,43 +80,44 @@
         "url": "https://medium.muz.li/case-study-redesigning-the-website-for-the-intersectional-feminist-8a6c9900e675"
       },
       {
-        "description": "A journey from initial conception to finalised app design in 14 weeks. It's complete with iOS and android mock ups, ready for handover. This project was a result of the UI/UX course I attended at DesignBoat. It helped me get a firm grasp of the entire product life cycle.",
+        "description": "n just 14 weeks, I designed and developed a mobile app for both iOS and Android platforms, from initial conception to final mockups. This project was the result of my UI/UX training at DesignBoat, where I gained expertise in the entire product life cycle. Throughout the project, I applied my skills in user research, information architecture, wireframing, prototyping, and visual design to create a seamless user experience that met our target audience's needs. The result is a stunning mobile app that showcases my ability to turn ideas into tangible products. I'm committed to refining my UI/UX design skills and pursuing opportunities to create impactful solutions that enhance people's lives.",
         "icon": "/projects/designboat.webp",
         "image": "/projects/cleansneaker.webp",
-        "title": "Case Study: Creating a specialized experience for sneaker-heads",
+        "title": "From Concept to Reality: A Case Study on Developing a Specialized Sneaker Experience for Enthusiasts",
         "client": "designboat",
         "tags": ["research", "visual design"],
         "url": "https://bootcamp.uxdesign.cc/case-study-creating-a-specialised-experience-for-sneaker-heads-5cd00941eb78"
       },
       {
-        "description": "The story of improving UI skills and a test of my durability, with a 100 day challenge. I started the challenge a beginner to the world of design tools and online resources. By the time I finished, they were in the palm of my hand.",
+        "description": "When I started the 100-day UI challenge, I was a complete beginner to design tools and online resources. But through dedication and persistence, I gradually honed my skills and built up my knowledge base. As I completed each of the 100 problem statements, I gained a deeper understanding of the nuances of UI design, from typography and color theory to layout and user experience. By the time I finished the challenge, I had transformed from a novice to a skilled designer, with a wealth of knowledge at my fingertips. The experience was a true test of my durability and commitment, but it was also incredibly rewarding. I'm excited to continue pushing myself and exploring new challenges as I build my career in UI design.",
         "icon": "/projects/dribbble.svg",
         "image": "/projects/daily-ui.webp",
-        "title": "Daily UI Challenge: 100 days, 100 problem statements, 100 screens",
+        "title": "100 Days of Growth: My Journey of Improving UI Skills Through a Daily Challenge",
         "client": "Dribbble",
         "tags": ["ui design", "daily challenge"],
         "url": "https://dribbble.com/AbhishekNairOfficial/collections/2732240-Daily-UI"
       }
     ],
-    "text": "Here is some of my work",
+    "text": "Here's some of my work",
     "title": "Projects:"
   },
   "devProjects": [
     {
-      "description": "As part of learning UI/UX design, I decided to redesign my website and work on it. Soon I completed the design and development. I wondered if there was an easier way for me to deploy. The current method involved merging code into master, and then manual deployment through the CLI.",
+      "description": "As part of my journey in learning UI/UX design, I took on the challenge of redesigning my own website from scratch. After completing the design and development phases, I realized that the deployment process was a bit cumbersome. At the time, the only way to deploy updates was to manually merge code into the master branch and then deploy using the command line interface (CLI). I began researching alternative deployment methods to simplify the process and make it more efficient.",
       "icon": "/projects/plain-english.webp",
       "image": "/projects/firebase-deploy.webp",
-      "title": "Host Your Own React Site with Firebase and Github Actions",
+      "title": "How to Host Your Own React Site: A Step-by-Step Guide Using Firebase and Github Actions",
       "type": "development",
+      "tags": ["javascript", "reactjs", "firebase"],
       "client": "JavaScript in plain English",
       "buttonText": "Read the article here",
       "url": "https://javascript.plainenglish.io/hosting-your-own-react-site-using-firebase-and-github-actions-8a518255cc64"
     },
     {
-      "description": "In 2020, we saw a long period of time where everyone had to stay home. The WFH culture grew global, and now everything moved online. I decided to get in on the action, by creating a simple game using my skills.",
+      "description": "As the WFH culture grew globally in 2020 due to the pandemic, I found myself with more time on my hands at home. I decided to put my skills to use and create a simple game. With so many people now spending time online, I thought it would be a fun way to provide some entertainment for others. With a focus on simplicity and user experience, I spent several weeks developing the game and refining it until I was happy with the final product. Overall, it was a fulfilling project that not only helped me improve my skills but also brought joy to others during a challenging time.",
       "icon": "/projects/tic-tac-toe.svg",
       "image": "/projects/tic-tac-toe.png",
-      "title": "Tic Tac Toe",
+      "title": "Creating a Simple Game During the Rise of WFH Culture",
       "client": "Hosted on Firebase",
       "type": "development",
       "buttonText": "Play the game here",
@@ -120,10 +125,10 @@
       "url": "https://ttt-backend-42a99.web.app/"
     },
     {
-      "description": "A young developer, I had recently learnt to build a mobile app. This got my mind racing. Creating anything that could run on billions of devices, I was living an earlier dream. So, I set about trying to build something that I would use, that someone else might use. And this is the story of how I created NotesApp.",
+      "description": "As a young developer, I was thrilled by the idea of creating something that could run on billions of devices. That's what inspired me to learn how to build mobile apps. Soon after, I set out to create a simple, yet useful application that I could use myself and share with others. And that's how NotesApp was born - a sleek and intuitive note-taking app designed to help users stay organized and productive on the go.",
       "icon": "/projects/medium.svg",
       "image": "/projects/NotesApp.webp",
-      "title": "NotesApp: A minimalistic application to take, and keep track of notes.",
+      "title": "From Dream to Reality: The Story of Creating NotesApp",
       "client": "Medium",
       "tags": ["ui design", "development", "react native"],
       "url": "https://medium.com/@6foot4/notesapp-b443bb9b2ac9"
