@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '@/app/organisms/Header';
 import DateDisplay from './atoms/Date';
 import Banner from './atoms/Banner';
+import Experience from './atoms/Experience';
 
 const PortfolioPage = () => {
 
@@ -11,6 +12,7 @@ const PortfolioPage = () => {
       <Header />
       <DateDisplay />
       <Banner />
+      <Experience />
     </>
   );
 };
