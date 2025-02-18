@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: var(--foreground);
+  font-family: var(--font-special-elite);
+  min-height: 100vh;
+}
