@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '@/app/organisms/Header';
 import DateDisplay from './atoms/Date';
 import Banner from './atoms/Banner';
-import Experience from './atoms/Experience';
+import Experience from './organisms/Experience';
 
 const PortfolioPage = () => {
 

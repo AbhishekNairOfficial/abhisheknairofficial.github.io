@@ -1,6 +1,6 @@
+import React from "react"
 import TimelineItem from "@/app/atoms/TimelineItem"
 import { TIMELINE_DATA } from "@/config/constants"
-import React from "react"
 
 const Timeline = () => {
     return (
