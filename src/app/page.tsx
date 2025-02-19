@@ -3,6 +3,7 @@ import Header from '@/app/organisms/Header';
 import DateDisplay from './atoms/Date';
 import Banner from './atoms/Banner';
 import Experience from './organisms/Experience';
+import Work from './organisms/Work';
 
 const PortfolioPage = () => {
 
@@ -13,6 +14,7 @@ const PortfolioPage = () => {
       <DateDisplay />
       <Banner />
       <Experience />
+      <Work />
     </>
   );
 };

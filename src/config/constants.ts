@@ -32,3 +32,21 @@ export const TIMELINE_DATA = [
     role: "Software Engineer",
   },
 ];
+
+export const PROJECTS = [
+  {
+    title: "Item POD",
+    description:
+      "Item was a recent project under Albertsons using React, Redux, Graph QL.",
+  },
+  {
+    title: "Digital Orders Dashboard",
+    description:
+      "Digital orders dashboard for T-mobile using React, D3 Graphs.",
+  },
+  {
+    title: "Tic Tac Toe",
+    description:
+      "My little project during the pandemic creating a Tic Tac Toe game.",
+  },
+];
