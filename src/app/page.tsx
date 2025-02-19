@@ -5,6 +5,7 @@ import Banner from './atoms/Banner';
 import Experience from './organisms/Experience';
 import Work from './organisms/Work';
 import Clients from './molecules/Clients';
+import LetsTalk from './organisms/LetsTalk';
 
 const PortfolioPage = () => {
 
@@ -17,6 +18,7 @@ const PortfolioPage = () => {
       <Experience />
       <Work />
       <Clients />
+      <LetsTalk />
     </>
   );
 };

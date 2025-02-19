@@ -8,7 +8,7 @@ const Experience = () => (
         <div className="flex">
             <p className="flex-1 text-2xl text-justify">
                 {EXPERIENCE_TEXT}
-                <Button className='mt-7'>Resume</Button>
+                <Button className='mt-7 block'>Resume</Button>
             </p>
             <Timeline />
         </div>

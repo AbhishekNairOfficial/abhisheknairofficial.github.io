@@ -50,3 +50,6 @@ export const PROJECTS = [
       "My little project during the pandemic creating a Tic Tac Toe game.",
   },
 ];
+
+export const LETS_TALK_TEXT =
+  "If you want to chat about a freelance project, job opportunity, or even just learn more about how I created this site, don't hesitate to reach out to me below!";
