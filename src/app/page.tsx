@@ -6,6 +6,7 @@ import Experience from './organisms/Experience';
 import Work from './organisms/Work';
 import Clients from './molecules/Clients';
 import LetsTalk from './organisms/LetsTalk';
+import Footer from './organisms/Footer';
 
 const PortfolioPage = () => {
 
@@ -19,6 +20,7 @@ const PortfolioPage = () => {
       <Work />
       <Clients />
       <LetsTalk />
+      <Footer />
     </>
   );
 };
