@@ -6,13 +6,13 @@ export const EXPERIENCE_TEXT =
   "Hello, my name is Abhishek, and I'm a developer based in Seattle, WA. With over 7 years of experience in the industry, I currently hold the position of Lead Software Engineer at UST.";
 
 export const TIMELINE_DATA = [
+  // {
+  //   period: "Apr 25 - Present",
+  //   company: "Rhombuz LLC",
+  //   role: "Senior Product Technologist",
+  // },
   {
-    period: "Apr 25 - Present",
-    company: "Rhombuz LLC",
-    role: "Senior Product Technologist",
-  },
-  {
-    period: "Jan 23 - Mar 25",
+    period: "Jan 23 - Present",
     company: "UST Global",
     role: "Lead II - Software Engineering",
   },
