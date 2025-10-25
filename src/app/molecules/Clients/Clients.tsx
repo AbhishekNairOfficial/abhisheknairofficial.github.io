@@ -1,44 +1,63 @@
-import React from 'react';
+import { Star } from 'lucide-react';
 import Image from 'next/image';
 
-const Clients = () => {
-    return (
-        <section className="mx-[50px] p-[50px]">
-            <h2 className="font-primary text-5xl underline mb-[30px]">Clients</h2>
-            <div className="border-t-[3px] border-b-[3px] border-black -mx-[50px]">
-                <div className="px-[50px] flex justify-center gap-[50px]">
-                    <Image
-                        src="/images/T-mobile_logo.png"
-                        alt="Tmobile Logo"
-                        width={200}
-                        height={100}
-                        className="w-auto h-[100px]"
-                    />
-                    <Image
-                        src="/images/Comcast-Logo.png"
-                        alt="Comcast Logo"
-                        width={200}
-                        height={100}
-                        className="w-auto h-[100px]"
-                    />
-                    <Image
-                        src="/images/albertsons-logo.png"
-                        alt="Albertsons Logo"
-                        width={200}
-                        height={100}
-                        className="w-auto h-[100px]"
-                    />
-                    <Image
-                        src="/images/adp-logo.png"
-                        alt="Albertsons Logo"
-                        width={200}
-                        height={100}
-                        className="w-auto h-[100px]"
-                    />
-                </div>
-            </div>
-        </section>
-    )
-};
+const clients = [
+  {
+    name: 'T-Mobile',
+    logo: '/images/T-mobile_logo.png'
+  },
+  {
+    name: 'Comcast',
+    logo: '/images/Comcast-Logo.png'
+  },
+  {
+    name: 'Albertsons',
+    logo: '/images/albertsons-logo.png'
+  },
+  {
+    name: 'ADP',
+    logo: '/images/adp-logo.png'
+  }
+];
 
-export default Clients; 
+export function Clients() {
+  // Duplicate the clients array for infinite scroll effect
+  const duplicatedClients = [...clients, ...clients];
+
+  return (
+    <section className="mb-12 border-b-2 border-black pb-12">
+      <div className="flex items-center gap-4 mb-8">
+        <h2 className="text-5xl">Notable Clients</h2>
+        <div className="h-1 flex-1 bg-black"></div>
+      </div>
+
+      <div className="overflow-hidden relative mb-6">
+        <div className="flex animate-scroll">
+          {duplicatedClients.map((client, index) => (
+            <div key={index} className="flex-shrink-0 px-8 flex items-center justify-center" style={{ width: '250px', height: '120px' }}>
+              <Image
+                src={client.logo}
+                alt={client.name}
+                width={200}
+                height={100}
+                className="max-h-24 max-w-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="bg-yellow-300 border-2 border-black p-6">
+        <div className="flex items-center gap-3">
+          <Star className="h-6 w-6 fill-black" />
+          <p className="text-lg">
+            <span className="font-serif">Client Satisfaction:</span> Maintained client satisfaction 
+            rate with 100% project delivery on schedule
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Clients;
