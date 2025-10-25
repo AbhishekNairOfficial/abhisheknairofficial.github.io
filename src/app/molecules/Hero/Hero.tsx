@@ -7,8 +7,8 @@ export function Hero() {
       <div className="bg-yellow-300 p-8 mb-8 border-2 border-black">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h2 className="text-5xl mb-4 tracking-tight">
-              Senior Product <span className="bg-white px-3 py-1 inline-block border-2 border-black hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 cursor-pointer transition-all duration-300">Technologist</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl mb-4 tracking-tight">
+              Senior Product <span className="bg-white px-2 sm:px-3 py-1 inline-block border-2 border-black hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 cursor-pointer transition-all duration-300">Technologist</span>
             </h2>
           </div>
           <div>

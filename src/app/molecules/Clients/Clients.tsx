@@ -31,20 +31,20 @@ export function Clients() {
   return (
     <section className="mb-12 border-b-2 border-black pb-12">
       <div className="flex items-center gap-4 mb-8">
-        <h2 className="text-5xl">Notable Clients</h2>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl">Notable Clients</h2>
         <div className="h-1 flex-1 bg-black"></div>
       </div>
 
       <div className="overflow-hidden relative mb-6">
         <div className="flex animate-scroll">
           {duplicatedClients.map((client, index) => (
-            <div key={index} className="flex-shrink-0 px-8 flex items-center justify-center" style={{ width: '250px', height: '120px' }}>
+            <div key={index} className="flex-shrink-0 px-4 sm:px-6 md:px-8 flex items-center justify-center w-48 sm:w-56 md:w-64 h-20 sm:h-24 md:h-28">
               <Image
                 src={client.logo}
                 alt={client.name}
                 width={200}
                 height={100}
-                className="max-h-24 max-w-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                className="max-h-16 sm:max-h-20 md:max-h-24 max-w-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
               />
             </div>
           ))}

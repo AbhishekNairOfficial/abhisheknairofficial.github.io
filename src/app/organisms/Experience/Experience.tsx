@@ -1,12 +1,12 @@
 import { TIMELINE_DATA } from "@/config/constants"
 import { Briefcase, Calendar } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
+import { Badge } from '@/components/ui';
 
 const Experience = () => {
   return (
     <section className="mb-12 border-b-2 border-black pb-12">
       <div className="flex items-center gap-4 mb-8">
-        <h2 className="text-5xl">My Experience</h2>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl">My Experience</h2>
         <div className="h-1 flex-1 bg-black"></div>
       </div>
 
@@ -21,7 +21,7 @@ const Experience = () => {
                   <Calendar className="h-4 w-4 text-emerald-600" />
                   <p className="text-sm">{exp.period}</p>
                 </div>
-                <div className={`inline-block px-3 py-1 text-xs border-2 border-black ${
+                <div className={`inline-block px-2 sm:px-3 py-1 text-xs border-2 border-black ${
                   index % 2 === 0 ? 'bg-yellow-300' : 'bg-emerald-100'
                 }`}>
                   {exp.company}
@@ -30,9 +30,9 @@ const Experience = () => {
               
               <div className="md:col-span-3">
                 <div className="flex items-start justify-between mb-3">
-                  <div>
-                    <h3 className="text-2xl mb-1">{exp.role}</h3>
-                    <p className="text-base text-gray-700 mb-3">{exp.description}</p>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-xl sm:text-2xl mb-1">{exp.role}</h3>
+                    <p className="text-sm sm:text-base text-gray-700 mb-3">{exp.description}</p>
                   </div>
                   <Briefcase className="h-6 w-6 text-gray-400 flex-shrink-0 ml-4" />
                 </div>

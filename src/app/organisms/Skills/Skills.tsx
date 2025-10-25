@@ -68,10 +68,10 @@ export function Skills() {
     <section className="mb-12">
       {/* Main headline banner */}
       <div className="bg-black text-white p-6 mb-6">
-        <h2 className="text-5xl text-center">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl text-center">
           What I Bring to the Table
         </h2>
-        <p className="text-center mt-2 text-gray-300">A comprehensive toolkit for building exceptional digital experiences</p>
+        <p className="text-center mt-2 text-gray-300 text-sm sm:text-base">A comprehensive toolkit for building exceptional digital experiences</p>
       </div>
 
       {/* Featured capability - Large spotlight */}
@@ -79,8 +79,8 @@ export function Skills() {
         <div className="flex items-start gap-6">
           <Code2 className="h-16 w-16 flex-shrink-0" />
           <div>
-            <h3 className="text-4xl mb-3">Technical Mastery</h3>
-            <p className="text-lg mb-4">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl mb-3">Technical Mastery</h3>
+            <p className="text-base sm:text-lg mb-4">
               Building scalable applications with modern technologies. From React ecosystems to cloud infrastructure, 
               I architect solutions that perform at scale.
             </p>
@@ -88,7 +88,7 @@ export function Skills() {
               {skillCategories[0].skills.map((skill, idx) => (
                 <span 
                   key={idx}
-                  className="bg-white border-2 border-black px-4 py-2 text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 transition-all cursor-default"
+                  className="bg-white border-2 border-black px-2 sm:px-4 py-2 text-xs sm:text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 transition-all cursor-default break-words"
                 >
                   {skill}
                 </span>
@@ -103,8 +103,8 @@ export function Skills() {
         {/* Design spotlight */}
         <div className="border-4 border-black p-6 bg-yellow-300">
           <div className="flex items-center gap-3 mb-4">
-            <Palette className="h-10 w-10" />
-            <h3 className="text-3xl">Design & UX</h3>
+            <Palette className="h-8 w-8 sm:h-10 sm:w-10" />
+            <h3 className="text-2xl sm:text-3xl">Design & UX</h3>
           </div>
           <p className="mb-4">
             Bridging the gap between design and development. Creating beautiful, accessible interfaces that users love.
@@ -124,8 +124,8 @@ export function Skills() {
         {/* Architecture spotlight */}
         <div className="border-4 border-black p-6 bg-white">
           <div className="flex items-center gap-3 mb-4">
-            <Rocket className="h-10 w-10" />
-            <h3 className="text-3xl">Architecture</h3>
+            <Rocket className="h-8 w-8 sm:h-10 sm:w-10" />
+            <h3 className="text-2xl sm:text-3xl">Architecture</h3>
           </div>
           <p className="mb-4">
             Designing systems that scale. Performance-first approach to building modern web applications.

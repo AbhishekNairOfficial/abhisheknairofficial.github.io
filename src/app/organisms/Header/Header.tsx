@@ -119,12 +119,12 @@ const Header = () => {
       </div>
       
       <div className="max-w-7xl mx-auto px-6 py-6">
-        <div className="flex items-start justify-between">
-          <div>
-            <h1 className="text-7xl tracking-tight mb-2">Abhishek Panthalingal</h1>
+        <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
+          <div className="flex-1 min-w-0">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-2 break-words">Abhishek Panthalingal</h1>
             <p className="text-sm uppercase tracking-widest border-t border-black pt-2 inline-block">{currentDate}</p>
           </div>
-          <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-black">
+          <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-black flex-shrink-0">
             <Image src={"/images/profile-picture.jpg"} alt="Profile" className="w-full h-full object-cover" width={120} height={120} />
           </div>
         </div>
