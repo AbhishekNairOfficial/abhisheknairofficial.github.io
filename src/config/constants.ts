@@ -8,68 +8,29 @@ export const EXPERIENCE_TEXT =
 export const TIMELINE_DATA = [
   {
     id: 5,
-    period: "Apr 25 - Present",
+    period: "Apr 2025 - Present",
     company: "Rhombuz LLC",
     role: "Senior Product Technologist",
-    description: 'Leading frontend architecture and development for enterprise-scale applications. Mentoring team of 8 engineers and establishing best practices for React.js development.',
+    description: 'Architecting and leading frontend development for large-scale enterprise applications with a focus on performance, modularity, and developer experience. Establishing best practices in React.js, React Native, TypeScript, and state management. Mentoring a cross-functional team of engineers, conducting code reviews, and guiding UI/UX consistency across multiple product lines.',
     highlights: [
       'Architected and deployed micro-frontend system reducing load time by 40%',
-      'Led migration from legacy Angular to modern React stack',
+      'Led migration from legacy Windows applications to modern React Native stack',
       'Implemented CI/CD pipeline improving deployment frequency by 60%'
     ],
-    technologies: ['React', 'Next.js', 'TypeScript', 'AWS', 'Docker']
+    technologies: ['React', 'Next.js', 'TypeScript', 'Azure',]
   },
   {
     id: 4,
-    period: "Jan 23 - Present",
+    period: "Sep 2017 - Mar 2023",
     company: "UST Global",
     role: "Lead II - Software Engineering",
     description: 'Leading frontend architecture and development for enterprise-scale applications. Mentoring team of 8 engineers and establishing best practices for React.js development.',
     highlights: [
-      'Architected and deployed micro-frontend system reducing load time by 40%',
-      'Led migration from legacy Angular to modern React stack',
-      'Implemented CI/CD pipeline improving deployment frequency by 60%'
+      'Signifantly improved site performance by breaking down monolithic codebase into smaller, more maintainable modules',
+      'Created and maintained a component system, offering a 20% reduction in development time for new features',
+      'Improved app architecture, providing a 33% performance boost for over 15000 users'
     ],
-    technologies: ['React', 'Next.js', 'TypeScript', 'AWS', 'Docker']
-  },
-  {
-    id: 3,
-    period: "Oct 21 - Dec 22",
-    company: "Piktorlabs Inc",
-    role: "Senior Design Technologist",
-    description: 'Leading frontend architecture and development for enterprise-scale applications. Mentoring team of 8 engineers and establishing best practices for React.js development.',
-    highlights: [
-      'Architected and deployed micro-frontend system reducing load time by 40%',
-      'Led migration from legacy Angular to modern React stack',
-      'Implemented CI/CD pipeline improving deployment frequency by 60%'
-    ],
-    technologies: ['React', 'Next.js', 'TypeScript', 'AWS', 'Docker']
-  },
-  {
-    id: 2,
-    period: "June 19 - Oct 21",
-    company: "Piktorlabs India",
-    role: "Product Engineer",
-    description: 'Leading frontend architecture and development for enterprise-scale applications. Mentoring team of 8 engineers and establishing best practices for React.js development.',
-    highlights: [
-      'Architected and deployed micro-frontend system reducing load time by 40%',
-      'Led migration from legacy Angular to modern React stack',
-      'Implemented CI/CD pipeline improving deployment frequency by 60%'
-    ],
-    technologies: ['React', 'Next.js', 'TypeScript', 'AWS', 'Docker']
-  },
-  {
-    id: 1,
-    period: "Sept 17 - May 19",
-    company: "Moonraft Innovation Labs",
-    role: "Software Engineer",
-    description: 'Leading frontend architecture and development for enterprise-scale applications. Mentoring team of 8 engineers and establishing best practices for React.js development.',
-    highlights: [
-      'Architected and deployed micro-frontend system reducing load time by 40%',
-      'Led migration from legacy Angular to modern React stack',
-      'Implemented CI/CD pipeline improving deployment frequency by 60%'
-    ],
-    technologies: ['React', 'Next.js', 'TypeScript', 'AWS', 'Docker']
+    technologies: ['React', 'React Native', 'GraphQL', 'TypeScript', 'AWS', 'Docker']
   },
 ];
 

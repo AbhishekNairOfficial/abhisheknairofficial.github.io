@@ -17,6 +17,10 @@ const clients = [
   {
     name: 'ADP',
     logo: '/images/adp-logo.png'
+  },
+  {
+    name: 'TOMRA',
+    logo: '/images/tomra-logo.png'
   }
 ];
 
