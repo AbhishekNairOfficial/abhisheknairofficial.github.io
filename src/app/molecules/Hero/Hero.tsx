@@ -13,7 +13,7 @@ export function Hero() {
           </div>
           <div>
             <p className="text-lg">
-              Lead Frontend Engineer with 7+ years of experience specializing in React.js, Next.js, and 
+              Software Engineer with 8+ years of experience specializing in React.js, Next.js, and 
               enterprise-scale web applications. Expert in UX implementation, RESTful APIs, and modern 
               frontend architectures.
             </p>
@@ -26,8 +26,8 @@ export function Hero() {
           <div className="border-l-4 border-emerald-500 pl-6">
             <h3 className="text-2xl mb-3">About Me</h3>
             <p className="text-base mb-4">
-              Hello, my name is Abhishek, and I&apos;m a developer based in Seattle, WA. With over 7 years of 
-              experience in the industry, I currently hold the position of Lead Software Engineer at UST Global.
+              Hello, my name is Abhishek, and I&apos;m a developer based in Bellevue, WA. With over 8 years of 
+              experience in the industry, I currently hold the position of Senior Product Technologist at Rhombuz LLC.
             </p>
             <p className="text-base mb-4">
               I specialize in building scalable, user-centric applications that solve real-world problems. 
@@ -39,6 +39,7 @@ export function Hero() {
               Download Resume
             </Button>
           </div>
+
           
           <div className="bg-gray-50 p-6 border-2 border-black">
             <h3 className="text-2xl mb-4">Quick Facts</h3>
@@ -47,28 +48,28 @@ export function Hero() {
                 <span className="bg-emerald-500 text-white px-2 py-1 text-xs">01</span>
                 <div>
                   <p className="font-semibold">Experience</p>
-                  <p className="text-sm text-gray-600">7+ years in software engineering</p>
+                  <p className="text-sm text-gray-600">8+ years in software engineering</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <span className="bg-yellow-400 text-black px-2 py-1 text-xs">02</span>
                 <div>
                   <p className="font-semibold">Specialization</p>
-                  <p className="text-sm text-gray-600">Frontend Architecture & UX Engineering</p>
+                  <p className="text-sm text-gray-600">Frontend, Architecture, and UX Engineering</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <span className="bg-emerald-500 text-white px-2 py-1 text-xs">03</span>
                 <div>
                   <p className="font-semibold">Current Role</p>
-                  <p className="text-sm text-gray-600">Lead II - Software Engineering @ UST Global</p>
+                  <p className="text-sm text-gray-600">Senior Product Technologist @ Rhombuz LLC</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <span className="bg-yellow-400 text-black px-2 py-1 text-xs">04</span>
                 <div>
                   <p className="font-semibold">Location</p>
-                  <p className="text-sm text-gray-600">Seattle, Washington</p>
+                  <p className="text-sm text-gray-600">Bellevue, Washington</p>
                 </div>
               </div>
             </div>
