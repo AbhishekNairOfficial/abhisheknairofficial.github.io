@@ -1,14 +1,4 @@
-// const Footer = () => {
-//     return (
-//         <footer className="bg-primary px-[100px] py-[50px]">
-//             <p className="text-white text-2xl">© {new Date().getFullYear()}. Made with love, sleepless nights and Next JS.</p>
-//         </footer>);
-// };
-
-// export default Footer; 
-
-
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -18,7 +8,7 @@ const Footer = () => {
           <div>
             <h3 className="text-3xl mb-4">Get In Touch</h3>
             <p className="text-gray-300 mb-4">
-              I'm always interested in hearing about new opportunities and exciting projects.
+              I&apos;m always interested in hearing about new opportunities and exciting projects.
             </p>
             <div className="space-y-2">
               <div className="flex items-center gap-2">
