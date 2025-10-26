@@ -6,7 +6,10 @@ const EVEN_INDEX = 2;
 
 const Experience = () => {
   return (
-    <section id="experience" className="mb-12 border-b-2 border-black pb-12">
+    <section
+      className="mb-12 border-b-2 border-black pb-12"
+      id="experience"
+    >
       <div className="flex items-center gap-4 mb-8">
         <h2 className="text-3xl sm:text-4xl md:text-5xl">
           My Experience

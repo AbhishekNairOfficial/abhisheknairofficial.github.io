@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import { Playfair_Display, Special_Elite as SpecialElite } from 'next/font/google';
+import { Playfair_Display as PlayfairDisplay, Special_Elite as SpecialElite } from 'next/font/google';
 import './globals.css';
 
-const playfairDisplay = Playfair_Display({
+const playfairDisplay = PlayfairDisplay({
   weight: '400',
   variable: '--font-playfair-display',
   subsets: ['latin'],
