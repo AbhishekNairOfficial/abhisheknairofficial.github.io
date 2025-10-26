@@ -65,7 +65,7 @@ const skillCategories = [
 
 export function Skills() {
   return (
-    <section className="mb-12">
+    <section id="skills" className="mb-12">
       {/* Main headline banner */}
       <div className="bg-black text-white p-6 mb-6">
         <h2 className="text-3xl sm:text-4xl md:text-5xl text-center">

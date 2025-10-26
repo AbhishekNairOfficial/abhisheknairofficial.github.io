@@ -29,7 +29,7 @@ export function Clients() {
   const duplicatedClients = [...clients, ...clients];
 
   return (
-    <section className="mb-12 border-b-2 border-black pb-12">
+    <section id="clients" className="mb-12 border-b-2 border-black pb-12">
       <div className="flex items-center gap-4 mb-8">
         <h2 className="text-3xl sm:text-4xl md:text-5xl">
           Notable Clients
