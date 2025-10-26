@@ -1,3 +1,3 @@
-import LetsTalk from "./LetsTalk";
+import LetsTalk from './LetsTalk';
 
-export default LetsTalk
+export default LetsTalk;

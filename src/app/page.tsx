@@ -7,7 +7,6 @@ import Hero from './molecules/Hero';
 import Skills from './organisms/Skills';
 
 const PortfolioPage = () => {
-
   return (
     <div className="min-h-screen bg-white">
       <Header />

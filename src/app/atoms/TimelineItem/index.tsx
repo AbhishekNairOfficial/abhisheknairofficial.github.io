@@ -1,3 +1,3 @@
-import TimelineItem from "./TimelineItem";
+import TimelineItem from './TimelineItem';
 
-export default TimelineItem
+export default TimelineItem;
