@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import { Gloock, Special_Elite as SpecialElite } from 'next/font/google';
+import { Playfair_Display, Special_Elite as SpecialElite } from 'next/font/google';
 import './globals.css';
 
-const gloock = Gloock({
+const playfairDisplay = Playfair_Display({
   weight: '400',
-  variable: '--font-gloock',
+  variable: '--font-playfair-display',
   subsets: ['latin'],
 });
 
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${specialEliteFont.variable} ${gloock.variable} antialiased`}
+        className={`${specialEliteFont.variable} ${playfairDisplay.variable} antialiased`}
       >
         {children}
       </body>

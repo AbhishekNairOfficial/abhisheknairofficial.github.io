@@ -55,8 +55,8 @@
   }
   body {
     @apply bg-background text-foreground;
-    --font-serif: 'Playfair Display', serif;
-    --font-sans: 'Inter', sans-serif;
+    --font-serif: 'var(--font-playfair)', serif;
+    --font-sans: 'var(--font-inter)', sans-serif;
   }
   
   /* Prevent horizontal scroll */

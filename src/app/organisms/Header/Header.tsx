@@ -155,7 +155,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-6 py-6">
         <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
           <div className="flex-1 min-w-0">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-2 break-words">
+            <h1 className="font-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-2 break-words">
               Abhishek Panthalingal
             </h1>
             <p className="text-sm uppercase tracking-widest border-t border-black pt-2 inline-block">
