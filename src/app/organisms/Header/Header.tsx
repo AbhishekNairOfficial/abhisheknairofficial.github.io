@@ -2,6 +2,15 @@ import { getNowPlaying, getSpotifyData } from '@/utils/spotify';
 import { Music2 } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
+import {
+  LOCATION_DESKTOP,
+  LOCATION_MOBILE,
+  NAME,
+  SOCIAL_LINKS,
+  STATUS_LISTENING,
+  STATUS_NOTHING,
+  STATUS_RECENT,
+} from '@/config/constants';
 
 const HTTP_STATUS_OK = 200;
 
@@ -14,8 +23,8 @@ const currentDate = new Date().toLocaleDateString('en-US', {
 
 const socialLinks = [
   {
-    url: 'https://linkedin.com/in/6foot4',
-    label: 'LinkedIn',
+    url: SOCIAL_LINKS[0].url,
+    label: SOCIAL_LINKS[0].label,
     icon: (
       <svg
         className="h-3.5 w-3.5"
@@ -27,8 +36,8 @@ const socialLinks = [
     ),
   },
   {
-    url: 'https://github.com/abhisheknairofficial',
-    label: 'GitHub',
+    url: SOCIAL_LINKS[1].url,
+    label: SOCIAL_LINKS[1].label,
     icon: (
       <svg
         className="h-3.5 w-3.5"
@@ -43,9 +52,9 @@ const socialLinks = [
 
 // eslint-disable-next-line max-statements
 async function getSongData() {
-  let name = 'Nothing playing';
+  let name = STATUS_NOTHING;
   let artist = '';
-  let statusText = 'Currently listening to';
+  let statusText = STATUS_LISTENING;
 
   try {
     const nowPlaying = await getNowPlaying();
@@ -57,7 +66,7 @@ async function getSongData() {
         const item = nowPlayingData.item;
         name = item.name;
         artist = item.artists.map((_artist: { name: string }) => _artist.name).join(', ');
-        statusText = 'Currently listening to';
+        statusText = STATUS_LISTENING;
         return { name, artist, statusText };
       }
     }
@@ -71,7 +80,7 @@ async function getSongData() {
       if (recentSong) {
         name = recentSong.name;
         artist = recentSong.artists.map((_artist: { name: string }) => _artist.name).join(', ');
-        statusText = 'Recently played';
+        statusText = STATUS_RECENT;
       }
     }
   } catch {
@@ -93,7 +102,7 @@ async function Header() {
             {/* Left: Seattle */}
             <div className="flex items-center">
               <span className="text-xs whitespace-nowrap">
-                📍 Bellevue, WA
+                📍 {LOCATION_DESKTOP}
               </span>
             </div>
 
@@ -131,7 +140,7 @@ async function Header() {
           <div className="md:hidden">
             <div className="flex items-center justify-between py-1">
               <span className="text-xs whitespace-nowrap">
-                📍 Seattle, WA
+                📍 {LOCATION_MOBILE}
               </span>
               <div className="flex items-center gap-3">
                 {socialLinks.map((link) => (
@@ -194,7 +203,7 @@ async function Header() {
         <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
           <div className="flex-1 min-w-0">
             <h1 className="font-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-2 break-words">
-              Abhishek Panthalingal
+              {NAME}
             </h1>
             <p className="text-sm uppercase tracking-widest border-t border-black pt-2 inline-block">
               {currentDate}

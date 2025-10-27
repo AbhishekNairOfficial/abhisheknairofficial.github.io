@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { Playfair_Display as PlayfairDisplay, Special_Elite as SpecialElite } from 'next/font/google';
 import './globals.css';
+import { META_DESCRIPTION, META_TITLE } from '@/config/constants';
 
 const playfairDisplay = PlayfairDisplay({
   weight: '400',
@@ -16,8 +17,8 @@ const specialEliteFont = SpecialElite({
 });
 
 export const metadata: Metadata = {
-  title: 'Abhishek | Software Engineer',
-  description: 'Portfolio website showcasing my experience, skills, and projects as a full stack developer',
+  title: META_TITLE,
+  description: META_DESCRIPTION,
 };
 
 export default function RootLayout({

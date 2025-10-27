@@ -1,65 +1,40 @@
 import { Code2, Palette, Rocket, Users } from 'lucide-react';
+import {
+  SKILL_CATEGORIES,
+  SKILLS_ARCHITECTURE_DESCRIPTION,
+  SKILLS_ARCHITECTURE_TITLE,
+  SKILLS_DESIGN_DESCRIPTION,
+  SKILLS_DESIGN_TITLE,
+  SKILLS_MAIN_TITLE,
+  SKILLS_SUBTITLE,
+  SKILLS_TECHNICAL_DESCRIPTION,
+  SKILLS_TECHNICAL_MASTERY,
+} from '@/config/constants';
 
 const skillCategories = [
   {
     icon: Code2,
-    title: 'Technical Expertise',
+    title: SKILL_CATEGORIES[0].title,
     color: 'emerald',
-    skills: [
-      'React.js & Next.js',
-      'TypeScript & JavaScript',
-      'Node.js & Express',
-      'GraphQL & REST APIs',
-      'AWS & Cloud Services',
-      'Docker & Kubernetes',
-      'CI/CD & DevOps',
-      'Testing (Jest, Cypress)',
-    ],
+    skills: SKILL_CATEGORIES[0].skills,
   },
   {
     icon: Palette,
-    title: 'Design & UX',
+    title: SKILL_CATEGORIES[1].title,
     color: 'yellow',
-    skills: [
-      'Responsive Design',
-      'Accessibility (WCAG)',
-      'Design Systems',
-      'Figma & Adobe XD',
-      'Tailwind CSS',
-      'CSS-in-JS',
-      'Animation & Motion',
-      'User Research',
-    ],
+    skills: SKILL_CATEGORIES[1].skills,
   },
   {
     icon: Rocket,
-    title: 'Architecture',
+    title: SKILL_CATEGORIES[2].title,
     color: 'emerald',
-    skills: [
-      'Micro-frontends',
-      'System Design',
-      'Performance Optimization',
-      'State Management',
-      'Code Splitting',
-      'SEO Optimization',
-      'Progressive Web Apps',
-      'Serverless Architecture',
-    ],
+    skills: SKILL_CATEGORIES[2].skills,
   },
   {
     icon: Users,
-    title: 'Leadership',
+    title: SKILL_CATEGORIES[3].title,
     color: 'yellow',
-    skills: [
-      'Team Management',
-      'Code Reviews',
-      'Mentoring',
-      'Agile/Scrum',
-      'Technical Writing',
-      'Stakeholder Communication',
-      'Project Planning',
-      'Cross-functional Collaboration',
-    ],
+    skills: SKILL_CATEGORIES[3].skills,
   },
 ];
 
@@ -72,10 +47,10 @@ export function Skills() {
       {/* Main headline banner */}
       <div className="bg-black text-white p-6 mb-6">
         <h2 className="text-3xl sm:text-4xl md:text-5xl text-center">
-          What I Bring to the Table
+          {SKILLS_MAIN_TITLE}
         </h2>
         <p className="text-center mt-2 text-gray-300 text-sm sm:text-base">
-          A comprehensive toolkit for building exceptional digital experiences
+          {SKILLS_SUBTITLE}
         </p>
       </div>
 
@@ -85,11 +60,10 @@ export function Skills() {
           <Code2 className="h-16 w-16 flex-shrink-0" />
           <div>
             <h3 className="text-2xl sm:text-3xl md:text-4xl mb-3">
-              Technical Mastery
+              {SKILLS_TECHNICAL_MASTERY}
             </h3>
             <p className="text-base sm:text-lg mb-4">
-              Building scalable applications with modern technologies. From React ecosystems to cloud infrastructure,
-              I architect solutions that perform at scale.
+              {SKILLS_TECHNICAL_DESCRIPTION}
             </p>
             <div className="flex flex-wrap gap-2">
               {skillCategories[0].skills.map((skill, idx) => (
@@ -112,11 +86,11 @@ export function Skills() {
           <div className="flex items-center gap-3 mb-4">
             <Palette className="h-8 w-8 sm:h-10 sm:w-10" />
             <h3 className="text-2xl sm:text-3xl">
-              Design & UX
+              {SKILLS_DESIGN_TITLE}
             </h3>
           </div>
           <p className="mb-4">
-            Bridging the gap between design and development. Creating beautiful, accessible interfaces that users love.
+            {SKILLS_DESIGN_DESCRIPTION}
           </p>
           <div className="space-y-2">
             {skillCategories[1].skills.map((skill, idx) => (
@@ -135,11 +109,11 @@ export function Skills() {
           <div className="flex items-center gap-3 mb-4">
             <Rocket className="h-8 w-8 sm:h-10 sm:w-10" />
             <h3 className="text-2xl sm:text-3xl">
-              Architecture
+              {SKILLS_ARCHITECTURE_TITLE}
             </h3>
           </div>
           <p className="mb-4">
-            Designing systems that scale. Performance-first approach to building modern web applications.
+            {SKILLS_ARCHITECTURE_DESCRIPTION}
           </p>
           <div className="space-y-2">
             {skillCategories[2].skills.map((skill, idx) => (

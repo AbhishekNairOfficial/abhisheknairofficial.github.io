@@ -1,32 +1,10 @@
 import { Star } from 'lucide-react';
 import Image from 'next/image';
-
-const clients = [
-  {
-    name: 'T-Mobile',
-    logo: '/images/T-mobile_logo.png',
-  },
-  {
-    name: 'Comcast',
-    logo: '/images/Comcast-Logo.png',
-  },
-  {
-    name: 'Albertsons',
-    logo: '/images/albertsons-logo.png',
-  },
-  {
-    name: 'ADP',
-    logo: '/images/adp-logo.png',
-  },
-  {
-    name: 'TOMRA',
-    logo: '/images/tomra-logo.png',
-  },
-];
+import { CLIENTS_DATA, CLIENTS_SATISFACTION_TEXT, CLIENTS_SATISFACTION_TITLE, CLIENTS_TITLE } from '@/config/constants';
 
 export function Clients() {
   // Duplicate the clients array for infinite scroll effect
-  const duplicatedClients = [...clients, ...clients];
+  const duplicatedClients = [...CLIENTS_DATA, ...CLIENTS_DATA];
 
   return (
     <section
@@ -35,7 +13,7 @@ export function Clients() {
     >
       <div className="flex items-center gap-4 mb-8">
         <h2 className="text-3xl sm:text-4xl md:text-5xl">
-          Notable Clients
+          {CLIENTS_TITLE}
         </h2>
         <div className="h-1 flex-1 bg-black" />
       </div>
@@ -64,11 +42,10 @@ export function Clients() {
           <Star className="h-6 w-6 fill-black" />
           <p className="text-lg">
             <span className="font-serif">
-              Client Satisfaction:
+              {CLIENTS_SATISFACTION_TITLE}
             </span>
             {' '}
-            Maintained client satisfaction
-            rate with 100% project delivery on schedule
+            {CLIENTS_SATISFACTION_TEXT}
           </p>
         </div>
       </div>

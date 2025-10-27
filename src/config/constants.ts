@@ -54,3 +54,177 @@ export const PROJECTS = [
 
 export const LETS_TALK_TEXT =
   "If you want to chat about a freelance project, job opportunity, or even just learn more about how I created this site, don't hesitate to reach out to me below!";
+
+// Header
+export const NAME = 'Abhishek Panthalingal';
+export const LOCATION_DESKTOP = 'Bellevue, WA';
+export const LOCATION_MOBILE = 'Seattle, WA';
+export const STATUS_LISTENING = 'Currently listening to';
+export const STATUS_RECENT = 'Recently played';
+export const STATUS_NOTHING = 'Nothing playing';
+
+// Social Links
+export const SOCIAL_LINKS = [
+  {
+    url: 'https://linkedin.com/in/6foot4',
+    label: 'LinkedIn',
+  },
+  {
+    url: 'https://github.com/abhisheknairofficial',
+    label: 'GitHub',
+  },
+];
+
+// Hero Section
+export const HERO_TITLE_PART1 = 'Senior Product';
+export const HERO_TITLE_PART2 = 'Technologist';
+export const HERO_DESCRIPTION =
+  'Software Engineer with 8+ years of experience specializing in React.js, Next.js, and enterprise-scale web applications. Expert in UX implementation, RESTful APIs, and modern frontend architectures.';
+export const ABOUT_ME_TITLE = 'About Me';
+export const ABOUT_ME_TEXT_PART1 =
+  "Hello, my name is Abhishek, and I'm a developer based in Bellevue, WA. With over 8 years of experience in the industry, I currently hold the position of Senior Product Technologist at Rhombuz LLC.";
+export const ABOUT_ME_TEXT_PART2 =
+  'I specialize in building scalable, user-centric applications that solve real-world problems. My expertise spans the full spectrum of modern frontend development, from architecture design to implementation and optimization.';
+export const DOWNLOAD_RESUME_TEXT = 'Download Resume';
+
+export const QUICK_FACTS_TITLE = 'Quick Facts';
+export const FACT_EXPERIENCE_NUMBER = '01';
+export const FACT_EXPERIENCE_LABEL = 'Experience';
+export const FACT_EXPERIENCE_DESC = '8+ years in software engineering';
+export const FACT_SPECIALIZATION_NUMBER = '02';
+export const FACT_SPECIALIZATION_LABEL = 'Specialization';
+export const FACT_SPECIALIZATION_DESC = 'Frontend, Architecture, and UX Engineering';
+export const FACT_CURRENT_ROLE_NUMBER = '03';
+export const FACT_CURRENT_ROLE_LABEL = 'Current Role';
+export const FACT_CURRENT_ROLE_DESC = 'Senior Product Technologist @ Rhombuz LLC';
+export const FACT_LOCATION_NUMBER = '04';
+export const FACT_LOCATION_LABEL = 'Location';
+export const FACT_LOCATION_DESC = 'Bellevue, Washington';
+
+// Experience Section
+export const EXPERIENCE_TITLE = 'My Experience';
+export const EXPERIENCE_KEY_ACHIEVEMENTS = 'Key Achievements:';
+
+// Clients Section
+export const CLIENTS_TITLE = 'Notable Clients';
+export const CLIENTS_SATISFACTION_TITLE = 'Client Satisfaction:';
+export const CLIENTS_SATISFACTION_TEXT = 'Maintained client satisfaction rate with 100% project delivery on schedule';
+
+// Skills Section
+export const SKILLS_MAIN_TITLE = 'What I Bring to the Table';
+export const SKILLS_SUBTITLE = 'A comprehensive toolkit for building exceptional digital experiences';
+export const SKILLS_TECHNICAL_MASTERY = 'Technical Mastery';
+export const SKILLS_TECHNICAL_DESCRIPTION = 'Building scalable applications with modern technologies. From React ecosystems to cloud infrastructure, I architect solutions that perform at scale.';
+export const SKILLS_DESIGN_TITLE = 'Design & UX';
+export const SKILLS_DESIGN_DESCRIPTION = 'Bridging the gap between design and development. Creating beautiful, accessible interfaces that users love.';
+export const SKILLS_ARCHITECTURE_TITLE = 'Architecture';
+export const SKILLS_ARCHITECTURE_DESCRIPTION = 'Designing systems that scale. Performance-first approach to building modern web applications.';
+
+export const SKILL_CATEGORIES = [
+  {
+    title: 'Technical Expertise',
+    skills: [
+      'React.js & Next.js',
+      'TypeScript & JavaScript',
+      'Node.js & Express',
+      'GraphQL & REST APIs',
+      'AWS & Cloud Services',
+      'Docker & Kubernetes',
+      'CI/CD & DevOps',
+      'Testing (Jest, Cypress)',
+    ],
+  },
+  {
+    title: 'Design & UX',
+    skills: [
+      'Responsive Design',
+      'Accessibility (WCAG)',
+      'Design Systems',
+      'Figma & Adobe XD',
+      'Tailwind CSS',
+      'CSS-in-JS',
+      'Animation & Motion',
+      'User Research',
+    ],
+  },
+  {
+    title: 'Architecture',
+    skills: [
+      'Micro-frontends',
+      'System Design',
+      'Performance Optimization',
+      'State Management',
+      'Code Splitting',
+      'SEO Optimization',
+      'Progressive Web Apps',
+      'Serverless Architecture',
+    ],
+  },
+  {
+    title: 'Leadership',
+    skills: [
+      'Team Management',
+      'Code Reviews',
+      'Mentoring',
+      'Agile/Scrum',
+      'Technical Writing',
+      'Stakeholder Communication',
+      'Project Planning',
+      'Cross-functional Collaboration',
+    ],
+  },
+];
+
+// Clients Data
+export const CLIENTS_DATA = [
+  {
+    name: 'T-Mobile',
+    logo: '/images/tmobile_logo.png',
+  },
+  {
+    name: 'Comcast',
+    logo: '/images/Comcast-Logo.png',
+  },
+  {
+    name: 'Albertsons',
+    logo: '/images/albertsons-logo.png',
+  },
+  {
+    name: 'ADP',
+    logo: '/images/adp-logo.png',
+  },
+  {
+    name: 'TOMRA',
+    logo: '/images/tomra-logo.png',
+  },
+];
+
+// Footer Section
+export const FOOTER_GET_IN_TOUCH_TITLE = 'Get In Touch';
+export const FOOTER_GET_IN_TOUCH_DESC =
+  "I'm always interested in hearing about new opportunities and exciting projects.";
+export const FOOTER_EMAIL = 'abhisheknr4@gmail.com';
+export const FOOTER_LOCATION = 'Bellevue, WA';
+export const FOOTER_QUICK_LINKS_TITLE = 'Quick Links';
+export const FOOTER_QUICK_LINKS = [
+  { label: 'Experience', href: '#experience' },
+  { label: 'Clients', href: '#clients' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Resume', href: '#resume' },
+];
+export const FOOTER_CONNECT_TITLE = 'Connect';
+export const FOOTER_CONNECT_DESC =
+  'Follow me on social media to stay updated with my latest work and thoughts on technology.';
+export const FOOTER_COPYRIGHT_TEXT = 'Made with love, sleepless nights and Next JS.';
+
+// Work Section
+export const WORK_TITLE = 'My Work';
+
+// Lets Talk Section
+export const LETS_TALK_SECTION_TITLE = "Let's Talk";
+export const EMAIL_BUTTON_TEXT = 'Email';
+export const LETS_TALK_IMAGE_ALT = 'Abhishek smiling at you';
+
+// Meta
+export const META_TITLE = 'Abhishek | Software Engineer';
+export const META_DESCRIPTION = 'Portfolio website showcasing my experience, skills, and projects as a full stack developer';

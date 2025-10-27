@@ -1,4 +1,4 @@
-import { TIMELINE_DATA } from '@/config/constants';
+import { EXPERIENCE_KEY_ACHIEVEMENTS, EXPERIENCE_TITLE, TIMELINE_DATA } from '@/config/constants';
 import { Briefcase, Calendar } from 'lucide-react';
 import { Badge } from '@/components/ui';
 
@@ -12,7 +12,7 @@ const Experience = () => {
     >
       <div className="flex items-center gap-4 mb-8">
         <h2 className="text-3xl sm:text-4xl md:text-5xl">
-          My Experience
+          {EXPERIENCE_TITLE}
         </h2>
         <div className="h-1 flex-1 bg-black" />
       </div>
@@ -34,9 +34,8 @@ const Experience = () => {
                   </p>
                 </div>
                 <div
-                  className={`inline-block px-2 sm:px-3 py-1 text-xs border-2 border-black ${
-                    index % EVEN_INDEX === 0 ? 'bg-yellow-300' : 'bg-emerald-100'
-                  }`}
+                  className={`inline-block px-2 sm:px-3 py-1 text-xs border-2 border-black ${index % EVEN_INDEX === 0 ? 'bg-yellow-300' : 'bg-emerald-100'
+                    }`}
                 >
                   {exp.company}
                 </div>
@@ -57,7 +56,7 @@ const Experience = () => {
 
                 <div className="mb-3">
                   <p className="text-sm uppercase tracking-wide mb-2">
-                    Key Achievements:
+                    {EXPERIENCE_KEY_ACHIEVEMENTS}
                   </p>
                   <ul className="space-y-1">
                     {exp.highlights.map((highlight, idx) => (
