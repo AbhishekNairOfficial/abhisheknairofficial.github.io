@@ -1,5 +1,9 @@
+import { getNowPlaying, getSpotifyData } from '@/utils/spotify';
 import { Music2 } from 'lucide-react';
 import Image from 'next/image';
+import React from 'react';
+
+const HTTP_STATUS_OK = 200;
 
 const currentDate = new Date().toLocaleDateString('en-US', {
   weekday: 'long',
@@ -37,7 +41,49 @@ const socialLinks = [
   },
 ];
 
-const Header = () => {
+// eslint-disable-next-line max-statements
+async function getSongData() {
+  let name = 'Nothing playing';
+  let artist = '';
+  let statusText = 'Currently listening to';
+
+  try {
+    const nowPlaying = await getNowPlaying();
+
+    // Check if there's currently playing music
+    if (nowPlaying.status === HTTP_STATUS_OK) {
+      const nowPlayingData = await nowPlaying.json();
+      if (nowPlayingData.is_playing && nowPlayingData.item) {
+        const item = nowPlayingData.item;
+        name = item.name;
+        artist = item.artists.map((_artist: { name: string }) => _artist.name).join(', ');
+        statusText = 'Currently listening to';
+        return { name, artist, statusText };
+      }
+    }
+
+    // No current song, try to get recently played
+    const spotifyData = await getSpotifyData();
+    if (spotifyData.responseRecently.ok) {
+      const recentData = await spotifyData.responseRecently.json();
+      const recentSong = recentData.items?.[0]?.track;
+
+      if (recentSong) {
+        name = recentSong.name;
+        artist = recentSong.artists.map((_artist: { name: string }) => _artist.name).join(', ');
+        statusText = 'Recently played';
+      }
+    }
+  } catch {
+    // Defaults already set
+  }
+
+  return { name, artist, statusText };
+}
+
+async function Header() {
+  const { name, artist, statusText } = await getSongData();
+
   return (
     <header className="border-b-4 border-black">
       <div className="bg-black text-white py-0">
@@ -55,20 +101,12 @@ const Header = () => {
             <div className="flex items-center gap-2 overflow-hidden flex-1 mx-4">
               <Music2 className="h-3 w-3 text-emerald-400 flex-shrink-0" />
               <div className="overflow-hidden min-w-0 flex-1">
-                <div className="animate-scroll whitespace-nowrap inline-block">
-                  <span className="text-xs">
-                    Currently listening to:
-                    <span className="text-emerald-400">
-                      Blinding Lights - The Weeknd
-                    </span>
+                <span className="text-xs">
+                  {`${statusText}: `}
+                  <span className="text-emerald-400">
+                    {`${name} - ${artist}`}
                   </span>
-                  <span className="text-xs ml-8">
-                    Currently listening to:
-                    <span className="text-emerald-400">
-                      Blinding Lights - The Weeknd
-                    </span>
-                  </span>
-                </div>
+                </span>
               </div>
             </div>
 
@@ -117,15 +155,15 @@ const Header = () => {
                 <div className="overflow-hidden min-w-0">
                   <div className="animate-scroll whitespace-nowrap inline-block">
                     <span className="text-xs">
-                      Currently listening to:
+                      {`${statusText}:`}
                       <span className="text-emerald-400">
-                        Blinding Lights - The Weeknd
+                        {`${name} - ${artist}`}
                       </span>
                     </span>
                     <span className="text-xs ml-8">
-                      Currently listening to:
+                      {`${statusText}:`}
                       <span className="text-emerald-400">
-                        Blinding Lights - The Weeknd
+                        {`${name} - ${artist}`}
                       </span>
                     </span>
                   </div>
@@ -175,6 +213,6 @@ const Header = () => {
       </div>
     </header>
   );
-};
+}
 
 export default Header;
