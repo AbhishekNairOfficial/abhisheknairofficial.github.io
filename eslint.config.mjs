@@ -148,7 +148,6 @@ const eslintConfig = [
       "semi": ["error", "always"],
       "semi-spacing": ["error", { "before": false, "after": true }],
       "space-before-blocks": "error",
-      "space-before-function-paren": ["error", "never"],
       "space-in-parens": ["error", "never"],
       "space-infix-ops": "error",
       "space-unary-ops": "error",

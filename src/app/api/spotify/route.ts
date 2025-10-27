@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import { getNowPlaying } from '@/utils/spotify';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 const HTTP_STATUS_NO_CONTENT = 204;
 const HTTP_STATUS_BAD_REQUEST = 400;
 const HTTP_STATUS_OK = 200;
@@ -14,7 +17,9 @@ export async function GET(): Promise<NextResponse> {
       {
         status: HTTP_STATUS_OK,
         headers: {
-          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0',
+          Pragma: 'no-cache',
+          Expires: '0',
         },
       });
   }
@@ -37,7 +42,9 @@ export async function GET(): Promise<NextResponse> {
     {
       status: HTTP_STATUS_OK,
       headers: {
-        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0',
+        Pragma: 'no-cache',
+        Expires: '0',
       },
     },
   );
