@@ -1,15 +1,22 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextResponse } from 'next/server';
 import { getNowPlaying } from '@/utils/spotify';
 
 const HTTP_STATUS_NO_CONTENT = 204;
 const HTTP_STATUS_BAD_REQUEST = 400;
 const HTTP_STATUS_OK = 200;
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
+export async function GET(): Promise<NextResponse> {
   const response = await getNowPlaying();
 
   if (response.status === HTTP_STATUS_NO_CONTENT || response.status > HTTP_STATUS_BAD_REQUEST) {
-    return res.status(HTTP_STATUS_OK).json({ isPlaying: false });
+    return NextResponse.json(
+      { isPlaying: false },
+      {
+        status: HTTP_STATUS_OK,
+        headers: {
+          'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=30',
+        },
+      });
   }
 
   const song = await response.json();
@@ -19,13 +26,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const album = song.item.album.name;
   const songUrl = song.item.external_urls.spotify;
 
-  res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=30');
-
-  return res.status(HTTP_STATUS_OK).json({
-    album,
-    artist,
-    isPlaying,
-    songUrl,
-    name,
-  });
+  return NextResponse.json(
+    {
+      album,
+      artist,
+      isPlaying,
+      songUrl,
+      name,
+    },
+    {
+      status: HTTP_STATUS_OK,
+      headers: {
+        'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=30',
+      },
+    },
+  );
 }
