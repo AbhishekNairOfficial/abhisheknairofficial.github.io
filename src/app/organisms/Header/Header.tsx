@@ -102,7 +102,9 @@ async function Header() {
             {/* Left: Seattle */}
             <div className="flex items-center">
               <span className="text-xs whitespace-nowrap">
-                📍 {LOCATION_DESKTOP}
+                📍
+                {' '}
+                {LOCATION_DESKTOP}
               </span>
             </div>
 
@@ -140,7 +142,9 @@ async function Header() {
           <div className="md:hidden">
             <div className="flex items-center justify-between py-1">
               <span className="text-xs whitespace-nowrap">
-                📍 {LOCATION_MOBILE}
+                📍
+                {' '}
+                {LOCATION_MOBILE}
               </span>
               <div className="flex items-center gap-3">
                 {socialLinks.map((link) => (

@@ -34,8 +34,7 @@ const Experience = () => {
                   </p>
                 </div>
                 <div
-                  className={`inline-block px-2 sm:px-3 py-1 text-xs border-2 border-black ${index % EVEN_INDEX === 0 ? 'bg-yellow-300' : 'bg-emerald-100'
-                    }`}
+                  className={`inline-block px-2 sm:px-3 py-1 text-xs border-2 border-black ${index % EVEN_INDEX === 0 ? 'bg-yellow-300' : 'bg-emerald-100'}`}
                 >
                   {exp.company}
                 </div>
