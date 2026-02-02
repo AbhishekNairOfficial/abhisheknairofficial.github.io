@@ -57,7 +57,7 @@ export function Hero() {
             <p className="text-base mb-4">
               {ABOUT_ME_TEXT_PART2}
             </p>
-            <Button className="bg-emerald-600 hover:bg-emerald-700">
+            <Button className="bg-emerald-800 hover:bg-emerald-900">
               <Download className="mr-2 h-4 w-4" />
               {DOWNLOAD_RESUME_TEXT}
             </Button>
@@ -69,7 +69,7 @@ export function Hero() {
             </h3>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
-                <span className="bg-emerald-500 text-white px-2 py-1 text-xs">
+                <span className="bg-emerald-700 text-white px-2 py-1 text-xs">
                   {FACT_EXPERIENCE_NUMBER}
                 </span>
                 <div>
@@ -95,7 +95,7 @@ export function Hero() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <span className="bg-emerald-500 text-white px-2 py-1 text-xs">
+                <span className="bg-emerald-700 text-white px-2 py-1 text-xs">
                   {FACT_CURRENT_ROLE_NUMBER}
                 </span>
                 <div>

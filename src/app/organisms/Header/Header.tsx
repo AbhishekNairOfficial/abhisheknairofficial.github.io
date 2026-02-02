@@ -27,6 +27,7 @@ const socialLinks = [
     label: SOCIAL_LINKS[0].label,
     icon: (
       <svg
+        aria-hidden="true"
         className="h-3.5 w-3.5"
         fill="currentColor"
         viewBox="0 0 24 24"
@@ -40,6 +41,7 @@ const socialLinks = [
     label: SOCIAL_LINKS[1].label,
     icon: (
       <svg
+        aria-hidden="true"
         className="h-3.5 w-3.5"
         fill="currentColor"
         viewBox="0 0 24 24"
@@ -125,7 +127,7 @@ async function Header() {
             <div className="flex items-center gap-3">
               {socialLinks.map((link) => (
                 <a
-                  aria-label={link.label}
+                  aria-label={`Visit ${link.label} profile`}
                   className="hover:text-emerald-400 transition-colors"
                   href={link.url}
                   key={link.label}
@@ -149,7 +151,7 @@ async function Header() {
               <div className="flex items-center gap-3">
                 {socialLinks.map((link) => (
                   <a
-                    aria-label={link.label}
+                    aria-label={`Visit ${link.label} profile`}
                     className="hover:text-emerald-400 transition-colors"
                     href={link.url}
                     key={link.label}

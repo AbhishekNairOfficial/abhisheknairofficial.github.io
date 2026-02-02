@@ -69,12 +69,14 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a
+                aria-label="Visit GitHub profile"
                 className="p-2 border border-white hover:bg-white hover:text-black transition-all"
                 href="https://github.com/abhisheknairofficial"
                 rel="noreferrer"
                 target="_blank"
               >
                 <svg
+                  aria-hidden="true"
                   className="h-4 w-4"
                   fill="currentColor"
                   viewBox="0 0 24 24"
@@ -84,12 +86,14 @@ const Footer = () => {
                 </svg>
               </a>
               <a
+                aria-label="Visit LinkedIn profile"
                 className="p-2 border border-white hover:bg-white hover:text-black transition-all"
                 href="https://linkedin.com/in/6foot4"
                 rel="noreferrer"
                 target="_blank"
               >
                 <svg
+                  aria-hidden="true"
                   className="h-4 w-4"
                   fill="currentColor"
                   viewBox="0 0 24 24"
