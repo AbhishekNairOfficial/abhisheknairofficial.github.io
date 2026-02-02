@@ -19,8 +19,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        primary: ['Gloock', 'serif'],
-        secondary: ['Special Elite', 'serif'],
+        primary: ['var(--font-playfair-display)', 'Playfair Display', 'serif'],
+        secondary: ['var(--font-special-elite)', 'Special Elite', 'serif'],
       },
       colors: {
         border: 'hsl(var(--border))',

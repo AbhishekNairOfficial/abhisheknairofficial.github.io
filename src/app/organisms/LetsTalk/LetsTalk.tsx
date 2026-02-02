@@ -1,5 +1,11 @@
-import { EMAIL_BUTTON_TEXT, LETS_TALK_IMAGE_ALT, LETS_TALK_SECTION_TITLE, LETS_TALK_TEXT } from '@/config/constants';
-import Button from '@/app/atoms/Button';
+import { Button } from '@/components/ui';
+import {
+  EMAIL_BUTTON_TEXT,
+  FOOTER_EMAIL,
+  LETS_TALK_IMAGE_ALT,
+  LETS_TALK_SECTION_TITLE,
+  LETS_TALK_TEXT,
+} from '@/config/constants';
 import Image from 'next/image';
 
 const LetsTalk = () => (
@@ -10,16 +16,21 @@ const LetsTalk = () => (
     <div className="flex">
       <p className="flex-1 text-2xl text-justify pr-[50px]">
         {LETS_TALK_TEXT}
-        <Button className="mt-7 block">
-          {EMAIL_BUTTON_TEXT}
+        <Button
+          asChild
+          className="mt-7 block bg-emerald-800 hover:bg-emerald-900"
+        >
+          <a href={`mailto:${FOOTER_EMAIL}`}>
+            {EMAIL_BUTTON_TEXT}
+          </a>
         </Button>
       </p>
       <p className="flex-1">
         <Image
           alt={LETS_TALK_IMAGE_ALT}
-          height="250"
+          height={250}
           src="/images/lets-talk.png"
-          width="250"
+          width={250}
         />
       </p>
     </div>

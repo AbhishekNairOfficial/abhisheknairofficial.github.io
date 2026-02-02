@@ -9,7 +9,8 @@
     "lint": "next lint",
     "lint:check": "eslint . --max-warnings 0",
     "lint:fix": "eslint . --fix",
-    "lint:report": "eslint . --format html --output-file eslint-report.html"
+    "lint:report": "eslint . --format html --output-file eslint-report.html",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
@@ -23,6 +24,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@playwright/test": "^1.49.0",
     "@eslint/eslintrc": "^3",
     "@types/node": "20.17.19",
     "@types/react": "19.0.10",

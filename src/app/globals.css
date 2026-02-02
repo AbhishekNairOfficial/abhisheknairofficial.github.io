@@ -55,18 +55,32 @@
   }
   body {
     @apply bg-background text-foreground;
-    --font-serif: 'var(--font-playfair)', serif;
-    --font-sans: 'var(--font-inter)', sans-serif;
+    --font-serif: var(--font-playfair-display), 'Playfair Display', serif;
+    --font-sans: var(--font-special-elite), 'Special Elite', sans-serif;
   }
-  
+
   /* Prevent horizontal scroll */
-  html, body {
+  html,
+  body {
     overflow-x: hidden;
     max-width: 100vw;
   }
-  
+
   /* Ensure all containers respect viewport width */
   * {
     box-sizing: border-box;
   }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 15s linear infinite;
 }

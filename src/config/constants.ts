@@ -1,9 +1,9 @@
 export const JOB_TITLE = 'Senior Product Technologist';
 export const JOB_DESCRIPTION =
-  'Lead Frontend Engineer with 7+ years of experience specializing in React.js, Next.js, and enterprise-scale web applications.\nExpert in UX implementation, RESTful APIs, and modern frontend architectures.';
+  'Lead Frontend Engineer with 8+ years of experience specializing in React.js, Next.js, and enterprise-scale web applications.\nExpert in UX implementation, RESTful APIs, and modern frontend architectures.';
 
 export const EXPERIENCE_TEXT =
-  "Hello, my name is Abhishek, and I'm a developer based in Seattle, WA. With over 7 years of experience in the industry, I currently hold the position of Lead Software Engineer at UST.";
+  "Hello, my name is Abhishek, and I'm a developer based in Bellevue, WA. With over 8 years of experience in the industry, I currently hold the position of Lead Software Engineer at UST.";
 
 export const TIMELINE_DATA = [
   {
@@ -26,7 +26,7 @@ export const TIMELINE_DATA = [
     role: 'Lead II - Software Engineering',
     description: 'Leading frontend architecture and development for enterprise-scale applications. Mentoring team of 8 engineers and establishing best practices for React.js development.',
     highlights: [
-      'Signifantly improved site performance by breaking down monolithic codebase into smaller, more maintainable modules',
+      'Significantly improved site performance by breaking down monolithic codebase into smaller, more maintainable modules',
       'Created and maintained a component system, offering a 20% reduction in development time for new features',
       'Improved app architecture, providing a 33% performance boost for over 15000 users',
     ],
@@ -58,7 +58,7 @@ export const LETS_TALK_TEXT =
 // Header
 export const NAME = 'Abhishek Panthalingal';
 export const LOCATION_DESKTOP = 'Bellevue, WA';
-export const LOCATION_MOBILE = 'Seattle, WA';
+export const LOCATION_MOBILE = 'Bellevue, WA';
 export const STATUS_LISTENING = 'Currently listening to';
 export const STATUS_RECENT = 'Recently played';
 export const STATUS_NOTHING = 'Nothing playing';
@@ -86,6 +86,7 @@ export const ABOUT_ME_TEXT_PART1 =
 export const ABOUT_ME_TEXT_PART2 =
   'I specialize in building scalable, user-centric applications that solve real-world problems. My expertise spans the full spectrum of modern frontend development, from architecture design to implementation and optimization.';
 export const DOWNLOAD_RESUME_TEXT = 'Download Resume';
+export const RESUME_URL = '/resume.pdf';
 
 export const QUICK_FACTS_TITLE = 'Quick Facts';
 export const FACT_EXPERIENCE_NUMBER = '01';
@@ -119,6 +120,8 @@ export const SKILLS_DESIGN_TITLE = 'Design & UX';
 export const SKILLS_DESIGN_DESCRIPTION = 'Bridging the gap between design and development. Creating beautiful, accessible interfaces that users love.';
 export const SKILLS_ARCHITECTURE_TITLE = 'Architecture';
 export const SKILLS_ARCHITECTURE_DESCRIPTION = 'Designing systems that scale. Performance-first approach to building modern web applications.';
+export const SKILLS_LEADERSHIP_TITLE = 'Leadership';
+export const SKILLS_LEADERSHIP_DESCRIPTION = 'Leading teams and elevating engineering practices. Mentoring, code reviews, and cross-functional collaboration.';
 
 export const SKILL_CATEGORIES = [
   {
@@ -226,5 +229,8 @@ export const EMAIL_BUTTON_TEXT = 'Email';
 export const LETS_TALK_IMAGE_ALT = 'Abhishek smiling at you';
 
 // Meta
-export const META_TITLE = 'Abhishek | Software Engineer';
-export const META_DESCRIPTION = 'Portfolio website showcasing my experience, skills, and projects as a full stack developer';
+export const META_TITLE = 'Abhishek Panthalingal | Senior Product Technologist';
+export const META_DESCRIPTION =
+  'Portfolio of Abhishek Panthalingal — Senior Product Technologist and frontend engineer with 8+ years building React, Next.js, and enterprise-scale web applications.';
+export const META_SITE_URL = 'https://abhisheknairofficial.github.io';
+export const META_OG_IMAGE = '/images/profile-picture.jpg';

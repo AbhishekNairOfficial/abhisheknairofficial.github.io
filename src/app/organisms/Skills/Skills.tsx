@@ -5,6 +5,8 @@ import {
   SKILLS_ARCHITECTURE_TITLE,
   SKILLS_DESIGN_DESCRIPTION,
   SKILLS_DESIGN_TITLE,
+  SKILLS_LEADERSHIP_DESCRIPTION,
+  SKILLS_LEADERSHIP_TITLE,
   SKILLS_MAIN_TITLE,
   SKILLS_SUBTITLE,
   SKILLS_TECHNICAL_DESCRIPTION,
@@ -125,6 +127,29 @@ export function Skills() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* Leadership spotlight */}
+      <div className="border-4 border-black p-6 bg-yellow-300">
+        <div className="flex items-center gap-3 mb-4">
+          <Users className="h-8 w-8 sm:h-10 sm:w-10" />
+          <h3 className="text-2xl sm:text-3xl">
+            {SKILLS_LEADERSHIP_TITLE}
+          </h3>
+        </div>
+        <p className="mb-4">
+          {SKILLS_LEADERSHIP_DESCRIPTION}
+        </p>
+        <div className="space-y-2">
+          {skillCategories[3].skills.map((skill, idx) => (
+            <div
+              className="bg-white border-l-4 border-black px-3 py-2 text-sm"
+              key={idx}
+            >
+              {skill}
+            </div>
+          ))}
         </div>
       </div>
     </section>

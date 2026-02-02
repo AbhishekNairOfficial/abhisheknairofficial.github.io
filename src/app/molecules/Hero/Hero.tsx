@@ -21,6 +21,7 @@ import {
   HERO_TITLE_PART1,
   HERO_TITLE_PART2,
   QUICK_FACTS_TITLE,
+  RESUME_URL,
 } from '@/config/constants';
 
 export function Hero() {
@@ -47,7 +48,10 @@ export function Hero() {
 
       <div className="prose max-w-none">
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="border-l-4 border-emerald-500 pl-6">
+          <div
+            className="border-l-4 border-emerald-500 pl-6"
+            id="resume"
+          >
             <h3 className="text-2xl mb-3">
               {ABOUT_ME_TITLE}
             </h3>
@@ -57,9 +61,17 @@ export function Hero() {
             <p className="text-base mb-4">
               {ABOUT_ME_TEXT_PART2}
             </p>
-            <Button className="bg-emerald-800 hover:bg-emerald-900">
-              <Download className="mr-2 h-4 w-4" />
-              {DOWNLOAD_RESUME_TEXT}
+            <Button
+              asChild
+              className="bg-emerald-800 hover:bg-emerald-900"
+            >
+              <a
+                download
+                href={RESUME_URL}
+              >
+                <Download className="mr-2 h-4 w-4" />
+                {DOWNLOAD_RESUME_TEXT}
+              </a>
             </Button>
           </div>
 
