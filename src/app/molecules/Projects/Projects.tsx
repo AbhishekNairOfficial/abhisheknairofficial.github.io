@@ -1,6 +1,6 @@
 import { ArrowUpRight } from 'lucide-react';
 import { FadeIn } from '@/components/motion';
-import type { Project } from '@/config/constants';
+import { projectExternalLinkAriaLabel, type Project } from '@/config/constants';
 import { STAGGER_CHILD_DELAY } from '@/lib/motion';
 
 interface ProjectCardsProps {
@@ -15,7 +15,7 @@ export function ProjectCards({ projects }: ProjectCardsProps) {
           delay={index * STAGGER_CHILD_DELAY}
           key={project.title}
         >
-          <div className="group border border-border p-6 sm:p-8 hover:border-primary/30 transition-all duration-300 h-full flex flex-col">
+          <div className="group border border-border border-t-2 border-t-primary/15 p-6 sm:p-8 hover:border-primary/30 transition-all duration-300 h-full flex flex-col hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5 motion-reduce:hover:translate-y-0 motion-reduce:hover:shadow-none">
             <div className="flex items-start justify-between mb-4 gap-2">
               <div className="min-w-0">
                 {project.client && (
@@ -29,13 +29,16 @@ export function ProjectCards({ projects }: ProjectCardsProps) {
               </div>
               {project.link && (
                 <a
-                  aria-label={`View ${project.title} (opens in new tab)`}
+                  aria-label={projectExternalLinkAriaLabel(project.title)}
                   className="text-muted-foreground hover:text-primary transition-colors flex-shrink-0 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   href={project.link}
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <ArrowUpRight aria-hidden className="h-5 w-5" />
+                  <ArrowUpRight
+                    aria-hidden
+                    className="h-5 w-5"
+                  />
                 </a>
               )}
             </div>
@@ -52,7 +55,7 @@ export function ProjectCards({ projects }: ProjectCardsProps) {
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech) => (
                   <span
-                    className="font-mono text-[10px] px-2 py-0.5 border border-border text-muted-foreground"
+                    className="inline-block cursor-default font-mono text-[10px] px-2 py-0.5 border border-border text-muted-foreground transition-all duration-200 hover:text-primary hover:border-primary/30 hover:-translate-y-0.5 hover:scale-105 active:scale-95 motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100 motion-reduce:active:scale-100"
                     key={tech}
                   >
                     {tech}
@@ -66,7 +69,10 @@ export function ProjectCards({ projects }: ProjectCardsProps) {
                     className="flex items-center gap-2 text-sm"
                     key={idx}
                   >
-                    <span aria-hidden className="text-primary text-xs">
+                    <span
+                      aria-hidden
+                      className="text-primary text-xs"
+                    >
                       &#8599;
                     </span>
                     <span className="text-foreground">

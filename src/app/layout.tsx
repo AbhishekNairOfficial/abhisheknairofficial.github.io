@@ -9,9 +9,12 @@ import {
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import {
+  JOB_TITLE,
   META_DESCRIPTION,
   META_SITE_URL,
   META_TITLE,
+  NAME,
+  SKIP_TO_MAIN_LABEL,
 } from '@/config/constants';
 
 const dmSerifDisplay = DMSerifDisplay({
@@ -66,8 +69,8 @@ export default function RootLayout({
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Abhishek Panthalingal',
-    jobTitle: 'Lead Engineer & Architect',
+    name: NAME,
+    jobTitle: JOB_TITLE,
     url: META_SITE_URL,
     description: META_DESCRIPTION,
   };
@@ -95,7 +98,7 @@ export default function RootLayout({
             className="sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:m-0 focus:w-auto focus:h-auto focus:overflow-visible focus:p-4 focus:[clip:auto] focus:whitespace-normal focus:bg-primary focus:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-primary"
             href="#main"
           >
-            Skip to main content
+            {SKIP_TO_MAIN_LABEL}
           </a>
           {children}
         </ThemeProvider>

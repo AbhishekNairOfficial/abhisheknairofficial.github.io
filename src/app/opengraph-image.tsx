@@ -1,6 +1,7 @@
 import { ImageResponse } from 'next/og';
+import { NAME, OG_IMAGE_ALT, OG_IMAGE_KICKER, OG_IMAGE_TAGLINE } from '@/config/constants';
 
-export const alt = 'Abhishek Panthalingal — Lead Engineer & Architect';
+export const alt = OG_IMAGE_ALT;
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -28,7 +29,7 @@ export default function OpenGraphImage() {
             marginBottom: 24,
           }}
         >
-          Portfolio
+          {OG_IMAGE_KICKER}
         </div>
         <div
           style={{
@@ -39,7 +40,7 @@ export default function OpenGraphImage() {
             marginBottom: 20,
           }}
         >
-          Abhishek Panthalingal
+          {NAME}
         </div>
         <div
           style={{
@@ -49,7 +50,7 @@ export default function OpenGraphImage() {
             lineHeight: 1.35,
           }}
         >
-          Lead Engineer & Architect — frontend systems at scale
+          {OG_IMAGE_TAGLINE}
         </div>
       </div>
     ),

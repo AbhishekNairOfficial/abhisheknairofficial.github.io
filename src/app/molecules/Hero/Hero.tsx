@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
-import { NAME, HERO_TITLE, HERO_TAGLINE } from '@/config/constants';
+import { HERO_SCROLL_LABEL, HERO_TITLE, HERO_TAGLINE, NAME } from '@/config/constants';
 import {
   FADE_DURATION_DEFAULT,
   HERO_CHEVRON_LOOP_DURATION,
@@ -16,6 +16,33 @@ import {
   MOTION_EASE,
   SCROLL_INDICATOR_OFFSET,
 } from '@/lib/motion';
+
+const HERO_HEADLINE_HOVER_LIFT_PX = 2;
+const HERO_HEADLINE_HOVER_DURATION_S = 0.2;
+
+function HeroHeadline() {
+  const reduceMotion = useReducedMotion();
+
+  return (
+    <motion.div
+      className="group inline-block w-full cursor-default"
+      transition={{
+        duration: HERO_HEADLINE_HOVER_DURATION_S,
+        ease: MOTION_EASE,
+      }}
+      whileHover={reduceMotion ? undefined : { y: -HERO_HEADLINE_HOVER_LIFT_PX }}
+    >
+      {HERO_TITLE.split('\n').map((line, i) => (
+        <span
+          className="block font-display font-normal text-foreground transition-colors duration-200 group-hover:text-primary"
+          key={i}
+        >
+          {line}
+        </span>
+      ))}
+    </motion.div>
+  );
+}
 
 export function Hero() {
   const reduceMotion = useReducedMotion();
@@ -44,10 +71,10 @@ export function Hero() {
   const chevronTransition = reduceMotion
     ? { duration: 0 }
     : {
-        duration: HERO_CHEVRON_LOOP_DURATION,
-        repeat: Infinity,
-        ease: 'easeInOut' as const,
-      };
+      duration: HERO_CHEVRON_LOOP_DURATION,
+      repeat: Infinity,
+      ease: 'easeInOut' as const,
+    };
 
   return (
     <section className="min-h-[90vh] flex flex-col justify-center relative pt-16">
@@ -61,15 +88,10 @@ export function Hero() {
           <span className="block font-mono text-xs uppercase tracking-[0.3em] text-primary mb-6">
             {NAME}
           </span>
-          {HERO_TITLE.split('\n').map((line, i) => (
-            <span
-              className="block font-display font-normal"
-              key={i}
-            >
-              {line}
-            </span>
-          ))}
+          <HeroHeadline />
         </motion.h1>
+
+        <div className="w-16 h-px bg-primary/40 mb-8" />
 
         <motion.p
           animate={{ opacity: 1, y: 0 }}
@@ -92,13 +114,16 @@ export function Hero() {
           href="#about"
         >
           <span className="font-mono text-[10px] uppercase tracking-widest">
-            Scroll
+            {HERO_SCROLL_LABEL}
           </span>
           <motion.div
             animate={chevronAnimate}
             transition={chevronTransition}
           >
-            <ChevronDown aria-hidden className="h-4 w-4" />
+            <ChevronDown
+              aria-hidden
+              className="h-4 w-4"
+            />
           </motion.div>
         </a>
       </motion.div>

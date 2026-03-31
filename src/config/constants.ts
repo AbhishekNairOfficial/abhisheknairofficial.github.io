@@ -1,13 +1,49 @@
-// Header / Navigation
+/* eslint-disable max-lines -- consolidated site copy; keep all strings in this file */
+/**
+ * Site copy — single place to edit user-visible text and structured content.
+ */
+
+// ——— Identity ———
 export const NAME = 'Abhishek Panthalingal';
 export const LOCATION = 'Bellevue, WA';
+/** Single-line role title (schema, OG, footer one-liners, etc.) */
+export const JOB_TITLE = 'Lead Engineer & Architect';
 
-// Spotify
+// ——— Navigation ———
+export const NAV_LINKS = [
+  { label: 'About', href: '#about' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Work', href: '#work' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Contact', href: '#contact' },
+] as const;
+
+/** Landmark label for the primary `<nav>` (accessibility). */
+export const NAVIGATION_LANDMARK_LABEL = 'Primary';
+export const BRAND_BACK_TO_MAIN_SUFFIX = ', back to main content';
+
+export function brandBackToMainAriaLabel(personName: string): string {
+  return `${personName}${BRAND_BACK_TO_MAIN_SUFFIX}`;
+}
+
+export const RESUME_URL = '/resume.pdf';
+export const RESUME_BUTTON_LABEL = 'Resume';
+export const DOWNLOAD_RESUME_LABEL = 'Download Resume';
+
+export const MOBILE_MENU_OPEN_LABEL = 'Open menu';
+export const MOBILE_MENU_CLOSE_LABEL = 'Close menu';
+export const MOBILE_SITE_MENU_DIALOG_LABEL = 'Site menu';
+
+// ——— Layout & shell ———
+export const SKIP_TO_MAIN_LABEL = 'Skip to main content';
+
+// ——— Spotify (footer) ———
 export const STATUS_LISTENING = 'Currently listening to';
 export const STATUS_RECENT = 'Recently played';
 export const STATUS_NOTHING = 'Nothing playing';
+export const SPOTIFY_STATUS_BEFORE_TRACK = ': ';
 
-// Social Links
+// ——— Social ———
 export const SOCIAL_LINKS = [
   {
     url: 'https://linkedin.com/in/6foot4',
@@ -19,19 +55,23 @@ export const SOCIAL_LINKS = [
   },
 ];
 
-// Hero Section
+export function socialProfileLinkAriaLabel(networkLabel: string): string {
+  return `Visit ${networkLabel} profile (opens in new tab)`;
+}
+
+// ——— Hero ———
 export const HERO_TITLE = 'Lead Engineer\n& Architect';
 export const HERO_TAGLINE =
   'I architect frontend systems that scale. 8+ years building enterprise products for T-Mobile, Comcast, and Albertsons.';
+export const HERO_SCROLL_LABEL = 'Scroll';
 
-// About Section
+// ——— About ———
 export const ABOUT_TITLE = 'About';
 export const ABOUT_SECTION_NUMBER = '01';
 export const ABOUT_TEXT =
   "I'm a lead engineer and architect based in Bellevue, WA. I specialize in building scalable, user-centric applications — from micro-frontend architectures to React Native migrations. I thrive at the intersection of systems thinking and craft, leading teams to ship products that perform at scale.";
 export const ABOUT_TEXT_2 =
   'Currently at Rhombuz LLC, I architect frontend systems for enterprise clients, mentor cross-functional engineering teams, and establish best practices across multiple product lines.';
-export const RESUME_URL = '/resume.pdf';
 
 export const QUICK_FACTS = [
   { number: '01', label: 'Experience', value: '8+ years in software engineering' },
@@ -40,7 +80,7 @@ export const QUICK_FACTS = [
   { number: '04', label: 'Location', value: 'Bellevue, Washington' },
 ];
 
-// Experience Section
+// ——— Experience ———
 export const EXPERIENCE_TITLE = 'Experience';
 export const EXPERIENCE_SECTION_NUMBER = '02';
 
@@ -89,7 +129,7 @@ export const TIMELINE_DATA = [
   },
 ];
 
-// Work / Projects Section
+// ——— Work / Projects ———
 export const WORK_TITLE = 'Work';
 export const WORK_SECTION_NUMBER = '03';
 
@@ -102,6 +142,10 @@ export interface Project {
   outcomes: string[];
   link?: string;
   github?: string;
+}
+
+export function projectExternalLinkAriaLabel(projectTitle: string): string {
+  return `View ${projectTitle} (opens in new tab)`;
 }
 
 export const PROJECTS: Project[] = [
@@ -143,7 +187,7 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-// Skills Section
+// ——— Skills ———
 export const SKILLS_TITLE = 'Skills';
 export const SKILLS_SECTION_NUMBER = '04';
 
@@ -204,7 +248,7 @@ export const SKILL_CATEGORIES = [
   },
 ];
 
-// Clients Section
+// ——— Clients ———
 export const CLIENTS_TITLE = 'Clients';
 export const CLIENTS_SECTION_NUMBER = '05';
 
@@ -216,26 +260,47 @@ export const CLIENTS_DATA = [
   { name: 'TOMRA', context: 'Reverse vending' },
 ];
 
-// Contact Section
+export const CLIENTS_MARQUEE_PAUSE = 'Pause';
+export const CLIENTS_MARQUEE_PLAY = 'Play';
+export const CLIENTS_MARQUEE_TOGGLE_SUFFIX = ' client list';
+
+// ——— Contact ———
 export const CONTACT_TITLE = 'Get in Touch';
 export const CONTACT_SECTION_NUMBER = '06';
 export const CONTACT_TEXT =
   "I'm always interested in hearing about new opportunities, architecture challenges, and exciting projects. Let's talk.";
 export const CONTACT_EMAIL = 'abhisheknr4@gmail.com';
 
-// Footer
+// ——— Footer ———
+export const FOOTER_BIO = `${JOB_TITLE} building scalable frontend systems.`;
+export const FOOTER_NAV_HEADING = 'Navigation';
+export const FOOTER_CONNECT_HEADING = 'Connect';
 export const FOOTER_COPYRIGHT = 'Crafted with Next.js, Tailwind, and too much coffee.';
 
-export const FOOTER_LINKS = [
-  { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Work', href: '#work' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Contact', href: '#contact' },
-];
+// ——— Theme / accent UI ———
+export const THEME_ARIA_LIGHT = 'Switch to light mode';
+export const THEME_ARIA_DARK = 'Switch to dark mode';
+export const ACCENT_COLOR_ARIA_LABEL = 'Customize accent color';
+export const ACCENT_HUE_LABEL = 'Accent hue';
+export const ACCENT_HUE_RESET = 'Reset';
 
-// Meta
-export const META_TITLE = 'Abhishek Panthalingal | Lead Engineer & Architect';
+// ——— Error & not found ———
+export const ERROR_PAGE_TITLE = 'Something went wrong';
+export const ERROR_PAGE_DESCRIPTION = 'An unexpected error occurred. Please try again.';
+export const ERROR_PAGE_TRY_AGAIN = 'Try again';
+
+export const NOT_FOUND_CODE = '404';
+export const NOT_FOUND_TITLE = 'Page not found';
+export const NOT_FOUND_DESCRIPTION = 'The page you are looking for does not exist or has been moved.';
+export const NOT_FOUND_BACK_HOME = 'Back to home';
+
+// ——— Open Graph image (app/opengraph-image.tsx) ———
+export const OG_IMAGE_ALT = `${NAME} — ${JOB_TITLE}`;
+export const OG_IMAGE_KICKER = 'Portfolio';
+export const OG_IMAGE_TAGLINE = `${JOB_TITLE} — frontend systems at scale`;
+
+// ——— Meta ———
+export const META_TITLE = `${NAME} | ${JOB_TITLE}`;
 export const META_DESCRIPTION =
-  'Portfolio of Abhishek Panthalingal — Lead Engineer & Architect with 8+ years building React, Next.js, and enterprise-scale frontend systems.';
+  `Portfolio of ${NAME} — ${JOB_TITLE} with 8+ years building React, Next.js, and enterprise-scale frontend systems.`;
 export const META_SITE_URL = 'https://abhisheknairofficial.github.io';

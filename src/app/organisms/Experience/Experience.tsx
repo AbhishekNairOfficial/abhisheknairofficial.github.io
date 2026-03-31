@@ -5,24 +5,24 @@ import { STAGGER_CHILD_DELAY } from '@/lib/motion';
 const Experience = () => {
   return (
     <section
-      className="py-24 border-t border-border"
+      className="py-24 border-t border-primary/10"
       id="experience"
     >
       <div className="max-w-6xl mx-auto px-6">
         <FadeIn>
-          <div className="flex items-center gap-4 mb-16">
+          <div className="group flex items-center gap-4 mb-16">
             <span className="font-mono text-xs text-primary">
               {EXPERIENCE_SECTION_NUMBER}
             </span>
             <h2 className="font-literata text-3xl sm:text-4xl font-semibold">
               {EXPERIENCE_TITLE}
             </h2>
-            <div className="h-px flex-1 bg-border" />
+            <div className="h-px flex-1 bg-border transition-colors duration-500 group-hover:bg-primary/40" />
           </div>
         </FadeIn>
 
         <div className="relative">
-          <div className="absolute left-0 md:left-[140px] top-0 bottom-0 w-px bg-border" />
+          <div className="absolute left-0 md:left-[140px] top-0 bottom-0 w-px bg-primary/20" />
 
           <div className="space-y-16">
             {TIMELINE_DATA.map((exp, index) => (
@@ -58,7 +58,10 @@ const Experience = () => {
                           className="flex items-start gap-3 text-sm text-muted-foreground"
                           key={idx}
                         >
-                          <span aria-hidden className="text-primary mt-1.5 text-[8px]">
+                          <span
+                            aria-hidden
+                            className="text-primary mt-1.5 text-[8px]"
+                          >
                             &#9646;
                           </span>
                           <span>
@@ -71,7 +74,7 @@ const Experience = () => {
                     <div className="flex flex-wrap gap-2">
                       {exp.technologies.map((tech) => (
                         <span
-                          className="font-mono text-[11px] px-2.5 py-1 border border-border text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
+                          className="inline-block cursor-default font-mono text-[11px] px-2.5 py-1 border border-border text-muted-foreground hover:text-primary hover:border-primary/30 transition-all duration-200 hover:-translate-y-0.5 hover:scale-105 active:scale-95 motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100 motion-reduce:active:scale-100"
                           key={tech}
                         >
                           {tech}

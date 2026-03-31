@@ -4,53 +4,53 @@
 
 @layer base {
   :root {
-    --background: 40 20% 98%;
+    --background: 180 8% 98%;
     --foreground: 220 12% 18%;
-    --card: 40 15% 96%;
+    --card: 180 6% 96%;
     --card-foreground: 220 12% 18%;
-    --popover: 40 20% 98%;
+    --popover: 180 8% 98%;
     --popover-foreground: 220 12% 18%;
-    --primary: 32 88% 42%;
-    --primary-foreground: 40 20% 98%;
-    --secondary: 40 10% 92%;
+    --primary: 174 84% 32%;
+    --primary-foreground: 180 20% 98%;
+    --secondary: 180 6% 92%;
     --secondary-foreground: 220 12% 18%;
-    --muted: 40 12% 92%;
+    --muted: 180 6% 92%;
     --muted-foreground: 220 10% 38%;
-    --accent: 32 88% 42%;
-    --accent-foreground: 40 20% 98%;
+    --accent: 174 84% 32%;
+    --accent-foreground: 180 20% 98%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 40 20% 98%;
-    --border: 40 8% 88%;
-    --input: 40 8% 88%;
-    --ring: 32 88% 42%;
+    --destructive-foreground: 180 20% 98%;
+    --border: 180 8% 88%;
+    --input: 180 8% 88%;
+    --ring: 174 84% 32%;
     --radius: 0.5rem;
   }
 
   .dark {
     --background: 0 0% 9%;
-    --foreground: 40 5% 92%;
+    --foreground: 210 8% 92%;
     --card: 0 0% 12%;
-    --card-foreground: 40 5% 92%;
+    --card-foreground: 210 8% 92%;
     --popover: 0 0% 12%;
-    --popover-foreground: 40 5% 92%;
-    --primary: 38 82% 52%;
+    --popover-foreground: 210 8% 92%;
+    --primary: 174 70% 48%;
     --primary-foreground: 0 0% 9%;
     --secondary: 0 0% 16%;
-    --secondary-foreground: 40 5% 92%;
+    --secondary-foreground: 210 8% 92%;
     --muted: 0 0% 18%;
     --muted-foreground: 0 0% 58%;
-    --accent: 38 82% 52%;
+    --accent: 174 70% 48%;
     --accent-foreground: 0 0% 9%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 40 5% 92%;
+    --destructive-foreground: 210 8% 92%;
     --border: 0 0% 20%;
     --input: 0 0% 20%;
-    --ring: 38 82% 52%;
+    --ring: 174 70% 48%;
   }
 
   @media (prefers-contrast: more) {
     :root {
-      --border: 40 8% 72%;
+      --border: 180 8% 72%;
       --muted-foreground: 220 10% 32%;
     }
 
@@ -62,7 +62,7 @@
 
   @media (prefers-contrast: less) {
     :root {
-      --border: 40 8% 91%;
+      --border: 180 8% 91%;
     }
 
     .dark {
@@ -94,6 +94,23 @@
   ::selection {
     background-color: hsl(var(--primary) / 0.28);
     color: hsl(var(--foreground));
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.25);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.4);
   }
 }
 
@@ -137,4 +154,44 @@
 
 .dark .noise-overlay {
   opacity: 0.03;
+}
+
+/* Nav link underline (easter egg polish) */
+.nav-link-underline {
+  position: relative;
+}
+
+.nav-link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: hsl(var(--primary));
+  transition: width 0.3s ease;
+}
+
+.nav-link-underline:hover::after {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link-underline::after {
+    transition: none;
+  }
+}
+
+/* Hue slider track: full spectrum (used by ColorSlider) */
+.hue-slider-track {
+  background: linear-gradient(
+    to right,
+    hsl(0, 90%, 50%),
+    hsl(60, 90%, 45%),
+    hsl(120, 90%, 40%),
+    hsl(180, 90%, 40%),
+    hsl(240, 90%, 55%),
+    hsl(300, 90%, 50%),
+    hsl(360, 90%, 50%)
+  );
 }

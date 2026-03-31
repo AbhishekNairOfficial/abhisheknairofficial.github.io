@@ -2,6 +2,11 @@
 
 import { useReducedMotion } from 'framer-motion';
 import { useCallback, useState } from 'react';
+import {
+  CLIENTS_MARQUEE_PAUSE,
+  CLIENTS_MARQUEE_PLAY,
+  CLIENTS_MARQUEE_TOGGLE_SUFFIX,
+} from '@/config/constants';
 import { cn } from '@/lib/utils';
 
 export interface ClientMarqueeItem {
@@ -31,9 +36,9 @@ export function ClientsMarquee({ items }: ClientsMarqueeProps) {
             reduceMotion
               ? 'flex flex-wrap justify-center gap-x-10 gap-y-8 md:gap-x-14'
               : cn(
-                  'flex clients-marquee-track animate-scroll',
-                  paused && 'animate-scroll-paused',
-                )
+                'flex clients-marquee-track animate-scroll',
+                paused && 'animate-scroll-paused',
+              )
           }
         >
           {displayItems.map((client, index) => (
@@ -41,7 +46,7 @@ export function ClientsMarquee({ items }: ClientsMarqueeProps) {
               className="flex-shrink-0 px-8 md:px-12 flex flex-col items-center justify-center gap-3"
               key={`${client.name}-${index}`}
             >
-              <span className="font-primary text-2xl sm:text-3xl text-foreground/60 hover:text-primary transition-colors whitespace-nowrap">
+              <span className="font-primary text-2xl sm:text-3xl text-foreground/60 hover:text-primary transition-all duration-300 whitespace-nowrap motion-safe:hover:scale-110">
                 {client.name}
               </span>
               <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
@@ -59,9 +64,8 @@ export function ClientsMarquee({ items }: ClientsMarqueeProps) {
             onClick={togglePaused}
             type="button"
           >
-            {paused ? 'Play' : 'Pause'}
-            {' '}
-            client list
+            {paused ? CLIENTS_MARQUEE_PLAY : CLIENTS_MARQUEE_PAUSE}
+            {CLIENTS_MARQUEE_TOGGLE_SUFFIX}
           </button>
         </div>
       )}
