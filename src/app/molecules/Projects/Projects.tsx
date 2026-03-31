@@ -29,12 +29,13 @@ export function ProjectCards({ projects }: ProjectCardsProps) {
               </div>
               {project.link && (
                 <a
-                  className="text-muted-foreground hover:text-primary transition-colors flex-shrink-0"
+                  aria-label={`View ${project.title} (opens in new tab)`}
+                  className="text-muted-foreground hover:text-primary transition-colors flex-shrink-0 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   href={project.link}
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <ArrowUpRight className="h-5 w-5" />
+                  <ArrowUpRight aria-hidden className="h-5 w-5" />
                 </a>
               )}
             </div>
@@ -65,7 +66,7 @@ export function ProjectCards({ projects }: ProjectCardsProps) {
                     className="flex items-center gap-2 text-sm"
                     key={idx}
                   >
-                    <span className="text-primary text-xs">
+                    <span aria-hidden className="text-primary text-xs">
                       &#8599;
                     </span>
                     <span className="text-foreground">

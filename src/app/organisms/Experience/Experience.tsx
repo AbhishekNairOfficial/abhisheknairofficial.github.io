@@ -58,7 +58,7 @@ const Experience = () => {
                           className="flex items-start gap-3 text-sm text-muted-foreground"
                           key={idx}
                         >
-                          <span className="text-primary mt-1.5 text-[8px]">
+                          <span aria-hidden className="text-primary mt-1.5 text-[8px]">
                             &#9646;
                           </span>
                           <span>

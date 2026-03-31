@@ -39,9 +39,9 @@ const LetsTalk = () => (
               className="inline-flex items-center gap-3 font-mono text-sm bg-primary text-primary-foreground px-6 py-3 hover:bg-primary/90 transition-colors"
               href={`mailto:${CONTACT_EMAIL}`}
             >
-              <Mail className="h-4 w-4" />
+              <Mail aria-hidden className="h-4 w-4" />
               {CONTACT_EMAIL}
-              <ArrowUpRight className="h-3 w-3" />
+              <ArrowUpRight aria-hidden className="h-3 w-3" />
             </a>
           </div>
         </FadeIn>

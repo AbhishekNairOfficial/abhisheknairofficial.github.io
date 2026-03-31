@@ -55,7 +55,7 @@ const Footer = async () => {
 
         <div className="border-t border-border pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-muted-foreground">
-            <Music2 className="h-3 w-3 text-primary flex-shrink-0" />
+            <Music2 aria-hidden className="h-3 w-3 text-primary flex-shrink-0" />
             <span className="font-mono text-[11px]">
               {statusText}
               {': '}

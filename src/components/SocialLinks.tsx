@@ -28,7 +28,7 @@ export function SocialLinks({ variant, className = '' }: SocialLinksProps) {
     <div className={className}>
       {SOCIAL_LINKS.map((link) => (
         <a
-          aria-label={`Visit ${link.label} profile`}
+          aria-label={`Visit ${link.label} profile (opens in new tab)`}
           className={linkClassName}
           href={link.url}
           key={link.label}

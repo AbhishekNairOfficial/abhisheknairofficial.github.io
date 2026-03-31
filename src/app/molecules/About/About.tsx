@@ -42,7 +42,7 @@ export function About() {
                 download
                 href={RESUME_URL}
               >
-                <Download className="h-3 w-3" />
+                <Download aria-hidden className="h-3 w-3" />
                 Download Resume
               </a>
             </div>
