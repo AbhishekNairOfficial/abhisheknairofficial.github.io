@@ -60,24 +60,24 @@ export function socialProfileLinkAriaLabel(networkLabel: string): string {
 }
 
 // ——— Hero ———
-export const HERO_TITLE = 'Lead Engineer\n& Architect';
+export const HERO_TITLE = 'Systems Engineer\n& Architect';
 export const HERO_TAGLINE =
-  'I architect frontend systems that scale. 8+ years building enterprise products for T-Mobile, Comcast, and Albertsons.';
+  'Frontend | Mobile | Hardware | Systems';
 export const HERO_SCROLL_LABEL = 'Scroll';
 
 // ——— About ———
 export const ABOUT_TITLE = 'About';
 export const ABOUT_SECTION_NUMBER = '01';
 export const ABOUT_TEXT =
-  "I'm a lead engineer and architect based in Bellevue, WA. I specialize in building scalable, user-centric applications — from micro-frontend architectures to React Native migrations. I thrive at the intersection of systems thinking and craft, leading teams to ship products that perform at scale.";
+  "I'm a systems-focused engineer and architect based in Bellevue, WA. I specialize in building reliable, scalable applications that operate beyond the browser - integrating hardware, networks, and real-world workflows. My work spans frontend architecture, device communication, and end-to-end system design.";
 export const ABOUT_TEXT_2 =
-  'Currently at Rhombuz LLC, I architect frontend systems for enterprise clients, mentor cross-functional engineering teams, and establish best practices across multiple product lines.';
+  'At Rhombuz LLC, I architect and deliver production systems for enterprise clients, lead cross-functional teams, and establish engineering standards across products. I focus on making complex systems work reliably in real-world environments';
 
 export const QUICK_FACTS = [
-  { number: '01', label: 'Experience', value: '8+ years in software engineering' },
-  { number: '02', label: 'Specialization', value: 'Frontend Architecture & Systems Design' },
+  { number: '01', label: 'Experience', value: '8+ years building production systems' },
+  { number: '02', label: 'Specialization', value: 'Mobile, Web, Cloud' },
   { number: '03', label: 'Current Role', value: 'Senior Product Technologist @ Rhombuz LLC' },
-  { number: '04', label: 'Location', value: 'Bellevue, Washington' },
+  { number: '04', label: 'Focus', value: 'Real-world systems (POS, devices, networks)' },
 ];
 
 // ——— Experience ———
@@ -100,22 +100,8 @@ export const TIMELINE_DATA = [
     technologies: ['React', 'Next.js', 'TypeScript', 'React Native', 'Azure'],
   },
   {
-    id: 3,
-    period: 'Mar 2023 — Mar 2025',
-    company: 'Independent Consulting',
-    role: 'Freelance Architect & Engineer',
-    description:
-      'Consulted for startups and mid-size companies on frontend architecture, performance optimization, and design system implementation. Delivered production systems across React, Next.js, and React Native.',
-    highlights: [
-      'Designed and delivered component library adopted by 3 client engineering teams',
-      'Reduced Lighthouse performance scores from ~50 to 90+ for an e-commerce platform',
-      'Established testing and CI/CD practices for a Series A startup',
-    ],
-    technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind', 'Node.js'],
-  },
-  {
     id: 4,
-    period: 'Sep 2017 — Mar 2023',
+    period: 'Sep 2017 — Mar 2025',
     company: 'UST Global',
     role: 'Lead II — Software Engineering',
     description:
