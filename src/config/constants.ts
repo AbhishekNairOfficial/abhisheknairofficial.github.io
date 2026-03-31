@@ -1,64 +1,8 @@
-export const JOB_TITLE = 'Senior Product Technologist';
-export const JOB_DESCRIPTION =
-  'Lead Frontend Engineer with 8+ years of experience specializing in React.js, Next.js, and enterprise-scale web applications.\nExpert in UX implementation, RESTful APIs, and modern frontend architectures.';
-
-export const EXPERIENCE_TEXT =
-  "Hello, my name is Abhishek, and I'm a developer based in Bellevue, WA. With over 8 years of experience in the industry, I currently hold the position of Lead Software Engineer at UST.";
-
-export const TIMELINE_DATA = [
-  {
-    id: 5,
-    period: 'Apr 2025 - Present',
-    company: 'Rhombuz LLC',
-    role: 'Senior Product Technologist',
-    description: 'Architecting and leading frontend development for large-scale enterprise applications with a focus on performance, modularity, and developer experience. Establishing best practices in React.js, React Native, TypeScript, and state management. Mentoring a cross-functional team of engineers, conducting code reviews, and guiding UI/UX consistency across multiple product lines.',
-    highlights: [
-      'Architected and deployed micro-frontend system reducing load time by 40%',
-      'Led migration from legacy Windows applications to modern React Native stack',
-      'Implemented CI/CD pipeline improving deployment frequency by 60%',
-    ],
-    technologies: ['React', 'Next.js', 'TypeScript', 'Azure'],
-  },
-  {
-    id: 4,
-    period: 'Sep 2017 - Mar 2023',
-    company: 'UST Global',
-    role: 'Lead II - Software Engineering',
-    description: 'Leading frontend architecture and development for enterprise-scale applications. Mentoring team of 8 engineers and establishing best practices for React.js development.',
-    highlights: [
-      'Significantly improved site performance by breaking down monolithic codebase into smaller, more maintainable modules',
-      'Created and maintained a component system, offering a 20% reduction in development time for new features',
-      'Improved app architecture, providing a 33% performance boost for over 15000 users',
-    ],
-    technologies: ['React', 'React Native', 'GraphQL', 'TypeScript', 'AWS', 'Docker'],
-  },
-];
-
-export const PROJECTS = [
-  {
-    title: 'Item POD',
-    description:
-      'Item was a recent project under Albertsons using React, Redux, Graph QL.',
-  },
-  {
-    title: 'Digital Orders Dashboard',
-    description:
-      'Digital orders dashboard for T-mobile using React, D3 Graphs.',
-  },
-  {
-    title: 'Tic Tac Toe',
-    description:
-      'My little project during the pandemic creating a Tic Tac Toe game.',
-  },
-];
-
-export const LETS_TALK_TEXT =
-  "If you want to chat about a freelance project, job opportunity, or even just learn more about how I created this site, don't hesitate to reach out to me below!";
-
-// Header
+// Header / Navigation
 export const NAME = 'Abhishek Panthalingal';
-export const LOCATION_DESKTOP = 'Bellevue, WA';
-export const LOCATION_MOBILE = 'Bellevue, WA';
+export const LOCATION = 'Bellevue, WA';
+
+// Spotify
 export const STATUS_LISTENING = 'Currently listening to';
 export const STATUS_RECENT = 'Recently played';
 export const STATUS_NOTHING = 'Nothing playing';
@@ -76,78 +20,160 @@ export const SOCIAL_LINKS = [
 ];
 
 // Hero Section
-export const HERO_TITLE_PART1 = 'Senior Product';
-export const HERO_TITLE_PART2 = 'Technologist';
-export const HERO_DESCRIPTION =
-  'Software Engineer with 8+ years of experience specializing in React.js, Next.js, and enterprise-scale web applications. Expert in UX implementation, RESTful APIs, and modern frontend architectures.';
-export const ABOUT_ME_TITLE = 'About Me';
-export const ABOUT_ME_TEXT_PART1 =
-  "Hello, my name is Abhishek, and I'm a developer based in Bellevue, WA. With over 8 years of experience in the industry, I currently hold the position of Senior Product Technologist at Rhombuz LLC.";
-export const ABOUT_ME_TEXT_PART2 =
-  'I specialize in building scalable, user-centric applications that solve real-world problems. My expertise spans the full spectrum of modern frontend development, from architecture design to implementation and optimization.';
-export const DOWNLOAD_RESUME_TEXT = 'Download Resume';
+export const HERO_TITLE = 'Lead Engineer\n& Architect';
+export const HERO_TAGLINE =
+  'I architect frontend systems that scale. 8+ years building enterprise products for T-Mobile, Comcast, and Albertsons.';
+
+// About Section
+export const ABOUT_TITLE = 'About';
+export const ABOUT_SECTION_NUMBER = '01';
+export const ABOUT_TEXT =
+  "I'm a lead engineer and architect based in Bellevue, WA. I specialize in building scalable, user-centric applications — from micro-frontend architectures to React Native migrations. I thrive at the intersection of systems thinking and craft, leading teams to ship products that perform at scale.";
+export const ABOUT_TEXT_2 =
+  'Currently at Rhombuz LLC, I architect frontend systems for enterprise clients, mentor cross-functional engineering teams, and establish best practices across multiple product lines.';
 export const RESUME_URL = '/resume.pdf';
 
-export const QUICK_FACTS_TITLE = 'Quick Facts';
-export const FACT_EXPERIENCE_NUMBER = '01';
-export const FACT_EXPERIENCE_LABEL = 'Experience';
-export const FACT_EXPERIENCE_DESC = '8+ years in software engineering';
-export const FACT_SPECIALIZATION_NUMBER = '02';
-export const FACT_SPECIALIZATION_LABEL = 'Specialization';
-export const FACT_SPECIALIZATION_DESC = 'Frontend, Architecture, and UX Engineering';
-export const FACT_CURRENT_ROLE_NUMBER = '03';
-export const FACT_CURRENT_ROLE_LABEL = 'Current Role';
-export const FACT_CURRENT_ROLE_DESC = 'Senior Product Technologist @ Rhombuz LLC';
-export const FACT_LOCATION_NUMBER = '04';
-export const FACT_LOCATION_LABEL = 'Location';
-export const FACT_LOCATION_DESC = 'Bellevue, Washington';
+export const QUICK_FACTS = [
+  { number: '01', label: 'Experience', value: '8+ years in software engineering' },
+  { number: '02', label: 'Specialization', value: 'Frontend Architecture & Systems Design' },
+  { number: '03', label: 'Current Role', value: 'Senior Product Technologist @ Rhombuz LLC' },
+  { number: '04', label: 'Location', value: 'Bellevue, Washington' },
+];
 
 // Experience Section
-export const EXPERIENCE_TITLE = 'My Experience';
-export const EXPERIENCE_KEY_ACHIEVEMENTS = 'Key Achievements:';
+export const EXPERIENCE_TITLE = 'Experience';
+export const EXPERIENCE_SECTION_NUMBER = '02';
 
-// Clients Section
-export const CLIENTS_TITLE = 'Notable Clients';
-export const CLIENTS_SATISFACTION_TITLE = 'Client Satisfaction:';
-export const CLIENTS_SATISFACTION_TEXT = 'Maintained client satisfaction rate with 100% project delivery on schedule';
+export const TIMELINE_DATA = [
+  {
+    id: 5,
+    period: 'Apr 2025 — Present',
+    company: 'Rhombuz LLC',
+    role: 'Senior Product Technologist',
+    description:
+      'Architecting and leading frontend development for large-scale enterprise applications. Establishing best practices in React.js, React Native, TypeScript, and state management across multiple product lines.',
+    highlights: [
+      'Architected micro-frontend system reducing initial load time by 40%',
+      'Led migration from legacy Windows applications to modern React Native stack',
+      'Implemented CI/CD pipeline improving deployment frequency by 60%',
+    ],
+    technologies: ['React', 'Next.js', 'TypeScript', 'React Native', 'Azure'],
+  },
+  {
+    id: 3,
+    period: 'Mar 2023 — Mar 2025',
+    company: 'Independent Consulting',
+    role: 'Freelance Architect & Engineer',
+    description:
+      'Consulted for startups and mid-size companies on frontend architecture, performance optimization, and design system implementation. Delivered production systems across React, Next.js, and React Native.',
+    highlights: [
+      'Designed and delivered component library adopted by 3 client engineering teams',
+      'Reduced Lighthouse performance scores from ~50 to 90+ for an e-commerce platform',
+      'Established testing and CI/CD practices for a Series A startup',
+    ],
+    technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind', 'Node.js'],
+  },
+  {
+    id: 4,
+    period: 'Sep 2017 — Mar 2023',
+    company: 'UST Global',
+    role: 'Lead II — Software Engineering',
+    description:
+      'Led frontend architecture and development for enterprise-scale applications serving Fortune 500 clients. Mentored a team of 8 engineers and established best practices for React.js development.',
+    highlights: [
+      'Broke down monolithic codebase into modular architecture, improving maintainability and deploy velocity',
+      'Created component system yielding 20% reduction in development time for new features',
+      'Improved application performance by 33% for 15,000+ daily active users',
+    ],
+    technologies: ['React', 'React Native', 'GraphQL', 'TypeScript', 'AWS', 'Docker'],
+  },
+];
+
+// Work / Projects Section
+export const WORK_TITLE = 'Work';
+export const WORK_SECTION_NUMBER = '03';
+
+export interface Project {
+  title: string;
+  client?: string;
+  summary: string;
+  role: string;
+  technologies: string[];
+  outcomes: string[];
+  link?: string;
+  github?: string;
+}
+
+export const PROJECTS: Project[] = [
+  {
+    title: 'Micro-Frontend Platform',
+    client: 'Rhombuz LLC',
+    summary:
+      'Architected a module-federated micro-frontend system enabling independent team deployments across a large enterprise product suite.',
+    role: 'Lead Architect',
+    technologies: ['React', 'Module Federation', 'TypeScript', 'Azure DevOps'],
+    outcomes: ['40% reduction in initial load time', 'Independent team deployments with zero downtime'],
+  },
+  {
+    title: 'Item POD',
+    client: 'Albertsons',
+    summary:
+      'Built a high-performance product operations dashboard for one of the largest grocery chains in the US, handling real-time inventory and pricing data.',
+    role: 'Frontend Lead',
+    technologies: ['React', 'Redux', 'GraphQL', 'Node.js'],
+    outcomes: ['Real-time data for 2,000+ stores', 'Sub-second query response times'],
+  },
+  {
+    title: 'Digital Orders Dashboard',
+    client: 'T-Mobile',
+    summary:
+      'Designed and built an interactive analytics dashboard for digital order tracking with complex D3 visualizations and drill-down capabilities.',
+    role: 'Frontend Lead',
+    technologies: ['React', 'D3.js', 'TypeScript', 'REST APIs'],
+    outcomes: ['Consolidated 5 legacy tools into one platform', '15,000+ daily active users'],
+  },
+  {
+    title: 'React Native Migration',
+    client: 'Enterprise Client',
+    summary:
+      'Led the migration of legacy Windows desktop applications to a cross-platform React Native solution, enabling mobile-first workflows for field teams.',
+    role: 'Lead Architect',
+    technologies: ['React Native', 'TypeScript', 'Azure', 'CI/CD'],
+    outcomes: ['Cross-platform coverage (iOS, Android, Windows)', '60% improvement in deployment frequency'],
+  },
+];
 
 // Skills Section
-export const SKILLS_MAIN_TITLE = 'What I Bring to the Table';
-export const SKILLS_SUBTITLE = 'A comprehensive toolkit for building exceptional digital experiences';
-export const SKILLS_TECHNICAL_MASTERY = 'Technical Mastery';
-export const SKILLS_TECHNICAL_DESCRIPTION = 'Building scalable applications with modern technologies. From React ecosystems to cloud infrastructure, I architect solutions that perform at scale.';
-export const SKILLS_DESIGN_TITLE = 'Design & UX';
-export const SKILLS_DESIGN_DESCRIPTION = 'Bridging the gap between design and development. Creating beautiful, accessible interfaces that users love.';
-export const SKILLS_ARCHITECTURE_TITLE = 'Architecture';
-export const SKILLS_ARCHITECTURE_DESCRIPTION = 'Designing systems that scale. Performance-first approach to building modern web applications.';
-export const SKILLS_LEADERSHIP_TITLE = 'Leadership';
-export const SKILLS_LEADERSHIP_DESCRIPTION = 'Leading teams and elevating engineering practices. Mentoring, code reviews, and cross-functional collaboration.';
+export const SKILLS_TITLE = 'Skills';
+export const SKILLS_SECTION_NUMBER = '04';
+
+export const SKILL_PROPOSITIONS = [
+  {
+    title: 'Systems Architecture',
+    description: 'I design frontend systems that scale — micro-frontends, module federation, and component architectures for large teams.',
+  },
+  {
+    title: 'Technical Leadership',
+    description: 'I lead engineering teams, establish best practices, run code reviews, and mentor engineers from junior to senior.',
+  },
+  {
+    title: 'Performance Engineering',
+    description: 'I optimize what matters — Core Web Vitals, bundle sizes, rendering pipelines, and perceived performance.',
+  },
+];
 
 export const SKILL_CATEGORIES = [
   {
-    title: 'Technical Expertise',
+    title: 'Engineering',
     skills: [
       'React.js & Next.js',
-      'TypeScript & JavaScript',
-      'Node.js & Express',
-      'GraphQL & REST APIs',
-      'AWS & Cloud Services',
-      'Docker & Kubernetes',
-      'CI/CD & DevOps',
-      'Testing (Jest, Cypress)',
-    ],
-  },
-  {
-    title: 'Design & UX',
-    skills: [
-      'Responsive Design',
-      'Accessibility (WCAG)',
-      'Design Systems',
-      'Figma & Adobe XD',
-      'Tailwind CSS',
-      'CSS-in-JS',
-      'Animation & Motion',
-      'User Research',
+      'TypeScript',
+      'React Native',
+      'GraphQL & REST',
+      'Node.js',
+      'AWS & Azure',
+      'Docker & CI/CD',
+      'Testing (Jest, Playwright)',
     ],
   },
   {
@@ -157,10 +183,10 @@ export const SKILL_CATEGORIES = [
       'System Design',
       'Performance Optimization',
       'State Management',
-      'Code Splitting',
-      'SEO Optimization',
+      'Design Systems',
+      'Module Federation',
       'Progressive Web Apps',
-      'Serverless Architecture',
+      'Serverless',
     ],
   },
   {
@@ -169,68 +195,47 @@ export const SKILL_CATEGORIES = [
       'Team Management',
       'Code Reviews',
       'Mentoring',
-      'Agile/Scrum',
+      'Agile / Scrum',
       'Technical Writing',
-      'Stakeholder Communication',
+      'Stakeholder Comms',
       'Project Planning',
       'Cross-functional Collaboration',
     ],
   },
 ];
 
-// Clients Data
+// Clients Section
+export const CLIENTS_TITLE = 'Clients';
+export const CLIENTS_SECTION_NUMBER = '05';
+
 export const CLIENTS_DATA = [
-  {
-    name: 'T-Mobile',
-    logo: '/images/tmobile_logo.png',
-  },
-  {
-    name: 'Comcast',
-    logo: '/images/Comcast-Logo.png',
-  },
-  {
-    name: 'Albertsons',
-    logo: '/images/albertsons-logo.png',
-  },
-  {
-    name: 'ADP',
-    logo: '/images/adp-logo.png',
-  },
-  {
-    name: 'TOMRA',
-    logo: '/images/tomra-logo.png',
-  },
+  { name: 'T-Mobile', context: 'Telecom analytics' },
+  { name: 'Comcast', context: 'Media platform' },
+  { name: 'Albertsons', context: 'Retail operations' },
+  { name: 'ADP', context: 'HR technology' },
+  { name: 'TOMRA', context: 'Reverse vending' },
 ];
 
-// Footer Section
-export const FOOTER_GET_IN_TOUCH_TITLE = 'Get In Touch';
-export const FOOTER_GET_IN_TOUCH_DESC =
-  "I'm always interested in hearing about new opportunities and exciting projects.";
-export const FOOTER_EMAIL = 'abhisheknr4@gmail.com';
-export const FOOTER_LOCATION = 'Bellevue, WA';
-export const FOOTER_QUICK_LINKS_TITLE = 'Quick Links';
-export const FOOTER_QUICK_LINKS = [
+// Contact Section
+export const CONTACT_TITLE = 'Get in Touch';
+export const CONTACT_SECTION_NUMBER = '06';
+export const CONTACT_TEXT =
+  "I'm always interested in hearing about new opportunities, architecture challenges, and exciting projects. Let's talk.";
+export const CONTACT_EMAIL = 'abhisheknr4@gmail.com';
+
+// Footer
+export const FOOTER_COPYRIGHT = 'Crafted with Next.js, Tailwind, and too much coffee.';
+
+export const FOOTER_LINKS = [
+  { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
-  { label: 'Clients', href: '#clients' },
+  { label: 'Work', href: '#work' },
   { label: 'Skills', href: '#skills' },
-  { label: 'Resume', href: '#resume' },
+  { label: 'Contact', href: '#contact' },
 ];
-export const FOOTER_CONNECT_TITLE = 'Connect';
-export const FOOTER_CONNECT_DESC =
-  'Follow me on social media to stay updated with my latest work and thoughts on technology.';
-export const FOOTER_COPYRIGHT_TEXT = 'Made with love, sleepless nights and Next JS.';
-
-// Work Section
-export const WORK_TITLE = 'My Work';
-
-// Lets Talk Section
-export const LETS_TALK_SECTION_TITLE = "Let's Talk";
-export const EMAIL_BUTTON_TEXT = 'Email';
-export const LETS_TALK_IMAGE_ALT = 'Abhishek smiling at you';
 
 // Meta
-export const META_TITLE = 'Abhishek Panthalingal | Senior Product Technologist';
+export const META_TITLE = 'Abhishek Panthalingal | Lead Engineer & Architect';
 export const META_DESCRIPTION =
-  'Portfolio of Abhishek Panthalingal — Senior Product Technologist and frontend engineer with 8+ years building React, Next.js, and enterprise-scale web applications.';
+  'Portfolio of Abhishek Panthalingal — Lead Engineer & Architect with 8+ years building React, Next.js, and enterprise-scale frontend systems.';
 export const META_SITE_URL = 'https://abhisheknairofficial.github.io';
-export const META_OG_IMAGE = '/images/profile-picture.jpg';

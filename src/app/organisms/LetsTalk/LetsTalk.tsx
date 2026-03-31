@@ -1,38 +1,60 @@
-import { Button } from '@/components/ui';
+import { Mail, ArrowUpRight } from 'lucide-react';
+import { FadeIn } from '@/components/motion';
+import { SocialLinks } from '@/components/SocialLinks';
 import {
-  EMAIL_BUTTON_TEXT,
-  FOOTER_EMAIL,
-  LETS_TALK_IMAGE_ALT,
-  LETS_TALK_SECTION_TITLE,
-  LETS_TALK_TEXT,
+  CONTACT_EMAIL,
+  CONTACT_SECTION_NUMBER,
+  CONTACT_TEXT,
+  CONTACT_TITLE,
 } from '@/config/constants';
-import Image from 'next/image';
 
 const LetsTalk = () => (
-  <section className="mx-[50px] p-[50px]">
-    <h2 className="font-primary text-5xl underline mb-[30px]">
-      {LETS_TALK_SECTION_TITLE}
-    </h2>
-    <div className="flex">
-      <p className="flex-1 text-2xl text-justify pr-[50px]">
-        {LETS_TALK_TEXT}
-        <Button
-          asChild
-          className="mt-7 block bg-emerald-800 hover:bg-emerald-900"
-        >
-          <a href={`mailto:${FOOTER_EMAIL}`}>
-            {EMAIL_BUTTON_TEXT}
-          </a>
-        </Button>
-      </p>
-      <p className="flex-1">
-        <Image
-          alt={LETS_TALK_IMAGE_ALT}
-          height={250}
-          src="/images/lets-talk.png"
-          width={250}
-        />
-      </p>
+  <section
+    className="py-24 border-t border-border"
+    id="contact"
+  >
+    <div className="max-w-6xl mx-auto px-6">
+      <FadeIn>
+        <div className="flex items-center gap-4 mb-16">
+          <span className="font-mono text-xs text-primary">
+            {CONTACT_SECTION_NUMBER}
+          </span>
+          <h2 className="font-literata text-3xl sm:text-4xl font-semibold">
+            {CONTACT_TITLE}
+          </h2>
+          <div className="h-px flex-1 bg-border" />
+        </div>
+      </FadeIn>
+
+      <div className="max-w-2xl">
+        <FadeIn delay={0.1}>
+          <p className="text-muted-foreground text-lg leading-relaxed mb-10">
+            {CONTACT_TEXT}
+          </p>
+        </FadeIn>
+
+        <FadeIn delay={0.2}>
+          <div className="flex flex-col sm:flex-row items-start gap-4">
+            <a
+              className="inline-flex items-center gap-3 font-mono text-sm bg-primary text-primary-foreground px-6 py-3 hover:bg-primary/90 transition-colors"
+              href={`mailto:${CONTACT_EMAIL}`}
+            >
+              <Mail className="h-4 w-4" />
+              {CONTACT_EMAIL}
+              <ArrowUpRight className="h-3 w-3" />
+            </a>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.3}>
+          <div className="mt-10">
+            <SocialLinks
+              className="flex gap-4"
+              variant="footer"
+            />
+          </div>
+        </FadeIn>
+      </div>
     </div>
   </section>
 );

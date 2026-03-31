@@ -21,8 +21,8 @@ export function SocialLinks({ variant, className = '' }: SocialLinksProps) {
   const isHeader = variant === 'header';
   const iconSize = isHeader ? 'h-3.5 w-3.5' : 'h-4 w-4';
   const linkClassName = isHeader
-    ? 'hover:text-emerald-400 transition-colors'
-    : 'p-2 border border-white hover:bg-white hover:text-black transition-all';
+    ? 'text-muted-foreground hover:text-primary transition-colors'
+    : 'p-2 border border-border text-muted-foreground hover:text-primary hover:border-primary/30 transition-all';
 
   return (
     <div className={className}>

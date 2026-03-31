@@ -5,18 +5,18 @@ test.describe('Home page', () => {
     await page.goto('/');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Abhishek');
-    await expect(page.getByRole('heading', { name: /experience/i })).toBeVisible();
-    await expect(page.getByRole('heading', { name: /clients/i })).toBeVisible();
-    await expect(page.getByRole('heading', { name: /skills|what i bring/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /^experience$/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /^clients$/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /^skills$/i })).toBeVisible();
   });
 
-  test('resume link points to resume section or PDF', async ({ page }) => {
+  test('resume link points to PDF', async ({ page }) => {
     await page.goto('/');
 
     const resumeLink = page.getByRole('link', { name: /resume/i }).first();
     await expect(resumeLink).toBeVisible();
     const href = await resumeLink.getAttribute('href');
-    expect(href === '#resume' || href?.endsWith('resume.pdf')).toBeTruthy();
+    expect(href?.endsWith('resume.pdf')).toBeTruthy();
   });
 
   test('skip to main content link is present', async ({ page }) => {

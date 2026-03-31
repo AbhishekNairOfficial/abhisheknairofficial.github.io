@@ -1,141 +1,76 @@
-import { Button } from '@/components/ui';
-import { Download } from 'lucide-react';
+'use client';
+
+import { motion } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
+import { NAME, HERO_TITLE, HERO_TAGLINE } from '@/config/constants';
 import {
-  ABOUT_ME_TEXT_PART1,
-  ABOUT_ME_TEXT_PART2,
-  ABOUT_ME_TITLE,
-  DOWNLOAD_RESUME_TEXT,
-  FACT_CURRENT_ROLE_DESC,
-  FACT_CURRENT_ROLE_LABEL,
-  FACT_CURRENT_ROLE_NUMBER,
-  FACT_EXPERIENCE_DESC,
-  FACT_EXPERIENCE_LABEL,
-  FACT_EXPERIENCE_NUMBER,
-  FACT_LOCATION_DESC,
-  FACT_LOCATION_LABEL,
-  FACT_LOCATION_NUMBER,
-  FACT_SPECIALIZATION_DESC,
-  FACT_SPECIALIZATION_LABEL,
-  FACT_SPECIALIZATION_NUMBER,
-  HERO_DESCRIPTION,
-  HERO_TITLE_PART1,
-  HERO_TITLE_PART2,
-  QUICK_FACTS_TITLE,
-  RESUME_URL,
-} from '@/config/constants';
+  FADE_DURATION_DEFAULT,
+  HERO_CHEVRON_LOOP_DURATION,
+  HERO_H1_DELAY,
+  HERO_H1_DURATION,
+  HERO_INITIAL_Y_OFFSET,
+  HERO_SCROLL_HINT_DELAY,
+  HERO_SCROLL_HINT_DURATION,
+  HERO_TAGLINE_DELAY,
+  HERO_TAGLINE_Y_OFFSET,
+  MOTION_EASE,
+  SCROLL_INDICATOR_OFFSET,
+} from '@/lib/motion';
 
 export function Hero() {
   return (
-    <section className="mb-12 border-b-2 border-black pb-12">
-      <div className="bg-yellow-300 p-8 mb-8 border-2 border-black">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl mb-4 tracking-tight">
-              {HERO_TITLE_PART1}
-              {' '}
-              <span className="bg-white px-2 sm:px-3 py-1 inline-block border-2 border-black hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 cursor-pointer transition-all duration-300">
-                {HERO_TITLE_PART2}
-              </span>
-            </h2>
-          </div>
-          <div>
-            <p className="text-lg">
-              {HERO_DESCRIPTION}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="prose max-w-none">
-        <div className="grid md:grid-cols-2 gap-8">
-          <div
-            className="border-l-4 border-emerald-500 pl-6"
-            id="resume"
-          >
-            <h3 className="text-2xl mb-3">
-              {ABOUT_ME_TITLE}
-            </h3>
-            <p className="text-base mb-4">
-              {ABOUT_ME_TEXT_PART1}
-            </p>
-            <p className="text-base mb-4">
-              {ABOUT_ME_TEXT_PART2}
-            </p>
-            <Button
-              asChild
-              className="bg-emerald-800 hover:bg-emerald-900"
+    <section className="min-h-[90vh] flex flex-col justify-center relative pt-16">
+      <div className="max-w-6xl mx-auto px-6 w-full">
+        <motion.h1
+          animate={{ opacity: 1, y: 0 }}
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[1.05] mb-8"
+          initial={{ opacity: 0, y: HERO_INITIAL_Y_OFFSET }}
+          transition={{ duration: HERO_H1_DURATION, delay: HERO_H1_DELAY, ease: MOTION_EASE }}
+        >
+          <span className="block font-mono text-xs uppercase tracking-[0.3em] text-primary mb-6">
+            {NAME}
+          </span>
+          {HERO_TITLE.split('\n').map((line, i) => (
+            <span
+              className="block font-display font-normal"
+              key={i}
             >
-              <a
-                download
-                href={RESUME_URL}
-              >
-                <Download className="mr-2 h-4 w-4" />
-                {DOWNLOAD_RESUME_TEXT}
-              </a>
-            </Button>
-          </div>
+              {line}
+            </span>
+          ))}
+        </motion.h1>
 
-          <div className="bg-gray-50 p-6 border-2 border-black">
-            <h3 className="text-2xl mb-4">
-              {QUICK_FACTS_TITLE}
-            </h3>
-            <div className="space-y-3">
-              <div className="flex items-start gap-3">
-                <span className="bg-emerald-700 text-white px-2 py-1 text-xs">
-                  {FACT_EXPERIENCE_NUMBER}
-                </span>
-                <div>
-                  <p className="font-semibold">
-                    {FACT_EXPERIENCE_LABEL}
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    {FACT_EXPERIENCE_DESC}
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="bg-yellow-400 text-black px-2 py-1 text-xs">
-                  {FACT_SPECIALIZATION_NUMBER}
-                </span>
-                <div>
-                  <p className="font-semibold">
-                    {FACT_SPECIALIZATION_LABEL}
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    {FACT_SPECIALIZATION_DESC}
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="bg-emerald-700 text-white px-2 py-1 text-xs">
-                  {FACT_CURRENT_ROLE_NUMBER}
-                </span>
-                <div>
-                  <p className="font-semibold">
-                    {FACT_CURRENT_ROLE_LABEL}
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    {FACT_CURRENT_ROLE_DESC}
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="bg-yellow-400 text-black px-2 py-1 text-xs">
-                  {FACT_LOCATION_NUMBER}
-                </span>
-                <div>
-                  <p className="font-semibold">
-                    {FACT_LOCATION_LABEL}
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    {FACT_LOCATION_DESC}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <motion.p
+          animate={{ opacity: 1, y: 0 }}
+          className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed"
+          initial={{ opacity: 0, y: HERO_TAGLINE_Y_OFFSET }}
+          transition={{ duration: FADE_DURATION_DEFAULT, delay: HERO_TAGLINE_DELAY }}
+        >
+          {HERO_TAGLINE}
+        </motion.p>
       </div>
+
+      <motion.div
+        animate={{ opacity: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        initial={{ opacity: 0 }}
+        transition={{ delay: HERO_SCROLL_HINT_DELAY, duration: HERO_SCROLL_HINT_DURATION }}
+      >
+        <a
+          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+          href="#about"
+        >
+          <span className="font-mono text-[10px] uppercase tracking-widest">
+            Scroll
+          </span>
+          <motion.div
+            animate={{ y: [0, SCROLL_INDICATOR_OFFSET, 0] }}
+            transition={{ duration: HERO_CHEVRON_LOOP_DURATION, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <ChevronDown className="h-4 w-4" />
+          </motion.div>
+        </a>
+      </motion.div>
     </section>
   );
 }

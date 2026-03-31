@@ -1,57 +1,38 @@
+import { Music2 } from 'lucide-react';
 import { SocialLinks } from '@/components/SocialLinks';
-import { Mail, MapPin } from 'lucide-react';
 import {
-  FOOTER_CONNECT_DESC,
-  FOOTER_CONNECT_TITLE,
-  FOOTER_COPYRIGHT_TEXT,
-  FOOTER_EMAIL,
-  FOOTER_GET_IN_TOUCH_DESC,
-  FOOTER_GET_IN_TOUCH_TITLE,
-  FOOTER_LOCATION,
-  FOOTER_QUICK_LINKS,
-  FOOTER_QUICK_LINKS_TITLE,
+  FOOTER_COPYRIGHT,
+  FOOTER_LINKS,
+  NAME,
 } from '@/config/constants';
+import { getFooterSpotifyData } from '@/utils/footer-spotify';
 
-const Footer = () => {
+const Footer = async () => {
+  const { songName, artist, statusText } = await getFooterSpotifyData();
+  const trackDetails = artist ? ` — ${artist}` : '';
+
   return (
-    <footer className="bg-black text-white mt-16">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+    <footer className="border-t border-border">
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
           <div>
-            <h3 className="text-3xl mb-4">
-              {FOOTER_GET_IN_TOUCH_TITLE}
-            </h3>
-            <p className="text-gray-300 mb-4">
-              {FOOTER_GET_IN_TOUCH_DESC}
+            <span className="font-primary text-xl font-semibold block mb-4">
+              {NAME}
+            </span>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Lead Engineer & Architect building scalable frontend systems.
             </p>
-            <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-emerald-400" />
-                <a
-                  className="text-sm hover:text-emerald-400 transition-colors"
-                  href={`mailto:${FOOTER_EMAIL}`}
-                >
-                  {FOOTER_EMAIL}
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-emerald-400" />
-                <span className="text-sm">
-                  {FOOTER_LOCATION}
-                </span>
-              </div>
-            </div>
           </div>
 
           <div>
-            <h3 className="text-3xl mb-4">
-              {FOOTER_QUICK_LINKS_TITLE}
-            </h3>
+            <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground block mb-4">
+              Navigation
+            </span>
             <ul className="space-y-2">
-              {FOOTER_QUICK_LINKS.map((link) => (
+              {FOOTER_LINKS.map((link) => (
                 <li key={link.href}>
                   <a
-                    className="text-sm hover:text-yellow-300 transition-colors"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
                     href={link.href}
                   >
                     {link.label}
@@ -62,28 +43,37 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-3xl mb-4">
-              {FOOTER_CONNECT_TITLE}
-            </h3>
-            <p className="text-gray-300 mb-4 text-sm">
-              {FOOTER_CONNECT_DESC}
-            </p>
+            <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground block mb-4">
+              Connect
+            </span>
             <SocialLinks
-              className="flex gap-4"
+              className="flex gap-3"
               variant="footer"
             />
           </div>
         </div>
-      </div>
 
-      <div className="bg-emerald-500 py-2">
-        <p className="text-center text-black text-sm">
-          ©
-          {' '}
-          {new Date().getFullYear()}
-          {' '}
-          {FOOTER_COPYRIGHT_TEXT}
-        </p>
+        <div className="border-t border-border pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-2 text-muted-foreground">
+            <Music2 className="h-3 w-3 text-primary flex-shrink-0" />
+            <span className="font-mono text-[11px]">
+              {statusText}
+              {': '}
+              <span className="text-foreground">
+                {songName}
+                {trackDetails}
+              </span>
+            </span>
+          </div>
+
+          <p className="font-mono text-[11px] text-muted-foreground">
+            &copy;
+            {' '}
+            {new Date().getFullYear()}
+            {' '}
+            {FOOTER_COPYRIGHT}
+          </p>
+        </div>
       </div>
     </footer>
   );

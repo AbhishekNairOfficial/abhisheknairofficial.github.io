@@ -19,8 +19,31 @@ export default {
     },
     extend: {
       fontFamily: {
-        primary: ['var(--font-playfair-display)', 'Playfair Display', 'serif'],
-        secondary: ['var(--font-special-elite)', 'Special Elite', 'serif'],
+        display: [
+          'var(--font-dm-serif-display)',
+          'DM Serif Display',
+          'Georgia',
+          'serif',
+        ],
+        primary: [
+          'var(--font-plus-jakarta)',
+          'Plus Jakarta Sans',
+          'system-ui',
+          'sans-serif',
+        ],
+        sans: [
+          'var(--font-plus-jakarta)',
+          'Plus Jakarta Sans',
+          'system-ui',
+          'sans-serif',
+        ],
+        literata: [
+          'var(--font-literata)',
+          'Literata',
+          'Georgia',
+          'serif',
+        ],
+        mono: ['var(--font-jetbrains-mono)', 'JetBrains Mono', 'monospace'],
       },
       colors: {
         border: 'hsl(var(--border))',

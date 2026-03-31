@@ -1,94 +1,89 @@
-import { EXPERIENCE_KEY_ACHIEVEMENTS, EXPERIENCE_TITLE, TIMELINE_DATA } from '@/config/constants';
-import { Briefcase, Calendar } from 'lucide-react';
-import { Badge } from '@/components/ui';
-
-const EVEN_INDEX = 2;
+import { FadeIn } from '@/components/motion';
+import { EXPERIENCE_SECTION_NUMBER, EXPERIENCE_TITLE, TIMELINE_DATA } from '@/config/constants';
+import { STAGGER_CHILD_DELAY } from '@/lib/motion';
 
 const Experience = () => {
   return (
     <section
-      className="mb-12 border-b-2 border-black pb-12"
+      className="py-24 border-t border-border"
       id="experience"
     >
-      <div className="flex items-center gap-4 mb-8">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl">
-          {EXPERIENCE_TITLE}
-        </h2>
-        <div className="h-1 flex-1 bg-black" />
-      </div>
+      <div className="max-w-6xl mx-auto px-6">
+        <FadeIn>
+          <div className="flex items-center gap-4 mb-16">
+            <span className="font-mono text-xs text-primary">
+              {EXPERIENCE_SECTION_NUMBER}
+            </span>
+            <h2 className="font-literata text-3xl sm:text-4xl font-semibold">
+              {EXPERIENCE_TITLE}
+            </h2>
+            <div className="h-px flex-1 bg-border" />
+          </div>
+        </FadeIn>
 
-      <div className="space-y-8">
-        {TIMELINE_DATA.map((exp, index) => (
-          <article
-            className="relative pl-8 border-l-4 border-emerald-500"
-            key={exp.id}
-          >
-            <div className="absolute -left-[13px] top-0 w-6 h-6 rounded-full bg-emerald-500 border-4 border-white" />
+        <div className="relative">
+          <div className="absolute left-0 md:left-[140px] top-0 bottom-0 w-px bg-border" />
 
-            <div className="grid md:grid-cols-4 gap-6">
-              <div className="md:col-span-1">
-                <div className="flex items-center gap-2 mb-2">
-                  <Calendar className="h-4 w-4 text-emerald-600" />
-                  <p className="text-sm">
-                    {exp.period}
-                  </p>
-                </div>
-                <div
-                  className={`inline-block px-2 sm:px-3 py-1 text-xs border-2 border-black ${index % EVEN_INDEX === 0 ? 'bg-yellow-300' : 'bg-emerald-100'}`}
-                >
-                  {exp.company}
-                </div>
-              </div>
-
-              <div className="md:col-span-3">
-                <div className="flex items-start justify-between mb-3">
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-xl sm:text-2xl mb-1">
-                      {exp.role}
-                    </h3>
-                    <p className="text-sm sm:text-base text-gray-700 mb-3">
-                      {exp.description}
+          <div className="space-y-16">
+            {TIMELINE_DATA.map((exp, index) => (
+              <FadeIn
+                delay={index * STAGGER_CHILD_DELAY}
+                key={exp.id}
+              >
+                <article className="relative grid md:grid-cols-[140px_1fr] gap-6 md:gap-10">
+                  <div className="relative">
+                    <div className="absolute left-0 md:left-auto md:right-[-25px] top-2 w-2 h-2 rounded-full bg-primary z-10" />
+                    <p className="font-mono text-xs text-muted-foreground whitespace-nowrap pl-6 md:pl-0">
+                      {exp.period}
                     </p>
                   </div>
-                  <Briefcase className="h-6 w-6 text-gray-400 flex-shrink-0 ml-4" />
-                </div>
 
-                <div className="mb-3">
-                  <p className="text-sm uppercase tracking-wide mb-2">
-                    {EXPERIENCE_KEY_ACHIEVEMENTS}
-                  </p>
-                  <ul className="space-y-1">
-                    {exp.highlights.map((highlight, idx) => (
-                      <li
-                        className="text-sm flex items-start gap-2"
-                        key={idx}
-                      >
-                        <span className="text-emerald-600 mt-1">
-                          ▪
-                        </span>
-                        <span>
-                          {highlight}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  <div className="pl-6 md:pl-8">
+                    <div className="mb-4">
+                      <span className="font-mono text-xs uppercase tracking-widest text-primary">
+                        {exp.company}
+                      </span>
+                      <h3 className="font-primary text-xl sm:text-2xl font-semibold mt-1">
+                        {exp.role}
+                      </h3>
+                    </div>
 
-                <div className="flex flex-wrap gap-2">
-                  {exp.technologies.map((tech) => (
-                    <Badge
-                      className="border-black"
-                      key={tech}
-                      variant="outline"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </article>
-        ))}
+                    <p className="text-muted-foreground leading-relaxed mb-5">
+                      {exp.description}
+                    </p>
+
+                    <ul className="space-y-2 mb-5">
+                      {exp.highlights.map((highlight, idx) => (
+                        <li
+                          className="flex items-start gap-3 text-sm text-muted-foreground"
+                          key={idx}
+                        >
+                          <span className="text-primary mt-1.5 text-[8px]">
+                            &#9646;
+                          </span>
+                          <span>
+                            {highlight}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="flex flex-wrap gap-2">
+                      {exp.technologies.map((tech) => (
+                        <span
+                          className="font-mono text-[11px] px-2.5 py-1 border border-border text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
+                          key={tech}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </article>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
