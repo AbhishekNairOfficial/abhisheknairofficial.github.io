@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Download } from 'lucide-react';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { NAME, RESUME_URL } from '@/config/constants';
 import {
   NAV_SCROLL_THRESHOLD_PX,
@@ -64,7 +65,7 @@ export function Navigation() {
             {NAME.split(' ')[0]}
           </a>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {NAV_LINKS.map((link) => (
               <a
                 className="font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors"
@@ -74,6 +75,7 @@ export function Navigation() {
                 {link.label}
               </a>
             ))}
+            <ThemeToggle />
             <a
               className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest bg-primary text-primary-foreground px-4 py-2 hover:bg-primary/90 transition-colors"
               download
@@ -84,14 +86,17 @@ export function Navigation() {
             </a>
           </div>
 
-          <button
-            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-            className="md:hidden text-foreground"
-            onClick={handleToggleMobileMenu}
-            type="button"
-          >
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          <div className="flex md:hidden items-center gap-2">
+            <ThemeToggle />
+            <button
+              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+              className="text-foreground"
+              onClick={handleToggleMobileMenu}
+              type="button"
+            >
+              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
       </nav>
 

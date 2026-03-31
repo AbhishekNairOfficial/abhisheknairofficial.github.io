@@ -7,6 +7,7 @@ import {
   Plus_Jakarta_Sans as PlusJakartaSans,
 } from 'next/font/google';
 import './globals.css';
+import { ThemeProvider } from '@/components/ThemeProvider';
 import {
   META_DESCRIPTION,
   META_SITE_URL,
@@ -55,6 +56,8 @@ export const metadata: Metadata = {
   },
 };
 
+const THEME_INIT_SCRIPT = '(function(){try{var t=localStorage.getItem(\'theme\');if(t===\'light\'||t===\'dark\'){document.documentElement.classList.add(t);}else{document.documentElement.classList.add(\'dark\');}}catch(e){document.documentElement.classList.add(\'dark\');}})();';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -70,8 +73,14 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      suppressHydrationWarning
+    >
       <head>
+        <script
+          dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }}
+        />
         <script
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           type="application/ld+json"
@@ -80,14 +89,16 @@ export default function RootLayout({
       <body
         className={`${dmSerifDisplay.variable} ${literata.variable} ${plusJakartaSans.variable} ${jetBrainsMono.variable} antialiased`}
       >
-        <div className="noise-overlay" />
-        <a
-          className="sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:m-0 focus:w-auto focus:h-auto focus:overflow-visible focus:p-4 focus:[clip:auto] focus:whitespace-normal focus:bg-primary focus:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-          href="#main"
-        >
-          Skip to main content
-        </a>
-        {children}
+        <ThemeProvider>
+          <div className="noise-overlay" />
+          <a
+            className="sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:m-0 focus:w-auto focus:h-auto focus:overflow-visible focus:p-4 focus:[clip:auto] focus:whitespace-normal focus:bg-primary focus:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+            href="#main"
+          >
+            Skip to main content
+          </a>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
