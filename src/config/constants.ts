@@ -7,7 +7,7 @@
 export const NAME = 'Abhishek Panthalingal';
 export const LOCATION = 'Bellevue, WA';
 /** Single-line role title (schema, OG, footer one-liners, etc.) */
-export const JOB_TITLE = 'Lead Engineer & Architect';
+export const JOB_TITLE = 'Frontend Architect';
 
 // ——— Navigation ———
 export const NAV_LINKS = [
@@ -60,7 +60,7 @@ export function socialProfileLinkAriaLabel(networkLabel: string): string {
 }
 
 // ——— Hero ———
-export const HERO_TITLE = 'Systems Engineer\n& Architect';
+export const HERO_TITLE = 'Frontend Architect\n& Engineer';
 export const HERO_TAGLINE =
   'Frontend | Mobile | Hardware | Systems';
 export const HERO_SCROLL_LABEL = 'Scroll';
