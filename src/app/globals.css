@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
   :root {
     --background: 180 8% 98%;
     --foreground: 220 12% 18%;

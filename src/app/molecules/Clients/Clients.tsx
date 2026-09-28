@@ -5,7 +5,7 @@ import { CLIENTS_DATA, CLIENTS_SECTION_NUMBER, CLIENTS_TITLE } from '@/config/co
 export function Clients() {
   return (
     <section
-      className="py-24 border-t border-primary/10"
+      className="scroll-mt-16 py-24 border-t border-primary/10"
       id="clients"
     >
       <div className="max-w-6xl mx-auto px-6">

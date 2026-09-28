@@ -5,7 +5,7 @@ import { STAGGER_CHILD_DELAY } from '@/lib/motion';
 const Experience = () => {
   return (
     <section
-      className="py-24 border-t border-primary/10"
+      className="scroll-mt-16 py-24 border-t border-primary/10"
       id="experience"
     >
       <div className="max-w-6xl mx-auto px-6">
