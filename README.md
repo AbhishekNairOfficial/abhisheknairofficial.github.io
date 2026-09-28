@@ -34,7 +34,7 @@ If these are unset, the footer shows a neutral “nothing playing” state.
 
 ## Deploy
 
-Configure your host for a Next.js app (e.g. Vercel, or static export with `output: 'export'` for GitHub Pages if you do not need the Spotify API at runtime).
+Deployed on [Vercel](https://vercel.com) — no special configuration needed beyond the optional Spotify environment variables above.
 
 ## License
 
