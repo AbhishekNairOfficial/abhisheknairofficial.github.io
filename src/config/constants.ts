@@ -1,4 +1,3 @@
-/* eslint-disable max-lines -- consolidated site copy; keep all strings in this file */
 /**
  * Site copy — single place to edit user-visible text and structured content.
  */
