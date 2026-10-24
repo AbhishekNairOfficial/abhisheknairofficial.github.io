@@ -16,6 +16,7 @@ import {
   NAME,
   SKIP_TO_MAIN_LABEL,
 } from '@/config/constants';
+import { alt as openGraphImageAlt, size as openGraphImageSize } from './opengraph-image';
 
 const dmSerifDisplay = DMSerifDisplay({
   subsets: ['latin'],
@@ -54,11 +55,20 @@ export const metadata: Metadata = {
     url: META_SITE_URL,
     siteName: META_TITLE,
     type: 'website',
+    images: [
+      {
+        url: `${META_SITE_URL}/opengraph-image`,
+        width: openGraphImageSize.width,
+        height: openGraphImageSize.height,
+        alt: openGraphImageAlt,
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: META_TITLE,
     description: META_DESCRIPTION,
+    images: [`${META_SITE_URL}/opengraph-image`],
   },
 };
 
