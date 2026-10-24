@@ -11,9 +11,11 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import {
   JOB_TITLE,
   META_DESCRIPTION,
+  META_OG_IMAGE_URL,
   META_SITE_URL,
   META_TITLE,
   NAME,
+  OG_IMAGE_ALT,
   SKIP_TO_MAIN_LABEL,
 } from '@/config/constants';
 
@@ -45,17 +47,29 @@ export const metadata: Metadata = {
   metadataBase: new URL(META_SITE_URL),
   title: META_TITLE,
   description: META_DESCRIPTION,
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: META_TITLE,
     description: META_DESCRIPTION,
     url: META_SITE_URL,
     siteName: META_TITLE,
     type: 'website',
+    images: [
+      {
+        url: META_OG_IMAGE_URL,
+        width: 1200,
+        height: 630,
+        alt: OG_IMAGE_ALT,
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: META_TITLE,
     description: META_DESCRIPTION,
+    images: [META_OG_IMAGE_URL],
   },
 };
 
@@ -72,6 +86,7 @@ export default function RootLayout({
     name: NAME,
     jobTitle: JOB_TITLE,
     url: META_SITE_URL,
+    image: META_OG_IMAGE_URL,
     description: META_DESCRIPTION,
   };
 
