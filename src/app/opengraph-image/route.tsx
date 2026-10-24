@@ -1,9 +1,5 @@
 import { ImageResponse } from 'next/og';
-import { NAME, OG_IMAGE_ALT, OG_IMAGE_KICKER, OG_IMAGE_TAGLINE } from '@/config/constants';
-
-export const alt = OG_IMAGE_ALT;
-export const size = { width: 1200, height: 630 };
-export const contentType = 'image/png';
+import { NAME, OG_IMAGE_KICKER, OG_IMAGE_SIZE, OG_IMAGE_TAGLINE } from '@/config/constants';
 
 export function GET() {
   return new ImageResponse(
@@ -54,6 +50,6 @@ export function GET() {
         </div>
       </div>
     ),
-    { ...size },
+    { ...OG_IMAGE_SIZE },
   );
 }

@@ -14,9 +14,10 @@ import {
   META_SITE_URL,
   META_TITLE,
   NAME,
+  OG_IMAGE_ALT,
+  OG_IMAGE_SIZE,
   SKIP_TO_MAIN_LABEL,
 } from '@/config/constants';
-import { alt as openGraphImageAlt, size as openGraphImageSize } from './opengraph-image/route';
 
 const dmSerifDisplay = DMSerifDisplay({
   subsets: ['latin'],
@@ -58,9 +59,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: `${META_SITE_URL}/opengraph-image`,
-        width: openGraphImageSize.width,
-        height: openGraphImageSize.height,
-        alt: openGraphImageAlt,
+        width: OG_IMAGE_SIZE.width,
+        height: OG_IMAGE_SIZE.height,
+        alt: OG_IMAGE_ALT,
       },
     ],
   },

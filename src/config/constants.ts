@@ -280,10 +280,11 @@ export const NOT_FOUND_TITLE = 'Page not found';
 export const NOT_FOUND_DESCRIPTION = 'The page you are looking for does not exist or has been moved.';
 export const NOT_FOUND_BACK_HOME = 'Back to home';
 
-// ——— Open Graph image (app/opengraph-image.tsx) ———
+// ——— Open Graph image (src/app/opengraph-image/route.tsx) ———
 export const OG_IMAGE_ALT = `${NAME} — ${JOB_TITLE}`;
 export const OG_IMAGE_KICKER = 'Portfolio';
 export const OG_IMAGE_TAGLINE = `${JOB_TITLE} — frontend systems at scale`;
+export const OG_IMAGE_SIZE = { width: 1200, height: 630 };
 
 // ——— Meta ———
 export const META_TITLE = `${NAME} | ${JOB_TITLE}`;
