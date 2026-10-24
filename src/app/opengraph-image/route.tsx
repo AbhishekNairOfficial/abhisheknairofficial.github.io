@@ -5,7 +5,7 @@ export const alt = OG_IMAGE_ALT;
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-export default function OpenGraphImage() {
+export function GET() {
   return new ImageResponse(
     (
       <div

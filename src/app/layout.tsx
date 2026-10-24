@@ -16,7 +16,7 @@ import {
   NAME,
   SKIP_TO_MAIN_LABEL,
 } from '@/config/constants';
-import { alt as openGraphImageAlt, size as openGraphImageSize } from './opengraph-image';
+import { alt as openGraphImageAlt, size as openGraphImageSize } from './opengraph-image/route';
 
 const dmSerifDisplay = DMSerifDisplay({
   subsets: ['latin'],
