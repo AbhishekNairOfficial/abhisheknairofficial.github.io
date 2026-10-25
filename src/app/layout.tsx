@@ -14,6 +14,8 @@ import {
   META_SITE_URL,
   META_TITLE,
   NAME,
+  OG_IMAGE_ALT,
+  OG_IMAGE_SIZE,
   SKIP_TO_MAIN_LABEL,
 } from '@/config/constants';
 
@@ -45,17 +47,29 @@ export const metadata: Metadata = {
   metadataBase: new URL(META_SITE_URL),
   title: META_TITLE,
   description: META_DESCRIPTION,
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: META_TITLE,
     description: META_DESCRIPTION,
     url: META_SITE_URL,
     siteName: META_TITLE,
     type: 'website',
+    images: [
+      {
+        url: `${META_SITE_URL}/opengraph-image`,
+        width: OG_IMAGE_SIZE.width,
+        height: OG_IMAGE_SIZE.height,
+        alt: OG_IMAGE_ALT,
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: META_TITLE,
     description: META_DESCRIPTION,
+    images: [`${META_SITE_URL}/opengraph-image`],
   },
 };
 
@@ -72,6 +86,7 @@ export default function RootLayout({
     name: NAME,
     jobTitle: JOB_TITLE,
     url: META_SITE_URL,
+    image: `${META_SITE_URL}/images/profile-picture.jpg`,
     description: META_DESCRIPTION,
   };
 

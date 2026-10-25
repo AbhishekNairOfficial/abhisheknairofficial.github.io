@@ -1,6 +1,6 @@
 # abhisheknairofficial.github.io
 
-Personal portfolio for **Abhishek Panthalingal** — lead engineer and architect. Built with [Next.js](https://nextjs.org) (App Router), React 19, TypeScript, Tailwind CSS, and Framer Motion.
+Personal portfolio for **Abhishek Panthalingal** — lead engineer and architect. Live at [https://www.abhisheknairofficial.com](https://www.abhisheknairofficial.com). Built with [Next.js](https://nextjs.org) (App Router), React 19, TypeScript, Tailwind CSS, and Framer Motion.
 
 ## Development
 
