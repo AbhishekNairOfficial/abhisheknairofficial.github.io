@@ -10,7 +10,7 @@ import { SectionNav } from './SectionNav';
 
 export function IdentityColumn() {
   return (
-    <aside className="flex flex-col justify-between pb-12 pt-8 lg:sticky lg:top-0 lg:max-h-screen lg:w-[22rem] lg:shrink-0 lg:py-24">
+    <aside className="flex flex-col justify-between pb-12 pt-8 lg:sticky lg:top-0 lg:max-h-screen lg:w-[22rem] lg:shrink-0 lg:self-start lg:py-24">
       <div>
         <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
           {NAME}
