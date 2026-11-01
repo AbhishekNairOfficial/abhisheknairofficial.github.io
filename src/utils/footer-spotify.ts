@@ -25,6 +25,7 @@ async function readRecentSpotify() {
     songName: recentSong.name as string,
     artist: formatTrackArtists(recentSong),
     statusText: STATUS_RECENT,
+    songUrl: '',
   };
 }
 
@@ -33,6 +34,7 @@ export async function getFooterSpotifyData() {
     songName: STATUS_NOTHING,
     artist: '',
     statusText: STATUS_LISTENING,
+    songUrl: '',
   };
 
   try {
@@ -45,6 +47,7 @@ export async function getFooterSpotifyData() {
           songName: item.name as string,
           artist: formatTrackArtists(item),
           statusText: STATUS_LISTENING,
+          songUrl: item.external_urls?.spotify ?? '',
         };
       }
     }
