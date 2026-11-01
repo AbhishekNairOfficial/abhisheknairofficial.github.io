@@ -1,0 +1,11 @@
+# Abhishek Panthalingal
+
+Frontend Architect based in Bellevue, WA. Senior Product Technologist at Rhombuz LLC. Previously Lead II — Software Engineering at UST Global.
+
+I build reliable, scalable applications that operate beyond the browser — integrating hardware, networks, and real-world workflows. Work spans frontend architecture, device communication, POS, and end-to-end system design for enterprise clients.
+
+Site: https://www.abhisheknairofficial.com
+GitHub: https://github.com/abhisheknairofficial
+LinkedIn: https://linkedin.com/in/6foot4
+Resume: https://www.abhisheknairofficial.com/resume.pdf
+Email: abhisheknr4@gmail.com

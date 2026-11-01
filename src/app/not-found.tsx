@@ -19,7 +19,7 @@ export default function NotFound() {
         {NOT_FOUND_DESCRIPTION}
       </p>
       <Link
-        className="font-mono text-xs uppercase tracking-widest text-primary border-b border-primary hover:text-foreground hover:border-foreground transition-colors"
+        className="font-mono text-xs uppercase tracking-widest text-primary border-b border-primary hover:text-foreground hover:border-foreground transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         href="/"
       >
         {NOT_FOUND_BACK_HOME}

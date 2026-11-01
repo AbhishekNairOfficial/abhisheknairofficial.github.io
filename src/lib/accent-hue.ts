@@ -2,9 +2,9 @@ export const HUE_STORAGE_KEY = 'custom-hue';
 export const HUE_MAX = 360;
 export const HUE_MIN = 0;
 const SATURATION_DARK = 70;
-const SATURATION_LIGHT = 84;
-const LIGHTNESS_DARK = 48;
-const LIGHTNESS_LIGHT = 32;
+const SATURATION_LIGHT = 90;
+const LIGHTNESS_DARK = 52;
+const LIGHTNESS_LIGHT = 22;
 
 /** Matches default teal in globals.css */
 export const DEFAULT_ACCENT_HUE = 174;

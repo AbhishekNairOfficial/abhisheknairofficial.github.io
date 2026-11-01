@@ -11,58 +11,58 @@
 
   :root {
     --background: 180 8% 98%;
-    --foreground: 220 12% 18%;
+    --foreground: 220 16% 12%;
     --card: 180 6% 96%;
-    --card-foreground: 220 12% 18%;
+    --card-foreground: 220 16% 12%;
     --popover: 180 8% 98%;
-    --popover-foreground: 220 12% 18%;
-    --primary: 174 84% 32%;
+    --popover-foreground: 220 16% 12%;
+    --primary: 174 90% 22%;
     --primary-foreground: 180 20% 98%;
     --secondary: 180 6% 92%;
-    --secondary-foreground: 220 12% 18%;
+    --secondary-foreground: 220 16% 12%;
     --muted: 180 6% 92%;
-    --muted-foreground: 220 10% 38%;
-    --accent: 174 84% 32%;
+    --muted-foreground: 220 12% 28%;
+    --accent: 174 90% 22%;
     --accent-foreground: 180 20% 98%;
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84.2% 42%;
     --destructive-foreground: 180 20% 98%;
-    --border: 180 8% 88%;
-    --input: 180 8% 88%;
-    --ring: 174 84% 32%;
+    --border: 180 10% 72%;
+    --input: 180 10% 72%;
+    --ring: 174 90% 22%;
     --radius: 0.5rem;
   }
 
   .dark {
     --background: 0 0% 9%;
-    --foreground: 210 8% 92%;
+    --foreground: 210 8% 94%;
     --card: 0 0% 12%;
-    --card-foreground: 210 8% 92%;
+    --card-foreground: 210 8% 94%;
     --popover: 0 0% 12%;
-    --popover-foreground: 210 8% 92%;
-    --primary: 174 70% 48%;
+    --popover-foreground: 210 8% 94%;
+    --primary: 174 70% 52%;
     --primary-foreground: 0 0% 9%;
     --secondary: 0 0% 16%;
-    --secondary-foreground: 210 8% 92%;
+    --secondary-foreground: 210 8% 94%;
     --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 58%;
-    --accent: 174 70% 48%;
+    --muted-foreground: 210 6% 72%;
+    --accent: 174 70% 52%;
     --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 8% 92%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 174 70% 48%;
+    --destructive: 0 84.2% 62%;
+    --destructive-foreground: 210 8% 94%;
+    --border: 0 0% 32%;
+    --input: 0 0% 32%;
+    --ring: 174 70% 52%;
   }
 
   @media (prefers-contrast: more) {
     :root {
-      --border: 180 8% 72%;
-      --muted-foreground: 220 10% 32%;
+      --border: 180 10% 58%;
+      --muted-foreground: 220 14% 22%;
     }
 
     .dark {
-      --border: 0 0% 28%;
-      --muted-foreground: 0 0% 68%;
+      --border: 0 0% 42%;
+      --muted-foreground: 210 8% 80%;
     }
   }
 
@@ -85,6 +85,41 @@
   body {
     @apply bg-background text-foreground font-sans;
     --font-mono: var(--font-jetbrains-mono), 'JetBrains Mono', monospace;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  [type='button']:focus-visible,
+  [type='submit']:focus-visible,
+  [role='button']:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  .skip-link {
+    @apply sr-only;
+  }
+
+  .skip-link:focus,
+  .skip-link:focus-visible {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    z-index: 100;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    padding: 0.75rem 1rem;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
   }
 
   html,

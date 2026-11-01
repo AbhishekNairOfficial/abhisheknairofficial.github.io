@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import {
-  DM_Serif_Display as DMSerifDisplay,
   JetBrains_Mono as JetBrainsMono,
-  Literata,
   Plus_Jakarta_Sans as PlusJakartaSans,
 } from 'next/font/google';
 import './globals.css';
@@ -17,19 +15,8 @@ import {
   OG_IMAGE_ALT,
   OG_IMAGE_SIZE,
   SKIP_TO_MAIN_LABEL,
+  SOCIAL_LINKS,
 } from '@/config/constants';
-
-const dmSerifDisplay = DMSerifDisplay({
-  subsets: ['latin'],
-  variable: '--font-dm-serif-display',
-  weight: '400',
-});
-
-const literata = Literata({
-  subsets: ['latin'],
-  variable: '--font-literata',
-  weight: ['400', '600', '700'],
-});
 
 const plusJakartaSans = PlusJakartaSans({
   subsets: ['latin'],
@@ -88,6 +75,7 @@ export default function RootLayout({
     url: META_SITE_URL,
     image: `${META_SITE_URL}/images/profile-picture.jpg`,
     description: META_DESCRIPTION,
+    sameAs: SOCIAL_LINKS.map((link) => link.url),
   };
 
   return (
@@ -105,12 +93,12 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${dmSerifDisplay.variable} ${literata.variable} ${plusJakartaSans.variable} ${jetBrainsMono.variable} antialiased`}
+        className={`${plusJakartaSans.variable} ${jetBrainsMono.variable} antialiased`}
       >
         <ThemeProvider>
           <div className="noise-overlay" />
           <a
-            className="sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:m-0 focus:w-auto focus:h-auto focus:overflow-visible focus:p-4 focus:[clip:auto] focus:whitespace-normal focus:bg-primary focus:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+            className="skip-link"
             href="#main"
           >
             {SKIP_TO_MAIN_LABEL}

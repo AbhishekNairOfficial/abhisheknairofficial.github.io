@@ -20,10 +20,10 @@ export default {
     extend: {
       fontFamily: {
         display: [
-          'var(--font-dm-serif-display)',
-          'DM Serif Display',
-          'Georgia',
-          'serif',
+          'var(--font-plus-jakarta)',
+          'Plus Jakarta Sans',
+          'system-ui',
+          'sans-serif',
         ],
         primary: [
           'var(--font-plus-jakarta)',
@@ -38,10 +38,10 @@ export default {
           'sans-serif',
         ],
         literata: [
-          'var(--font-literata)',
-          'Literata',
-          'Georgia',
-          'serif',
+          'var(--font-plus-jakarta)',
+          'Plus Jakarta Sans',
+          'system-ui',
+          'sans-serif',
         ],
         mono: ['var(--font-jetbrains-mono)', 'JetBrains Mono', 'monospace'],
       },

@@ -14,7 +14,7 @@ export const NAV_LINKS = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
   { label: 'Work', href: '#work' },
-  { label: 'Skills', href: '#skills' },
+  { label: 'Clients', href: '#clients' },
   { label: 'Contact', href: '#contact' },
 ] as const;
 
@@ -64,6 +64,40 @@ export const HERO_TITLE = 'Frontend Architect\n& Engineer';
 export const HERO_TAGLINE =
   'Frontend | Mobile | Hardware | Systems';
 export const HERO_SCROLL_LABEL = 'Scroll';
+
+/* eslint-disable no-warning-comments -- proposed positioning copy pending owner confirmation */
+// TODO(owner): confirm
+export const POSITIONING_HEADLINE =
+  'Engineering leader & frontend architect for real-world systems: POS, devices, enterprise web';
+// TODO(owner): confirm
+export const POSITIONING_SPECIALTIES =
+  'Frontend architecture and micro-frontends. POS, devices, and enterprise web. Engineering standards and team leadership.';
+// TODO(owner): confirm
+export const AVAILABILITY_LINE =
+  'Open to Director / Principal roles and advisory.';
+/* eslint-enable no-warning-comments */
+
+export const OUTCOME_SEPARATOR = ' · ';
+
+export function toOutcomeLine(parts: readonly string[]): string {
+  return parts.join(OUTCOME_SEPARATOR);
+}
+
+const INLINE_LIST_PAIR_LENGTH = 2;
+
+export function formatInlineList(items: readonly string[]): string {
+  const lastIndex = items.length - 1;
+  if (items.length === 0) {
+    return '';
+  }
+  if (items.length === 1) {
+    return items[0];
+  }
+  if (items.length === INLINE_LIST_PAIR_LENGTH) {
+    return `${items[0]} and ${items[1]}`;
+  }
+  return `${items.slice(0, lastIndex).join(', ')}, and ${items[lastIndex]}`;
+}
 
 // ——— About ———
 export const ABOUT_TITLE = 'About';
