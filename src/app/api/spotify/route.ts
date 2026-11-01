@@ -8,26 +8,36 @@ const HTTP_STATUS_NO_CONTENT = 204;
 const HTTP_STATUS_BAD_REQUEST = 400;
 const HTTP_STATUS_OK = 200;
 
+const NO_STORE_HEADERS = {
+  'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0',
+  Pragma: 'no-cache',
+  Expires: '0',
+};
+
+function idleResponse(): NextResponse {
+  return NextResponse.json(
+    { isPlaying: false },
+    {
+      status: HTTP_STATUS_OK,
+      headers: NO_STORE_HEADERS,
+    },
+  );
+}
+
 export async function GET(): Promise<NextResponse> {
   const response = await getNowPlaying();
 
   if (response.status === HTTP_STATUS_NO_CONTENT || response.status > HTTP_STATUS_BAD_REQUEST) {
-    return NextResponse.json(
-      { isPlaying: false },
-      {
-        status: HTTP_STATUS_OK,
-        headers: {
-          'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0',
-          Pragma: 'no-cache',
-          Expires: '0',
-        },
-      });
+    return idleResponse();
   }
 
   const song = await response.json();
-  const isPlaying = song.is_playing;
+  if (!song.is_playing || !song.item) {
+    return idleResponse();
+  }
+
   const { name } = song.item;
-  const artist = song.item.artists.map((_artist: { name: string }) => _artist.name).join(', ');
+  const artist = song.item.artists.map((item: { name: string }) => item.name).join(', ');
   const album = song.item.album.name;
   const songUrl = song.item.external_urls.spotify;
 
@@ -35,17 +45,13 @@ export async function GET(): Promise<NextResponse> {
     {
       album,
       artist,
-      isPlaying,
+      isPlaying: true,
       songUrl,
       name,
     },
     {
       status: HTTP_STATUS_OK,
-      headers: {
-        'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0',
-        Pragma: 'no-cache',
-        Expires: '0',
-      },
+      headers: NO_STORE_HEADERS,
     },
   );
 }
