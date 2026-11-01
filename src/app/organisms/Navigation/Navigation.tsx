@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useReducedMotion } from 'framer-motion';
 import {
+  BRAND_HOME_HREF,
   NAME,
   NAVIGATION_LANDMARK_LABEL,
   brandBackToMainAriaLabel,
@@ -131,7 +132,7 @@ export function Navigation() {
           <a
             aria-label={brandBackToMainAriaLabel(NAME)}
             className="font-primary text-xl font-semibold text-foreground hover:text-primary transition-colors"
-            href="#main"
+            href={BRAND_HOME_HREF}
           >
             {NAME.split(' ')[0]}
           </a>
