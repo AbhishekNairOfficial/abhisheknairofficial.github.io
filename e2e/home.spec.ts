@@ -6,8 +6,9 @@ test.describe('Home page', () => {
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Abhishek');
     await expect(page.getByRole('heading', { name: /^experience$/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /^work$/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /^now$/i })).toBeVisible();
     await expect(page.getByRole('heading', { name: /^clients$/i })).toBeVisible();
-    await expect(page.getByRole('heading', { name: /^skills$/i })).toBeVisible();
   });
 
   test('resume link points to PDF', async ({ page }) => {

@@ -16,7 +16,7 @@ export function NavigationDesktop() {
     <div className="hidden md:flex items-center gap-6">
       {NAV_LINKS.map((link) => (
         <a
-          className="nav-link-underline font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors"
+          className="nav-link-underline rounded-sm font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
           href={link.href}
           key={link.href}
         >

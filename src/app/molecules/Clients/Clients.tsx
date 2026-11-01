@@ -1,31 +1,30 @@
-import { ClientsMarquee } from '@/components/ClientsMarquee';
-import { FadeIn } from '@/components/motion';
-import { CLIENTS_DATA, CLIENTS_SECTION_NUMBER, CLIENTS_TITLE } from '@/config/constants';
+import { PageSection } from '@/app/molecules/PageSection';
+import { CLIENTS_DATA, CLIENTS_TITLE } from '@/config/constants';
 
 export function Clients() {
   return (
-    <section
-      className="scroll-mt-16 py-24 border-t border-primary/10"
+    <PageSection
       id="clients"
+      title={CLIENTS_TITLE}
     >
-      <div className="max-w-6xl mx-auto px-6">
-        <FadeIn>
-          <div className="group flex items-center gap-4 mb-16">
-            <span className="font-mono text-xs text-primary">
-              {CLIENTS_SECTION_NUMBER}
-            </span>
-            <h2 className="font-literata text-3xl sm:text-4xl font-semibold">
-              {CLIENTS_TITLE}
-            </h2>
-            <div className="h-px flex-1 bg-border transition-colors duration-500 group-hover:bg-primary/40" />
-          </div>
-        </FadeIn>
-
-        <FadeIn delay={0.1}>
-          <ClientsMarquee items={CLIENTS_DATA} />
-        </FadeIn>
-      </div>
-    </section>
+      <ul className="space-y-3">
+        {CLIENTS_DATA.map((client) => {
+          return (
+            <li
+              className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-border/70 py-2 last:border-b-0"
+              key={client.name}
+            >
+              <span className="text-foreground">
+                {client.name}
+              </span>
+              <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                {client.context}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+    </PageSection>
   );
 }
 
