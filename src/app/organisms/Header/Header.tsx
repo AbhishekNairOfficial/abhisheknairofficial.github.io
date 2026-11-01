@@ -1,9 +1,9 @@
-import { Navigation } from '@/app/organisms/Navigation';
+import { CompactHeader } from './CompactHeader';
 
 function Header() {
   return (
     <header>
-      <Navigation />
+      <CompactHeader />
     </header>
   );
 }

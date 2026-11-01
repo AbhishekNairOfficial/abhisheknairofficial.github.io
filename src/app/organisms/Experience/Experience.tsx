@@ -1,92 +1,54 @@
-import { FadeIn } from '@/components/motion';
-import { EXPERIENCE_SECTION_NUMBER, EXPERIENCE_TITLE, TIMELINE_DATA } from '@/config/constants';
-import { STAGGER_CHILD_DELAY } from '@/lib/motion';
+import { SectionHeading } from '@/app/atoms/SectionHeading';
+import { TechTags } from '@/app/atoms/TechTags';
+import {
+  EXPERIENCE_TITLE,
+  TIMELINE_DATA,
+  toOutcomeLine,
+} from '@/config/constants';
+
+type ExperienceItem = (typeof TIMELINE_DATA)[number];
+
+interface ExperienceRowProps {
+  experience: ExperienceItem;
+}
+
+function ExperienceRow({ experience }: ExperienceRowProps) {
+  return (
+    <article className="grid gap-2 border-t border-border py-8 first:border-t-0 sm:grid-cols-[8.75rem_1fr] sm:gap-8">
+      <p className="font-mono text-xs text-muted-foreground">
+        {experience.period}
+      </p>
+      <div>
+        <h3 className="text-base font-medium text-foreground">
+          {experience.role}
+          {' · '}
+          {experience.company}
+        </h3>
+        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+          {toOutcomeLine(experience.highlights)}
+        </p>
+        <TechTags tags={experience.technologies} />
+      </div>
+    </article>
+  );
+}
 
 const Experience = () => {
   return (
     <section
-      className="scroll-mt-16 py-24 border-t border-primary/10"
+      className="scroll-mt-20 pb-20 lg:pb-24"
       id="experience"
     >
-      <div className="max-w-6xl mx-auto px-6">
-        <FadeIn>
-          <div className="group flex items-center gap-4 mb-16">
-            <span className="font-mono text-xs text-primary">
-              {EXPERIENCE_SECTION_NUMBER}
-            </span>
-            <h2 className="font-literata text-3xl sm:text-4xl font-semibold">
-              {EXPERIENCE_TITLE}
-            </h2>
-            <div className="h-px flex-1 bg-border transition-colors duration-500 group-hover:bg-primary/40" />
-          </div>
-        </FadeIn>
-
-        <div className="relative">
-          <div className="absolute left-0 md:left-[140px] top-0 bottom-0 w-px bg-primary/20" />
-
-          <div className="space-y-16">
-            {TIMELINE_DATA.map((exp, index) => (
-              <FadeIn
-                delay={index * STAGGER_CHILD_DELAY}
-                key={exp.id}
-              >
-                <article className="relative grid md:grid-cols-[140px_1fr] gap-6 md:gap-10">
-                  <div className="relative">
-                    <div className="absolute left-0 md:left-auto md:right-[-25px] top-2 w-2 h-2 rounded-full bg-primary z-10" />
-                    <p className="font-mono text-xs text-muted-foreground whitespace-nowrap pl-6 md:pl-0">
-                      {exp.period}
-                    </p>
-                  </div>
-
-                  <div className="pl-6 md:pl-8">
-                    <div className="mb-4">
-                      <span className="font-mono text-xs uppercase tracking-widest text-primary">
-                        {exp.company}
-                      </span>
-                      <h3 className="font-primary text-xl sm:text-2xl font-semibold mt-1">
-                        {exp.role}
-                      </h3>
-                    </div>
-
-                    <p className="text-muted-foreground leading-relaxed mb-5">
-                      {exp.description}
-                    </p>
-
-                    <ul className="space-y-2 mb-5">
-                      {exp.highlights.map((highlight, idx) => (
-                        <li
-                          className="flex items-start gap-3 text-sm text-muted-foreground"
-                          key={idx}
-                        >
-                          <span
-                            aria-hidden
-                            className="text-primary mt-1.5 text-[8px]"
-                          >
-                            &#9646;
-                          </span>
-                          <span>
-                            {highlight}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <div className="flex flex-wrap gap-2">
-                      {exp.technologies.map((tech) => (
-                        <span
-                          className="inline-block cursor-default font-mono text-[11px] px-2.5 py-1 border border-border text-muted-foreground hover:text-primary hover:border-primary/30 transition-all duration-200 hover:-translate-y-0.5 hover:scale-105 active:scale-95 motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100 motion-reduce:active:scale-100"
-                          key={tech}
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </article>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
+      <SectionHeading>
+        {EXPERIENCE_TITLE}
+      </SectionHeading>
+      <div>
+        {TIMELINE_DATA.map((experience) => (
+          <ExperienceRow
+            experience={experience}
+            key={experience.id}
+          />
+        ))}
       </div>
     </section>
   );

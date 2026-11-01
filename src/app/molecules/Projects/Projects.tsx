@@ -1,90 +1,76 @@
-import { ArrowUpRight } from 'lucide-react';
-import { FadeIn } from '@/components/motion';
-import { projectExternalLinkAriaLabel, type Project } from '@/config/constants';
-import { STAGGER_CHILD_DELAY } from '@/lib/motion';
+import { TechTags } from '@/app/atoms/TechTags';
+import {
+  projectExternalLinkAriaLabel,
+  type Project,
+} from '@/config/constants';
+import { TEXT_LINK } from '@/lib/styles';
 
-interface ProjectCardsProps {
+interface ProjectListProps {
   projects: Project[];
 }
 
-export function ProjectCards({ projects }: ProjectCardsProps) {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {projects.map((project, index) => (
-        <FadeIn
-          delay={index * STAGGER_CHILD_DELAY}
-          key={project.title}
+interface ProjectRowProps {
+  project: Project;
+}
+
+function ProjectTitle({ project }: ProjectRowProps) {
+  if (project.link) {
+    return (
+      <h3 className="text-base font-medium">
+        <a
+          aria-label={projectExternalLinkAriaLabel(project.title)}
+          className={TEXT_LINK}
+          href={project.link}
+          rel="noopener noreferrer"
+          target="_blank"
         >
-          <div className="group border border-border border-t-2 border-t-primary/15 p-6 sm:p-8 hover:border-primary/30 transition-all duration-300 h-full flex flex-col hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5 motion-reduce:hover:translate-y-0 motion-reduce:hover:shadow-none">
-            <div className="flex items-start justify-between mb-4 gap-2">
-              <div className="min-w-0">
-                {project.client && (
-                  <span className="font-mono text-[11px] uppercase tracking-widest text-primary mb-2 block">
-                    {project.client}
-                  </span>
-                )}
-                <h3 className="font-primary text-xl sm:text-2xl font-semibold">
-                  {project.title}
-                </h3>
-              </div>
-              {project.link && (
-                <a
-                  aria-label={projectExternalLinkAriaLabel(project.title)}
-                  className="text-muted-foreground hover:text-primary transition-colors flex-shrink-0 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                  href={project.link}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <ArrowUpRight
-                    aria-hidden
-                    className="h-5 w-5"
-                  />
-                </a>
-              )}
-            </div>
+          {project.title}
+        </a>
+      </h3>
+    );
+  }
 
-            <span className="font-mono text-xs text-muted-foreground mb-4 block">
-              {project.role}
-            </span>
+  return (
+    <h3 className="text-base font-medium text-foreground">
+      {project.title}
+    </h3>
+  );
+}
 
-            <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
-              {project.summary}
+function ProjectRow({ project }: ProjectRowProps) {
+  const outcome = project.outcomes[0];
+
+  return (
+    <li className="border-t border-border py-6 first:border-t-0">
+      <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+        <div className="min-w-0">
+          <ProjectTitle project={project} />
+          {project.client ? (
+            <p className="mt-1 text-sm text-muted-foreground">
+              {project.client}
             </p>
+          ) : null}
+        </div>
+        {outcome ? (
+          <p className="text-sm text-muted-foreground sm:max-w-xs sm:text-right">
+            {outcome}
+          </p>
+        ) : null}
+      </div>
+      <TechTags tags={project.technologies} />
+    </li>
+  );
+}
 
-            <div className="space-y-4 mt-auto">
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech) => (
-                  <span
-                    className="inline-block cursor-default font-mono text-[10px] px-2 py-0.5 border border-border text-muted-foreground transition-all duration-200 hover:text-primary hover:border-primary/30 hover:-translate-y-0.5 hover:scale-105 active:scale-95 motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100 motion-reduce:active:scale-100"
-                    key={tech}
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              <div className="border-t border-border pt-4">
-                {project.outcomes.map((outcome, idx) => (
-                  <div
-                    className="flex items-center gap-2 text-sm"
-                    key={idx}
-                  >
-                    <span
-                      aria-hidden
-                      className="text-primary text-xs"
-                    >
-                      &#8599;
-                    </span>
-                    <span className="text-foreground">
-                      {outcome}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </FadeIn>
+export function ProjectList({ projects }: ProjectListProps) {
+  return (
+    <ul>
+      {projects.map((project) => (
+        <ProjectRow
+          key={project.title}
+          project={project}
+        />
       ))}
-    </div>
+    </ul>
   );
 }

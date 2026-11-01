@@ -1,30 +1,24 @@
-import { ClientsMarquee } from '@/components/ClientsMarquee';
-import { FadeIn } from '@/components/motion';
-import { CLIENTS_DATA, CLIENTS_SECTION_NUMBER, CLIENTS_TITLE } from '@/config/constants';
+import { SectionHeading } from '@/app/atoms/SectionHeading';
+import {
+  CLIENTS_DATA,
+  CLIENTS_TITLE,
+  formatInlineList,
+} from '@/config/constants';
 
 export function Clients() {
+  const names = CLIENTS_DATA.map((client) => client.name);
+
   return (
     <section
-      className="scroll-mt-16 py-24 border-t border-primary/10"
+      className="scroll-mt-20 pb-20 lg:pb-24"
       id="clients"
     >
-      <div className="max-w-6xl mx-auto px-6">
-        <FadeIn>
-          <div className="group flex items-center gap-4 mb-16">
-            <span className="font-mono text-xs text-primary">
-              {CLIENTS_SECTION_NUMBER}
-            </span>
-            <h2 className="font-literata text-3xl sm:text-4xl font-semibold">
-              {CLIENTS_TITLE}
-            </h2>
-            <div className="h-px flex-1 bg-border transition-colors duration-500 group-hover:bg-primary/40" />
-          </div>
-        </FadeIn>
-
-        <FadeIn delay={0.1}>
-          <ClientsMarquee items={CLIENTS_DATA} />
-        </FadeIn>
-      </div>
+      <SectionHeading>
+        {CLIENTS_TITLE}
+      </SectionHeading>
+      <p className="max-w-xl text-[0.95rem] leading-relaxed text-muted-foreground">
+        {formatInlineList(names)}
+      </p>
     </section>
   );
 }

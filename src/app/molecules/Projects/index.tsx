@@ -1,1 +1,1 @@
-export { ProjectCards } from './Projects';
+export { ProjectList } from './Projects';
