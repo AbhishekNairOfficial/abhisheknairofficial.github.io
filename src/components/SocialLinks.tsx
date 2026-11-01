@@ -22,7 +22,7 @@ export function SocialLinks({ variant, className = '' }: SocialLinksProps) {
   const iconSize = isHeader ? 'h-3.5 w-3.5' : 'h-4 w-4';
   const linkClassName = isHeader
     ? 'group text-muted-foreground hover:text-primary transition-colors'
-    : 'group p-2 border border-border text-muted-foreground hover:text-primary hover:border-primary/30 transition-all';
+    : 'group p-2 border border-input text-muted-foreground hover:text-primary hover:border-primary transition-all';
 
   return (
     <div className={className}>

@@ -8,7 +8,10 @@ import {
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center px-6">
+    <main
+      className="min-h-[70vh] flex flex-col items-center justify-center px-6 pt-24"
+      id="main"
+    >
       <p className="font-mono text-xs text-primary uppercase tracking-widest mb-4">
         {NOT_FOUND_CODE}
       </p>
@@ -24,6 +27,6 @@ export default function NotFound() {
       >
         {NOT_FOUND_BACK_HOME}
       </Link>
-    </div>
+    </main>
   );
 }

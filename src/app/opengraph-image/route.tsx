@@ -1,55 +1,10 @@
-import { ImageResponse } from 'next/og';
-import { NAME, OG_IMAGE_KICKER, OG_IMAGE_SIZE, OG_IMAGE_TAGLINE } from '@/config/constants';
+import { NAME, OG_IMAGE_KICKER, OG_IMAGE_TAGLINE } from '@/config/constants';
+import { createOgImage } from '@/lib/og-image';
 
 export function GET() {
-  return new ImageResponse(
-    (
-      <div
-        style={{
-          background: '#0a0a0a',
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          padding: 72,
-          fontFamily: 'ui-sans-serif, system-ui, sans-serif',
-        }}
-      >
-        <div
-          style={{
-            color: '#f59e0b',
-            fontSize: 22,
-            letterSpacing: '0.35em',
-            textTransform: 'uppercase',
-            marginBottom: 24,
-          }}
-        >
-          {OG_IMAGE_KICKER}
-        </div>
-        <div
-          style={{
-            color: '#fafaf9',
-            fontSize: 68,
-            fontWeight: 400,
-            lineHeight: 1.05,
-            marginBottom: 20,
-          }}
-        >
-          {NAME}
-        </div>
-        <div
-          style={{
-            color: 'rgba(250, 250, 249, 0.65)',
-            fontSize: 30,
-            maxWidth: 900,
-            lineHeight: 1.35,
-          }}
-        >
-          {OG_IMAGE_TAGLINE}
-        </div>
-      </div>
-    ),
-    { ...OG_IMAGE_SIZE },
-  );
+  return createOgImage({
+    kicker: OG_IMAGE_KICKER,
+    title: NAME,
+    tagline: OG_IMAGE_TAGLINE,
+  });
 }

@@ -3,11 +3,12 @@ import type { ReactNode } from 'react';
 import {
   DM_Serif_Display as DMSerifDisplay,
   JetBrains_Mono as JetBrainsMono,
-  Literata,
   Plus_Jakarta_Sans as PlusJakartaSans,
 } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import Header from '@/app/organisms/Header';
+import Footer from '@/app/organisms/Footer';
 import {
   JOB_TITLE,
   META_DESCRIPTION,
@@ -17,18 +18,14 @@ import {
   OG_IMAGE_ALT,
   OG_IMAGE_SIZE,
   SKIP_TO_MAIN_LABEL,
+  SOCIAL_LINKS,
 } from '@/config/constants';
+import { absoluteUrl } from '@/lib/site';
 
 const dmSerifDisplay = DMSerifDisplay({
   subsets: ['latin'],
   variable: '--font-dm-serif-display',
   weight: '400',
-});
-
-const literata = Literata({
-  subsets: ['latin'],
-  variable: '--font-literata',
-  weight: ['400', '600', '700'],
 });
 
 const plusJakartaSans = PlusJakartaSans({
@@ -42,6 +39,8 @@ const jetBrainsMono = JetBrainsMono({
   variable: '--font-jetbrains-mono',
   subsets: ['latin'],
 });
+
+const OG_IMAGE_URL = absoluteUrl('/opengraph-image');
 
 export const metadata: Metadata = {
   metadataBase: new URL(META_SITE_URL),
@@ -58,7 +57,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: `${META_SITE_URL}/opengraph-image`,
+        url: OG_IMAGE_URL,
         width: OG_IMAGE_SIZE.width,
         height: OG_IMAGE_SIZE.height,
         alt: OG_IMAGE_ALT,
@@ -69,7 +68,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: META_TITLE,
     description: META_DESCRIPTION,
-    images: [`${META_SITE_URL}/opengraph-image`],
+    images: [OG_IMAGE_URL],
   },
 };
 
@@ -86,8 +85,11 @@ export default function RootLayout({
     name: NAME,
     jobTitle: JOB_TITLE,
     url: META_SITE_URL,
-    image: `${META_SITE_URL}/images/profile-picture.jpg`,
+    image: absoluteUrl('/images/profile-picture.jpg'),
     description: META_DESCRIPTION,
+    sameAs: SOCIAL_LINKS.map((link) => {
+      return link.url;
+    }),
   };
 
   return (
@@ -105,17 +107,21 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${dmSerifDisplay.variable} ${literata.variable} ${plusJakartaSans.variable} ${jetBrainsMono.variable} antialiased`}
+        className={`${dmSerifDisplay.variable} ${plusJakartaSans.variable} ${jetBrainsMono.variable} antialiased`}
       >
         <ThemeProvider>
           <div className="noise-overlay" />
           <a
-            className="sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:m-0 focus:w-auto focus:h-auto focus:overflow-visible focus:p-4 focus:[clip:auto] focus:whitespace-normal focus:bg-primary focus:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+            className="sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:m-0 focus:h-auto focus:w-auto focus:overflow-visible focus:whitespace-normal focus:p-4 focus:[clip:auto] focus:bg-primary focus:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background focus-visible:fixed focus-visible:left-4 focus-visible:top-4 focus-visible:z-[100] focus-visible:m-0 focus-visible:h-auto focus-visible:w-auto focus-visible:overflow-visible focus-visible:whitespace-normal focus-visible:p-4 focus-visible:[clip:auto] focus-visible:bg-primary focus-visible:text-primary-foreground"
             href="#main"
           >
             {SKIP_TO_MAIN_LABEL}
           </a>
-          {children}
+          <div className="min-h-screen bg-background text-foreground">
+            <Header />
+            {children}
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

@@ -37,12 +37,6 @@ export default {
           'system-ui',
           'sans-serif',
         ],
-        literata: [
-          'var(--font-literata)',
-          'Literata',
-          'Georgia',
-          'serif',
-        ],
         mono: ['var(--font-jetbrains-mono)', 'JetBrains Mono', 'monospace'],
       },
       colors: {

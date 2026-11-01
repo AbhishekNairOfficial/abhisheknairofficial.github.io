@@ -13,7 +13,10 @@ export default function Error({
   reset: () => void;
 }) {
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center px-6">
+    <main
+      className="min-h-[70vh] flex flex-col items-center justify-center px-6 pt-24"
+      id="main"
+    >
       <h1 className="text-2xl font-primary font-semibold mb-2">
         {ERROR_PAGE_TITLE}
       </h1>
@@ -27,6 +30,6 @@ export default function Error({
       >
         {ERROR_PAGE_TRY_AGAIN}
       </button>
-    </div>
+    </main>
   );
 }
