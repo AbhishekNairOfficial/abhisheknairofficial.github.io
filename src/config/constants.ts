@@ -11,16 +11,16 @@ export const JOB_TITLE = 'Frontend Architect';
 
 // ——— Navigation ———
 export const NAV_LINKS = [
-  { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Work', href: '#work' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Work', href: '/#work' },
+  { label: 'Experience', href: '/#experience' },
+  { label: 'Clients', href: '/#clients' },
+  { label: 'Contact', href: '/#contact' },
 ] as const;
 
 /** Landmark label for the primary `<nav>` (accessibility). */
 export const NAVIGATION_LANDMARK_LABEL = 'Primary';
 export const BRAND_BACK_TO_MAIN_SUFFIX = ', back to main content';
+export const BRAND_HOME_HREF = '/#main';
 
 export function brandBackToMainAriaLabel(personName: string): string {
   return `${personName}${BRAND_BACK_TO_MAIN_SUFFIX}`;
@@ -37,11 +37,21 @@ export const MOBILE_SITE_MENU_DIALOG_LABEL = 'Site menu';
 // ——— Layout & shell ———
 export const SKIP_TO_MAIN_LABEL = 'Skip to main content';
 
+export const PRIMARY_LINK_CLASSNAME =
+  'inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest '
+  + 'bg-primary text-primary-foreground px-5 py-3 transition-colors hover:bg-primary/90';
+
+export const SECONDARY_LINK_CLASSNAME =
+  'inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest '
+  + 'border border-input px-5 py-3 text-foreground transition-colors '
+  + 'hover:border-primary hover:text-primary';
+
 // ——— Spotify (footer) ———
 export const STATUS_LISTENING = 'Currently listening to';
 export const STATUS_RECENT = 'Recently played';
 export const STATUS_NOTHING = 'Nothing playing';
 export const SPOTIFY_STATUS_BEFORE_TRACK = ': ';
+export const SPOTIFY_API_PATH = '/api/spotify';
 
 // ——— Social ———
 export const SOCIAL_LINKS = [
@@ -59,7 +69,36 @@ export function socialProfileLinkAriaLabel(networkLabel: string): string {
   return `Visit ${networkLabel} profile (opens in new tab)`;
 }
 
-// ——— Hero ———
+// ——— Hero (proposed positioning; pending owner confirmation) ———
+/* eslint-disable no-warning-comments -- proposed copy pending owner confirmation */
+
+// TODO(owner): confirm
+export const HERO_HEADLINE =
+  'Engineering leader & frontend architect for real-world systems: POS, devices, enterprise web';
+
+// TODO(owner): confirm
+export const HERO_SPECIALTY_MFE = 'Micro-frontends and module federation';
+
+// TODO(owner): confirm
+export const HERO_SPECIALTY_RN = 'Cross-platform React Native';
+
+// TODO(owner): confirm
+export const HERO_SPECIALTY_SYSTEMS = 'POS, devices, and enterprise web';
+
+export const HERO_SPECIALTIES = [
+  HERO_SPECIALTY_MFE,
+  HERO_SPECIALTY_RN,
+  HERO_SPECIALTY_SYSTEMS,
+] as const;
+
+// TODO(owner): confirm
+export const HERO_AVAILABILITY = 'Open to Director / Principal roles and advisory.';
+
+// TODO(owner): confirm
+export const SELECTED_WORK_TITLE = 'Selected work';
+
+/* eslint-enable no-warning-comments */
+
 export const HERO_TITLE = 'Frontend Architect\n& Engineer';
 export const HERO_TAGLINE =
   'Frontend | Mobile | Hardware | Systems';
@@ -118,8 +157,15 @@ export const TIMELINE_DATA = [
 // ——— Work / Projects ———
 export const WORK_TITLE = 'Work';
 export const WORK_SECTION_NUMBER = '03';
+export const WORK_INDEX_DIGITS = 2;
+
+export type CaseStudyDiagramKind =
+  | 'federation'
+  | 'windows-to-rn'
+  | 'tool-consolidation';
 
 export interface Project {
+  slug: string;
   title: string;
   client?: string;
   summary: string;
@@ -130,12 +176,26 @@ export interface Project {
   github?: string;
 }
 
+export interface CaseStudySectionCopy {
+  constraints: string | null;
+  approach: string | null;
+  diagram: CaseStudyDiagramKind | null;
+  diagramCaption: string | null;
+  roleDetail: string | null;
+  lessons: string | null;
+}
+
 export function projectExternalLinkAriaLabel(projectTitle: string): string {
   return `View ${projectTitle} (opens in new tab)`;
 }
 
+export function projectCaseStudyAriaLabel(projectTitle: string): string {
+  return `Read case study: ${projectTitle}`;
+}
+
 export const PROJECTS: Project[] = [
   {
+    slug: 'micro-frontend-platform',
     title: 'Micro-Frontend Platform',
     client: 'Rhombuz LLC',
     summary:
@@ -145,6 +205,7 @@ export const PROJECTS: Project[] = [
     outcomes: ['40% reduction in initial load time', 'Independent team deployments with zero downtime'],
   },
   {
+    slug: 'item-pod',
     title: 'Item POD',
     client: 'Albertsons',
     summary:
@@ -154,6 +215,7 @@ export const PROJECTS: Project[] = [
     outcomes: ['Real-time data for 2,000+ stores', 'Sub-second query response times'],
   },
   {
+    slug: 'digital-orders-dashboard',
     title: 'Digital Orders Dashboard',
     client: 'T-Mobile',
     summary:
@@ -163,6 +225,7 @@ export const PROJECTS: Project[] = [
     outcomes: ['Consolidated 5 legacy tools into one platform', '15,000+ daily active users'],
   },
   {
+    slug: 'react-native-migration',
     title: 'React Native Migration',
     client: 'Enterprise Client',
     summary:
@@ -172,6 +235,60 @@ export const PROJECTS: Project[] = [
     outcomes: ['Cross-platform coverage (iOS, Android, Windows)', '60% improvement in deployment frequency'],
   },
 ];
+
+export const SELECTED_WORK_SLUGS = [
+  'micro-frontend-platform',
+  'react-native-migration',
+  'digital-orders-dashboard',
+] as const;
+
+export type SelectedWorkSlug = (typeof SELECTED_WORK_SLUGS)[number];
+
+export const CASE_STUDY_SECTIONS: Record<SelectedWorkSlug, CaseStudySectionCopy> = {
+  'micro-frontend-platform': {
+    constraints: null,
+    approach:
+      'A module-federated micro-frontend system enabling independent team deployments across a large enterprise product suite. Stack: React, Module Federation, TypeScript, Azure DevOps.',
+    diagram: 'federation',
+    diagramCaption: 'Placeholder: module federation across an enterprise product suite.',
+    roleDetail: null,
+    lessons: null,
+  },
+  'react-native-migration': {
+    constraints:
+      'Legacy Windows desktop applications. The stated aim was mobile-first workflows for field teams.',
+    approach:
+      'Migration from legacy Windows desktop applications to a cross-platform React Native solution covering iOS, Android, and Windows, with Azure and CI/CD.',
+    diagram: 'windows-to-rn',
+    diagramCaption: 'Placeholder: Windows desktop to React Native (iOS, Android, Windows).',
+    roleDetail: null,
+    lessons: null,
+  },
+  'digital-orders-dashboard': {
+    constraints: null,
+    approach:
+      'An interactive analytics dashboard for digital order tracking, with D3 visualizations and drill-down capabilities. Stack: React, D3.js, TypeScript, REST APIs.',
+    diagram: 'tool-consolidation',
+    diagramCaption: 'Placeholder: five legacy tools consolidated into one dashboard.',
+    roleDetail: null,
+    lessons: null,
+  },
+};
+
+export const CASE_STUDY_CONTEXT_TITLE = 'Context';
+export const CASE_STUDY_CONSTRAINTS_TITLE = 'Constraints';
+export const CASE_STUDY_APPROACH_TITLE = 'Approach / architecture';
+export const CASE_STUDY_ROLE_TITLE = 'My role';
+export const CASE_STUDY_OUTCOMES_TITLE = 'Outcomes';
+export const CASE_STUDY_LESSONS_TITLE = 'Lessons';
+export const CASE_STUDY_DRAFT_NOTE = 'Draft: detail to add';
+export const CASE_STUDY_PREV_LABEL = 'Previous';
+export const CASE_STUDY_NEXT_LABEL = 'Next';
+export const CASE_STUDY_BACK_TO_WORK = 'Back to selected work';
+export const CASE_STUDY_OG_KICKER = 'Case study';
+
+export const SITEMAP_HOME_PRIORITY = 1;
+export const SITEMAP_WORK_PRIORITY = 0.8;
 
 // ——— Skills ———
 export const SKILLS_TITLE = 'Skills';
@@ -285,6 +402,22 @@ export const OG_IMAGE_ALT = `${NAME} — ${JOB_TITLE}`;
 export const OG_IMAGE_KICKER = 'Portfolio';
 export const OG_IMAGE_TAGLINE = `${JOB_TITLE} — frontend systems at scale`;
 export const OG_IMAGE_SIZE = { width: 1200, height: 630 };
+export const OG_IMAGE_BG = '#0a0a0a';
+export const OG_IMAGE_KICKER_COLOR = '#f59e0b';
+export const OG_IMAGE_TITLE_COLOR = '#fafaf9';
+export const OG_IMAGE_TAGLINE_COLOR = 'rgba(250, 250, 249, 0.65)';
+export const OG_IMAGE_PADDING_PX = 72;
+export const OG_IMAGE_KICKER_SIZE_PX = 22;
+export const OG_IMAGE_TITLE_SIZE_PX = 68;
+export const OG_IMAGE_TITLE_FONT_WEIGHT = 400;
+export const OG_IMAGE_TAGLINE_SIZE_PX = 30;
+export const OG_IMAGE_KICKER_TRACKING = '0.35em';
+export const OG_IMAGE_KICKER_MARGIN_PX = 24;
+export const OG_IMAGE_TITLE_MARGIN_PX = 20;
+export const OG_IMAGE_TAGLINE_MAX_WIDTH_PX = 900;
+export const OG_IMAGE_TITLE_LINE_HEIGHT = 1.05;
+export const OG_IMAGE_TAGLINE_LINE_HEIGHT = 1.35;
+export const OG_IMAGE_FONT_FAMILY = 'ui-sans-serif, system-ui, sans-serif';
 
 // ——— Meta ———
 export const META_TITLE = `${NAME} | ${JOB_TITLE}`;
