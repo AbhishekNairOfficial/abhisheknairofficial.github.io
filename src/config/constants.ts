@@ -14,7 +14,7 @@ export const NAV_LINKS = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
   { label: 'Work', href: '#work' },
-  { label: 'Skills', href: '#skills' },
+  { label: 'Now', href: '#now' },
   { label: 'Contact', href: '#contact' },
 ] as const;
 
@@ -37,7 +37,7 @@ export const MOBILE_SITE_MENU_DIALOG_LABEL = 'Site menu';
 // ——— Layout & shell ———
 export const SKIP_TO_MAIN_LABEL = 'Skip to main content';
 
-// ——— Spotify (footer) ———
+// ——— Spotify (Now block; fetched client-side) ———
 export const STATUS_LISTENING = 'Currently listening to';
 export const STATUS_RECENT = 'Recently played';
 export const STATUS_NOTHING = 'Nothing playing';
@@ -55,8 +55,16 @@ export const SOCIAL_LINKS = [
   },
 ];
 
+export const SAME_AS_PROFILE_URLS = SOCIAL_LINKS.map((link) => {
+  return link.url;
+});
+
 export function socialProfileLinkAriaLabel(networkLabel: string): string {
   return `Visit ${networkLabel} profile (opens in new tab)`;
+}
+
+export function spotifyTrackLinkAriaLabel(trackName: string): string {
+  return `Open ${trackName} on Spotify (opens in new tab)`;
 }
 
 // ——— Hero ———
@@ -64,6 +72,48 @@ export const HERO_TITLE = 'Frontend Architect\n& Engineer';
 export const HERO_TAGLINE =
   'Frontend | Mobile | Hardware | Systems';
 export const HERO_SCROLL_LABEL = 'Scroll';
+
+/* eslint-disable no-warning-comments -- proposed copy pending owner confirmation */
+// ——— Positioning (proposed; pending owner confirmation) ———
+// TODO(owner): confirm
+export const POSITIONING_HEADLINE =
+  'Engineering leader & frontend architect for real-world systems: POS, devices, enterprise web';
+
+// TODO(owner): confirm
+export const SPECIALTIES = [
+  'Frontend architecture for enterprise web',
+  'POS, devices, and real-world systems',
+  'Technical leadership',
+] as const;
+
+// TODO(owner): confirm
+export const AVAILABILITY_LINE =
+  'Open to Director / Principal roles and advisory.';
+
+// TODO(owner): confirm
+export const NOW_FOCUS =
+  'Architecting production systems for enterprise clients and establishing engineering standards across products.';
+
+// TODO(owner): confirm
+export const SYSTEMS_DIAGRAM_TITLE = 'Systems beyond the browser';
+
+// TODO(owner): confirm
+export const SYSTEMS_DIAGRAM_DESCRIPTION =
+  'Four connected layers: Browser, Device, Network, and Cloud. Hover, focus, or tap a node to highlight that layer.';
+
+// TODO(owner): confirm
+export const SYSTEMS_LAYER_BROWSER = 'Browser';
+// TODO(owner): confirm
+export const SYSTEMS_LAYER_DEVICE = 'Device';
+// TODO(owner): confirm
+export const SYSTEMS_LAYER_NETWORK = 'Network';
+// TODO(owner): confirm
+export const SYSTEMS_LAYER_CLOUD = 'Cloud';
+
+// TODO(owner): confirm
+export const META_DESCRIPTION =
+  `Portfolio of ${NAME} — engineering leader and frontend architect for real-world systems: POS, devices, and enterprise web.`;
+/* eslint-enable no-warning-comments */
 
 // ——— About ———
 export const ABOUT_TITLE = 'About';
@@ -250,6 +300,9 @@ export const CLIENTS_MARQUEE_PAUSE = 'Pause';
 export const CLIENTS_MARQUEE_PLAY = 'Play';
 export const CLIENTS_MARQUEE_TOGGLE_SUFFIX = ' client list';
 
+// ——— Now ———
+export const NOW_TITLE = 'Now';
+
 // ——— Contact ———
 export const CONTACT_TITLE = 'Get in Touch';
 export const CONTACT_SECTION_NUMBER = '06';
@@ -262,6 +315,7 @@ export const FOOTER_BIO = `${JOB_TITLE} building scalable frontend systems.`;
 export const FOOTER_NAV_HEADING = 'Navigation';
 export const FOOTER_CONNECT_HEADING = 'Connect';
 export const FOOTER_COPYRIGHT = 'Crafted with Next.js, Tailwind, and too much coffee.';
+export const COPYRIGHT_YEAR = 2026;
 
 // ——— Theme / accent UI ———
 export const THEME_ARIA_LIGHT = 'Switch to light mode';
@@ -288,6 +342,4 @@ export const OG_IMAGE_SIZE = { width: 1200, height: 630 };
 
 // ——— Meta ———
 export const META_TITLE = `${NAME} | ${JOB_TITLE}`;
-export const META_DESCRIPTION =
-  `Portfolio of ${NAME} — ${JOB_TITLE} with 8+ years building React, Next.js, and enterprise-scale frontend systems.`;
 export const META_SITE_URL = 'https://www.abhisheknairofficial.com';

@@ -3,7 +3,6 @@ import type { ReactNode } from 'react';
 import {
   DM_Serif_Display as DMSerifDisplay,
   JetBrains_Mono as JetBrainsMono,
-  Literata,
   Plus_Jakarta_Sans as PlusJakartaSans,
 } from 'next/font/google';
 import './globals.css';
@@ -16,6 +15,7 @@ import {
   NAME,
   OG_IMAGE_ALT,
   OG_IMAGE_SIZE,
+  SAME_AS_PROFILE_URLS,
   SKIP_TO_MAIN_LABEL,
 } from '@/config/constants';
 
@@ -23,12 +23,6 @@ const dmSerifDisplay = DMSerifDisplay({
   subsets: ['latin'],
   variable: '--font-dm-serif-display',
   weight: '400',
-});
-
-const literata = Literata({
-  subsets: ['latin'],
-  variable: '--font-literata',
-  weight: ['400', '600', '700'],
 });
 
 const plusJakartaSans = PlusJakartaSans({
@@ -88,6 +82,7 @@ export default function RootLayout({
     url: META_SITE_URL,
     image: `${META_SITE_URL}/images/profile-picture.jpg`,
     description: META_DESCRIPTION,
+    sameAs: SAME_AS_PROFILE_URLS,
   };
 
   return (
@@ -105,12 +100,12 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${dmSerifDisplay.variable} ${literata.variable} ${plusJakartaSans.variable} ${jetBrainsMono.variable} antialiased`}
+        className={`${dmSerifDisplay.variable} ${plusJakartaSans.variable} ${jetBrainsMono.variable} antialiased`}
       >
         <ThemeProvider>
           <div className="noise-overlay" />
           <a
-            className="sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:m-0 focus:w-auto focus:h-auto focus:overflow-visible focus:p-4 focus:[clip:auto] focus:whitespace-normal focus:bg-primary focus:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+            className="sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:m-0 focus:inline-flex focus:w-auto focus:h-auto focus:overflow-visible focus:px-4 focus:py-2 focus:[clip:auto] focus:whitespace-normal focus:bg-primary focus:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
             href="#main"
           >
             {SKIP_TO_MAIN_LABEL}
