@@ -1,0 +1,21 @@
+# Abhishek Panthalingal
+
+Frontend Architect in Bellevue, WA. Systems-focused engineer for real-world applications: POS, devices, networks, and enterprise web. Currently Senior Product Technologist at Rhombuz LLC.
+
+Site headline (proposed): Engineering leader & frontend architect for real-world systems: POS, devices, enterprise web.
+
+## Pages
+- Home: https://www.abhisheknairofficial.com/
+- Resume: https://www.abhisheknairofficial.com/resume.pdf
+
+## Case studies
+- Micro-Frontend Platform: https://www.abhisheknairofficial.com/work/micro-frontend-platform
+- React Native Migration: https://www.abhisheknairofficial.com/work/react-native-migration
+- Digital Orders Dashboard: https://www.abhisheknairofficial.com/work/digital-orders-dashboard
+
+## Profiles
+- GitHub: https://github.com/abhisheknairofficial
+- LinkedIn: https://linkedin.com/in/6foot4
+
+## Contact
+- Email: mailto:abhisheknr4@gmail.com
