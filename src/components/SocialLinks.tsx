@@ -21,8 +21,8 @@ export function SocialLinks({ variant, className = '' }: SocialLinksProps) {
   const isHeader = variant === 'header';
   const iconSize = isHeader ? 'h-3.5 w-3.5' : 'h-4 w-4';
   const linkClassName = isHeader
-    ? 'group text-muted-foreground hover:text-primary transition-colors'
-    : 'group p-2 border border-border text-muted-foreground hover:text-primary hover:border-primary/30 transition-all';
+    ? 'group rounded-sm text-muted-foreground transition-colors hover:text-primary'
+    : 'group rounded-sm border border-border p-2 text-muted-foreground transition-all hover:border-primary/30 hover:text-primary';
 
   return (
     <div className={className}>
@@ -39,7 +39,9 @@ export function SocialLinks({ variant, className = '' }: SocialLinksProps) {
             aria-hidden="true"
             className={`${iconSize} transition-transform duration-500 motion-safe:group-hover:rotate-[360deg]`}
             fill="currentColor"
+            height="16"
             viewBox="0 0 24 24"
+            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path d={iconPaths[link.label] ?? ''} />

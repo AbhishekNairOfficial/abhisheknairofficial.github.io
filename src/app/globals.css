@@ -10,69 +10,69 @@
   }
 
   :root {
-    --background: 180 8% 98%;
-    --foreground: 220 12% 18%;
-    --card: 180 6% 96%;
-    --card-foreground: 220 12% 18%;
-    --popover: 180 8% 98%;
-    --popover-foreground: 220 12% 18%;
-    --primary: 174 84% 32%;
-    --primary-foreground: 180 20% 98%;
-    --secondary: 180 6% 92%;
-    --secondary-foreground: 220 12% 18%;
-    --muted: 180 6% 92%;
-    --muted-foreground: 220 10% 38%;
-    --accent: 174 84% 32%;
-    --accent-foreground: 180 20% 98%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 180 20% 98%;
-    --border: 180 8% 88%;
-    --input: 180 8% 88%;
-    --ring: 174 84% 32%;
+    --background: 36 32% 97%;
+    --foreground: 24 22% 10%;
+    --card: 36 28% 95%;
+    --card-foreground: 24 22% 10%;
+    --popover: 36 32% 97%;
+    --popover-foreground: 24 22% 10%;
+    --primary: 174 78% 24%;
+    --primary-foreground: 36 32% 98%;
+    --secondary: 36 18% 92%;
+    --secondary-foreground: 24 22% 10%;
+    --muted: 36 18% 92%;
+    --muted-foreground: 24 14% 26%;
+    --accent: 174 78% 24%;
+    --accent-foreground: 36 32% 98%;
+    --destructive: 0 72% 40%;
+    --destructive-foreground: 36 32% 98%;
+    --border: 30 16% 54%;
+    --input: 30 16% 54%;
+    --ring: 174 78% 24%;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 0 0% 9%;
-    --foreground: 210 8% 92%;
-    --card: 0 0% 12%;
-    --card-foreground: 210 8% 92%;
-    --popover: 0 0% 12%;
-    --popover-foreground: 210 8% 92%;
-    --primary: 174 70% 48%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 16%;
-    --secondary-foreground: 210 8% 92%;
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 58%;
-    --accent: 174 70% 48%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 8% 92%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 174 70% 48%;
+    --background: 24 10% 7%;
+    --foreground: 36 20% 94%;
+    --card: 24 10% 10%;
+    --card-foreground: 36 20% 94%;
+    --popover: 24 10% 10%;
+    --popover-foreground: 36 20% 94%;
+    --primary: 174 58% 56%;
+    --primary-foreground: 24 10% 8%;
+    --secondary: 24 8% 14%;
+    --secondary-foreground: 36 20% 94%;
+    --muted: 24 8% 14%;
+    --muted-foreground: 32 10% 72%;
+    --accent: 174 58% 56%;
+    --accent-foreground: 24 10% 8%;
+    --destructive: 0 72% 48%;
+    --destructive-foreground: 36 20% 94%;
+    --border: 30 8% 38%;
+    --input: 30 8% 38%;
+    --ring: 174 58% 56%;
   }
 
   @media (prefers-contrast: more) {
     :root {
-      --border: 180 8% 72%;
-      --muted-foreground: 220 10% 32%;
+      --border: 30 18% 46%;
+      --muted-foreground: 24 16% 20%;
     }
 
     .dark {
-      --border: 0 0% 28%;
-      --muted-foreground: 0 0% 68%;
+      --border: 30 10% 48%;
+      --muted-foreground: 32 12% 80%;
     }
   }
 
   @media (prefers-contrast: less) {
     :root {
-      --border: 180 8% 91%;
+      --border: 30 12% 82%;
     }
 
     .dark {
-      --border: 0 0% 18%;
+      --border: 24 8% 20%;
     }
   }
 }
@@ -84,6 +84,8 @@
 
   body {
     @apply bg-background text-foreground font-sans;
+    font-size: 1.125rem;
+    line-height: 1.7;
     --font-mono: var(--font-jetbrains-mono), 'JetBrains Mono', monospace;
   }
 
@@ -95,6 +97,16 @@
 
   * {
     box-sizing: border-box;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
   }
 
   ::selection {
@@ -200,4 +212,111 @@
     hsl(300, 90%, 50%),
     hsl(360, 90%, 50%)
   );
+}
+
+/* Signature systems diagram (CSS/SVG only; static by default) */
+.systems-diagram {
+  color: hsl(var(--foreground));
+  overflow: visible;
+}
+
+.systems-diagram .system-edge {
+  fill: none;
+  stroke: hsl(var(--border));
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  transition: stroke 0.25s ease, opacity 0.25s ease;
+}
+
+.systems-diagram .system-node {
+  cursor: pointer;
+  outline: none;
+}
+
+.systems-diagram .node-shape {
+  fill: hsl(var(--card));
+  stroke: hsl(var(--border));
+  stroke-width: 1.75;
+  transition: fill 0.25s ease, stroke 0.25s ease, stroke-width 0.25s ease;
+}
+
+.systems-diagram .node-icon,
+.systems-diagram .node-label {
+  fill: hsl(var(--muted-foreground));
+  transition: fill 0.25s ease, stroke 0.25s ease;
+}
+
+.systems-diagram .node-icon-line {
+  fill: none;
+  stroke: hsl(var(--muted-foreground));
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.25s ease;
+}
+
+.systems-diagram .node-label {
+  font-family: var(--font-plus-jakarta), system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.systems-diagram .system-node:hover .node-shape,
+.systems-diagram .system-node:focus .node-shape,
+.systems-diagram .system-node:active .node-shape {
+  fill: hsl(var(--primary) / 0.16);
+  stroke: hsl(var(--primary));
+  stroke-width: 2.25;
+}
+
+.systems-diagram .system-node:hover .node-icon,
+.systems-diagram .system-node:hover .node-label,
+.systems-diagram .system-node:focus .node-icon,
+.systems-diagram .system-node:focus .node-label,
+.systems-diagram .system-node:active .node-icon,
+.systems-diagram .system-node:active .node-label {
+  fill: hsl(var(--primary));
+}
+
+.systems-diagram .system-node:hover .node-icon-line,
+.systems-diagram .system-node:focus .node-icon-line,
+.systems-diagram .system-node:active .node-icon-line {
+  stroke: hsl(var(--primary));
+}
+
+.systems-diagram:has(.node-browser:hover) .edge-browser,
+.systems-diagram:has(.node-browser:focus) .edge-browser,
+.systems-diagram:has(.node-browser:active) .edge-browser,
+.systems-diagram:has(.node-network:hover) .edge-browser,
+.systems-diagram:has(.node-network:focus) .edge-browser,
+.systems-diagram:has(.node-network:active) .edge-browser,
+.systems-diagram:has(.node-network:hover) .edge-device,
+.systems-diagram:has(.node-network:focus) .edge-device,
+.systems-diagram:has(.node-network:active) .edge-device,
+.systems-diagram:has(.node-network:hover) .edge-cloud,
+.systems-diagram:has(.node-network:focus) .edge-cloud,
+.systems-diagram:has(.node-network:active) .edge-cloud,
+.systems-diagram:has(.node-device:hover) .edge-device,
+.systems-diagram:has(.node-device:focus) .edge-device,
+.systems-diagram:has(.node-device:active) .edge-device,
+.systems-diagram:has(.node-cloud:hover) .edge-cloud,
+.systems-diagram:has(.node-cloud:focus) .edge-cloud,
+.systems-diagram:has(.node-cloud:active) .edge-cloud {
+  stroke: hsl(var(--primary));
+}
+
+.systems-diagram:has(.system-node:hover) .system-node:not(:hover),
+.systems-diagram:has(.system-node:focus) .system-node:not(:focus) {
+  opacity: 0.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .systems-diagram .system-edge,
+  .systems-diagram .node-shape,
+  .systems-diagram .node-icon,
+  .systems-diagram .node-label,
+  .systems-diagram .system-node {
+    transition: none;
+  }
 }

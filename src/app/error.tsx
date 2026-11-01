@@ -21,7 +21,7 @@ export default function Error({
         {ERROR_PAGE_DESCRIPTION}
       </p>
       <button
-        className="px-5 py-2.5 bg-primary text-primary-foreground font-mono text-xs uppercase tracking-widest hover:bg-primary/90 transition-colors"
+        className="bg-primary px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-primary-foreground transition-colors hover:bg-primary/90"
         onClick={reset}
         type="button"
       >
