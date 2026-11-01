@@ -4,10 +4,11 @@ test.describe('Home page', () => {
   test('loads and shows main sections', async ({ page }) => {
     await page.goto('/');
 
-    await expect(page.getByRole('heading', { level: 1 })).toContainText('Abhishek');
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('Engineering leader');
+    await expect(page.getByRole('heading', { name: /selected work/i })).toBeVisible();
     await expect(page.getByRole('heading', { name: /^experience$/i })).toBeVisible();
     await expect(page.getByRole('heading', { name: /^clients$/i })).toBeVisible();
-    await expect(page.getByRole('heading', { name: /^skills$/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /get in touch/i })).toBeVisible();
   });
 
   test('resume link points to PDF', async ({ page }) => {
@@ -19,11 +20,17 @@ test.describe('Home page', () => {
     expect(href?.endsWith('resume.pdf')).toBeTruthy();
   });
 
+  test('mailto contact is present', async ({ page }) => {
+    await page.goto('/');
+
+    const mail = page.locator('a[href^="mailto:"]').first();
+    await expect(mail).toBeVisible();
+  });
+
   test('skip to main content link is present', async ({ page }) => {
     await page.goto('/');
 
     const skipLink = page.getByRole('link', { name: /skip to main content/i });
-    await expect(skipLink).toBeVisible();
     await expect(skipLink).toHaveAttribute('href', '#main');
   });
 
@@ -31,7 +38,7 @@ test.describe('Home page', () => {
     await page.goto('/');
 
     const brand = page.getByRole('link', { name: /back to main content/i });
-    await expect(brand).toHaveAttribute('href', '#main');
+    await expect(brand).toHaveAttribute('href', '/#main');
   });
 
   test('primary navigation landmark is labeled', async ({ page }) => {
@@ -45,6 +52,14 @@ test.describe('Home page', () => {
 
     const social = page.getByRole('link', { name: /opens in new tab/i });
     await expect(social.first()).toBeVisible();
+  });
+
+  test('selected work rows link to case studies', async ({ page }) => {
+    await page.goto('/');
+
+    const caseLink = page.getByRole('link', { name: /read case study: micro-frontend platform/i });
+    await expect(caseLink).toBeVisible();
+    await expect(caseLink).toHaveAttribute('href', '/work/micro-frontend-platform');
   });
 
   test('mobile menu exposes dialog semantics and Escape closes it', async ({ page }) => {
