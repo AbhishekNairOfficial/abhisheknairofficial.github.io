@@ -56,7 +56,7 @@ export function ColorSliderPanel({
           &deg;
         </span>
         <button
-          className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground underline-offset-4 hover:text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-popover rounded-sm"
+          className="inline-flex min-h-11 items-center rounded-sm px-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground underline-offset-4 hover:text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-popover"
           onClick={onReset}
           type="button"
         >

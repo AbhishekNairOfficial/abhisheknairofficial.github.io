@@ -14,13 +14,13 @@ const Experience = () => {
               <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
                 {item.period}
               </p>
-              <h3 className="mt-2 font-display text-2xl tracking-tight text-foreground md:text-3xl">
+              <h3 className="mt-2 text-balance font-display text-2xl tracking-tight text-foreground md:text-[1.85rem]">
                 {item.role}
               </h3>
               <p className="mt-1 text-sm text-primary">
                 {item.company}
               </p>
-              <p className="mt-4 leading-relaxed text-muted-foreground">
+              <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
                 {item.description}
               </p>
             </li>

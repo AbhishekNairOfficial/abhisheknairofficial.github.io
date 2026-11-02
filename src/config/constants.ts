@@ -11,9 +11,8 @@ export const JOB_TITLE = 'Frontend Architect';
 
 // ——— Navigation ———
 export const NAV_LINKS = [
-  { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
   { label: 'Work', href: '#work' },
+  { label: 'Experience', href: '#experience' },
   { label: 'Now', href: '#now' },
   { label: 'Contact', href: '#contact' },
 ] as const;
@@ -42,16 +41,22 @@ export const STATUS_LISTENING = 'Currently listening to';
 export const STATUS_RECENT = 'Recently played';
 export const STATUS_NOTHING = 'Nothing playing';
 export const SPOTIFY_STATUS_BEFORE_TRACK = ': ';
+/* eslint-disable no-warning-comments -- proposed copy pending owner confirmation */
+// TODO(owner): confirm
+export const STATUS_LOADING = 'Checking what’s playing';
+// TODO(owner): confirm
+export const STATUS_UNAVAILABLE = 'Listening status unavailable';
+/* eslint-enable no-warning-comments */
 
 // ——— Social ———
 export const SOCIAL_LINKS = [
   {
-    url: 'https://linkedin.com/in/6foot4',
-    label: 'LinkedIn',
-  },
-  {
     url: 'https://github.com/abhisheknairofficial',
     label: 'GitHub',
+  },
+  {
+    url: 'https://linkedin.com/in/6foot4',
+    label: 'LinkedIn',
   },
 ];
 
@@ -99,7 +104,7 @@ export const SYSTEMS_DIAGRAM_TITLE = 'Systems beyond the browser';
 
 // TODO(owner): confirm
 export const SYSTEMS_DIAGRAM_DESCRIPTION =
-  'Four connected layers: Browser, Device, Network, and Cloud. Hover, focus, or tap a node to highlight that layer.';
+  'Hover, focus, or tap a node.';
 
 // TODO(owner): confirm
 export const SYSTEMS_LAYER_BROWSER = 'Browser';
@@ -109,6 +114,26 @@ export const SYSTEMS_LAYER_DEVICE = 'Device';
 export const SYSTEMS_LAYER_NETWORK = 'Network';
 // TODO(owner): confirm
 export const SYSTEMS_LAYER_CLOUD = 'Cloud';
+
+// TODO(owner): confirm
+export const SYSTEMS_LAYER_CAPTION_BROWSER =
+  'Frontend architecture and micro-frontends in the browser.';
+// TODO(owner): confirm
+export const SYSTEMS_LAYER_CAPTION_DEVICE =
+  'POS, devices, and hardware that sit beyond the browser.';
+// TODO(owner): confirm
+export const SYSTEMS_LAYER_CAPTION_NETWORK =
+  'Device communication and networks for real-world workflows.';
+// TODO(owner): confirm
+export const SYSTEMS_LAYER_CAPTION_CLOUD =
+  'Cloud platforms on AWS and Azure for enterprise web.';
+
+export const SYSTEMS_LAYER_CAPTIONS = {
+  browser: SYSTEMS_LAYER_CAPTION_BROWSER,
+  device: SYSTEMS_LAYER_CAPTION_DEVICE,
+  network: SYSTEMS_LAYER_CAPTION_NETWORK,
+  cloud: SYSTEMS_LAYER_CAPTION_CLOUD,
+} as const;
 
 // TODO(owner): confirm
 export const META_DESCRIPTION =
@@ -336,8 +361,12 @@ export const NOT_FOUND_BACK_HOME = 'Back to home';
 
 // ——— Open Graph image (src/app/opengraph-image/route.tsx) ———
 export const OG_IMAGE_ALT = `${NAME} — ${JOB_TITLE}`;
-export const OG_IMAGE_KICKER = 'Portfolio';
-export const OG_IMAGE_TAGLINE = `${JOB_TITLE} — frontend systems at scale`;
+/* eslint-disable no-warning-comments -- proposed copy pending owner confirmation */
+// TODO(owner): confirm
+export const OG_IMAGE_KICKER = SYSTEMS_DIAGRAM_TITLE;
+// TODO(owner): confirm
+export const OG_IMAGE_TAGLINE = POSITIONING_HEADLINE;
+/* eslint-enable no-warning-comments */
 export const OG_IMAGE_SIZE = { width: 1200, height: 630 };
 
 // ——— Meta ———

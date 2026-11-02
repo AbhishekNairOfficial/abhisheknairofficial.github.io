@@ -34,7 +34,7 @@ export function ProjectRows({ projects }: ProjectRowsProps) {
       {projects.map((project) => {
         return (
           <li
-            className="border-t border-border py-8 first:border-t-0 first:pt-0"
+            className="border-t border-border py-6 first:border-t-0 first:pt-0 md:py-8"
             key={project.title}
           >
             <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
@@ -48,10 +48,10 @@ export function ProjectRows({ projects }: ProjectRowsProps) {
             <p className="mt-1 font-mono text-xs text-muted-foreground">
               {project.role}
             </p>
-            <p className="mt-3 leading-relaxed text-muted-foreground">
+            <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
               {project.summary}
             </p>
-            <p className="mt-3 text-sm text-foreground">
+            <p className="mt-3 text-pretty text-sm text-foreground">
               {project.outcomes.join(' · ')}
             </p>
           </li>

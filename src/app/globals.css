@@ -163,7 +163,7 @@
 .noise-overlay {
   position: fixed;
   inset: 0;
-  z-index: 50;
+  z-index: 30;
   pointer-events: none;
   opacity: 0.02;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
@@ -214,7 +214,7 @@
   );
 }
 
-/* Signature systems diagram (CSS/SVG only; static by default) */
+/* Signature systems diagram (CSS/SVG only; packets pause under reduced motion) */
 .systems-diagram {
   color: hsl(var(--foreground));
   overflow: visible;
@@ -228,9 +228,33 @@
   transition: stroke 0.25s ease, opacity 0.25s ease;
 }
 
+.systems-diagram .system-joint {
+  fill: hsl(var(--border));
+  pointer-events: none;
+  transition: fill 0.25s ease;
+}
+
 .systems-diagram .system-node {
   cursor: pointer;
   outline: none;
+}
+
+.systems-diagram .system-node:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 4px;
+}
+
+.systems-diagram .data-packet {
+  fill: hsl(var(--primary));
+  filter: drop-shadow(0 0 2.5px hsl(var(--primary) / 0.9));
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .systems-diagram .data-packet,
+  .systems-diagram .data-packets {
+    display: none;
+  }
 }
 
 .systems-diagram .node-shape {
@@ -257,62 +281,46 @@
 
 .systems-diagram .node-label {
   font-family: var(--font-plus-jakarta), system-ui, sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.01em;
 }
 
-.systems-diagram .system-node:hover .node-shape,
-.systems-diagram .system-node:focus .node-shape,
-.systems-diagram .system-node:active .node-shape {
+.systems-diagram .system-node.is-active .node-shape {
   fill: hsl(var(--primary) / 0.16);
   stroke: hsl(var(--primary));
   stroke-width: 2.25;
 }
 
-.systems-diagram .system-node:hover .node-icon,
-.systems-diagram .system-node:hover .node-label,
-.systems-diagram .system-node:focus .node-icon,
-.systems-diagram .system-node:focus .node-label,
-.systems-diagram .system-node:active .node-icon,
-.systems-diagram .system-node:active .node-label {
+.systems-diagram .system-node.is-active .node-icon,
+.systems-diagram .system-node.is-active .node-label {
   fill: hsl(var(--primary));
 }
 
-.systems-diagram .system-node:hover .node-icon-line,
-.systems-diagram .system-node:focus .node-icon-line,
-.systems-diagram .system-node:active .node-icon-line {
+.systems-diagram .system-node.is-active .node-icon-line {
   stroke: hsl(var(--primary));
 }
 
-.systems-diagram:has(.node-browser:hover) .edge-browser,
-.systems-diagram:has(.node-browser:focus) .edge-browser,
-.systems-diagram:has(.node-browser:active) .edge-browser,
-.systems-diagram:has(.node-network:hover) .edge-browser,
-.systems-diagram:has(.node-network:focus) .edge-browser,
-.systems-diagram:has(.node-network:active) .edge-browser,
-.systems-diagram:has(.node-network:hover) .edge-device,
-.systems-diagram:has(.node-network:focus) .edge-device,
-.systems-diagram:has(.node-network:active) .edge-device,
-.systems-diagram:has(.node-network:hover) .edge-cloud,
-.systems-diagram:has(.node-network:focus) .edge-cloud,
-.systems-diagram:has(.node-network:active) .edge-cloud,
-.systems-diagram:has(.node-device:hover) .edge-device,
-.systems-diagram:has(.node-device:focus) .edge-device,
-.systems-diagram:has(.node-device:active) .edge-device,
-.systems-diagram:has(.node-cloud:hover) .edge-cloud,
-.systems-diagram:has(.node-cloud:focus) .edge-cloud,
-.systems-diagram:has(.node-cloud:active) .edge-cloud {
+.systems-diagram[data-active-layer='browser'] .edge-browser,
+.systems-diagram[data-active-layer='network'] .edge-browser,
+.systems-diagram[data-active-layer='network'] .edge-device,
+.systems-diagram[data-active-layer='network'] .edge-cloud,
+.systems-diagram[data-active-layer='device'] .edge-device,
+.systems-diagram[data-active-layer='cloud'] .edge-cloud {
   stroke: hsl(var(--primary));
 }
 
-.systems-diagram:has(.system-node:hover) .system-node:not(:hover),
-.systems-diagram:has(.system-node:focus) .system-node:not(:focus) {
-  opacity: 0.55;
+.systems-diagram[data-active-layer] .system-joint {
+  fill: hsl(var(--primary));
+}
+
+.systems-diagram[data-active-layer] .system-node:not(.is-active) {
+  opacity: 0.45;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .systems-diagram .system-edge,
+  .systems-diagram .system-joint,
   .systems-diagram .node-shape,
   .systems-diagram .node-icon,
   .systems-diagram .node-label,

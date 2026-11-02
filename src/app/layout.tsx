@@ -105,7 +105,7 @@ export default function RootLayout({
         <ThemeProvider>
           <div className="noise-overlay" />
           <a
-            className="sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:m-0 focus:inline-flex focus:w-auto focus:h-auto focus:overflow-visible focus:px-4 focus:py-2 focus:[clip:auto] focus:whitespace-normal focus:bg-primary focus:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
+            className="sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:m-0 focus:inline-flex focus:min-h-11 focus:w-auto focus:h-auto focus:overflow-visible focus:px-4 focus:py-2 focus:[clip:auto] focus:whitespace-normal focus:bg-primary focus:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
             href="#main"
           >
             {SKIP_TO_MAIN_LABEL}

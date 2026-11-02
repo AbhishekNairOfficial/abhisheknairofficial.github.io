@@ -38,7 +38,12 @@ test.describe('Home page', () => {
   test('primary navigation landmark is labeled', async ({ page }) => {
     await page.goto('/');
 
-    await expect(page.getByRole('navigation', { name: /^primary$/i })).toBeVisible();
+    const nav = page.getByRole('navigation', { name: /^primary$/i });
+    await expect(nav).toBeVisible();
+    await expect(nav.getByRole('link', { name: /^experience$/i })).toBeVisible();
+    await expect(nav.getByRole('link', { name: /^work$/i })).toBeVisible();
+    await expect(nav.getByRole('link', { name: /^now$/i })).toBeVisible();
+    await expect(nav.getByRole('link', { name: /^contact$/i })).toBeVisible();
   });
 
   test('social links announce opening in a new tab', async ({ page }) => {

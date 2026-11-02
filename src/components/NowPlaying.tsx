@@ -5,8 +5,10 @@ import { Music2 } from 'lucide-react';
 import {
   SPOTIFY_STATUS_BEFORE_TRACK,
   STATUS_LISTENING,
+  STATUS_LOADING,
   STATUS_NOTHING,
   STATUS_RECENT,
+  STATUS_UNAVAILABLE,
   spotifyTrackLinkAriaLabel,
 } from '@/config/constants';
 
@@ -17,6 +19,8 @@ interface SpotifyPayload {
   artist?: string | null;
   songUrl?: string | null;
 }
+
+type Phase = 'loading' | 'ready' | 'error';
 
 const IDLE_PAYLOAD: SpotifyPayload = {
   isPlaying: false,
@@ -71,8 +75,45 @@ function TrackLabel({ data }: { data: SpotifyPayload }) {
   );
 }
 
+function NowPlayingBody({
+  data,
+  phase,
+}: {
+  data: SpotifyPayload;
+  phase: Phase;
+}) {
+  if (phase === 'loading') {
+    return (
+      <span>
+        {STATUS_LOADING}
+      </span>
+    );
+  }
+  if (phase === 'error') {
+    return (
+      <span>
+        {STATUS_UNAVAILABLE}
+      </span>
+    );
+  }
+
+  const statusText = resolveStatus(data);
+  const showTrack = statusText !== STATUS_NOTHING;
+
+  return (
+    <span>
+      {statusText}
+      {showTrack ? SPOTIFY_STATUS_BEFORE_TRACK : ''}
+      {showTrack ? (
+        <TrackLabel data={data} />
+      ) : null}
+    </span>
+  );
+}
+
 export function NowPlaying() {
   const [data, setData] = useState<SpotifyPayload>(IDLE_PAYLOAD);
+  const [phase, setPhase] = useState<Phase>('loading');
 
   useEffect(() => {
     const controller = new AbortController();
@@ -80,18 +121,20 @@ export function NowPlaying() {
     fetch('/api/spotify', { signal: controller.signal })
       .then((response) => {
         if (!response.ok) {
-          return IDLE_PAYLOAD;
+          throw new Error('spotify');
         }
         return response.json() as Promise<SpotifyPayload>;
       })
       .then((payload) => {
         setData(payload);
+        setPhase('ready');
       })
       .catch((error: unknown) => {
         if (error instanceof DOMException && error.name === 'AbortError') {
           return;
         }
         setData(IDLE_PAYLOAD);
+        setPhase('error');
       });
 
     return () => {
@@ -99,21 +142,21 @@ export function NowPlaying() {
     };
   }, []);
 
-  const statusText = resolveStatus(data);
-  const showTrack = statusText !== STATUS_NOTHING;
-
   return (
-    <p className="flex items-start gap-2 text-sm text-muted-foreground">
+    <p
+      aria-atomic="true"
+      aria-live="polite"
+      className="flex min-h-11 items-center gap-2 text-sm leading-5 text-muted-foreground"
+    >
       <Music2
         aria-hidden
-        className="mt-0.5 h-4 w-4 shrink-0 text-primary"
+        className="h-4 w-4 shrink-0 text-primary"
       />
-      <span>
-        {statusText}
-        {showTrack ? SPOTIFY_STATUS_BEFORE_TRACK : ''}
-        {showTrack ? (
-          <TrackLabel data={data} />
-        ) : null}
+      <span className="min-w-0 line-clamp-2">
+        <NowPlayingBody
+          data={data}
+          phase={phase}
+        />
       </span>
     </p>
   );

@@ -8,7 +8,7 @@ export function Now() {
       id="now"
       title={NOW_TITLE}
     >
-      <p className="mb-6 leading-relaxed text-foreground">
+      <p className="mb-6 text-pretty leading-relaxed text-foreground">
         {NOW_FOCUS}
       </p>
       <NowPlaying />

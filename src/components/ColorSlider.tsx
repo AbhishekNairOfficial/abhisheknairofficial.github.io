@@ -24,7 +24,7 @@ export function ColorSlider() {
     return (
       <span
         aria-hidden
-        className="h-9 w-9 inline-flex shrink-0"
+        className="inline-flex h-11 w-11 shrink-0"
       />
     );
   }
@@ -38,7 +38,7 @@ export function ColorSlider() {
         aria-controls={popoverId}
         aria-expanded={open}
         aria-label={ACCENT_COLOR_ARIA_LABEL}
-        className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
         onClick={handleToggleOpen}
         type="button"
       >

@@ -25,7 +25,7 @@ export function NavigationMobileToolbar({
         aria-controls={MOBILE_MENU_DIALOG_ID}
         aria-expanded={mobileOpen}
         aria-label={mobileOpen ? MOBILE_MENU_CLOSE_LABEL : MOBILE_MENU_OPEN_LABEL}
-        className="text-foreground rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        className="inline-flex h-11 w-11 items-center justify-center rounded-md text-foreground"
         onClick={onToggleMenu}
         ref={menuButtonRef}
         type="button"
