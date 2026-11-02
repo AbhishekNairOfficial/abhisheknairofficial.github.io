@@ -31,7 +31,7 @@ export function ThemeToggle() {
   return (
     <button
       aria-label={isDark ? THEME_ARIA_LIGHT : THEME_ARIA_DARK}
-      className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+      className="inline-flex h-11 w-11 items-center justify-center rounded-md text-muted-foreground transition-colors hover:text-foreground"
       onClick={handleToggle}
       type="button"
     >

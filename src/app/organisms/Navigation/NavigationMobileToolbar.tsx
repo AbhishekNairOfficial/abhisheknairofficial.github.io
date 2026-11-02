@@ -1,6 +1,5 @@
 import type { RefObject } from 'react';
 import { Menu, X } from 'lucide-react';
-import { ColorSlider } from '@/components/ColorSlider';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { MOBILE_MENU_CLOSE_LABEL, MOBILE_MENU_OPEN_LABEL } from '@/config/constants';
 
@@ -18,8 +17,7 @@ export function NavigationMobileToolbar({
   onToggleMenu,
 }: NavigationMobileToolbarProps) {
   return (
-    <div className="flex md:hidden items-center gap-2">
-      <ColorSlider />
+    <div className="flex items-center gap-1 md:hidden">
       <ThemeToggle />
       <button
         aria-controls={MOBILE_MENU_DIALOG_ID}

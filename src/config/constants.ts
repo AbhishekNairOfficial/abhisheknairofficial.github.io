@@ -28,6 +28,10 @@ export function brandBackToMainAriaLabel(personName: string): string {
 export const RESUME_URL = '/resume.pdf';
 export const RESUME_BUTTON_LABEL = 'Resume';
 export const DOWNLOAD_RESUME_LABEL = 'Download Resume';
+/* eslint-disable no-warning-comments -- proposed copy pending owner confirmation */
+// TODO(owner): confirm
+export const GET_IN_TOUCH_LABEL = 'Get in touch';
+/* eslint-enable no-warning-comments */
 
 export const MOBILE_MENU_OPEN_LABEL = 'Open menu';
 export const MOBILE_MENU_CLOSE_LABEL = 'Close menu';
@@ -85,6 +89,10 @@ export const POSITIONING_HEADLINE =
   'Engineering leader & frontend architect for real-world systems: POS, devices, enterprise web';
 
 // TODO(owner): confirm
+export const HERO_INTRO =
+  "I'm a systems-focused engineer and architect. My work spans frontend architecture, device communication, and end-to-end system design.";
+
+// TODO(owner): confirm
 export const SPECIALTIES = [
   'Frontend architecture for enterprise web',
   'POS, devices, and real-world systems',
@@ -104,7 +112,7 @@ export const SYSTEMS_DIAGRAM_TITLE = 'Systems beyond the browser';
 
 // TODO(owner): confirm
 export const SYSTEMS_DIAGRAM_DESCRIPTION =
-  'Hover, focus, or tap a node.';
+  'I specialize in building reliable, scalable applications that operate beyond the browser - integrating hardware, networks, and real-world workflows.';
 
 // TODO(owner): confirm
 export const SYSTEMS_LAYER_BROWSER = 'Browser';
@@ -362,8 +370,7 @@ export const NOT_FOUND_BACK_HOME = 'Back to home';
 // ——— Open Graph image (src/app/opengraph-image/route.tsx) ———
 export const OG_IMAGE_ALT = `${NAME} — ${JOB_TITLE}`;
 /* eslint-disable no-warning-comments -- proposed copy pending owner confirmation */
-// TODO(owner): confirm
-export const OG_IMAGE_KICKER = SYSTEMS_DIAGRAM_TITLE;
+export const OG_IMAGE_KICKER = JOB_TITLE;
 // TODO(owner): confirm
 export const OG_IMAGE_TAGLINE = POSITIONING_HEADLINE;
 /* eslint-enable no-warning-comments */

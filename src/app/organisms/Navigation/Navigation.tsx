@@ -130,7 +130,7 @@ export function Navigation() {
         <div className="mx-auto flex h-16 max-w-3xl items-center justify-between px-5 sm:px-6">
           <a
             aria-label={brandBackToMainAriaLabel(NAME)}
-            className="font-primary text-xl font-semibold text-foreground hover:text-primary transition-colors"
+            className="text-sm font-medium text-foreground transition-colors hover:text-muted-foreground"
             href="#main"
           >
             {NAME.split(' ')[0]}

@@ -14,9 +14,9 @@ const OG_BG = '#141110';
 const OG_FG = '#F3EFEA';
 const OG_MUTED = 'rgba(243, 239, 234, 0.72)';
 const OG_ACCENT = '#4ECFC3';
-const OG_LINE = 'rgba(78, 207, 195, 0.5)';
+const OG_LINE = 'rgba(243, 239, 234, 0.28)';
 const OG_NODE_BG = '#1C1917';
-const OG_NODE_BORDER = 'rgba(78, 207, 195, 0.85)';
+const OG_NODE_BORDER = 'rgba(243, 239, 234, 0.32)';
 
 function OgNode({ label }: { label: string }) {
   return (

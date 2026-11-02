@@ -214,7 +214,7 @@
   );
 }
 
-/* Signature systems diagram (CSS/SVG only; packets pause under reduced motion) */
+/* Quiet systems illustration — static by default; one packet under motion-safe */
 .systems-diagram {
   color: hsl(var(--foreground));
   overflow: visible;
@@ -223,30 +223,21 @@
 .systems-diagram .system-edge {
   fill: none;
   stroke: hsl(var(--border));
-  stroke-width: 1.75;
+  stroke-width: 1.25;
   stroke-linecap: round;
-  transition: stroke 0.25s ease, opacity 0.25s ease;
-}
-
-.systems-diagram .system-joint {
-  fill: hsl(var(--border));
-  pointer-events: none;
-  transition: fill 0.25s ease;
+  transition: stroke 0.25s ease;
 }
 
 .systems-diagram .system-node {
-  cursor: pointer;
-  outline: none;
+  pointer-events: auto;
 }
 
-.systems-diagram .system-node:focus-visible {
-  outline: 2px solid hsl(var(--ring));
-  outline-offset: 4px;
+.systems-diagram .system-node:hover .node-shape {
+  stroke: hsl(var(--muted-foreground));
 }
 
 .systems-diagram .data-packet {
-  fill: hsl(var(--primary));
-  filter: drop-shadow(0 0 2.5px hsl(var(--primary) / 0.9));
+  fill: hsl(var(--muted-foreground) / 0.7);
   pointer-events: none;
 }
 
@@ -260,71 +251,29 @@
 .systems-diagram .node-shape {
   fill: hsl(var(--card));
   stroke: hsl(var(--border));
-  stroke-width: 1.75;
-  transition: fill 0.25s ease, stroke 0.25s ease, stroke-width 0.25s ease;
+  stroke-width: 1.25;
+  transition: stroke 0.25s ease, fill 0.25s ease;
 }
 
-.systems-diagram .node-icon,
 .systems-diagram .node-label {
   fill: hsl(var(--muted-foreground));
-  transition: fill 0.25s ease, stroke 0.25s ease;
+  font-family: var(--font-plus-jakarta), system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 .systems-diagram .node-icon-line {
   fill: none;
   stroke: hsl(var(--muted-foreground));
-  stroke-width: 1.4;
+  stroke-width: 1.25;
   stroke-linecap: round;
   stroke-linejoin: round;
-  transition: stroke 0.25s ease;
-}
-
-.systems-diagram .node-label {
-  font-family: var(--font-plus-jakarta), system-ui, sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-}
-
-.systems-diagram .system-node.is-active .node-shape {
-  fill: hsl(var(--primary) / 0.16);
-  stroke: hsl(var(--primary));
-  stroke-width: 2.25;
-}
-
-.systems-diagram .system-node.is-active .node-icon,
-.systems-diagram .system-node.is-active .node-label {
-  fill: hsl(var(--primary));
-}
-
-.systems-diagram .system-node.is-active .node-icon-line {
-  stroke: hsl(var(--primary));
-}
-
-.systems-diagram[data-active-layer='browser'] .edge-browser,
-.systems-diagram[data-active-layer='network'] .edge-browser,
-.systems-diagram[data-active-layer='network'] .edge-device,
-.systems-diagram[data-active-layer='network'] .edge-cloud,
-.systems-diagram[data-active-layer='device'] .edge-device,
-.systems-diagram[data-active-layer='cloud'] .edge-cloud {
-  stroke: hsl(var(--primary));
-}
-
-.systems-diagram[data-active-layer] .system-joint {
-  fill: hsl(var(--primary));
-}
-
-.systems-diagram[data-active-layer] .system-node:not(.is-active) {
-  opacity: 0.45;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .systems-diagram .system-edge,
-  .systems-diagram .system-joint,
-  .systems-diagram .node-shape,
-  .systems-diagram .node-icon,
-  .systems-diagram .node-label,
-  .systems-diagram .system-node {
+  .systems-diagram .node-shape {
     transition: none;
   }
 }
