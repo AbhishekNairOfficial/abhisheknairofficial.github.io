@@ -146,32 +146,6 @@
   opacity: 0.03;
 }
 
-/* Nav link underline (easter egg polish) */
-.nav-link-underline {
-  position: relative;
-}
-
-.nav-link-underline::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: hsl(var(--primary));
-  transition: width 0.3s ease;
-}
-
-.nav-link-underline:hover::after {
-  width: 100%;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .nav-link-underline::after {
-    transition: none;
-  }
-}
-
 /* Quiet systems illustration — static by default; one packet under motion-safe */
 .systems-diagram {
   color: hsl(var(--foreground));

@@ -144,12 +144,12 @@ export const TIMELINE_DATA = [
     description:
       'Provided technical leadership, solution architecture ownership, direct client engagement, and input into technical hiring across T-Mobile US and TOMRA programs.',
     highlights: [
-      'T-Mobile — Executive Network Analytics: architected an executive analytics platform supporting network build, performance, and planning decisions; designed a five-level geographic data hierarchy spanning more than 80 markets; Snowflake and Azure PostgreSQL reporting over millions of rows daily; Azure Application Insights and KQL usage analytics.',
-      'T-Mobile — AI & Anomaly Detection: Databricks-based anomaly detection for 5G network performance; Databricks-hosted Llama 70B for root-cause analysis and recommended actions.',
-      'T-Mobile — Cloud Engineering: Azure service migration and private-network cutover; resolved authentication issues across Azure Container Apps, Cosmos DB, and Entra ID; CI/CD and deployment credentials.',
-      'T-Mobile — Supply Chain: UI and API architecture for a control tower covering device distribution, inventory, and servicing.',
-      'TOMRA — Industrial Application: iPadOS app integrating industrial weighing and display devices over Bluetooth Low Energy; rollout to at least five California collection locations.',
-      'Internal: technical interview frameworks; on-premises AI inference for data-residency needs; briefing workflow with prompt-injection safeguards.',
+      'T-Mobile — Executive Network Analytics: architected an executive analytics platform supporting network build, performance, and planning decisions; designed a five-level geographic data hierarchy spanning more than 80 markets; developed reporting views using Snowflake and Azure PostgreSQL over datasets ingesting millions of rows daily; implemented Azure Application Insights and KQL usage analytics, including adoption and retention metrics.',
+      'T-Mobile — AI & Anomaly Detection: built Databricks-based anomaly detection for 5G network performance; integrated a Databricks-hosted Llama 70B model to produce understandable root-cause analysis and recommended actions.',
+      'T-Mobile — Cloud Engineering: led Azure service migration and private-network cutover; resolved authentication issues across Azure Container Apps, Cosmos DB, and Entra ID; managed CI/CD and deployment credentials.',
+      'T-Mobile — Supply Chain: owned UI and API architecture for a control tower application providing visibility into device distribution, inventory, and servicing.',
+      'TOMRA — Industrial Application: designed and delivered an iPadOS application integrating industrial weighing and display devices over Bluetooth Low Energy; supported rollout to at least five California collection locations.',
+      'Internal: developed technical interview frameworks; explored on-premises AI inference architectures for data-residency needs; built a briefing workflow with prompt-injection safeguards.',
     ],
   },
   {
