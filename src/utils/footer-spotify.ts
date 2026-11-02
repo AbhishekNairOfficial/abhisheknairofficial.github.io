@@ -25,7 +25,7 @@ async function readRecentSpotify() {
     songName: recentSong.name as string,
     artist: formatTrackArtists(recentSong),
     statusText: STATUS_RECENT,
-    songUrl: '',
+    songUrl: recentSong.external_urls?.spotify ?? '',
   };
 }
 

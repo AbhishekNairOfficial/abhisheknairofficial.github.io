@@ -144,8 +144,6 @@ export function NowPlaying() {
 
   return (
     <p
-      aria-atomic="true"
-      aria-live="polite"
       className="flex min-h-11 items-center gap-2 text-sm leading-5 text-muted-foreground"
     >
       <Music2

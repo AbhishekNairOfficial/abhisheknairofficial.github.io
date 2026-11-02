@@ -27,7 +27,6 @@ export function brandBackToMainAriaLabel(personName: string): string {
 
 export const RESUME_URL = '/resume.pdf';
 export const RESUME_BUTTON_LABEL = 'Resume';
-export const DOWNLOAD_RESUME_LABEL = 'Download Resume';
 /* eslint-disable no-warning-comments -- proposed copy pending owner confirmation */
 // TODO(owner): confirm
 export const GET_IN_TOUCH_LABEL = 'Get in touch';
@@ -77,25 +76,14 @@ export function spotifyTrackLinkAriaLabel(trackName: string): string {
 }
 
 // ——— Hero ———
-export const HERO_TITLE = 'Director,\nAI & Analytics';
-export const HERO_TAGLINE =
-  'AI, analytics, and product engineering — cloud-native platforms, solution architecture, and technical leadership.';
-export const HERO_SCROLL_LABEL = 'Scroll';
-
 export const POSITIONING_HEADLINE =
   'Director, AI & Analytics Practice at Rhombuz LLC';
 
 /* eslint-disable no-warning-comments -- proposed copy pending owner confirmation */
 // TODO(owner): confirm
 export const HERO_INTRO =
-  'AI, analytics, and product engineering leader with approximately nine years of progressive experience in software engineering, enterprise analytics, cloud-native platforms, solution architecture, and technical team leadership. Appointed Director, AI & Analytics Practice at Rhombuz LLC in October 2026, following service as Lead Product Technologist, delivering data-driven platforms and AI-enabled applications for T-Mobile US, TOMRA, Albertsons, and Comcast on Microsoft Azure, Databricks, Snowflake, React, Next.js, and TypeScript.';
+  'AI, analytics, and product engineering leader with approximately nine years of progressive experience in software engineering, enterprise analytics, cloud-native platforms, solution architecture, and technical team leadership. Appointed Director, AI & Analytics Practice at Rhombuz LLC in October 2026, following service as Lead Product Technologist. Experience delivering data-driven platforms and AI-enabled applications for enterprise clients including T-Mobile US, TOMRA, Albertsons, and Comcast.';
 /* eslint-enable no-warning-comments */
-
-export const SPECIALTIES = [
-  'AI, analytics, and product engineering',
-  'Cloud-native platforms and solution architecture',
-  'Technical team leadership',
-] as const;
 
 export const NOW_FOCUS =
   'Reports directly to the CEO and leads the AI & Analytics practice, including AI-led programs for Piktorlabs and development of Rhombuz’s Data Experience Workbench (DEW) platform.';
@@ -123,14 +111,7 @@ export const SYSTEMS_LAYER_CAPTION_DEVICE =
 export const SYSTEMS_LAYER_CAPTION_NETWORK =
   'T-Mobile: Databricks-based anomaly detection for 5G network performance; Databricks-hosted Llama 70B for root-cause analysis and recommended actions.';
 export const SYSTEMS_LAYER_CAPTION_CLOUD =
-  'T-Mobile: Azure service migration and private-network cutover; authentication across Azure Container Apps, Cosmos DB, and Entra ID.';
-
-export const SYSTEMS_LAYER_CAPTIONS = {
-  browser: SYSTEMS_LAYER_CAPTION_BROWSER,
-  device: SYSTEMS_LAYER_CAPTION_DEVICE,
-  network: SYSTEMS_LAYER_CAPTION_NETWORK,
-  cloud: SYSTEMS_LAYER_CAPTION_CLOUD,
-} as const;
+  'T-Mobile: Azure service migration and private-network cutover; resolved authentication issues across Azure Container Apps, Cosmos DB, and Entra ID.';
 
 /* eslint-disable no-warning-comments -- proposed copy pending owner confirmation */
 // TODO(owner): confirm
@@ -138,24 +119,8 @@ export const META_DESCRIPTION =
   `Portfolio of ${NAME} — Director, AI & Analytics Practice at Rhombuz LLC. Approximately nine years in software engineering, enterprise analytics, cloud-native platforms, solution architecture, and technical team leadership.`;
 /* eslint-enable no-warning-comments */
 
-// ——— About ———
-export const ABOUT_TITLE = 'About';
-export const ABOUT_SECTION_NUMBER = '01';
-export const ABOUT_TEXT =
-  'AI, analytics, and product engineering leader with approximately nine years of progressive experience in software engineering, enterprise analytics, cloud-native platforms, solution architecture, and technical team leadership.';
-export const ABOUT_TEXT_2 =
-  'Appointed Director, AI & Analytics Practice at Rhombuz LLC in October 2026, following service as Lead Product Technologist. Experience delivering data-driven platforms and AI-enabled applications for enterprise clients including T-Mobile US, TOMRA, Albertsons, and Comcast. Technical expertise spans Microsoft Azure, Databricks, Snowflake, React, Next.js, TypeScript, and modern API and cloud architectures.';
-
-export const QUICK_FACTS = [
-  { number: '01', label: 'Experience', value: 'Approximately nine years in software engineering and technical leadership' },
-  { number: '02', label: 'Specialization', value: 'AI, analytics, and cloud-native platforms' },
-  { number: '03', label: 'Current Role', value: 'Director, AI & Analytics Practice @ Rhombuz LLC' },
-  { number: '04', label: 'Focus', value: 'Data-driven platforms and AI-enabled applications' },
-];
-
 // ——— Experience ———
 export const EXPERIENCE_TITLE = 'Experience';
-export const EXPERIENCE_SECTION_NUMBER = '02';
 
 export const TIMELINE_DATA = [
   {
@@ -170,7 +135,6 @@ export const TIMELINE_DATA = [
       'Responsible for development of Rhombuz’s Data Experience Workbench (DEW), a strategic platform intended to be a core part of the company’s future product offering.',
       'Leads recruitment and technical evaluation for AI, analytics, and engineering roles; oversees onboarding, training, mentoring, and professional development.',
     ],
-    technologies: ['Azure', 'Databricks', 'Snowflake', 'React', 'Next.js', 'TypeScript'],
   },
   {
     id: 4,
@@ -182,12 +146,11 @@ export const TIMELINE_DATA = [
     highlights: [
       'T-Mobile — Executive Network Analytics: architected an executive analytics platform supporting network build, performance, and planning decisions; designed a five-level geographic data hierarchy spanning more than 80 markets; Snowflake and Azure PostgreSQL reporting over millions of rows daily; Azure Application Insights and KQL usage analytics.',
       'T-Mobile — AI & Anomaly Detection: Databricks-based anomaly detection for 5G network performance; Databricks-hosted Llama 70B for root-cause analysis and recommended actions.',
-      'T-Mobile — Cloud Engineering: Azure service migration and private-network cutover; authentication across Azure Container Apps, Cosmos DB, and Entra ID; CI/CD and deployment credentials.',
+      'T-Mobile — Cloud Engineering: Azure service migration and private-network cutover; resolved authentication issues across Azure Container Apps, Cosmos DB, and Entra ID; CI/CD and deployment credentials.',
       'T-Mobile — Supply Chain: UI and API architecture for a control tower covering device distribution, inventory, and servicing.',
       'TOMRA — Industrial Application: iPadOS app integrating industrial weighing and display devices over Bluetooth Low Energy; rollout to at least five California collection locations.',
       'Internal: technical interview frameworks; on-premises AI inference for data-residency needs; briefing workflow with prompt-injection safeguards.',
     ],
-    technologies: ['Azure', 'Databricks', 'Snowflake', 'React', 'TypeScript', 'iPadOS'],
   },
   {
     id: 3,
@@ -195,13 +158,12 @@ export const TIMELINE_DATA = [
     company: 'UST',
     role: 'Lead II, Software Engineering',
     description:
-      'Led frontend development for an enterprise retail product at Albertsons, MVP development at Comcast, and executive decision-support dashboards at T-Mobile.',
+      'Led frontend development for an enterprise retail product at Albertsons and MVP development at Comcast. Developed executive decision-support dashboards at T-Mobile.',
     highlights: [
       'Albertsons: designed React/Next.js architecture that improved page-load speed by 30% and reduced maintenance overhead by 25%; improved test coverage by more than 20% using AI-assisted tools.',
       'Comcast: led MVP development across interdisciplinary teams; implemented Docker, Kubernetes, and CI/CD pipelines, reducing deployment times by 40%.',
       'T-Mobile: developed executive decision-support dashboards and optimized a data visualization library, improving Lighthouse performance scores from 75 to at least 95.',
     ],
-    technologies: ['React', 'Next.js', 'Docker', 'Kubernetes', 'CI/CD'],
   },
   {
     id: 2,
@@ -215,7 +177,6 @@ export const TIMELINE_DATA = [
       'Improved application performance through state-management and network optimizations.',
       'Used Docker and Kubernetes to support scalable application deployment.',
     ],
-    technologies: ['React Native', 'Docker', 'Kubernetes'],
   },
   {
     id: 1,
@@ -227,20 +188,17 @@ export const TIMELINE_DATA = [
     highlights: [
       'Delivered the organization’s first React.js project, helped drive internal adoption, and mentored junior developers through workshops.',
     ],
-    technologies: ['React.js'],
   },
 ];
 
 // ——— Work / Projects ———
 export const WORK_TITLE = 'Work';
-export const WORK_SECTION_NUMBER = '03';
 
 export interface Project {
   title: string;
   client?: string;
   summary: string;
   role: string;
-  technologies: string[];
   outcomes: string[];
   link?: string;
   github?: string;
@@ -257,7 +215,6 @@ export const PROJECTS: Project[] = [
     summary:
       'Responsible for development of Rhombuz’s Data Experience Workbench (DEW), a strategic platform intended to be a core part of the company’s future product offering.',
     role: 'Director, AI & Analytics Practice',
-    technologies: ['Azure', 'Databricks', 'Snowflake', 'React', 'TypeScript'],
     outcomes: ['Strategic platform intended as a core part of the company’s future product offering'],
   },
   {
@@ -266,7 +223,6 @@ export const PROJECTS: Project[] = [
     summary:
       'Architected an executive analytics platform supporting network build, performance, and planning decisions. Designed a five-level geographic data hierarchy spanning more than 80 markets. Developed reporting views using Snowflake and Azure PostgreSQL over datasets ingesting millions of rows daily. Implemented Azure Application Insights and KQL usage analytics, including adoption and retention metrics.',
     role: 'Lead Product Technologist',
-    technologies: ['Snowflake', 'Azure PostgreSQL', 'Application Insights', 'KQL'],
     outcomes: [
       'Five-level geographic hierarchy spanning more than 80 markets',
       'Reporting over datasets ingesting millions of rows daily',
@@ -278,7 +234,6 @@ export const PROJECTS: Project[] = [
     summary:
       'Built Databricks-based anomaly detection for 5G network performance. Integrated a Databricks-hosted Llama 70B model to produce understandable root-cause analysis and recommended actions.',
     role: 'Lead Product Technologist',
-    technologies: ['Databricks', 'Llama 70B'],
     outcomes: [
       '5G network anomaly detection in Databricks',
       'Llama 70B root-cause analysis and recommended actions',
@@ -290,8 +245,7 @@ export const PROJECTS: Project[] = [
     summary:
       'Owned UI and API architecture for a control tower application providing visibility into device distribution, inventory, and servicing.',
     role: 'Lead Product Technologist',
-    technologies: ['React', 'TypeScript'],
-    outcomes: ['End-to-end UI and API architecture for device distribution, inventory, and servicing'],
+    outcomes: ['Owned UI and API architecture for a control tower application providing visibility into device distribution, inventory, and servicing'],
   },
   {
     title: 'Industrial Collection App',
@@ -299,7 +253,6 @@ export const PROJECTS: Project[] = [
     summary:
       'Designed and delivered an iPadOS application integrating industrial weighing and display devices over Bluetooth Low Energy. Supported rollout to at least five California collection locations.',
     role: 'Lead Product Technologist',
-    technologies: ['iPadOS', 'Bluetooth Low Energy'],
     outcomes: [
       'iPadOS and BLE industrial weighing and display',
       'Rollout to at least five California collection locations',
@@ -311,7 +264,6 @@ export const PROJECTS: Project[] = [
     summary:
       'Led frontend development for an enterprise retail product. Designed React/Next.js architecture that improved page-load speed by 30% and reduced maintenance overhead by 25%. Improved test coverage by more than 20% using AI-assisted tools. Guided UX implementation, security hardening, cross-functional collaboration, and client communications.',
     role: 'Lead II, Software Engineering',
-    technologies: ['React', 'Next.js'],
     outcomes: [
       '30% page-load improvement',
       '25% reduction in maintenance overhead',
@@ -322,7 +274,6 @@ export const PROJECTS: Project[] = [
 
 // ——— Skills ———
 export const SKILLS_TITLE = 'Expertise';
-export const SKILLS_SECTION_NUMBER = '04';
 
 export const SKILL_CATEGORIES = [
   {
@@ -388,7 +339,6 @@ export const SKILL_CATEGORIES = [
 
 // ——— Clients ———
 export const CLIENTS_TITLE = 'Clients';
-export const CLIENTS_SECTION_NUMBER = '05';
 
 export const CLIENTS_DATA = [
   { name: 'T-Mobile', context: 'Network analytics, AI, cloud, and supply chain' },
@@ -397,16 +347,11 @@ export const CLIENTS_DATA = [
   { name: 'Comcast', context: 'MVP development' },
 ];
 
-export const CLIENTS_MARQUEE_PAUSE = 'Pause';
-export const CLIENTS_MARQUEE_PLAY = 'Play';
-export const CLIENTS_MARQUEE_TOGGLE_SUFFIX = ' client list';
-
 // ——— Now ———
 export const NOW_TITLE = 'Now';
 
 // ——— Contact ———
 export const CONTACT_TITLE = 'Get in Touch';
-export const CONTACT_SECTION_NUMBER = '06';
 /* eslint-disable no-warning-comments -- proposed copy pending owner confirmation */
 // TODO(owner): confirm
 export const CONTACT_TEXT =
@@ -415,18 +360,11 @@ export const CONTACT_TEXT =
 export const CONTACT_EMAIL = 'abhisheknr4@gmail.com';
 
 // ——— Footer ———
-export const FOOTER_BIO = `${JOB_TITLE} at Rhombuz LLC.`;
-export const FOOTER_NAV_HEADING = 'Navigation';
-export const FOOTER_CONNECT_HEADING = 'Connect';
-export const FOOTER_COPYRIGHT = 'Crafted with Next.js, Tailwind, and too much coffee.';
 export const COPYRIGHT_YEAR = 2026;
 
-// ——— Theme / accent UI ———
+// ——— Theme ———
 export const THEME_ARIA_LIGHT = 'Switch to light mode';
 export const THEME_ARIA_DARK = 'Switch to dark mode';
-export const ACCENT_COLOR_ARIA_LABEL = 'Customize accent color';
-export const ACCENT_HUE_LABEL = 'Accent hue';
-export const ACCENT_HUE_RESET = 'Reset';
 
 // ——— Error & not found ———
 export const ERROR_PAGE_TITLE = 'Something went wrong';

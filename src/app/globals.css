@@ -132,34 +132,6 @@
   }
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-scroll {
-  animation: scroll 20s linear infinite;
-}
-
-.animate-scroll-paused {
-  animation-play-state: paused;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .clients-marquee-track {
-    animation: none;
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 1.5rem;
-    column-gap: 2rem;
-    transform: none;
-  }
-}
-
 .noise-overlay {
   position: fixed;
   inset: 0;
@@ -198,20 +170,6 @@
   .nav-link-underline::after {
     transition: none;
   }
-}
-
-/* Hue slider track: full spectrum (used by ColorSlider) */
-.hue-slider-track {
-  background: linear-gradient(
-    to right,
-    hsl(0, 90%, 50%),
-    hsl(60, 90%, 45%),
-    hsl(120, 90%, 40%),
-    hsl(180, 90%, 40%),
-    hsl(240, 90%, 55%),
-    hsl(300, 90%, 50%),
-    hsl(360, 90%, 50%)
-  );
 }
 
 /* Quiet systems illustration — static by default; one packet under motion-safe */
