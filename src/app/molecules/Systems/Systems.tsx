@@ -19,12 +19,12 @@ const LAYERS = [
     label: SYSTEMS_LAYER_BROWSER,
   },
   {
-    caption: SYSTEMS_LAYER_CAPTION_DEVICE,
-    label: SYSTEMS_LAYER_DEVICE,
-  },
-  {
     caption: SYSTEMS_LAYER_CAPTION_NETWORK,
     label: SYSTEMS_LAYER_NETWORK,
+  },
+  {
+    caption: SYSTEMS_LAYER_CAPTION_DEVICE,
+    label: SYSTEMS_LAYER_DEVICE,
   },
   {
     caption: SYSTEMS_LAYER_CAPTION_CLOUD,

@@ -1,5 +1,4 @@
 import {
-  AVAILABILITY_LINE,
   CONTACT_EMAIL,
   GET_IN_TOUCH_LABEL,
   HERO_INTRO,
@@ -41,15 +40,7 @@ export function Hero() {
           {HERO_INTRO}
         </p>
 
-        <p className="mt-8 flex min-h-11 items-center gap-2.5 text-sm text-muted-foreground">
-          <span
-            aria-hidden
-            className="h-1.5 w-1.5 shrink-0 rounded-full bg-foreground"
-          />
-          {AVAILABILITY_LINE}
-        </p>
-
-        <div className="mt-6 flex flex-row flex-wrap items-center gap-3">
+        <div className="mt-10 flex flex-row flex-wrap items-center gap-3">
           <a
             className={primaryCtaClassName}
             href={`mailto:${CONTACT_EMAIL}`}

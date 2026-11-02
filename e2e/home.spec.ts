@@ -5,8 +5,10 @@ test.describe('Home page', () => {
     await page.goto('/');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Abhishek');
+    await expect(page.getByText('Director, AI & Analytics Practice at Rhombuz LLC').first()).toBeVisible();
     await expect(page.getByRole('heading', { name: /^experience$/i })).toBeVisible();
     await expect(page.getByRole('heading', { name: /^work$/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /^expertise$/i })).toBeVisible();
     await expect(page.getByRole('heading', { name: /^now$/i })).toBeVisible();
     await expect(page.getByRole('heading', { name: /^clients$/i })).toBeVisible();
   });

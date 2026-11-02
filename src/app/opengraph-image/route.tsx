@@ -109,10 +109,12 @@ export function GET() {
             style={{
               display: 'flex',
               color: OG_ACCENT,
-              fontSize: 16,
-              letterSpacing: 6,
+              fontSize: 15,
+              letterSpacing: 2,
               textTransform: 'uppercase',
               marginBottom: 24,
+              maxWidth: 680,
+              flexWrap: 'wrap',
               fontFamily: 'ui-sans-serif, system-ui, sans-serif',
             }}
           >

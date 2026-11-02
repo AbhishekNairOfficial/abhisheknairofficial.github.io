@@ -1,8 +1,8 @@
 # Abhishek Panthalingal
 
-Engineering leader and frontend architect based in Bellevue, WA. Builds reliable, scalable applications that operate beyond the browser — integrating hardware, networks, and real-world workflows (POS, devices, enterprise web).
+Director, AI & Analytics Practice at Rhombuz LLC. AI, analytics, and product engineering leader with approximately nine years of experience in software engineering, enterprise analytics, cloud-native platforms, solution architecture, and technical team leadership. Experience delivering data-driven platforms and AI-enabled applications for T-Mobile US, TOMRA, Albertsons, and Comcast.
 
-Current role: Senior Product Technologist at Rhombuz LLC.
+Current role: Director, AI & Analytics Practice at Rhombuz LLC.
 
 ## Site
 

@@ -4,6 +4,7 @@ import Hero from './molecules/Hero';
 import { Systems } from './molecules/Systems';
 import Experience from './organisms/Experience';
 import Work from './organisms/Work';
+import Skills from './organisms/Skills';
 import { Now } from './molecules/Now';
 import Clients from './molecules/Clients';
 import LetsTalk from './organisms/LetsTalk';
@@ -20,6 +21,7 @@ const PortfolioPage = () => {
         <Systems />
         <Experience />
         <Work />
+        <Skills />
         <Now />
         <Clients />
         <LetsTalk />

@@ -23,6 +23,18 @@ const Experience = () => {
               <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
                 {item.description}
               </p>
+              <ul className="mt-4 list-disc space-y-2 pl-5">
+                {item.highlights.map((highlight) => {
+                  return (
+                    <li
+                      className="text-pretty text-sm leading-relaxed text-muted-foreground"
+                      key={highlight}
+                    >
+                      {highlight}
+                    </li>
+                  );
+                })}
+              </ul>
             </li>
           );
         })}

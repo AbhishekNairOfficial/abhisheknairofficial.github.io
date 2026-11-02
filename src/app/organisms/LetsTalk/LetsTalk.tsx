@@ -2,7 +2,6 @@ import { Mail } from 'lucide-react';
 import { PageSection } from '@/app/molecules/PageSection';
 import { SocialLinks } from '@/components/SocialLinks';
 import {
-  AVAILABILITY_LINE,
   CONTACT_EMAIL,
   CONTACT_TEXT,
   CONTACT_TITLE,
@@ -17,9 +16,6 @@ const LetsTalk = () => {
       id="contact"
       title={CONTACT_TITLE}
     >
-      <p className="mb-4 text-pretty text-lg leading-relaxed text-foreground">
-        {AVAILABILITY_LINE}
-      </p>
       <p className="mb-10 text-pretty leading-relaxed text-muted-foreground">
         {CONTACT_TEXT}
       </p>
