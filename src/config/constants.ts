@@ -107,7 +107,7 @@ export const SYSTEMS_LAYER_CLOUD = 'Cloud';
 export const SYSTEMS_LAYER_CAPTION_BROWSER =
   'Albertsons: React/Next.js architecture that improved page-load speed by 30% and reduced maintenance overhead by 25%.';
 export const SYSTEMS_LAYER_CAPTION_DEVICE =
-  'TOMRA: iPadOS application integrating industrial weighing and display devices over Bluetooth Low Energy; rollout to at least five California collection locations.';
+  'TOMRA: iPadOS application integrating industrial weighing and display devices over Bluetooth Low Energy; supported rollout to at least five California collection locations.';
 export const SYSTEMS_LAYER_CAPTION_NETWORK =
   'T-Mobile: Databricks-based anomaly detection for 5G network performance; Databricks-hosted Llama 70B for root-cause analysis and recommended actions.';
 export const SYSTEMS_LAYER_CAPTION_CLOUD =
@@ -255,7 +255,7 @@ export const PROJECTS: Project[] = [
     role: 'Lead Product Technologist',
     outcomes: [
       'iPadOS and BLE industrial weighing and display',
-      'Rollout to at least five California collection locations',
+      'Supported rollout to at least five California collection locations',
     ],
   },
   {
