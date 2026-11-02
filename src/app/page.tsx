@@ -1,13 +1,16 @@
 import React from 'react';
 import Header from '@/app/organisms/Header';
 import Hero from './molecules/Hero';
-import { About } from './molecules/About';
+import { Systems } from './molecules/Systems';
 import Experience from './organisms/Experience';
 import Work from './organisms/Work';
 import Skills from './organisms/Skills';
+import { Now } from './molecules/Now';
 import Clients from './molecules/Clients';
 import LetsTalk from './organisms/LetsTalk';
 import Footer from './organisms/Footer';
+
+export const dynamic = 'force-static';
 
 const PortfolioPage = () => {
   return (
@@ -15,10 +18,11 @@ const PortfolioPage = () => {
       <Header />
       <main id="main">
         <Hero />
-        <About />
+        <Systems />
         <Experience />
         <Work />
         <Skills />
+        <Now />
         <Clients />
         <LetsTalk />
       </main>

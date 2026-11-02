@@ -37,13 +37,11 @@ export default {
           'system-ui',
           'sans-serif',
         ],
-        literata: [
-          'var(--font-literata)',
-          'Literata',
-          'Georgia',
-          'serif',
-        ],
         mono: ['var(--font-jetbrains-mono)', 'JetBrains Mono', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['3.25rem', { lineHeight: '1.08', letterSpacing: '-0.03em' }],
+        'display-md': ['2.25rem', { lineHeight: '1.15', letterSpacing: '-0.02em' }],
       },
       colors: {
         border: 'hsl(var(--border))',

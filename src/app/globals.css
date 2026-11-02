@@ -10,69 +10,69 @@
   }
 
   :root {
-    --background: 180 8% 98%;
-    --foreground: 220 12% 18%;
-    --card: 180 6% 96%;
-    --card-foreground: 220 12% 18%;
-    --popover: 180 8% 98%;
-    --popover-foreground: 220 12% 18%;
-    --primary: 174 84% 32%;
-    --primary-foreground: 180 20% 98%;
-    --secondary: 180 6% 92%;
-    --secondary-foreground: 220 12% 18%;
-    --muted: 180 6% 92%;
-    --muted-foreground: 220 10% 38%;
-    --accent: 174 84% 32%;
-    --accent-foreground: 180 20% 98%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 180 20% 98%;
-    --border: 180 8% 88%;
-    --input: 180 8% 88%;
-    --ring: 174 84% 32%;
+    --background: 36 32% 97%;
+    --foreground: 24 22% 10%;
+    --card: 36 28% 95%;
+    --card-foreground: 24 22% 10%;
+    --popover: 36 32% 97%;
+    --popover-foreground: 24 22% 10%;
+    --primary: 174 78% 24%;
+    --primary-foreground: 36 32% 98%;
+    --secondary: 36 18% 92%;
+    --secondary-foreground: 24 22% 10%;
+    --muted: 36 18% 92%;
+    --muted-foreground: 24 14% 26%;
+    --accent: 174 78% 24%;
+    --accent-foreground: 36 32% 98%;
+    --destructive: 0 72% 40%;
+    --destructive-foreground: 36 32% 98%;
+    --border: 30 16% 54%;
+    --input: 30 16% 54%;
+    --ring: 174 78% 24%;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 0 0% 9%;
-    --foreground: 210 8% 92%;
-    --card: 0 0% 12%;
-    --card-foreground: 210 8% 92%;
-    --popover: 0 0% 12%;
-    --popover-foreground: 210 8% 92%;
-    --primary: 174 70% 48%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 16%;
-    --secondary-foreground: 210 8% 92%;
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 58%;
-    --accent: 174 70% 48%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 8% 92%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 174 70% 48%;
+    --background: 24 10% 7%;
+    --foreground: 36 20% 94%;
+    --card: 24 10% 10%;
+    --card-foreground: 36 20% 94%;
+    --popover: 24 10% 10%;
+    --popover-foreground: 36 20% 94%;
+    --primary: 174 58% 56%;
+    --primary-foreground: 24 10% 8%;
+    --secondary: 24 8% 14%;
+    --secondary-foreground: 36 20% 94%;
+    --muted: 24 8% 14%;
+    --muted-foreground: 32 10% 72%;
+    --accent: 174 58% 56%;
+    --accent-foreground: 24 10% 8%;
+    --destructive: 0 72% 48%;
+    --destructive-foreground: 36 20% 94%;
+    --border: 30 8% 38%;
+    --input: 30 8% 38%;
+    --ring: 174 58% 56%;
   }
 
   @media (prefers-contrast: more) {
     :root {
-      --border: 180 8% 72%;
-      --muted-foreground: 220 10% 32%;
+      --border: 30 18% 46%;
+      --muted-foreground: 24 16% 20%;
     }
 
     .dark {
-      --border: 0 0% 28%;
-      --muted-foreground: 0 0% 68%;
+      --border: 30 10% 48%;
+      --muted-foreground: 32 12% 80%;
     }
   }
 
   @media (prefers-contrast: less) {
     :root {
-      --border: 180 8% 91%;
+      --border: 30 12% 82%;
     }
 
     .dark {
-      --border: 0 0% 18%;
+      --border: 24 8% 20%;
     }
   }
 }
@@ -84,6 +84,8 @@
 
   body {
     @apply bg-background text-foreground font-sans;
+    font-size: 1.125rem;
+    line-height: 1.7;
     --font-mono: var(--font-jetbrains-mono), 'JetBrains Mono', monospace;
   }
 
@@ -95,6 +97,16 @@
 
   * {
     box-sizing: border-box;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
   }
 
   ::selection {
@@ -120,38 +132,10 @@
   }
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-scroll {
-  animation: scroll 20s linear infinite;
-}
-
-.animate-scroll-paused {
-  animation-play-state: paused;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .clients-marquee-track {
-    animation: none;
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 1.5rem;
-    column-gap: 2rem;
-    transform: none;
-  }
-}
-
 .noise-overlay {
   position: fixed;
   inset: 0;
-  z-index: 50;
+  z-index: 30;
   pointer-events: none;
   opacity: 0.02;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
@@ -162,42 +146,66 @@
   opacity: 0.03;
 }
 
-/* Nav link underline (easter egg polish) */
-.nav-link-underline {
-  position: relative;
+/* Quiet systems illustration — static by default; one packet under motion-safe */
+.systems-diagram {
+  color: hsl(var(--foreground));
+  overflow: visible;
 }
 
-.nav-link-underline::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: hsl(var(--primary));
-  transition: width 0.3s ease;
+.systems-diagram .system-edge {
+  fill: none;
+  stroke: hsl(var(--border));
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  transition: stroke 0.25s ease;
 }
 
-.nav-link-underline:hover::after {
-  width: 100%;
+.systems-diagram .system-node {
+  pointer-events: auto;
+}
+
+.systems-diagram .system-node:hover .node-shape {
+  stroke: hsl(var(--muted-foreground));
+}
+
+.systems-diagram .data-packet {
+  fill: hsl(var(--muted-foreground) / 0.7);
+  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nav-link-underline::after {
-    transition: none;
+  .systems-diagram .data-packet,
+  .systems-diagram .data-packets {
+    display: none;
   }
 }
 
-/* Hue slider track: full spectrum (used by ColorSlider) */
-.hue-slider-track {
-  background: linear-gradient(
-    to right,
-    hsl(0, 90%, 50%),
-    hsl(60, 90%, 45%),
-    hsl(120, 90%, 40%),
-    hsl(180, 90%, 40%),
-    hsl(240, 90%, 55%),
-    hsl(300, 90%, 50%),
-    hsl(360, 90%, 50%)
-  );
+.systems-diagram .node-shape {
+  fill: hsl(var(--card));
+  stroke: hsl(var(--border));
+  stroke-width: 1.25;
+  transition: stroke 0.25s ease, fill 0.25s ease;
+}
+
+.systems-diagram .node-label {
+  fill: hsl(var(--muted-foreground));
+  font-family: var(--font-plus-jakarta), system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.systems-diagram .node-icon-line {
+  fill: none;
+  stroke: hsl(var(--muted-foreground));
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .systems-diagram .system-edge,
+  .systems-diagram .node-shape {
+    transition: none;
+  }
 }
