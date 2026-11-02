@@ -5,9 +5,12 @@ test.describe('Home page', () => {
     await page.goto('/');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Abhishek');
+    await expect(page.getByText('Director, AI & Analytics Practice at Rhombuz LLC').first()).toBeVisible();
     await expect(page.getByRole('heading', { name: /^experience$/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /^work$/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /^expertise$/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /^now$/i })).toBeVisible();
     await expect(page.getByRole('heading', { name: /^clients$/i })).toBeVisible();
-    await expect(page.getByRole('heading', { name: /^skills$/i })).toBeVisible();
   });
 
   test('resume link points to PDF', async ({ page }) => {
@@ -37,7 +40,12 @@ test.describe('Home page', () => {
   test('primary navigation landmark is labeled', async ({ page }) => {
     await page.goto('/');
 
-    await expect(page.getByRole('navigation', { name: /^primary$/i })).toBeVisible();
+    const nav = page.getByRole('navigation', { name: /^primary$/i });
+    await expect(nav).toBeVisible();
+    await expect(nav.getByRole('link', { name: /^experience$/i })).toBeVisible();
+    await expect(nav.getByRole('link', { name: /^work$/i })).toBeVisible();
+    await expect(nav.getByRole('link', { name: /^now$/i })).toBeVisible();
+    await expect(nav.getByRole('link', { name: /^contact$/i })).toBeVisible();
   });
 
   test('social links announce opening in a new tab', async ({ page }) => {

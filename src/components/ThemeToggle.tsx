@@ -21,7 +21,7 @@ export function ThemeToggle() {
     return (
       <span
         aria-hidden
-        className="h-9 w-9 inline-flex shrink-0"
+        className="inline-flex h-11 w-11 shrink-0"
       />
     );
   }
@@ -31,7 +31,7 @@ export function ThemeToggle() {
   return (
     <button
       aria-label={isDark ? THEME_ARIA_LIGHT : THEME_ARIA_DARK}
-      className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      className="inline-flex h-11 w-11 items-center justify-center rounded-md text-muted-foreground transition-colors hover:text-foreground"
       onClick={handleToggle}
       type="button"
     >
