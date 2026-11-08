@@ -8,7 +8,6 @@ import {
   checkSecret,
   checkSkillLeakage,
   extractEntityNames,
-  extractNumbers,
   extractNumberUnits,
   fold,
   numberUnitKey,
@@ -121,10 +120,7 @@ function allowedGrounding(bundle: Bundle, cited: Claim[]): {
   const units = new Set<string>();
   cited.forEach((claim) => {
     claim.numbers.forEach((value) => numbers.add(value));
-    extractNumbers(claim.text).forEach((value) => numbers.add(value));
-    extractNumberUnits(claim.text).forEach((pair) => {
-      units.add(numberUnitKey(pair));
-    });
+    extractNumberUnits(claim.text).forEach((pair) => addCitedNumber(pair, numbers, units));
   });
   return { blob: parts.join(' '), numbers, units };
 }
@@ -138,10 +134,28 @@ function numberIssues(
   return unexpected ? [issue('unsupported-number', path)] : [];
 }
 
+function addCitedNumber(
+  pair: NumberUnit,
+  numbers: Set<string>,
+  units: Set<string>,
+): void {
+  if (pair.unknownSuffix) {
+    return;
+  }
+  if (pair.unit.length > 0) {
+    units.add(numberUnitKey(pair));
+    return;
+  }
+  numbers.add(pair.number);
+}
+
 function pairAllowed(
   pair: NumberUnit,
   allowed: { numbers: Set<string>; units: Set<string> },
 ): boolean {
+  if (pair.unknownSuffix) {
+    return false;
+  }
   if (pair.unit.length > 0) {
     return allowed.units.has(numberUnitKey(pair));
   }

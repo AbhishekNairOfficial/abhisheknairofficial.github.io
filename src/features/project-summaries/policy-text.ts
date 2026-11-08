@@ -48,6 +48,13 @@ const URL_PATTERN = /https?:\/\//iu;
 const CONTROL_PATTERN = /[\u0000-\u0008\u000B\u000C\u000E-\u001F]/u;
 const BIDI_PATTERN = /[\u202A-\u202E\u2066-\u2069]/u;
 const NUMBER_PATTERN = /\d+(?:\.\d+)?%?/gu;
+const ENTITY_STOPLIST = new Set([
+  'a', 'an', 'and', 'are', 'as', 'at', 'be', 'been', 'being', 'but', 'by',
+  'for', 'from', 'if', 'in', 'into', 'is', 'it', 'its', 'my', 'no', 'nor',
+  'not', 'of', 'on', 'or', 'our', 'over', 'so', 'that', 'the', 'their',
+  'these', 'this', 'those', 'to', 'was', 'we', 'were', 'what', 'when',
+  'where', 'which', 'while', 'who', 'whom', 'with', 'yet', 'you', 'your',
+]);
 
 export function fold(text: string): string {
   return text
@@ -114,37 +121,46 @@ export function extractNumbers(text: string): string[] {
   return matches === null ? [] : matches;
 }
 
-export interface NumberUnit {
-  number: string;
-  unit: string;
-}
-
-export function extractNumberUnits(text: string): NumberUnit[] {
-  const matches = text.match(/\d+(?:\.\d+)?%?(?:[A-Za-z]+|\s+[A-Za-z]+)?/gu);
-  if (matches === null) {
-    return [];
-  }
-  return matches.map(toNumberUnit);
-}
-
-function toNumberUnit(token: string): NumberUnit {
-  const trimmed = token.trim();
-  const numberMatch = trimmed.match(/^\d+(?:\.\d+)?%?/u);
-  const number = numberMatch?.[0] ?? '';
-  const rest = trimmed.slice(number.length).trim();
-  return {
-    number,
-    unit: fold(rest),
-  };
-}
+export { extractNumberUnits, numberUnitKey, type NumberUnit } from './policy-units';
 
 export function extractEntityNames(text: string): string[] {
-  const matches = text.match(/\b[A-Z][A-Za-z0-9]+(?:[ -][A-Z][A-Za-z0-9]+)+\b/gu);
-  return matches === null ? [] : matches;
+  const tokens = text.split(/[^\p{L}\p{N}.]+/u).filter((part) => {
+    return part.length > 0 && part !== '.';
+  });
+  return tokens.filter((token, index) => isCandidateEntity(token, index === 0));
 }
 
-export function numberUnitKey(pair: NumberUnit): string {
-  return `${pair.number}:${pair.unit}`;
+function isCandidateEntity(token: string, initial: boolean): boolean {
+  if (!hasEntityShape(token) || ENTITY_STOPLIST.has(fold(token))) {
+    return false;
+  }
+  if (initial && isOrdinaryWord(token)) {
+    return false;
+  }
+  return true;
+}
+
+function hasEntityShape(token: string): boolean {
+  if (/^\d/u.test(token)) {
+    return false;
+  }
+  return isTitleCase(token) || isCamelCase(token) || isAllCaps(token) || /[\d.]/u.test(token);
+}
+
+function isOrdinaryWord(token: string): boolean {
+  return isTitleCase(token) || /^[a-z]+$/u.test(token);
+}
+
+function isTitleCase(token: string): boolean {
+  return /^[A-Z][a-z]+$/u.test(token);
+}
+
+function isCamelCase(token: string): boolean {
+  return /[a-z][A-Z]/u.test(token) || /[A-Z][a-z]+[A-Z]/u.test(token);
+}
+
+function isAllCaps(token: string): boolean {
+  return /^[A-Z]{2,}$/u.test(token);
 }
 
 export function wordCount(text: string): number {

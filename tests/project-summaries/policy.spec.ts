@@ -99,12 +99,6 @@ test('blocks number unit changes against cited claims', () => {
 });
 
 test('blocks attached number units that are not in the cited claims', () => {
-  const bundle = makeBundle();
-  bundle.source.claims[1] = {
-    ...bundle.source.claims[1],
-    text: 'Clerks recorded berth assignments in 5 seconds.',
-    numbers: ['5'],
-  };
   const sentences = [
     'Clerks recorded berth assignments in 5ms.',
     'Clerks recorded berth assignments in 10x.',
@@ -113,11 +107,48 @@ test('blocks attached number units that are not in the cited claims', () => {
     'Clerks recorded berth assignments in 5xyz.',
   ];
   sentences.forEach((text) => {
-    const found = codes(replaceFirstSentence(bundle, {
+    const found = codes(replaceFirstSentence(secondsClaimBundle(), {
       text,
       claimIds: ['clerk-records'],
     }));
     expect(found).toContain('unsupported-number');
+  });
+});
+
+test('blocks hyphenated unit changes against cited claims', () => {
+  const found = codes(replaceFirstSentence(secondsClaimBundle(), {
+    text: 'Clerks recorded 5-millisecond latency for berth assignments.',
+    claimIds: ['clerk-records'],
+  }));
+  expect(found).toContain('unsupported-number');
+});
+
+test('does not treat a following non-unit word as a unit', () => {
+  const bundle = makeBundle();
+  bundle.source.claims[1] = {
+    ...bundle.source.claims[1],
+    text: 'Clerks recorded 30% and reduced crate counts for visiting barges.',
+    numbers: ['30'],
+  };
+  const found = codes(replaceFirstSentence(bundle, {
+    text: 'Clerks recorded 30% while reducing crate counts for visiting barges.',
+    claimIds: ['clerk-records'],
+  }));
+  expect(found).not.toContain('unsupported-number');
+});
+
+test('allows faithful unit paraphrases of cited claims', () => {
+  const paraphrases = [
+    'Clerks recorded berth assignments in 5s.',
+    'Clerks recorded berth assignments in 5 sec.',
+    'Clerks recorded berth assignments in 5-second windows.',
+  ];
+  paraphrases.forEach((text) => {
+    const found = codes(replaceFirstSentence(secondsClaimBundle(), {
+      text,
+      claimIds: ['clerk-records'],
+    }));
+    expect(found).not.toContain('unsupported-number');
   });
 });
 
@@ -145,11 +176,26 @@ test('blocks unsupported numbers, qualifier changes, and verb drift', () => {
 });
 
 test('blocks novel entities that are not on the cited allowlist', () => {
+  const names = [
+    'The project uses Amazon Bedrock to record berth assignments.',
+    'The project uses DynamoDB to record berth assignments.',
+    'The project uses Next.js to record berth assignments.',
+  ];
+  names.forEach((text) => {
+    const found = codes(replaceFirstSentence(makeBundle(), {
+      text,
+      claimIds: ['clerk-records'],
+    }));
+    expect(found).toContain('unsupported-entity');
+  });
+});
+
+test('allows faithful entity paraphrases of cited claims', () => {
   const found = codes(replaceFirstSentence(makeBundle(), {
-    text: 'The project uses Amazon Bedrock to record berth assignments.',
+    text: 'Port of Cedar Quay clerks recorded berth assignments for visiting barges.',
     claimIds: ['clerk-records'],
   }));
-  expect(found).toContain('unsupported-entity');
+  expect(found).not.toContain('unsupported-entity');
 });
 
 test('blocks profile skill leakage and prompt injection', () => {
@@ -195,3 +241,13 @@ test('validateBundle accepts the synthetic fixture bundle', () => {
   const result = validateBundle(makeBundle());
   expect(result.ok).toBe(true);
 });
+
+function secondsClaimBundle(): Bundle {
+  const bundle = makeBundle();
+  bundle.source.claims[1] = {
+    ...bundle.source.claims[1],
+    text: 'Clerks recorded berth assignments in 5 seconds.',
+    numbers: ['5'],
+  };
+  return bundle;
+}
