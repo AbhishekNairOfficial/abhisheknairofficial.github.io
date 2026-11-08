@@ -120,7 +120,7 @@ export interface NumberUnit {
 }
 
 export function extractNumberUnits(text: string): NumberUnit[] {
-  const matches = text.match(/\d+(?:\.\d+)?%?(?:\s+[A-Za-z]+)?/gu);
+  const matches = text.match(/\d+(?:\.\d+)?%?(?:[A-Za-z]+|\s+[A-Za-z]+)?/gu);
   if (matches === null) {
     return [];
   }
@@ -128,11 +128,19 @@ export function extractNumberUnits(text: string): NumberUnit[] {
 }
 
 function toNumberUnit(token: string): NumberUnit {
-  const parts = token.trim().split(/\s+/u);
+  const trimmed = token.trim();
+  const numberMatch = trimmed.match(/^\d+(?:\.\d+)?%?/u);
+  const number = numberMatch?.[0] ?? '';
+  const rest = trimmed.slice(number.length).trim();
   return {
-    number: parts[0] ?? '',
-    unit: fold(parts[1] ?? ''),
+    number,
+    unit: fold(rest),
   };
+}
+
+export function extractEntityNames(text: string): string[] {
+  const matches = text.match(/\b[A-Z][A-Za-z0-9]+(?:[ -][A-Z][A-Za-z0-9]+)+\b/gu);
+  return matches === null ? [] : matches;
 }
 
 export function numberUnitKey(pair: NumberUnit): string {

@@ -98,6 +98,29 @@ test('blocks number unit changes against cited claims', () => {
   expect(found).toContain('unsupported-number');
 });
 
+test('blocks attached number units that are not in the cited claims', () => {
+  const bundle = makeBundle();
+  bundle.source.claims[1] = {
+    ...bundle.source.claims[1],
+    text: 'Clerks recorded berth assignments in 5 seconds.',
+    numbers: ['5'],
+  };
+  const sentences = [
+    'Clerks recorded berth assignments in 5ms.',
+    'Clerks recorded berth assignments in 10x.',
+    'Clerks recorded berth assignments in 30%.',
+    'Clerks recorded berth assignments in 2GB.',
+    'Clerks recorded berth assignments in 5xyz.',
+  ];
+  sentences.forEach((text) => {
+    const found = codes(replaceFirstSentence(bundle, {
+      text,
+      claimIds: ['clerk-records'],
+    }));
+    expect(found).toContain('unsupported-number');
+  });
+});
+
 test('blocks unsupported numbers, qualifier changes, and verb drift', () => {
   const recast = codes(replaceFirstSentence(makeBundle(), {
     text: 'Harbor lanterns improved Lighthouse scores by 20% and remain imaginary throughout.',
@@ -119,6 +142,14 @@ test('blocks unsupported numbers, qualifier changes, and verb drift', () => {
   const found = codes(drifted);
   expect(found).toContain('qualifier-change');
   expect(found).toContain('verb-drift');
+});
+
+test('blocks novel entities that are not on the cited allowlist', () => {
+  const found = codes(replaceFirstSentence(makeBundle(), {
+    text: 'The project uses Amazon Bedrock to record berth assignments.',
+    claimIds: ['clerk-records'],
+  }));
+  expect(found).toContain('unsupported-entity');
 });
 
 test('blocks profile skill leakage and prompt injection', () => {

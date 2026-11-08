@@ -80,8 +80,8 @@ export function makeSource(project: ProjectInput = makeProject()): SourceSnapsho
   return { ...source, sourceHash: hashSource(source) };
 }
 
-function sentencesFor(audience: Audience): Sentence[] {
-  const roleLine = roleSentence(audience);
+function sentencesFor(audience: Audience, role: string): Sentence[] {
+  const roleLine = roleSentence(audience, role);
   return [
     { text: LEDGER_PURPOSE, claimIds: ['ledger-purpose'] },
     { text: roleLine, claimIds: ['clerk-records'] },
@@ -91,9 +91,9 @@ function sentencesFor(audience: Audience): Sentence[] {
   ];
 }
 
-function roleSentence(audience: Audience): string {
+function roleSentence(audience: Audience, role: string): string {
   if (audience === 'recruiter') {
-    return 'The assigned role was Fictional Harbor Clerk, with scope limited to clerks at the invented Port of Cedar Quay who recorded berth assignments, tide windows, and crate counts for visiting barges.';
+    return `The assigned role was ${role}, with scope limited to clerks at the invented Port of Cedar Quay who recorded berth assignments, tide windows, and crate counts for visiting barges.`;
   }
   if (audience === 'client') {
     return 'The stated problem was keeping a harbor notebook current, and the stated outcomes were that clerks at the invented Port of Cedar Quay recorded berth assignments, tide windows, and crate counts for visiting barges.';
@@ -119,7 +119,7 @@ export function makeDraft(
     sourceHash: source.sourceHash,
     sourceRevision: source.sourceRevision,
     audience,
-    sentences: sentencesFor(audience),
+    sentences: sentencesFor(audience, source.project.role),
     provenance: {
       kind: 'manual' as const,
       author: FIXTURE_REVIEWER,

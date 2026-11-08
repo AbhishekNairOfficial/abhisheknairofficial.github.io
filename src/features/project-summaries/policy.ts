@@ -7,6 +7,7 @@ import {
   checkPlainText,
   checkSecret,
   checkSkillLeakage,
+  extractEntityNames,
   extractNumbers,
   extractNumberUnits,
   fold,
@@ -78,7 +79,7 @@ function sentenceIssues(bundle: Bundle, sentence: Sentence, path: string): Issue
     ...sourceTextIssues(sentence.text, path),
     ...checkSkillLeakage(sentence.text, path, allowed.blob),
     ...numberIssues(sentence.text, allowed, path),
-    ...entityIssues(sentence.text, bundle.source.claims, cited.found, path),
+    ...entityIssues(sentence.text, { all: bundle.source.claims, cited: cited.found }, allowed.blob, path),
     ...qualifierIssues(sentence.text, cited.found, path),
     ...verbIssues(sentence.text, cited.found, path),
   ];
@@ -149,19 +150,21 @@ function pairAllowed(
 
 function entityIssues(
   text: string,
-  allClaims: Claim[],
-  cited: Claim[],
+  claims: { all: Claim[]; cited: Claim[] },
+  blob: string,
   path: string,
 ): Issue[] {
-  const citedEntities = new Set(cited.flatMap((claim) => claim.entities.map(fold)));
-  const uncited = allClaims
-    .filter((claim) => !cited.includes(claim))
+  const citedEntities = new Set(claims.cited.flatMap((claim) => claim.entities.map(fold)));
+  const uncited = claims.all
+    .filter((claim) => !claims.cited.includes(claim))
     .flatMap((claim) => claim.entities);
   const leaked = uncited.some((entity) => {
     const folded = fold(entity);
     return folded.length > 0 && fold(text).includes(folded) && !citedEntities.has(folded);
   });
-  return leaked ? [issue('unsupported-entity', path)] : [];
+  const allowed = fold(blob);
+  const novel = extractEntityNames(text).some((name) => !allowed.includes(fold(name)));
+  return leaked || novel ? [issue('unsupported-entity', path)] : [];
 }
 
 function qualifierIssues(text: string, cited: Claim[], path: string): Issue[] {
