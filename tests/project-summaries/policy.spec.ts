@@ -152,6 +152,27 @@ test('allows faithful unit paraphrases of cited claims', () => {
   });
 });
 
+test('strips terminal punctuation from entity tokens but keeps internal dots', () => {
+  const bundle = makeBundle();
+  bundle.source.claims[1] = {
+    ...bundle.source.claims[1],
+    text: 'Clerks recorded berth assignments in 5 milliseconds.',
+    numbers: ['5'],
+  };
+  const spaced = codes(replaceFirstSentence(bundle, {
+    text: 'Clerks recorded berth assignments in 5 ms.',
+    claimIds: ['clerk-records'],
+  }));
+  expect(spaced).not.toContain('unsupported-entity');
+  expect(spaced).not.toContain('unsupported-number');
+
+  const next = codes(replaceFirstSentence(makeBundle(), {
+    text: 'The project uses Next.js to record berth assignments.',
+    claimIds: ['clerk-records'],
+  }));
+  expect(next).toContain('unsupported-entity');
+});
+
 test('blocks unsupported numbers, qualifier changes, and verb drift', () => {
   const recast = codes(replaceFirstSentence(makeBundle(), {
     text: 'Harbor lanterns improved Lighthouse scores by 20% and remain imaginary throughout.',

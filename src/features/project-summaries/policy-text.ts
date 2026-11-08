@@ -124,10 +124,14 @@ export function extractNumbers(text: string): string[] {
 export { extractNumberUnits, numberUnitKey, type NumberUnit } from './policy-units';
 
 export function extractEntityNames(text: string): string[] {
-  const tokens = text.split(/[^\p{L}\p{N}.]+/u).filter((part) => {
+  const tokens = text.split(/[^\p{L}\p{N}.]+/u).map(stripTerminalPunctuation).filter((part) => {
     return part.length > 0 && part !== '.';
   });
   return tokens.filter((token, index) => isCandidateEntity(token, index === 0));
+}
+
+function stripTerminalPunctuation(token: string): string {
+  return token.replace(/[.,;:!?)"'”’»\]}]+$/u, '');
 }
 
 function isCandidateEntity(token: string, initial: boolean): boolean {
