@@ -7,6 +7,8 @@ const AVAILABILITY_PHRASES = [
   'seeking opportunity',
   'available for hire',
   'looking for next role',
+  'looking for my next role',
+  'looking for the next role',
 ];
 
 const SKILL_LEAKS = [
@@ -110,6 +112,31 @@ export function checkSkillLeakage(text: string, path: string, allowed: string): 
 export function extractNumbers(text: string): string[] {
   const matches = text.match(NUMBER_PATTERN);
   return matches === null ? [] : matches;
+}
+
+export interface NumberUnit {
+  number: string;
+  unit: string;
+}
+
+export function extractNumberUnits(text: string): NumberUnit[] {
+  const matches = text.match(/\d+(?:\.\d+)?%?(?:\s+[A-Za-z]+)?/gu);
+  if (matches === null) {
+    return [];
+  }
+  return matches.map(toNumberUnit);
+}
+
+function toNumberUnit(token: string): NumberUnit {
+  const parts = token.trim().split(/\s+/u);
+  return {
+    number: parts[0] ?? '',
+    unit: fold(parts[1] ?? ''),
+  };
+}
+
+export function numberUnitKey(pair: NumberUnit): string {
+  return `${pair.number}:${pair.unit}`;
 }
 
 export function wordCount(text: string): number {

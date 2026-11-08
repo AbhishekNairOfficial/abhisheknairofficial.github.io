@@ -24,6 +24,27 @@ test('invalid registry yields original-only rows and does not throw', () => {
   });
 });
 
+test('stale current with matching lastGood uses lastGood', () => {
+  const lastGood = makeCandidate();
+  const stale = makeCandidate({
+    ...lastGood.bundle.source.project,
+    summary: 'Stale original harbor copy that no longer matches the live project.',
+  });
+  const registry = makeRegistry();
+  registry.current[lastGood.bundle.source.project.id] = stale;
+  registry.lastGood[lastGood.bundle.source.project.id] = lastGood;
+  const catalog = buildSummaryCatalog(
+    [lastGood.bundle.source.project],
+    registry,
+    fixtureVerifier,
+  );
+  const selected = catalog[lastGood.bundle.source.project.id];
+  expect(selected?.kind).toBe('approved');
+  if (selected?.kind === 'approved') {
+    expect(selected.sourceHash).toBe(lastGood.bundle.source.sourceHash);
+  }
+});
+
 test('unrelated project failures do not break a valid row', () => {
   const good = makeCandidate();
   const other = makeCandidate({

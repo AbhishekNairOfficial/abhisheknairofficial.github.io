@@ -62,11 +62,9 @@ function originalCatalog(
 }
 
 function liveSourceHash(project: ProjectInput, registry: ReleaseRegistry): Hash | null {
-  const candidate = registry.current[project.id] ?? registry.lastGood[project.id];
+  const candidate = matchingSnapshot(project, registry.current[project.id])
+    ?? matchingSnapshot(project, registry.lastGood[project.id]);
   if (!candidate) {
-    return null;
-  }
-  if (!snapshotMatchesProject(candidate, project)) {
     return null;
   }
   return hashSource({
@@ -76,6 +74,16 @@ function liveSourceHash(project: ProjectInput, registry: ReleaseRegistry): Hash 
     sourceRevision: candidate.bundle.source.sourceRevision,
     claims: candidate.bundle.source.claims,
   });
+}
+
+function matchingSnapshot(
+  project: ProjectInput,
+  candidate: Candidate | undefined,
+): Candidate | undefined {
+  if (!candidate || !snapshotMatchesProject(candidate, project)) {
+    return undefined;
+  }
+  return candidate;
 }
 
 function snapshotMatchesProject(candidate: Candidate, project: ProjectInput): boolean {

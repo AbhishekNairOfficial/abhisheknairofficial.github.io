@@ -36,6 +36,8 @@ test('blocks open-to-work wording variants', () => {
     'Open to work next quarter.',
     'Currently seeking opportunities in analytics.',
     'Looking for next role after this notebook.',
+    'Looking for my next role after this notebook.',
+    'Looking for the next role after this notebook.',
   ];
   phrases.forEach((text) => {
     const found = codes(replaceFirstSentence(makeBundle(), {
@@ -80,6 +82,20 @@ test('blocks HTML, markdown links, and control characters as plain text violatio
     claimIds: ['clerk-records'],
   }));
   expect(markdown).toContain('plain-text');
+});
+
+test('blocks number unit changes against cited claims', () => {
+  const bundle = makeBundle();
+  bundle.source.claims[1] = {
+    ...bundle.source.claims[1],
+    text: 'Clerks recorded berth assignments in 5 seconds.',
+    numbers: ['5'],
+  };
+  const found = codes(replaceFirstSentence(bundle, {
+    text: 'Clerks recorded berth assignments in 5 milliseconds.',
+    claimIds: ['clerk-records'],
+  }));
+  expect(found).toContain('unsupported-number');
 });
 
 test('blocks unsupported numbers, qualifier changes, and verb drift', () => {

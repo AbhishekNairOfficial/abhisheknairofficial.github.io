@@ -8,8 +8,11 @@ import {
   checkSecret,
   checkSkillLeakage,
   extractNumbers,
+  extractNumberUnits,
   fold,
+  numberUnitKey,
   wordCount,
+  type NumberUnit,
 } from './policy-text';
 import { AUDIENCES, issue, type Bundle, type Claim, type Issue, type Sentence } from './types';
 
@@ -74,7 +77,7 @@ function sentenceIssues(bundle: Bundle, sentence: Sentence, path: string): Issue
     ...unknown,
     ...sourceTextIssues(sentence.text, path),
     ...checkSkillLeakage(sentence.text, path, allowed.blob),
-    ...numberIssues(sentence.text, allowed.numbers, path),
+    ...numberIssues(sentence.text, allowed, path),
     ...entityIssues(sentence.text, bundle.source.claims, cited.found, path),
     ...qualifierIssues(sentence.text, cited.found, path),
     ...verbIssues(sentence.text, cited.found, path),
@@ -100,7 +103,11 @@ function citedClaims(
   return { found, missing };
 }
 
-function allowedGrounding(bundle: Bundle, cited: Claim[]): { blob: string; numbers: Set<string> } {
+function allowedGrounding(bundle: Bundle, cited: Claim[]): {
+  blob: string;
+  numbers: Set<string>;
+  units: Set<string>;
+} {
   const parts = [
     bundle.source.project.title,
     bundle.source.project.role,
@@ -110,16 +117,34 @@ function allowedGrounding(bundle: Bundle, cited: Claim[]): { blob: string; numbe
     ...cited.flatMap((claim) => claim.entities),
   ];
   const numbers = new Set<string>();
+  const units = new Set<string>();
   cited.forEach((claim) => {
     claim.numbers.forEach((value) => numbers.add(value));
     extractNumbers(claim.text).forEach((value) => numbers.add(value));
+    extractNumberUnits(claim.text).forEach((pair) => {
+      units.add(numberUnitKey(pair));
+    });
   });
-  return { blob: parts.join(' '), numbers };
+  return { blob: parts.join(' '), numbers, units };
 }
 
-function numberIssues(text: string, allowed: Set<string>, path: string): Issue[] {
-  const unexpected = extractNumbers(text).some((value) => !allowed.has(value));
+function numberIssues(
+  text: string,
+  allowed: { numbers: Set<string>; units: Set<string> },
+  path: string,
+): Issue[] {
+  const unexpected = extractNumberUnits(text).some((pair) => !pairAllowed(pair, allowed));
   return unexpected ? [issue('unsupported-number', path)] : [];
+}
+
+function pairAllowed(
+  pair: NumberUnit,
+  allowed: { numbers: Set<string>; units: Set<string> },
+): boolean {
+  if (pair.unit.length > 0) {
+    return allowed.units.has(numberUnitKey(pair));
+  }
+  return allowed.numbers.has(pair.number);
 }
 
 function entityIssues(
