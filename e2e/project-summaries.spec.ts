@@ -40,10 +40,13 @@ test.describe('project summaries', () => {
     expect(html).not.toContain(['spark', '749c'].join('-'));
   });
 
-  test('sitemap and robots exclude the demo route', async ({ request }) => {
+  test('robots allow labs while the demo stays noindex and out of the sitemap', async ({ request }) => {
     const sitemap = await (await request.get('/sitemap.xml')).text();
     expect(sitemap).not.toContain('/labs/');
     const robots = await (await request.get('/robots.txt')).text();
-    expect(robots).toContain('Disallow: /labs/');
+    expect(robots).not.toContain('Disallow: /labs/');
+    const demo = await (await request.get('/labs/audience-summaries-demo')).text();
+    expect(demo).toMatch(/noindex/i);
+    expect(demo).toMatch(/nofollow/i);
   });
 });
