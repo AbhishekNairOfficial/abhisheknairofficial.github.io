@@ -20,6 +20,11 @@ const eslintConfig = [
       "next-env.d.ts",
       "e2e/**",
       "playwright.config.ts",
+      "playwright.summaries.config.ts",
+      "playwright.summaries-ui.config.ts",
+      "tests/summary-site/.next/**",
+      "tests/summary-site/next-env.d.ts",
+      "tests/summary-site/**",
     ],
   },
   ...compat.extends("next/core-web-vitals", "next/typescript"),
@@ -228,6 +233,20 @@ const eslintConfig = [
     rules: {
       "no-magic-numbers": "off",
       "max-lines-per-function": "off",
+      "max-lines": "off",
+      "max-statements": "off",
+      "complexity": "off",
+    },
+  },
+  {
+    files: ["tests/project-summaries/fixtures.ts"],
+    rules: {
+      "no-magic-numbers": "off",
+      "max-lines-per-function": "off",
+      "max-lines": "off",
+      "max-statements": "off",
+      "complexity": "off",
+      "max-params": "off",
     },
   },
 ];

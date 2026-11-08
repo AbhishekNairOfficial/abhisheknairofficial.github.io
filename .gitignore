@@ -43,3 +43,7 @@ next-env.d.ts
 # playwright
 /playwright-report/
 /test-results/
+
+# summary harness
+/tests/summary-site/.next/
+/tests/summary-site/next-env.d.ts

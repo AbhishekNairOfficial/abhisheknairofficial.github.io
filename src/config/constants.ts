@@ -3,6 +3,8 @@
  * Site copy — single place to edit user-visible text and structured content.
  */
 
+import type { ProjectId } from '@/features/project-summaries/types';
+
 // ——— Identity ———
 export const NAME = 'Abhishek Panthalingal';
 export const LOCATION = 'Bellevue, WA';
@@ -195,6 +197,7 @@ export const TIMELINE_DATA = [
 export const WORK_TITLE = 'Work';
 
 export interface Project {
+  id: ProjectId;
   title: string;
   client?: string;
   summary: string;
@@ -210,6 +213,7 @@ export function projectExternalLinkAriaLabel(projectTitle: string): string {
 
 export const PROJECTS: Project[] = [
   {
+    id: 'dew',
     title: 'Data Experience Workbench (DEW)',
     client: 'Rhombuz LLC',
     summary:
@@ -218,6 +222,7 @@ export const PROJECTS: Project[] = [
     outcomes: ['Strategic platform intended as a core part of the company’s future product offering'],
   },
   {
+    id: 'executive-network-analytics',
     title: 'Executive Network Analytics',
     client: 'T-Mobile',
     summary:
@@ -229,6 +234,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    id: 'ai-anomaly-detection',
     title: 'AI & Anomaly Detection',
     client: 'T-Mobile',
     summary:
@@ -240,6 +246,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    id: 'supply-chain-control-tower',
     title: 'Supply Chain Control Tower',
     client: 'T-Mobile',
     summary:
@@ -248,6 +255,7 @@ export const PROJECTS: Project[] = [
     outcomes: ['Owned UI and API architecture for a control tower application providing visibility into device distribution, inventory, and servicing'],
   },
   {
+    id: 'industrial-collection-app',
     title: 'Industrial Collection App',
     client: 'TOMRA',
     summary:
@@ -259,6 +267,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    id: 'enterprise-retail-frontend',
     title: 'Enterprise Retail Frontend',
     client: 'Albertsons',
     summary:

@@ -38,6 +38,9 @@
   "exclude": [
     "node_modules",
     "playwright.config.ts",
-    "e2e"
+    "playwright.summaries.config.ts",
+    "playwright.summaries-ui.config.ts",
+    "e2e",
+    "tests/summary-site"
   ]
 }

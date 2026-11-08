@@ -10,7 +10,9 @@
     "lint:check": "eslint . --max-warnings 0",
     "lint:fix": "eslint . --fix",
     "lint:report": "eslint . --format html --output-file eslint-report.html",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:summaries": "playwright test --config=playwright.summaries.config.ts",
+    "test:summaries:ui": "playwright test --config=playwright.summaries-ui.config.ts"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",

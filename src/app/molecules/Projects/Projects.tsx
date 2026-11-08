@@ -1,7 +1,10 @@
 import { projectExternalLinkAriaLabel, type Project } from '@/config/constants';
+import type { ProjectId, ResolvedSummary } from '@/features/project-summaries/types';
+import { ProjectSummary } from './ProjectSummary';
 
 interface ProjectRowsProps {
   projects: Project[];
+  summaries: Record<ProjectId, ResolvedSummary>;
 }
 
 function ProjectHeading({ project }: { project: Project }) {
@@ -28,14 +31,16 @@ function ProjectHeading({ project }: { project: Project }) {
   );
 }
 
-export function ProjectRows({ projects }: ProjectRowsProps) {
+export function ProjectRows({ projects, summaries }: ProjectRowsProps) {
   return (
     <ul>
       {projects.map((project) => {
+        const resolved = summaries[project.id] ?? { kind: 'original' as const, reason: 'no-approved-release' };
         return (
           <li
             className="border-t border-border py-6 first:border-t-0 first:pt-0 md:py-8"
-            key={project.title}
+            data-project-id={project.id}
+            key={project.id}
           >
             <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
               <ProjectHeading project={project} />
@@ -48,9 +53,12 @@ export function ProjectRows({ projects }: ProjectRowsProps) {
             <p className="mt-1 font-mono text-xs text-muted-foreground">
               {project.role}
             </p>
-            <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
-              {project.summary}
-            </p>
+            <ProjectSummary
+              original={project.summary}
+              projectId={project.id}
+              resolved={resolved}
+              title={project.title}
+            />
             <p className="mt-3 text-pretty text-sm text-foreground">
               {project.outcomes.join(' · ')}
             </p>
